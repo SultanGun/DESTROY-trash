@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://b0tbpwjndfc83"
-path="res://.godot/imported/Top-Down Simple Summer_Prop - Castle Round.png-0bc03a3f44f6f03e7f64bb4f179b0e4f.ctex"
+uid="uid://841ac1duyc04"
+path="res://.godot/imported/2.png-0a446f1ad8431dd5245954d70e1c7e25.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/sprites/props/Top-Down Simple Summer_Prop - Castle Round.png"
-dest_files=["res://.godot/imported/Top-Down Simple Summer_Prop - Castle Round.png-0bc03a3f44f6f03e7f64bb4f179b0e4f.ctex"]
+source_file="res://assets/sprites/mc/back/2.png"
+dest_files=["res://.godot/imported/2.png-0a446f1ad8431dd5245954d70e1c7e25.ctex"]
 
 [params]
 
