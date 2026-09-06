@@ -1,4 +1,4 @@
-[gd_scene load_steps=196 format=3 uid="uid://dr6msqg3adjhk"]
+[gd_scene load_steps=197 format=3 uid="uid://dr6msqg3adjhk"]
 
 [ext_resource type="Texture2D" uid="uid://bhet6hy5sn2cy" path="res://assets/sprites/props/Top-Down Simple Summer_Prop - House.png" id="0_c"]
 [ext_resource type="Texture2D" uid="uid://dkvi4bk7tnt4l" path="res://assets/sprites/properti_jalan/stroke7-ezgif.com-crop.png" id="1_556fm"]
@@ -35,50 +35,47 @@
 [ext_resource type="Texture2D" uid="uid://yhaqtjhhxbl8" path="res://assets/sprites/properti_jalan/stroke1-ezgif.com-crop.png" id="35_ch1si"]
 [ext_resource type="Texture2D" uid="uid://cor5mvjtabeyv" path="res://assets/sprites/properti_jalan/stroke8-ezgif.com-crop.png" id="36_tnew8"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_u2wxr"]
-size = Vector2(109.12, 88)
+[sub_resource type="CircleShape2D" id="CircleShape2D_pykmx"]
+radius = 15.1327
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_6sk8p"]
-size = Vector2(109.12, 88)
+[sub_resource type="CircleShape2D" id="CircleShape2D_bfwrw"]
+radius = 19.0263
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_ch1si"]
-size = Vector2(109.12, 88)
+[sub_resource type="CircleShape2D" id="CircleShape2D_qsf01"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_tnew8"]
-size = Vector2(109.12, 88)
+[sub_resource type="CircleShape2D" id="CircleShape2D_y0njf"]
+radius = 23.7697
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_jmb6l"]
-radius = 39.56
+radius = 32.0
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_gfpr5"]
 radius = 22.08
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_tlw76"]
-size = Vector2(159.28, 146.96)
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_pbic4"]
+radius = 59.5
+height = 145.0
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_jow8e"]
-size = Vector2(144.32, 107.36)
+[sub_resource type="CircleShape2D" id="CircleShape2D_u2wxr"]
+radius = 25.4951
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_0p7jk"]
-size = Vector2(144.32, 107.36)
+[sub_resource type="CircleShape2D" id="CircleShape2D_6sk8p"]
+radius = 22.3607
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_f6jts"]
 radius = 19.78
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_o2ig1"]
-size = Vector2(144.32, 107.36)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_shs62"]
-size = Vector2(190.08, 107.36)
+[sub_resource type="CircleShape2D" id="CircleShape2D_ch1si"]
+radius = 23.4094
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_mkjli"]
-size = Vector2(76, 44.45)
+size = Vector2(70, 36)
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_c0uy2"]
-radius = 17.48
+radius = 16.0
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_eho6h"]
-size = Vector2(396, 540.32)
+size = Vector2(239, 119)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_wp1pd"]
 size = Vector2(202, 66.6)
@@ -87,13 +84,13 @@ size = Vector2(202, 66.6)
 size = Vector2(202, 66.6)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_xogdn"]
-size = Vector2(76, 44.45)
+size = Vector2(53, 44.45)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_h8q4n"]
 size = Vector2(76, 44.45)
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_yppdd"]
-radius = 39.56
+radius = 30.0
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_jma8v"]
 radius = 22.08
@@ -108,199 +105,193 @@ radius = 17.48
 size = Vector2(96, 88.55)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_vbiuf"]
-size = Vector2(96, 88.55)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_dhd3r"]
-size = Vector2(96, 88.55)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_h04cm"]
-size = Vector2(96, 88.55)
+size = Vector2(38.5, 43)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_tppsj"]
-size = Vector2(96, 88.55)
+size = Vector2(36, 47)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_fhuyo"]
-size = Vector2(96, 88.55)
+size = Vector2(41, 47)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_lf4a4"]
-size = Vector2(96, 88.55)
+size = Vector2(35, 49)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_knds6"]
-size = Vector2(96, 88.55)
+size = Vector2(41, 43)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_3nwg0"]
-size = Vector2(96, 88.55)
+size = Vector2(43, 45)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_gn1qy"]
-size = Vector2(96, 88.55)
+size = Vector2(33, 52)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_hoajt"]
-size = Vector2(96, 88.55)
+size = Vector2(33, 41)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_8red2"]
-size = Vector2(96, 88.55)
+size = Vector2(46, 60)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_wv5u5"]
-size = Vector2(96, 88.55)
+size = Vector2(36, 41.5)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_g65ja"]
-size = Vector2(96, 88.55)
+size = Vector2(33, 51.275)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_10avt"]
-size = Vector2(96, 88.55)
+size = Vector2(42, 41)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_3euij"]
-size = Vector2(96, 88.55)
+size = Vector2(39, 43)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_or1gs"]
-size = Vector2(147, 126)
+size = Vector2(47, 75)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_b4tk6"]
-size = Vector2(147, 126)
+size = Vector2(50, 35)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_tg37j"]
-size = Vector2(260.48, 214.72)
+size = Vector2(144, 73)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_nymhv"]
-size = Vector2(260.48, 214.72)
+size = Vector2(144, 63)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_db11k"]
-size = Vector2(260.48, 214.72)
+size = Vector2(161, 69)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_c7b3f"]
-size = Vector2(260.48, 214.72)
+size = Vector2(148, 62)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_gy00e"]
-size = Vector2(249.92, 117.92)
+size = Vector2(193, 24)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_1keic"]
-size = Vector2(76, 44.45)
+size = Vector2(64, 41.225)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_44poe"]
-size = Vector2(76, 44.45)
+size = Vector2(65, 44.45)
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_6nuq1"]
-size = Vector2(135.52, 107.36)
+[sub_resource type="CircleShape2D" id="CircleShape2D_tnew8"]
+radius = 51.3517
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ngwxp"]
-size = Vector2(117.92, 205.92)
+size = Vector2(14, 58)
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_wiqkh"]
-size = Vector2(89.76, 100.32)
+[sub_resource type="CircleShape2D" id="CircleShape2D_tlw76"]
+radius = 30.4138
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_7wuif"]
-size = Vector2(89.76, 100.32)
+[sub_resource type="CircleShape2D" id="CircleShape2D_jow8e"]
+radius = 34.8281
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_2ck57"]
-size = Vector2(89.76, 100.32)
+[sub_resource type="CircleShape2D" id="CircleShape2D_0p7jk"]
+radius = 25.02
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_vpcuw"]
-size = Vector2(89.76, 100.32)
+[sub_resource type="CircleShape2D" id="CircleShape2D_o2ig1"]
+radius = 30.0
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_4o2i6"]
-size = Vector2(89.76, 100.32)
+[sub_resource type="CircleShape2D" id="CircleShape2D_shs62"]
+radius = 29.0689
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_maxjt"]
-size = Vector2(89.76, 100.32)
+[sub_resource type="CircleShape2D" id="CircleShape2D_mkjli"]
+radius = 25.1794
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_ex1qt"]
-size = Vector2(89.76, 100.32)
+[sub_resource type="CircleShape2D" id="CircleShape2D_eho6h"]
+radius = 25.4951
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_gju20"]
-size = Vector2(89.76, 100.32)
+[sub_resource type="CircleShape2D" id="CircleShape2D_wp1pd"]
+radius = 26.0768
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_w54u7"]
-size = Vector2(89.76, 100.32)
+[sub_resource type="CircleShape2D" id="CircleShape2D_mibde"]
+radius = 30.0167
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_nmuab"]
-size = Vector2(146.96, 100.32)
+size = Vector2(115, 45)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_tqd3v"]
-size = Vector2(168.96, 325.6)
+size = Vector2(101, 119)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_eh56a"]
-size = Vector2(50, 31.5)
+size = Vector2(41, 30)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_mswh5"]
-size = Vector2(50, 31.5)
+size = Vector2(45, 34)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_s2yoy"]
-size = Vector2(66, 69.55)
+size = Vector2(35, 46)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_sjk44"]
-size = Vector2(96, 88.55)
+size = Vector2(38, 45)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_4agai"]
-size = Vector2(96, 88.55)
+size = Vector2(39, 44)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_htue1"]
-size = Vector2(96, 88.55)
+size = Vector2(39, 33)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_u23n6"]
-size = Vector2(96, 88.55)
+size = Vector2(41, 48)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_27d5y"]
-size = Vector2(96, 88.55)
+size = Vector2(36, 60.5499)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_4sudi"]
-size = Vector2(96, 88.55)
+size = Vector2(41, 49)
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_jw5c1"]
-size = Vector2(109.12, 88)
+[sub_resource type="CircleShape2D" id="CircleShape2D_xogdn"]
+radius = 18.1108
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_bmdj0"]
-size = Vector2(109.12, 88)
+[sub_resource type="CircleShape2D" id="CircleShape2D_h8q4n"]
+radius = 21.3776
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_8ms2c"]
-size = Vector2(109.12, 88)
+[sub_resource type="CircleShape2D" id="CircleShape2D_7p6yv"]
+radius = 18.0278
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_dtku2"]
-size = Vector2(109.12, 88)
+[sub_resource type="CircleShape2D" id="CircleShape2D_vbiuf"]
+radius = 20.3961
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_n4csn"]
-size = Vector2(109.12, 88)
+[sub_resource type="CircleShape2D" id="CircleShape2D_dhd3r"]
+radius = 19.4165
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_ny645"]
-size = Vector2(109.12, 88)
+[sub_resource type="CircleShape2D" id="CircleShape2D_h04cm"]
+radius = 18.2015
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_wphc2"]
-size = Vector2(109.12, 88)
+[sub_resource type="CircleShape2D" id="CircleShape2D_tppsj"]
+radius = 22.0907
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_l5gxf"]
-size = Vector2(96, 88.55)
+size = Vector2(37, 47)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_1urfl"]
-size = Vector2(96, 88.55)
+size = Vector2(42, 38)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_l8apr"]
-size = Vector2(96, 88.55)
+size = Vector2(37, 47)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_wr4gg"]
-size = Vector2(96, 88.55)
+size = Vector2(39, 43)
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_oao2j"]
-size = Vector2(109.12, 88)
+[sub_resource type="CircleShape2D" id="CircleShape2D_fhuyo"]
+radius = 15.1327
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_ud07j"]
-size = Vector2(109.12, 88)
+[sub_resource type="CircleShape2D" id="CircleShape2D_lf4a4"]
+radius = 21.2132
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_3il4b"]
-size = Vector2(109.12, 88)
+[sub_resource type="CircleShape2D" id="CircleShape2D_knds6"]
+radius = 21.587
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_31q6n"]
-size = Vector2(109.12, 88)
+[sub_resource type="CircleShape2D" id="CircleShape2D_3nwg0"]
+radius = 20.0
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_ux37n"]
-size = Vector2(109.12, 88)
+[sub_resource type="CircleShape2D" id="CircleShape2D_gn1qy"]
+radius = 18.6011
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_c7po4"]
-size = Vector2(109.12, 88)
+[sub_resource type="CircleShape2D" id="CircleShape2D_hoajt"]
+radius = 21.8786
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_duwh2"]
-size = Vector2(109.12, 88)
+size = Vector2(34.56, 28)
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_7uhyi"]
-size = Vector2(109.12, 88)
+[sub_resource type="CircleShape2D" id="CircleShape2D_8red2"]
+radius = 21.8403
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_tsqj6"]
 size = Vector2(202, 66.6)
@@ -411,25 +402,25 @@ size = Vector2(36, 176.4)
 size = Vector2(36, 176.4)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_niwks"]
-size = Vector2(396, 540.32)
+size = Vector2(244, 107.08)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_qaiwk"]
 size = Vector2(202, 66.6)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_eg8f7"]
-size = Vector2(109.12, 88)
+size = Vector2(33.56, 26)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_p3ceg"]
-size = Vector2(109.12, 88)
+size = Vector2(33.56, 29)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_yc3x7"]
 size = Vector2(76, 44.45)
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_k6dnq"]
-radius = 39.56
+radius = 30.0666
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_puibr"]
-size = Vector2(460, 177.82)
+size = Vector2(165, 153)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_g8jf1"]
 size = Vector2(50, 31.5)
@@ -441,82 +432,96 @@ size = Vector2(50, 31.5)
 radius = 22.08
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_oboac"]
-size = Vector2(144.32, 107.36)
+size = Vector2(39.16, 36.68)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_6mxvs"]
-size = Vector2(176, 190.08)
+size = Vector2(147, 99.04)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_g8ucj"]
-size = Vector2(176, 190.08)
+size = Vector2(148, 102)
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_iuare"]
-size = Vector2(190.08, 107.36)
+[sub_resource type="CircleShape2D" id="CircleShape2D_wv5u5"]
+radius = 16.0312
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_22gpp"]
-size = Vector2(190.08, 107.36)
+[sub_resource type="CircleShape2D" id="CircleShape2D_g65ja"]
+radius = 17.0
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_80afn"]
-size = Vector2(168.96, 222.64)
+size = Vector2(37.48, 38.41)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_pq8fx"]
-size = Vector2(168.96, 222.64)
+size = Vector2(34, 44.0001)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_jj8tx"]
-size = Vector2(168.96, 222.64)
+size = Vector2(36, 42.0001)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_8yrj4"]
-size = Vector2(168.96, 222.64)
+size = Vector2(38, 42)
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_udypu"]
-size = Vector2(159.28, 146.96)
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_10avt"]
+radius = 60.5
+height = 143.0
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_a0qiq"]
-size = Vector2(133.76, 111.76)
+size = Vector2(57.0001, 46.3799)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_u7mox"]
-size = Vector2(133.76, 111.76)
+size = Vector2(63, 31.19)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_rloq5"]
-size = Vector2(249.92, 117.92)
+size = Vector2(176, 26)
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_148sf"]
-size = Vector2(89.76, 100.32)
+[sub_resource type="CircleShape2D" id="CircleShape2D_3euij"]
+radius = 23.0868
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_pamg6"]
-size = Vector2(89.76, 100.32)
+[sub_resource type="CircleShape2D" id="CircleShape2D_or1gs"]
+radius = 22.0227
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_4sxxq"]
-size = Vector2(89.76, 100.32)
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_b4tk6"]
+radius = 22.0
+height = 44.0
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_kenn6"]
-size = Vector2(89.76, 100.32)
+[sub_resource type="CircleShape2D" id="CircleShape2D_tg37j"]
+radius = 21.3776
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_cdex6"]
-radius = 39.56
+radius = 32.0156
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_fygux"]
-radius = 43.4166
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_6nuq1"]
+size = Vector2(49, 20)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_hwgwv"]
-size = Vector2(96, 88.55)
+size = Vector2(37, 51)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_kbvvt"]
-size = Vector2(96, 88.55)
+size = Vector2(36, 54.5499)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_57ron"]
-size = Vector2(109.12, 88)
+size = Vector2(30.56, 29)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_4svmi"]
-size = Vector2(109.12, 88)
+size = Vector2(30.28, 27)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_idc63"]
-size = Vector2(109.12, 88)
+size = Vector2(25.56, 22)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_yxhfl"]
-size = Vector2(109.12, 88)
+size = Vector2(26.56, 24)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_r5ii6"]
-size = Vector2(109.12, 88)
+size = Vector2(27.78, 28)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_pykmx"]
+size = Vector2(1318, 131)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_wiqkh"]
+size = Vector2(2.175, 204.9)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_7wuif"]
+size = Vector2(5.75, 201.75)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_2ck57"]
+size = Vector2(160.65, 2.94998)
 
 [node name="Map1_City" type="Node2D"]
 
@@ -531,10 +536,10 @@ offset_bottom = 1030.0
 color = Color(0.44, 0.66, 0.33, 1)
 
 [node name="Ground_1 (ColorRect)" type="ColorRect" parent="Ground"]
-offset_left = 1764.0
-offset_top = -1.0
-offset_right = 3197.0
-offset_bottom = 1030.0
+offset_left = 1732.0
+offset_top = 3.0
+offset_right = 3165.0
+offset_bottom = 1034.0
 color = Color(0.439216, 0.658824, 0.329412, 1)
 
 [node name="Ground_2 (ColorRect)" type="ColorRect" parent="Ground"]
@@ -1198,1729 +1203,1746 @@ position = Vector2(944.25, 3226)
 scale = Vector2(3.7832, 0.429688)
 texture = ExtResource("10_u2wxr")
 
-[node name="Map1_City#Jalan" type="Node2D" parent="."]
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
 
-[node name="Map1_City#Perumahan" type="Node2D" parent="."]
+[node name="Map1_City#Jalan" type="Node2D" parent="StaticBody2D"]
 
-[node name="Map1_City_Perumahan#YardBushA1" type="Sprite2D" parent="."]
+[node name="Map1_City#Perumahan" type="Node2D" parent="StaticBody2D"]
+
+[node name="Map1_City_Perumahan#YardBushA1" type="Sprite2D" parent="StaticBody2D"]
 position = Vector2(265, 766)
 texture = ExtResource("5_c")
 
-[node name="Map1_City_Perumahan#YardBushA1_Collision" type="StaticBody2D" parent="Map1_City_Perumahan#YardBushA1"]
+[node name="Map1_City_Perumahan#YardBushA1_Collision" type="StaticBody2D" parent="StaticBody2D/Map1_City_Perumahan#YardBushA1"]
 
-[node name="@CollisionShape2D@2" type="CollisionShape2D" parent="Map1_City_Perumahan#YardBushA1/Map1_City_Perumahan#YardBushA1_Collision"]
-position = Vector2(2, -2)
-shape = SubResource("RectangleShape2D_u2wxr")
+[node name="@CollisionShape2D@2" type="CollisionShape2D" parent="StaticBody2D/Map1_City_Perumahan#YardBushA1/Map1_City_Perumahan#YardBushA1_Collision"]
+position = Vector2(14, 18)
+shape = SubResource("CircleShape2D_pykmx")
 
-[node name="Map1_City_Perumahan#YardBushA2" type="Sprite2D" parent="."]
+[node name="Map1_City_Perumahan#YardBushA2" type="Sprite2D" parent="StaticBody2D"]
 position = Vector2(366, 691)
 texture = ExtResource("5_c")
 
-[node name="Map1_City_Perumahan#YardBushA2_Collision" type="StaticBody2D" parent="Map1_City_Perumahan#YardBushA2"]
+[node name="Map1_City_Perumahan#YardBushA2_Collision" type="StaticBody2D" parent="StaticBody2D/Map1_City_Perumahan#YardBushA2"]
 
-[node name="@CollisionShape2D@3" type="CollisionShape2D" parent="Map1_City_Perumahan#YardBushA2/Map1_City_Perumahan#YardBushA2_Collision"]
-position = Vector2(2, -2)
-shape = SubResource("RectangleShape2D_6sk8p")
+[node name="@CollisionShape2D@3" type="CollisionShape2D" parent="StaticBody2D/Map1_City_Perumahan#YardBushA2/Map1_City_Perumahan#YardBushA2_Collision"]
+position = Vector2(16, 11)
+shape = SubResource("CircleShape2D_bfwrw")
 
-[node name="Map1_City_Perumahan#YardBushB1" type="Sprite2D" parent="."]
+[node name="Map1_City_Perumahan#YardBushB1" type="Sprite2D" parent="StaticBody2D"]
 position = Vector2(1142, 479)
 texture = ExtResource("5_c")
 
-[node name="Map1_City_Perumahan#YardBushB1_Collision" type="StaticBody2D" parent="Map1_City_Perumahan#YardBushB1"]
+[node name="Map1_City_Perumahan#YardBushB1_Collision" type="StaticBody2D" parent="StaticBody2D/Map1_City_Perumahan#YardBushB1"]
 
-[node name="@CollisionShape2D@4" type="CollisionShape2D" parent="Map1_City_Perumahan#YardBushB1/Map1_City_Perumahan#YardBushB1_Collision"]
-position = Vector2(2, -2)
-shape = SubResource("RectangleShape2D_ch1si")
+[node name="@CollisionShape2D@4" type="CollisionShape2D" parent="StaticBody2D/Map1_City_Perumahan#YardBushB1/Map1_City_Perumahan#YardBushB1_Collision"]
+position = Vector2(-2, 10)
+shape = SubResource("CircleShape2D_qsf01")
 
-[node name="Map1_City_Perumahan#YardBushB2" type="Sprite2D" parent="."]
+[node name="Map1_City_Perumahan#YardBushB2" type="Sprite2D" parent="StaticBody2D"]
 position = Vector2(1202, 871)
 texture = ExtResource("5_c")
 
-[node name="Map1_City_Perumahan#YardBushB2_Collision" type="StaticBody2D" parent="Map1_City_Perumahan#YardBushB2"]
+[node name="Map1_City_Perumahan#YardBushB2_Collision" type="StaticBody2D" parent="StaticBody2D/Map1_City_Perumahan#YardBushB2"]
 
-[node name="@CollisionShape2D@5" type="CollisionShape2D" parent="Map1_City_Perumahan#YardBushB2/Map1_City_Perumahan#YardBushB2_Collision"]
-position = Vector2(2, -2)
-shape = SubResource("RectangleShape2D_tnew8")
+[node name="@CollisionShape2D@5" type="CollisionShape2D" parent="StaticBody2D/Map1_City_Perumahan#YardBushB2/Map1_City_Perumahan#YardBushB2_Collision"]
+position = Vector2(16, 10)
+shape = SubResource("CircleShape2D_y0njf")
 
-[node name="Map1_City_Perumahan#YardRock1" type="Sprite2D" parent="."]
+[node name="Map1_City_Perumahan#YardRock1" type="Sprite2D" parent="StaticBody2D"]
 position = Vector2(371, 180)
 texture = ExtResource("8_c")
 
-[node name="Map1_City_Perumahan#YardRock1_Collision" type="StaticBody2D" parent="Map1_City_Perumahan#YardRock1"]
+[node name="Map1_City_Perumahan#YardRock1_Collision" type="StaticBody2D" parent="StaticBody2D/Map1_City_Perumahan#YardRock1"]
 
-[node name="@CollisionShape2D@6" type="CollisionShape2D" parent="Map1_City_Perumahan#YardRock1/Map1_City_Perumahan#YardRock1_Collision"]
-position = Vector2(2, 0)
+[node name="@CollisionShape2D@6" type="CollisionShape2D" parent="StaticBody2D/Map1_City_Perumahan#YardRock1/Map1_City_Perumahan#YardRock1_Collision"]
+position = Vector2(12, 0)
 shape = SubResource("CircleShape2D_jmb6l")
 
-[node name="Map1_City_Perumahan#YardRock2" type="Sprite2D" parent="."]
+[node name="Map1_City_Perumahan#YardRock2" type="Sprite2D" parent="StaticBody2D"]
 position = Vector2(1209, 759)
 texture = ExtResource("9_c")
 
-[node name="Map1_City_Perumahan#YardRock2_Collision" type="StaticBody2D" parent="Map1_City_Perumahan#YardRock2"]
+[node name="Map1_City_Perumahan#YardRock2_Collision" type="StaticBody2D" parent="StaticBody2D/Map1_City_Perumahan#YardRock2"]
 
-[node name="@CollisionShape2D@7" type="CollisionShape2D" parent="Map1_City_Perumahan#YardRock2/Map1_City_Perumahan#YardRock2_Collision"]
+[node name="@CollisionShape2D@7" type="CollisionShape2D" parent="StaticBody2D/Map1_City_Perumahan#YardRock2/Map1_City_Perumahan#YardRock2_Collision"]
 position = Vector2(2, -2)
 shape = SubResource("CircleShape2D_gfpr5")
 
-[node name="Map1_City_Perumahan#WellHousing" type="Sprite2D" parent="."]
+[node name="Map1_City_Perumahan#WellHousing" type="Sprite2D" parent="StaticBody2D"]
 position = Vector2(275, 316)
 texture = ExtResource("13_c")
 
-[node name="Map1_City_Perumahan#WellHousing_Collision" type="StaticBody2D" parent="Map1_City_Perumahan#WellHousing"]
+[node name="Map1_City_Perumahan#WellHousing_Collision" type="StaticBody2D" parent="StaticBody2D/Map1_City_Perumahan#WellHousing"]
 
-[node name="@CollisionShape2D@8" type="CollisionShape2D" parent="Map1_City_Perumahan#WellHousing/Map1_City_Perumahan#WellHousing_Collision"]
+[node name="@CollisionShape2D@8" type="CollisionShape2D" parent="StaticBody2D/Map1_City_Perumahan#WellHousing/Map1_City_Perumahan#WellHousing_Collision"]
 position = Vector2(1.5, -0.5)
-shape = SubResource("RectangleShape2D_tlw76")
+shape = SubResource("CapsuleShape2D_pbic4")
 
-[node name="Map1_City_Perumahan#WellBush1" type="Sprite2D" parent="."]
+[node name="Map1_City_Perumahan#WellBush1" type="Sprite2D" parent="StaticBody2D"]
 position = Vector2(536, 184)
 texture = ExtResource("6_c")
 
-[node name="Map1_City_Perumahan#WellBush1_Collision" type="StaticBody2D" parent="Map1_City_Perumahan#WellBush1"]
+[node name="Map1_City_Perumahan#WellBush1_Collision" type="StaticBody2D" parent="StaticBody2D/Map1_City_Perumahan#WellBush1"]
 
-[node name="@CollisionShape2D@9" type="CollisionShape2D" parent="Map1_City_Perumahan#WellBush1/Map1_City_Perumahan#WellBush1_Collision"]
-position = Vector2(2, -2)
-shape = SubResource("RectangleShape2D_jow8e")
+[node name="@CollisionShape2D@9" type="CollisionShape2D" parent="StaticBody2D/Map1_City_Perumahan#WellBush1/Map1_City_Perumahan#WellBush1_Collision"]
+position = Vector2(16, 12)
+shape = SubResource("CircleShape2D_u2wxr")
 
-[node name="Map1_City_Perumahan#WellBush2" type="Sprite2D" parent="."]
+[node name="Map1_City_Perumahan#WellBush2" type="Sprite2D" parent="StaticBody2D"]
 position = Vector2(933, 187)
 texture = ExtResource("6_c")
 
-[node name="Map1_City_Perumahan#WellBush2_Collision" type="StaticBody2D" parent="Map1_City_Perumahan#WellBush2"]
+[node name="Map1_City_Perumahan#WellBush2_Collision" type="StaticBody2D" parent="StaticBody2D/Map1_City_Perumahan#WellBush2"]
 
-[node name="@CollisionShape2D@10" type="CollisionShape2D" parent="Map1_City_Perumahan#WellBush2/Map1_City_Perumahan#WellBush2_Collision"]
-position = Vector2(2, -2)
-shape = SubResource("RectangleShape2D_0p7jk")
+[node name="@CollisionShape2D@10" type="CollisionShape2D" parent="StaticBody2D/Map1_City_Perumahan#WellBush2/Map1_City_Perumahan#WellBush2_Collision"]
+position = Vector2(24, 25)
+shape = SubResource("CircleShape2D_6sk8p")
 
-[node name="Map1_City_Perumahan#WellRock" type="Sprite2D" parent="."]
+[node name="Map1_City_Perumahan#WellRock" type="Sprite2D" parent="StaticBody2D"]
 position = Vector2(1210, 987)
 texture = ExtResource("10_c")
 
-[node name="Map1_City_Perumahan#WellRock_Collision" type="StaticBody2D" parent="Map1_City_Perumahan#WellRock"]
+[node name="Map1_City_Perumahan#WellRock_Collision" type="StaticBody2D" parent="StaticBody2D/Map1_City_Perumahan#WellRock"]
 
-[node name="@CollisionShape2D@11" type="CollisionShape2D" parent="Map1_City_Perumahan#WellRock/Map1_City_Perumahan#WellRock_Collision"]
+[node name="@CollisionShape2D@11" type="CollisionShape2D" parent="StaticBody2D/Map1_City_Perumahan#WellRock/Map1_City_Perumahan#WellRock_Collision"]
 position = Vector2(2, -1.5)
 shape = SubResource("CircleShape2D_f6jts")
 
-[node name="Map1_City_Perumahan#CornerBush1" type="Sprite2D" parent="."]
+[node name="Map1_City_Perumahan#CornerBush1" type="Sprite2D" parent="StaticBody2D"]
 position = Vector2(170, 170)
 texture = ExtResource("6_c")
 
-[node name="Map1_City_Perumahan#CornerBush1_Collision" type="StaticBody2D" parent="Map1_City_Perumahan#CornerBush1"]
+[node name="Map1_City_Perumahan#CornerBush1_Collision" type="StaticBody2D" parent="StaticBody2D/Map1_City_Perumahan#CornerBush1"]
 
-[node name="@CollisionShape2D@12" type="CollisionShape2D" parent="Map1_City_Perumahan#CornerBush1/Map1_City_Perumahan#CornerBush1_Collision"]
-position = Vector2(2, -2)
-shape = SubResource("RectangleShape2D_o2ig1")
+[node name="@CollisionShape2D@12" type="CollisionShape2D" parent="StaticBody2D/Map1_City_Perumahan#CornerBush1/Map1_City_Perumahan#CornerBush1_Collision"]
+position = Vector2(14, 12)
+shape = SubResource("CircleShape2D_ch1si")
 
-[node name="Map1_City_Perumahan#CornerBush2" type="Sprite2D" parent="."]
+[node name="Map1_City_Perumahan#CornerBush2" type="Sprite2D" parent="StaticBody2D"]
 position = Vector2(1260, 170)
 texture = ExtResource("7_c")
 
-[node name="Map1_City_Perumahan#CornerBush2_Collision" type="StaticBody2D" parent="Map1_City_Perumahan#CornerBush2"]
+[node name="Map1_City_Perumahan#CornerBush2_Collision" type="StaticBody2D" parent="StaticBody2D/Map1_City_Perumahan#CornerBush2"]
 
-[node name="@CollisionShape2D@13" type="CollisionShape2D" parent="Map1_City_Perumahan#CornerBush2/Map1_City_Perumahan#CornerBush2_Collision"]
-position = Vector2(2, 0)
-shape = SubResource("RectangleShape2D_shs62")
-
-[node name="Map1_City_Perumahan#CornerStump" type="Sprite2D" parent="."]
+[node name="Map1_City_Perumahan#CornerStump" type="Sprite2D" parent="StaticBody2D"]
 position = Vector2(240, 891)
 texture = ExtResource("19_c")
 
-[node name="Map1_City_Perumahan#CornerStump_Collision" type="StaticBody2D" parent="Map1_City_Perumahan#CornerStump"]
+[node name="Map1_City_Perumahan#CornerStump_Collision" type="StaticBody2D" parent="StaticBody2D/Map1_City_Perumahan#CornerStump"]
 
-[node name="@CollisionShape2D@14" type="CollisionShape2D" parent="Map1_City_Perumahan#CornerStump/Map1_City_Perumahan#CornerStump_Collision"]
-position = Vector2(0, 39.775)
+[node name="@CollisionShape2D@14" type="CollisionShape2D" parent="StaticBody2D/Map1_City_Perumahan#CornerStump/Map1_City_Perumahan#CornerStump_Collision"]
+position = Vector2(-2, 31)
 shape = SubResource("RectangleShape2D_mkjli")
 
-[node name="Map1_City_Perumahan#CornerRock" type="Sprite2D" parent="."]
+[node name="Map1_City_Perumahan#CornerRock" type="Sprite2D" parent="StaticBody2D"]
 position = Vector2(1847, 461)
 texture = ExtResource("11_c")
 
-[node name="Map1_City_Perumahan#CornerRock_Collision" type="StaticBody2D" parent="Map1_City_Perumahan#CornerRock"]
+[node name="Map1_City_Perumahan#CornerRock_Collision" type="StaticBody2D" parent="StaticBody2D/Map1_City_Perumahan#CornerRock"]
 
-[node name="@CollisionShape2D@15" type="CollisionShape2D" parent="Map1_City_Perumahan#CornerRock/Map1_City_Perumahan#CornerRock_Collision"]
+[node name="@CollisionShape2D@15" type="CollisionShape2D" parent="StaticBody2D/Map1_City_Perumahan#CornerRock/Map1_City_Perumahan#CornerRock_Collision"]
 position = Vector2(2, -1)
 shape = SubResource("CircleShape2D_c0uy2")
 
-[node name="Map1_City_Perumahan#HouseA" type="Sprite2D" parent="."]
+[node name="Map1_City_Perumahan#HouseA" type="Sprite2D" parent="StaticBody2D"]
 position = Vector2(648, 472)
 texture = ExtResource("0_c")
 
-[node name="Map1_City_Perumahan#HouseA_Collision" type="StaticBody2D" parent="Map1_City_Perumahan#HouseA"]
+[node name="Map1_City_Perumahan#HouseA_Collision" type="StaticBody2D" parent="StaticBody2D/Map1_City_Perumahan#HouseA"]
 
-[node name="@CollisionShape2D@16" type="CollisionShape2D" parent="Map1_City_Perumahan#HouseA/Map1_City_Perumahan#HouseA_Collision"]
-position = Vector2(2, -3)
+[node name="@CollisionShape2D@16" type="CollisionShape2D" parent="StaticBody2D/Map1_City_Perumahan#HouseA/Map1_City_Perumahan#HouseA_Collision"]
+position = Vector2(43.5, 235.5)
 shape = SubResource("RectangleShape2D_eho6h")
 
-[node name="Map1_City_Perumahan#FenceA" type="Sprite2D" parent="."]
+[node name="Map1_City_Perumahan#FenceA" type="Sprite2D" parent="StaticBody2D"]
 position = Vector2(370, 835)
 texture = ExtResource("3_c")
 
-[node name="Map1_City_Perumahan#FenceA_Collision" type="StaticBody2D" parent="Map1_City_Perumahan#FenceA"]
+[node name="Map1_City_Perumahan#FenceA_Collision" type="StaticBody2D" parent="StaticBody2D/Map1_City_Perumahan#FenceA"]
 
-[node name="@CollisionShape2D@17" type="CollisionShape2D" parent="Map1_City_Perumahan#FenceA/Map1_City_Perumahan#FenceA_Collision"]
+[node name="@CollisionShape2D@17" type="CollisionShape2D" parent="StaticBody2D/Map1_City_Perumahan#FenceA/Map1_City_Perumahan#FenceA_Collision"]
 position = Vector2(-3, 1)
 shape = SubResource("RectangleShape2D_wp1pd")
 
-[node name="Map1_City_Perumahan#FenceB" type="Sprite2D" parent="."]
+[node name="Map1_City_Perumahan#FenceB" type="Sprite2D" parent="StaticBody2D"]
 position = Vector2(1050, 835)
 texture = ExtResource("3_c")
 
-[node name="Map1_City_Perumahan#FenceB_Collision" type="StaticBody2D" parent="Map1_City_Perumahan#FenceB"]
+[node name="Map1_City_Perumahan#FenceB_Collision" type="StaticBody2D" parent="StaticBody2D/Map1_City_Perumahan#FenceB"]
 
-[node name="@CollisionShape2D@18" type="CollisionShape2D" parent="Map1_City_Perumahan#FenceB/Map1_City_Perumahan#FenceB_Collision"]
+[node name="@CollisionShape2D@18" type="CollisionShape2D" parent="StaticBody2D/Map1_City_Perumahan#FenceB/Map1_City_Perumahan#FenceB_Collision"]
 position = Vector2(-3, 1)
 shape = SubResource("RectangleShape2D_mibde")
 
-[node name="Map1_City#Taman" type="Node2D" parent="."]
+[node name="Map1_City#Taman" type="Node2D" parent="StaticBody2D"]
 
-[node name="Map1_City_Taman#BenchStump1" type="Sprite2D" parent="."]
+[node name="Map1_City_Taman#BenchStump1" type="Sprite2D" parent="StaticBody2D"]
 position = Vector2(793, 3745)
 texture = ExtResource("19_c")
 
-[node name="Map1_City_Taman#BenchStump1_Collision" type="StaticBody2D" parent="Map1_City_Taman#BenchStump1"]
+[node name="Map1_City_Taman#BenchStump1_Collision" type="StaticBody2D" parent="StaticBody2D/Map1_City_Taman#BenchStump1"]
 
-[node name="@CollisionShape2D@19" type="CollisionShape2D" parent="Map1_City_Taman#BenchStump1/Map1_City_Taman#BenchStump1_Collision"]
-position = Vector2(0, 39.775)
+[node name="@CollisionShape2D@19" type="CollisionShape2D" parent="StaticBody2D/Map1_City_Taman#BenchStump1/Map1_City_Taman#BenchStump1_Collision"]
+position = Vector2(2, 24)
 shape = SubResource("RectangleShape2D_xogdn")
 
-[node name="Map1_City_Taman#BenchStump2" type="Sprite2D" parent="."]
+[node name="Map1_City_Taman#BenchStump2" type="Sprite2D" parent="StaticBody2D"]
 position = Vector2(525, 1465)
 texture = ExtResource("19_c")
 
-[node name="Map1_City_Taman#BenchStump2_Collision" type="StaticBody2D" parent="Map1_City_Taman#BenchStump2"]
+[node name="Map1_City_Taman#BenchStump2_Collision" type="StaticBody2D" parent="StaticBody2D/Map1_City_Taman#BenchStump2"]
 
-[node name="@CollisionShape2D@20" type="CollisionShape2D" parent="Map1_City_Taman#BenchStump2/Map1_City_Taman#BenchStump2_Collision"]
+[node name="@CollisionShape2D@20" type="CollisionShape2D" parent="StaticBody2D/Map1_City_Taman#BenchStump2/Map1_City_Taman#BenchStump2_Collision"]
 position = Vector2(0, 39.775)
 shape = SubResource("RectangleShape2D_h8q4n")
 
-[node name="Map1_City_Taman#RockPark1" type="Sprite2D" parent="."]
+[node name="Map1_City_Taman#RockPark1" type="Sprite2D" parent="StaticBody2D"]
 position = Vector2(1832, 198)
 scale = Vector2(1.13333, 1)
 texture = ExtResource("8_c")
 
-[node name="Map1_City_Taman#RockPark1_Collision" type="StaticBody2D" parent="Map1_City_Taman#RockPark1"]
+[node name="Map1_City_Taman#RockPark1_Collision" type="StaticBody2D" parent="StaticBody2D/Map1_City_Taman#RockPark1"]
 
-[node name="@CollisionShape2D@21" type="CollisionShape2D" parent="Map1_City_Taman#RockPark1/Map1_City_Taman#RockPark1_Collision"]
-position = Vector2(2, 0)
+[node name="@CollisionShape2D@21" type="CollisionShape2D" parent="StaticBody2D/Map1_City_Taman#RockPark1/Map1_City_Taman#RockPark1_Collision"]
+position = Vector2(12.353, 5)
 shape = SubResource("CircleShape2D_yppdd")
 
-[node name="Map1_City_Taman#RockPark2" type="Sprite2D" parent="."]
+[node name="Map1_City_Taman#RockPark2" type="Sprite2D" parent="StaticBody2D"]
 position = Vector2(2606, 129)
 texture = ExtResource("9_c")
 
-[node name="Map1_City_Taman#RockPark2_Collision" type="StaticBody2D" parent="Map1_City_Taman#RockPark2"]
+[node name="Map1_City_Taman#RockPark2_Collision" type="StaticBody2D" parent="StaticBody2D/Map1_City_Taman#RockPark2"]
 
-[node name="@CollisionShape2D@22" type="CollisionShape2D" parent="Map1_City_Taman#RockPark2/Map1_City_Taman#RockPark2_Collision"]
+[node name="@CollisionShape2D@22" type="CollisionShape2D" parent="StaticBody2D/Map1_City_Taman#RockPark2/Map1_City_Taman#RockPark2_Collision"]
 position = Vector2(2, -2)
 shape = SubResource("CircleShape2D_jma8v")
 
-[node name="Map1_City_Taman#RockPark3" type="Sprite2D" parent="."]
+[node name="Map1_City_Taman#RockPark3" type="Sprite2D" parent="StaticBody2D"]
 position = Vector2(1998, 846)
 texture = ExtResource("10_c")
 
-[node name="Map1_City_Taman#RockPark3_Collision" type="StaticBody2D" parent="Map1_City_Taman#RockPark3"]
+[node name="Map1_City_Taman#RockPark3_Collision" type="StaticBody2D" parent="StaticBody2D/Map1_City_Taman#RockPark3"]
 
-[node name="@CollisionShape2D@23" type="CollisionShape2D" parent="Map1_City_Taman#RockPark3/Map1_City_Taman#RockPark3_Collision"]
-position = Vector2(2, -1.5)
+[node name="@CollisionShape2D@23" type="CollisionShape2D" parent="StaticBody2D/Map1_City_Taman#RockPark3/Map1_City_Taman#RockPark3_Collision"]
+position = Vector2(5, -1)
 shape = SubResource("CircleShape2D_a86v5")
 
-[node name="Map1_City_Taman#RockPark4" type="Sprite2D" parent="."]
+[node name="Map1_City_Taman#RockPark4" type="Sprite2D" parent="StaticBody2D"]
 position = Vector2(2342, 740)
 texture = ExtResource("12_c")
 
-[node name="Map1_City_Taman#RockPark4_Collision" type="StaticBody2D" parent="Map1_City_Taman#RockPark4"]
+[node name="Map1_City_Taman#RockPark4_Collision" type="StaticBody2D" parent="StaticBody2D/Map1_City_Taman#RockPark4"]
 
-[node name="@CollisionShape2D@24" type="CollisionShape2D" parent="Map1_City_Taman#RockPark4/Map1_City_Taman#RockPark4_Collision"]
+[node name="@CollisionShape2D@24" type="CollisionShape2D" parent="StaticBody2D/Map1_City_Taman#RockPark4/Map1_City_Taman#RockPark4_Collision"]
 position = Vector2(0.5, -2)
 shape = SubResource("CircleShape2D_0xyis")
 
-[node name="Map1_City_Taman#ParkTree_0" type="Sprite2D" parent="."]
+[node name="Map1_City_Taman#ParkTree_0" type="Sprite2D" parent="StaticBody2D"]
 position = Vector2(2010, 228)
 texture = ExtResource("1_c")
 
-[node name="Map1_City_Taman#ParkTree_0_Collision" type="StaticBody2D" parent="Map1_City_Taman#ParkTree_0"]
+[node name="Map1_City_Taman#ParkTree_0_Collision" type="StaticBody2D" parent="StaticBody2D/Map1_City_Taman#ParkTree_0"]
 
-[node name="@CollisionShape2D@25" type="CollisionShape2D" parent="Map1_City_Taman#ParkTree_0/Map1_City_Taman#ParkTree_0_Collision"]
+[node name="@CollisionShape2D@25" type="CollisionShape2D" parent="StaticBody2D/Map1_City_Taman#ParkTree_0/Map1_City_Taman#ParkTree_0_Collision"]
 position = Vector2(3, 77.725)
 shape = SubResource("RectangleShape2D_7p6yv")
 
-[node name="Map1_City_Taman#ParkTree_1" type="Sprite2D" parent="."]
+[node name="Map1_City_Taman#ParkTree_1" type="Sprite2D" parent="StaticBody2D"]
 position = Vector2(2181, 232)
 texture = ExtResource("1_c")
 
-[node name="Map1_City_Taman#ParkTree_1_Collision" type="StaticBody2D" parent="Map1_City_Taman#ParkTree_1"]
+[node name="Map1_City_Taman#ParkTree_1_Collision" type="StaticBody2D" parent="StaticBody2D/Map1_City_Taman#ParkTree_1"]
 
-[node name="@CollisionShape2D@26" type="CollisionShape2D" parent="Map1_City_Taman#ParkTree_1/Map1_City_Taman#ParkTree_1_Collision"]
-position = Vector2(3, 77.725)
+[node name="@CollisionShape2D@26" type="CollisionShape2D" parent="StaticBody2D/Map1_City_Taman#ParkTree_1/Map1_City_Taman#ParkTree_1_Collision"]
+position = Vector2(16.75, 68)
 shape = SubResource("RectangleShape2D_vbiuf")
 
-[node name="Map1_City_Taman#ParkTree_2" type="Sprite2D" parent="."]
+[node name="Map1_City_Taman#ParkTree_2" type="Sprite2D" parent="StaticBody2D"]
 position = Vector2(2773, 233)
 texture = ExtResource("1_c")
 
-[node name="Map1_City_Taman#ParkTree_2_Collision" type="StaticBody2D" parent="Map1_City_Taman#ParkTree_2"]
+[node name="Map1_City_Taman#ParkTree_2_Collision" type="StaticBody2D" parent="StaticBody2D/Map1_City_Taman#ParkTree_2"]
 
-[node name="@CollisionShape2D@27" type="CollisionShape2D" parent="Map1_City_Taman#ParkTree_2/Map1_City_Taman#ParkTree_2_Collision"]
-position = Vector2(3, 77.725)
-shape = SubResource("RectangleShape2D_dhd3r")
-
-[node name="Map1_City_Taman#ParkTree_3" type="Sprite2D" parent="."]
+[node name="Map1_City_Taman#ParkTree_3" type="Sprite2D" parent="StaticBody2D"]
 position = Vector2(2939, 239)
 texture = ExtResource("1_c")
 
-[node name="Map1_City_Taman#ParkTree_3_Collision" type="StaticBody2D" parent="Map1_City_Taman#ParkTree_3"]
+[node name="Map1_City_Taman#ParkTree_3_Collision" type="StaticBody2D" parent="StaticBody2D/Map1_City_Taman#ParkTree_3"]
 
-[node name="@CollisionShape2D@28" type="CollisionShape2D" parent="Map1_City_Taman#ParkTree_3/Map1_City_Taman#ParkTree_3_Collision"]
-position = Vector2(3, 77.725)
-shape = SubResource("RectangleShape2D_h04cm")
-
-[node name="Map1_City_Taman#ParkTree_4" type="Sprite2D" parent="."]
+[node name="Map1_City_Taman#ParkTree_4" type="Sprite2D" parent="StaticBody2D"]
 position = Vector2(2090, 380)
 texture = ExtResource("1_c")
 
-[node name="Map1_City_Taman#ParkTree_4_Collision" type="StaticBody2D" parent="Map1_City_Taman#ParkTree_4"]
+[node name="Map1_City_Taman#ParkTree_4_Collision" type="StaticBody2D" parent="StaticBody2D/Map1_City_Taman#ParkTree_4"]
 
-[node name="@CollisionShape2D@29" type="CollisionShape2D" parent="Map1_City_Taman#ParkTree_4/Map1_City_Taman#ParkTree_4_Collision"]
-position = Vector2(3, 77.725)
+[node name="@CollisionShape2D@29" type="CollisionShape2D" parent="StaticBody2D/Map1_City_Taman#ParkTree_4/Map1_City_Taman#ParkTree_4_Collision"]
+position = Vector2(16, 70.5)
 shape = SubResource("RectangleShape2D_tppsj")
 
-[node name="Map1_City_Taman#ParkTree_5" type="Sprite2D" parent="."]
+[node name="Map1_City_Taman#ParkTree_5" type="Sprite2D" parent="StaticBody2D"]
 position = Vector2(2297, 385)
 texture = ExtResource("1_c")
 
-[node name="Map1_City_Taman#ParkTree_5_Collision" type="StaticBody2D" parent="Map1_City_Taman#ParkTree_5"]
+[node name="Map1_City_Taman#ParkTree_5_Collision" type="StaticBody2D" parent="StaticBody2D/Map1_City_Taman#ParkTree_5"]
 
-[node name="@CollisionShape2D@30" type="CollisionShape2D" parent="Map1_City_Taman#ParkTree_5/Map1_City_Taman#ParkTree_5_Collision"]
-position = Vector2(3, 77.725)
+[node name="@CollisionShape2D@30" type="CollisionShape2D" parent="StaticBody2D/Map1_City_Taman#ParkTree_5/Map1_City_Taman#ParkTree_5_Collision"]
+position = Vector2(16.5, 72.5)
 shape = SubResource("RectangleShape2D_fhuyo")
 
-[node name="Map1_City_Taman#ParkTree_6" type="Sprite2D" parent="."]
+[node name="Map1_City_Taman#ParkTree_6" type="Sprite2D" parent="StaticBody2D"]
 position = Vector2(2898, 390)
 texture = ExtResource("1_c")
 
-[node name="Map1_City_Taman#ParkTree_6_Collision" type="StaticBody2D" parent="Map1_City_Taman#ParkTree_6"]
+[node name="Map1_City_Taman#ParkTree_6_Collision" type="StaticBody2D" parent="StaticBody2D/Map1_City_Taman#ParkTree_6"]
 
-[node name="@CollisionShape2D@31" type="CollisionShape2D" parent="Map1_City_Taman#ParkTree_6/Map1_City_Taman#ParkTree_6_Collision"]
-position = Vector2(3, 77.725)
+[node name="@CollisionShape2D@31" type="CollisionShape2D" parent="StaticBody2D/Map1_City_Taman#ParkTree_6/Map1_City_Taman#ParkTree_6_Collision"]
+position = Vector2(15.5, 69.5)
 shape = SubResource("RectangleShape2D_lf4a4")
 
-[node name="Map1_City_Taman#ParkTree_7" type="Sprite2D" parent="."]
+[node name="Map1_City_Taman#ParkTree_7" type="Sprite2D" parent="StaticBody2D"]
 position = Vector2(3050, 380)
 texture = ExtResource("1_c")
 
-[node name="Map1_City_Taman#ParkTree_7_Collision" type="StaticBody2D" parent="Map1_City_Taman#ParkTree_7"]
+[node name="Map1_City_Taman#ParkTree_7_Collision" type="StaticBody2D" parent="StaticBody2D/Map1_City_Taman#ParkTree_7"]
 
-[node name="@CollisionShape2D@32" type="CollisionShape2D" parent="Map1_City_Taman#ParkTree_7/Map1_City_Taman#ParkTree_7_Collision"]
-position = Vector2(3, 77.725)
+[node name="@CollisionShape2D@32" type="CollisionShape2D" parent="StaticBody2D/Map1_City_Taman#ParkTree_7/Map1_City_Taman#ParkTree_7_Collision"]
+position = Vector2(15.5, 69.5)
 shape = SubResource("RectangleShape2D_knds6")
 
-[node name="Map1_City_Taman#ParkTree_8" type="Sprite2D" parent="."]
+[node name="Map1_City_Taman#ParkTree_8" type="Sprite2D" parent="StaticBody2D"]
 position = Vector2(2206, 762)
 texture = ExtResource("1_c")
 
-[node name="Map1_City_Taman#ParkTree_8_Collision" type="StaticBody2D" parent="Map1_City_Taman#ParkTree_8"]
+[node name="Map1_City_Taman#ParkTree_8_Collision" type="StaticBody2D" parent="StaticBody2D/Map1_City_Taman#ParkTree_8"]
 
-[node name="@CollisionShape2D@33" type="CollisionShape2D" parent="Map1_City_Taman#ParkTree_8/Map1_City_Taman#ParkTree_8_Collision"]
-position = Vector2(3, 77.725)
+[node name="@CollisionShape2D@33" type="CollisionShape2D" parent="StaticBody2D/Map1_City_Taman#ParkTree_8/Map1_City_Taman#ParkTree_8_Collision"]
+position = Vector2(16.5, 73.5)
 shape = SubResource("RectangleShape2D_3nwg0")
 
-[node name="Map1_City_Taman#ParkTree_9" type="Sprite2D" parent="."]
+[node name="Map1_City_Taman#ParkTree_9" type="Sprite2D" parent="StaticBody2D"]
 position = Vector2(1089, 258)
 texture = ExtResource("1_c")
 
-[node name="Map1_City_Taman#ParkTree_9_Collision" type="StaticBody2D" parent="Map1_City_Taman#ParkTree_9"]
+[node name="Map1_City_Taman#ParkTree_9_Collision" type="StaticBody2D" parent="StaticBody2D/Map1_City_Taman#ParkTree_9"]
 
-[node name="@CollisionShape2D@34" type="CollisionShape2D" parent="Map1_City_Taman#ParkTree_9/Map1_City_Taman#ParkTree_9_Collision"]
-position = Vector2(3, 77.725)
+[node name="@CollisionShape2D@34" type="CollisionShape2D" parent="StaticBody2D/Map1_City_Taman#ParkTree_9/Map1_City_Taman#ParkTree_9_Collision"]
+position = Vector2(15.5, 70)
 shape = SubResource("RectangleShape2D_gn1qy")
 
-[node name="Map1_City_Taman#ParkTree_10" type="Sprite2D" parent="."]
+[node name="Map1_City_Taman#ParkTree_10" type="Sprite2D" parent="StaticBody2D"]
 position = Vector2(1139, 1437)
 texture = ExtResource("1_c")
 
-[node name="Map1_City_Taman#ParkTree_10_Collision" type="StaticBody2D" parent="Map1_City_Taman#ParkTree_10"]
+[node name="Map1_City_Taman#ParkTree_10_Collision" type="StaticBody2D" parent="StaticBody2D/Map1_City_Taman#ParkTree_10"]
 
-[node name="@CollisionShape2D@35" type="CollisionShape2D" parent="Map1_City_Taman#ParkTree_10/Map1_City_Taman#ParkTree_10_Collision"]
-position = Vector2(3, 77.725)
+[node name="@CollisionShape2D@35" type="CollisionShape2D" parent="StaticBody2D/Map1_City_Taman#ParkTree_10/Map1_City_Taman#ParkTree_10_Collision"]
+position = Vector2(18.5, 70.5)
 shape = SubResource("RectangleShape2D_hoajt")
 
-[node name="Map1_City_Taman#ParkTree_11" type="Sprite2D" parent="."]
+[node name="Map1_City_Taman#ParkTree_11" type="Sprite2D" parent="StaticBody2D"]
 position = Vector2(211, 1410)
 texture = ExtResource("1_c")
 
-[node name="Map1_City_Taman#ParkTree_11_Collision" type="StaticBody2D" parent="Map1_City_Taman#ParkTree_11"]
+[node name="Map1_City_Taman#ParkTree_11_Collision" type="StaticBody2D" parent="StaticBody2D/Map1_City_Taman#ParkTree_11"]
 
-[node name="@CollisionShape2D@36" type="CollisionShape2D" parent="Map1_City_Taman#ParkTree_11/Map1_City_Taman#ParkTree_11_Collision"]
-position = Vector2(3, 77.725)
+[node name="@CollisionShape2D@36" type="CollisionShape2D" parent="StaticBody2D/Map1_City_Taman#ParkTree_11/Map1_City_Taman#ParkTree_11_Collision"]
+position = Vector2(16, 62)
 shape = SubResource("RectangleShape2D_8red2")
 
-[node name="Map1_City_Taman#ParkTree_12" type="Sprite2D" parent="."]
+[node name="Map1_City_Taman#ParkTree_12" type="Sprite2D" parent="StaticBody2D"]
 position = Vector2(2214, 3441)
 texture = ExtResource("1_c")
 
-[node name="Map1_City_Taman#ParkTree_12_Collision" type="StaticBody2D" parent="Map1_City_Taman#ParkTree_12"]
+[node name="Map1_City_Taman#ParkTree_12_Collision" type="StaticBody2D" parent="StaticBody2D/Map1_City_Taman#ParkTree_12"]
 
-[node name="@CollisionShape2D@37" type="CollisionShape2D" parent="Map1_City_Taman#ParkTree_12/Map1_City_Taman#ParkTree_12_Collision"]
-position = Vector2(3, 77.725)
+[node name="@CollisionShape2D@37" type="CollisionShape2D" parent="StaticBody2D/Map1_City_Taman#ParkTree_12/Map1_City_Taman#ParkTree_12_Collision"]
+position = Vector2(17, 70.25)
 shape = SubResource("RectangleShape2D_wv5u5")
 
-[node name="Map1_City_Taman#ParkTree_13" type="Sprite2D" parent="."]
+[node name="Map1_City_Taman#ParkTree_13" type="Sprite2D" parent="StaticBody2D"]
 position = Vector2(751, 3425)
 texture = ExtResource("1_c")
 
-[node name="Map1_City_Taman#ParkTree_13_Collision" type="StaticBody2D" parent="Map1_City_Taman#ParkTree_13"]
+[node name="Map1_City_Taman#ParkTree_13_Collision" type="StaticBody2D" parent="StaticBody2D/Map1_City_Taman#ParkTree_13"]
 
-[node name="@CollisionShape2D@38" type="CollisionShape2D" parent="Map1_City_Taman#ParkTree_13/Map1_City_Taman#ParkTree_13_Collision"]
-position = Vector2(3, 77.725)
+[node name="@CollisionShape2D@38" type="CollisionShape2D" parent="StaticBody2D/Map1_City_Taman#ParkTree_13/Map1_City_Taman#ParkTree_13_Collision"]
+position = Vector2(16.5, 65.6375)
 shape = SubResource("RectangleShape2D_g65ja")
 
-[node name="Map1_City_Taman#ParkTree_14" type="Sprite2D" parent="."]
+[node name="Map1_City_Taman#ParkTree_14" type="Sprite2D" parent="StaticBody2D"]
 position = Vector2(2867, 3440)
 texture = ExtResource("1_c")
 
-[node name="Map1_City_Taman#ParkTree_14_Collision" type="StaticBody2D" parent="Map1_City_Taman#ParkTree_14"]
+[node name="Map1_City_Taman#ParkTree_14_Collision" type="StaticBody2D" parent="StaticBody2D/Map1_City_Taman#ParkTree_14"]
 
-[node name="@CollisionShape2D@39" type="CollisionShape2D" parent="Map1_City_Taman#ParkTree_14/Map1_City_Taman#ParkTree_14_Collision"]
-position = Vector2(3, 77.725)
+[node name="@CollisionShape2D@39" type="CollisionShape2D" parent="StaticBody2D/Map1_City_Taman#ParkTree_14/Map1_City_Taman#ParkTree_14_Collision"]
+position = Vector2(17, 73)
 shape = SubResource("RectangleShape2D_10avt")
 
-[node name="Map1_City_Taman#ParkTree_15" type="Sprite2D" parent="."]
+[node name="Map1_City_Taman#ParkTree_15" type="Sprite2D" parent="StaticBody2D"]
 position = Vector2(2678, 3437)
 texture = ExtResource("1_c")
 
-[node name="Map1_City_Taman#ParkTree_15_Collision" type="StaticBody2D" parent="Map1_City_Taman#ParkTree_15"]
+[node name="Map1_City_Taman#ParkTree_15_Collision" type="StaticBody2D" parent="StaticBody2D/Map1_City_Taman#ParkTree_15"]
 
-[node name="@CollisionShape2D@40" type="CollisionShape2D" parent="Map1_City_Taman#ParkTree_15/Map1_City_Taman#ParkTree_15_Collision"]
-position = Vector2(3, 77.725)
+[node name="@CollisionShape2D@40" type="CollisionShape2D" parent="StaticBody2D/Map1_City_Taman#ParkTree_15/Map1_City_Taman#ParkTree_15_Collision"]
+position = Vector2(15.5, 71.5)
 shape = SubResource("RectangleShape2D_3euij")
 
-[node name="Map1_City_Taman#ParkTreeBig1" type="Sprite2D" parent="."]
+[node name="Map1_City_Taman#ParkTreeBig1" type="Sprite2D" parent="StaticBody2D"]
 position = Vector2(2695, 351)
 texture = ExtResource("2_c")
 
-[node name="Map1_City_Taman#ParkTreeBig1_Collision" type="StaticBody2D" parent="Map1_City_Taman#ParkTreeBig1"]
+[node name="Map1_City_Taman#ParkTreeBig1_Collision" type="StaticBody2D" parent="StaticBody2D/Map1_City_Taman#ParkTreeBig1"]
 
-[node name="@CollisionShape2D@41" type="CollisionShape2D" parent="Map1_City_Taman#ParkTreeBig1/Map1_City_Taman#ParkTreeBig1_Collision"]
-position = Vector2(2, 115)
+[node name="@CollisionShape2D@41" type="CollisionShape2D" parent="StaticBody2D/Map1_City_Taman#ParkTreeBig1/Map1_City_Taman#ParkTreeBig1_Collision"]
+position = Vector2(-10.5, 113.5)
 shape = SubResource("RectangleShape2D_or1gs")
 
-[node name="Map1_City_Taman#ParkTreeBig2" type="Sprite2D" parent="."]
+[node name="Map1_City_Taman#ParkTreeBig2" type="Sprite2D" parent="StaticBody2D"]
 position = Vector2(1340, 266)
 texture = ExtResource("2_c")
 
-[node name="Map1_City_Taman#ParkTreeBig2_Collision" type="StaticBody2D" parent="Map1_City_Taman#ParkTreeBig2"]
+[node name="Map1_City_Taman#ParkTreeBig2_Collision" type="StaticBody2D" parent="StaticBody2D/Map1_City_Taman#ParkTreeBig2"]
 
-[node name="@CollisionShape2D@42" type="CollisionShape2D" parent="Map1_City_Taman#ParkTreeBig2/Map1_City_Taman#ParkTreeBig2_Collision"]
-position = Vector2(2, 115)
+[node name="@CollisionShape2D@42" type="CollisionShape2D" parent="StaticBody2D/Map1_City_Taman#ParkTreeBig2/Map1_City_Taman#ParkTreeBig2_Collision"]
+position = Vector2(-13, 69.5)
 shape = SubResource("RectangleShape2D_b4tk6")
 
-[node name="Map1_City#Pasar" type="Node2D" parent="."]
+[node name="Map1_City#Pasar" type="Node2D" parent="StaticBody2D"]
 
-[node name="Map1_City_Pasar#TentA" type="Sprite2D" parent="."]
+[node name="Map1_City_Pasar#TentA" type="Sprite2D" parent="StaticBody2D"]
 position = Vector2(390, 1640)
 texture = ExtResource("14_c")
 
-[node name="Map1_City_Pasar#TentA_Collision" type="StaticBody2D" parent="Map1_City_Pasar#TentA"]
+[node name="Map1_City_Pasar#TentA_Collision" type="StaticBody2D" parent="StaticBody2D/Map1_City_Pasar#TentA"]
 
-[node name="@CollisionShape2D@43" type="CollisionShape2D" parent="Map1_City_Pasar#TentA/Map1_City_Pasar#TentA_Collision"]
-position = Vector2(2, -2)
+[node name="@CollisionShape2D@43" type="CollisionShape2D" parent="StaticBody2D/Map1_City_Pasar#TentA/Map1_City_Pasar#TentA_Collision"]
+position = Vector2(6, 56.5)
 shape = SubResource("RectangleShape2D_tg37j")
 
-[node name="Map1_City_Pasar#TentB" type="Sprite2D" parent="."]
+[node name="Map1_City_Pasar#TentB" type="Sprite2D" parent="StaticBody2D"]
 position = Vector2(1090, 1640)
 texture = ExtResource("14_c")
 
-[node name="Map1_City_Pasar#TentB_Collision" type="StaticBody2D" parent="Map1_City_Pasar#TentB"]
+[node name="Map1_City_Pasar#TentB_Collision" type="StaticBody2D" parent="StaticBody2D/Map1_City_Pasar#TentB"]
 
-[node name="@CollisionShape2D@44" type="CollisionShape2D" parent="Map1_City_Pasar#TentB/Map1_City_Pasar#TentB_Collision"]
-position = Vector2(2, -2)
+[node name="@CollisionShape2D@44" type="CollisionShape2D" parent="StaticBody2D/Map1_City_Pasar#TentB/Map1_City_Pasar#TentB_Collision"]
+position = Vector2(8, 59.5)
 shape = SubResource("RectangleShape2D_nymhv")
 
-[node name="Map1_City_Pasar#TentC" type="Sprite2D" parent="."]
+[node name="Map1_City_Pasar#TentC" type="Sprite2D" parent="StaticBody2D"]
 position = Vector2(390, 2080)
 texture = ExtResource("14_c")
 
-[node name="Map1_City_Pasar#TentC_Collision" type="StaticBody2D" parent="Map1_City_Pasar#TentC"]
+[node name="Map1_City_Pasar#TentC_Collision" type="StaticBody2D" parent="StaticBody2D/Map1_City_Pasar#TentC"]
 
-[node name="@CollisionShape2D@45" type="CollisionShape2D" parent="Map1_City_Pasar#TentC/Map1_City_Pasar#TentC_Collision"]
-position = Vector2(2, -2)
+[node name="@CollisionShape2D@45" type="CollisionShape2D" parent="StaticBody2D/Map1_City_Pasar#TentC/Map1_City_Pasar#TentC_Collision"]
+position = Vector2(6.5, 59.5)
 shape = SubResource("RectangleShape2D_db11k")
 
-[node name="Map1_City_Pasar#TentD" type="Sprite2D" parent="."]
+[node name="Map1_City_Pasar#TentD" type="Sprite2D" parent="StaticBody2D"]
 position = Vector2(1090, 2080)
 texture = ExtResource("14_c")
 
-[node name="Map1_City_Pasar#TentD_Collision" type="StaticBody2D" parent="Map1_City_Pasar#TentD"]
+[node name="Map1_City_Pasar#TentD_Collision" type="StaticBody2D" parent="StaticBody2D/Map1_City_Pasar#TentD"]
 
-[node name="@CollisionShape2D@46" type="CollisionShape2D" parent="Map1_City_Pasar#TentD/Map1_City_Pasar#TentD_Collision"]
-position = Vector2(2, -2)
+[node name="@CollisionShape2D@46" type="CollisionShape2D" parent="StaticBody2D/Map1_City_Pasar#TentD/Map1_City_Pasar#TentD_Collision"]
+position = Vector2(10, 63)
 shape = SubResource("RectangleShape2D_c7b3f")
 
-[node name="Map1_City_Pasar#Cart" type="Sprite2D" parent="."]
+[node name="Map1_City_Pasar#Cart" type="Sprite2D" parent="StaticBody2D"]
 position = Vector2(2068, 1577)
 texture = ExtResource("15_c")
 
-[node name="Map1_City_Pasar#Cart_Collision" type="StaticBody2D" parent="Map1_City_Pasar#Cart"]
+[node name="Map1_City_Pasar#Cart_Collision" type="StaticBody2D" parent="StaticBody2D/Map1_City_Pasar#Cart"]
 
-[node name="@CollisionShape2D@47" type="CollisionShape2D" parent="Map1_City_Pasar#Cart/Map1_City_Pasar#Cart_Collision"]
-position = Vector2(2, 0)
+[node name="@CollisionShape2D@47" type="CollisionShape2D" parent="StaticBody2D/Map1_City_Pasar#Cart/Map1_City_Pasar#Cart_Collision"]
+position = Vector2(-2.5, 36)
 shape = SubResource("RectangleShape2D_gy00e")
 
-[node name="Map1_City_Pasar#StumpSeat1" type="Sprite2D" parent="."]
+[node name="Map1_City_Pasar#StumpSeat1" type="Sprite2D" parent="StaticBody2D"]
 position = Vector2(560, 2000)
 texture = ExtResource("19_c")
 
-[node name="Map1_City_Pasar#StumpSeat1_Collision" type="StaticBody2D" parent="Map1_City_Pasar#StumpSeat1"]
+[node name="Map1_City_Pasar#StumpSeat1_Collision" type="StaticBody2D" parent="StaticBody2D/Map1_City_Pasar#StumpSeat1"]
 
-[node name="@CollisionShape2D@48" type="CollisionShape2D" parent="Map1_City_Pasar#StumpSeat1/Map1_City_Pasar#StumpSeat1_Collision"]
-position = Vector2(0, 39.775)
+[node name="@CollisionShape2D@48" type="CollisionShape2D" parent="StaticBody2D/Map1_City_Pasar#StumpSeat1/Map1_City_Pasar#StumpSeat1_Collision"]
+position = Vector2(-1, 28.6125)
 shape = SubResource("RectangleShape2D_1keic")
 
-[node name="Map1_City_Pasar#StumpSeat2" type="Sprite2D" parent="."]
+[node name="Map1_City_Pasar#StumpSeat2" type="Sprite2D" parent="StaticBody2D"]
 position = Vector2(920, 2000)
 texture = ExtResource("19_c")
 
-[node name="Map1_City_Pasar#StumpSeat2_Collision" type="StaticBody2D" parent="Map1_City_Pasar#StumpSeat2"]
+[node name="Map1_City_Pasar#StumpSeat2_Collision" type="StaticBody2D" parent="StaticBody2D/Map1_City_Pasar#StumpSeat2"]
 
-[node name="@CollisionShape2D@49" type="CollisionShape2D" parent="Map1_City_Pasar#StumpSeat2/Map1_City_Pasar#StumpSeat2_Collision"]
-position = Vector2(0, 39.775)
+[node name="@CollisionShape2D@49" type="CollisionShape2D" parent="StaticBody2D/Map1_City_Pasar#StumpSeat2/Map1_City_Pasar#StumpSeat2_Collision"]
+position = Vector2(-1, 28)
 shape = SubResource("RectangleShape2D_44poe")
 
-[node name="Map1_City_Pasar#Campfire" type="Sprite2D" parent="."]
+[node name="Map1_City_Pasar#Campfire" type="Sprite2D" parent="StaticBody2D"]
 position = Vector2(740, 1871)
 texture = ExtResource("20_c")
 
-[node name="Map1_City_Pasar#Campfire_Collision" type="StaticBody2D" parent="Map1_City_Pasar#Campfire"]
+[node name="Map1_City_Pasar#Campfire_Collision" type="StaticBody2D" parent="StaticBody2D/Map1_City_Pasar#Campfire"]
 
-[node name="@CollisionShape2D@50" type="CollisionShape2D" parent="Map1_City_Pasar#Campfire/Map1_City_Pasar#Campfire_Collision"]
-position = Vector2(2, 0)
-shape = SubResource("RectangleShape2D_6nuq1")
+[node name="@CollisionShape2D@50" type="CollisionShape2D" parent="StaticBody2D/Map1_City_Pasar#Campfire/Map1_City_Pasar#Campfire_Collision"]
+position = Vector2(10, 1)
+shape = SubResource("CircleShape2D_tnew8")
 
-[node name="Map1_City_Pasar#BannerBlue" type="Sprite2D" parent="."]
+[node name="Map1_City_Pasar#BannerBlue" type="Sprite2D" parent="StaticBody2D"]
 position = Vector2(758, 1420)
 texture = ExtResource("21_c")
 
-[node name="Map1_City_Pasar#BannerBlue_Collision" type="StaticBody2D" parent="Map1_City_Pasar#BannerBlue"]
+[node name="Map1_City_Pasar#BannerBlue_Collision" type="StaticBody2D" parent="StaticBody2D/Map1_City_Pasar#BannerBlue"]
 
-[node name="@CollisionShape2D@51" type="CollisionShape2D" parent="Map1_City_Pasar#BannerBlue/Map1_City_Pasar#BannerBlue_Collision"]
-position = Vector2(0, 1)
+[node name="@CollisionShape2D@51" type="CollisionShape2D" parent="StaticBody2D/Map1_City_Pasar#BannerBlue/Map1_City_Pasar#BannerBlue_Collision"]
+position = Vector2(0, 82)
 shape = SubResource("RectangleShape2D_ngwxp")
 
-[node name="Map1_City_Pasar#Barrel_0" type="Sprite2D" parent="."]
+[node name="Map1_City_Pasar#Barrel_0" type="Sprite2D" parent="StaticBody2D"]
 position = Vector2(609, 2117)
 texture = ExtResource("16_c")
 
-[node name="Map1_City_Pasar#Barrel_0_Collision" type="StaticBody2D" parent="Map1_City_Pasar#Barrel_0"]
+[node name="Map1_City_Pasar#Barrel_0_Collision" type="StaticBody2D" parent="StaticBody2D/Map1_City_Pasar#Barrel_0"]
 
-[node name="@CollisionShape2D@52" type="CollisionShape2D" parent="Map1_City_Pasar#Barrel_0/Map1_City_Pasar#Barrel_0_Collision"]
-position = Vector2(-6, 0)
-shape = SubResource("RectangleShape2D_wiqkh")
+[node name="@CollisionShape2D@52" type="CollisionShape2D" parent="StaticBody2D/Map1_City_Pasar#Barrel_0/Map1_City_Pasar#Barrel_0_Collision"]
+position = Vector2(-2, 20)
+shape = SubResource("CircleShape2D_tlw76")
 
-[node name="Map1_City_Pasar#Barrel_1" type="Sprite2D" parent="."]
+[node name="Map1_City_Pasar#Barrel_1" type="Sprite2D" parent="StaticBody2D"]
 position = Vector2(583, 1657)
 texture = ExtResource("16_c")
 
-[node name="Map1_City_Pasar#Barrel_1_Collision" type="StaticBody2D" parent="Map1_City_Pasar#Barrel_1"]
+[node name="Map1_City_Pasar#Barrel_1_Collision" type="StaticBody2D" parent="StaticBody2D/Map1_City_Pasar#Barrel_1"]
 
-[node name="@CollisionShape2D@53" type="CollisionShape2D" parent="Map1_City_Pasar#Barrel_1/Map1_City_Pasar#Barrel_1_Collision"]
-position = Vector2(-6, 0)
-shape = SubResource("RectangleShape2D_7wuif")
+[node name="@CollisionShape2D@53" type="CollisionShape2D" parent="StaticBody2D/Map1_City_Pasar#Barrel_1/Map1_City_Pasar#Barrel_1_Collision"]
+position = Vector2(0, 19)
+shape = SubResource("CircleShape2D_jow8e")
 
-[node name="Map1_City_Pasar#Barrel_2" type="Sprite2D" parent="."]
+[node name="Map1_City_Pasar#Barrel_2" type="Sprite2D" parent="StaticBody2D"]
 position = Vector2(893, 2120)
 texture = ExtResource("16_c")
 
-[node name="Map1_City_Pasar#Barrel_2_Collision" type="StaticBody2D" parent="Map1_City_Pasar#Barrel_2"]
+[node name="Map1_City_Pasar#Barrel_2_Collision" type="StaticBody2D" parent="StaticBody2D/Map1_City_Pasar#Barrel_2"]
 
-[node name="@CollisionShape2D@54" type="CollisionShape2D" parent="Map1_City_Pasar#Barrel_2/Map1_City_Pasar#Barrel_2_Collision"]
-position = Vector2(-6, 0)
-shape = SubResource("RectangleShape2D_2ck57")
+[node name="@CollisionShape2D@54" type="CollisionShape2D" parent="StaticBody2D/Map1_City_Pasar#Barrel_2/Map1_City_Pasar#Barrel_2_Collision"]
+position = Vector2(1, 25)
+shape = SubResource("CircleShape2D_0p7jk")
 
-[node name="Map1_City_Pasar#Barrel_3" type="Sprite2D" parent="."]
+[node name="Map1_City_Pasar#Barrel_3" type="Sprite2D" parent="StaticBody2D"]
 position = Vector2(2635, 2018)
 texture = ExtResource("16_c")
 
-[node name="Map1_City_Pasar#Barrel_3_Collision" type="StaticBody2D" parent="Map1_City_Pasar#Barrel_3"]
+[node name="Map1_City_Pasar#Barrel_3_Collision" type="StaticBody2D" parent="StaticBody2D/Map1_City_Pasar#Barrel_3"]
 
-[node name="@CollisionShape2D@55" type="CollisionShape2D" parent="Map1_City_Pasar#Barrel_3/Map1_City_Pasar#Barrel_3_Collision"]
-position = Vector2(-6, 0)
-shape = SubResource("RectangleShape2D_vpcuw")
+[node name="@CollisionShape2D@55" type="CollisionShape2D" parent="StaticBody2D/Map1_City_Pasar#Barrel_3/Map1_City_Pasar#Barrel_3_Collision"]
+position = Vector2(2, 23)
+shape = SubResource("CircleShape2D_o2ig1")
 
-[node name="Map1_City_Pasar#Barrel_4" type="Sprite2D" parent="."]
+[node name="Map1_City_Pasar#Barrel_4" type="Sprite2D" parent="StaticBody2D"]
 position = Vector2(910, 1667)
 texture = ExtResource("16_c")
 
-[node name="Map1_City_Pasar#Barrel_4_Collision" type="StaticBody2D" parent="Map1_City_Pasar#Barrel_4"]
+[node name="Map1_City_Pasar#Barrel_4_Collision" type="StaticBody2D" parent="StaticBody2D/Map1_City_Pasar#Barrel_4"]
 
-[node name="@CollisionShape2D@56" type="CollisionShape2D" parent="Map1_City_Pasar#Barrel_4/Map1_City_Pasar#Barrel_4_Collision"]
-position = Vector2(-6, 0)
-shape = SubResource("RectangleShape2D_4o2i6")
+[node name="@CollisionShape2D@56" type="CollisionShape2D" parent="StaticBody2D/Map1_City_Pasar#Barrel_4/Map1_City_Pasar#Barrel_4_Collision"]
+position = Vector2(1, 28)
+shape = SubResource("CircleShape2D_shs62")
 
-[node name="Map1_City#Pengolahan" type="Node2D" parent="."]
+[node name="Map1_City#Pengolahan" type="Node2D" parent="StaticBody2D"]
 
-[node name="Map1_City_Pengolahan#PBarrel_0" type="Sprite2D" parent="."]
+[node name="Map1_City_Pengolahan#PBarrel_0" type="Sprite2D" parent="StaticBody2D"]
 position = Vector2(2325, 2015)
 texture = ExtResource("16_c")
 
-[node name="Map1_City_Pengolahan#PBarrel_0_Collision" type="StaticBody2D" parent="Map1_City_Pengolahan#PBarrel_0"]
+[node name="Map1_City_Pengolahan#PBarrel_0_Collision" type="StaticBody2D" parent="StaticBody2D/Map1_City_Pengolahan#PBarrel_0"]
 
-[node name="@CollisionShape2D@57" type="CollisionShape2D" parent="Map1_City_Pengolahan#PBarrel_0/Map1_City_Pengolahan#PBarrel_0_Collision"]
-position = Vector2(-6, 0)
-shape = SubResource("RectangleShape2D_maxjt")
+[node name="@CollisionShape2D@57" type="CollisionShape2D" parent="StaticBody2D/Map1_City_Pengolahan#PBarrel_0/Map1_City_Pengolahan#PBarrel_0_Collision"]
+position = Vector2(-1, 29)
+shape = SubResource("CircleShape2D_mkjli")
 
-[node name="Map1_City_Pengolahan#PBarrel_1" type="Sprite2D" parent="."]
+[node name="Map1_City_Pengolahan#PBarrel_1" type="Sprite2D" parent="StaticBody2D"]
 position = Vector2(2220, 2017)
 texture = ExtResource("16_c")
 
-[node name="Map1_City_Pengolahan#PBarrel_1_Collision" type="StaticBody2D" parent="Map1_City_Pengolahan#PBarrel_1"]
+[node name="Map1_City_Pengolahan#PBarrel_1_Collision" type="StaticBody2D" parent="StaticBody2D/Map1_City_Pengolahan#PBarrel_1"]
 
-[node name="@CollisionShape2D@58" type="CollisionShape2D" parent="Map1_City_Pengolahan#PBarrel_1/Map1_City_Pengolahan#PBarrel_1_Collision"]
-position = Vector2(-6, 0)
-shape = SubResource("RectangleShape2D_ex1qt")
+[node name="@CollisionShape2D@58" type="CollisionShape2D" parent="StaticBody2D/Map1_City_Pengolahan#PBarrel_1/Map1_City_Pengolahan#PBarrel_1_Collision"]
+position = Vector2(-1, 28)
+shape = SubResource("CircleShape2D_eho6h")
 
-[node name="Map1_City_Pengolahan#PBarrel_2" type="Sprite2D" parent="."]
+[node name="Map1_City_Pengolahan#PBarrel_2" type="Sprite2D" parent="StaticBody2D"]
 position = Vector2(2536, 2018)
 texture = ExtResource("16_c")
 
-[node name="Map1_City_Pengolahan#PBarrel_2_Collision" type="StaticBody2D" parent="Map1_City_Pengolahan#PBarrel_2"]
+[node name="Map1_City_Pengolahan#PBarrel_2_Collision" type="StaticBody2D" parent="StaticBody2D/Map1_City_Pengolahan#PBarrel_2"]
 
-[node name="@CollisionShape2D@59" type="CollisionShape2D" parent="Map1_City_Pengolahan#PBarrel_2/Map1_City_Pengolahan#PBarrel_2_Collision"]
-position = Vector2(-6, 0)
-shape = SubResource("RectangleShape2D_gju20")
+[node name="@CollisionShape2D@59" type="CollisionShape2D" parent="StaticBody2D/Map1_City_Pengolahan#PBarrel_2/Map1_City_Pengolahan#PBarrel_2_Collision"]
+position = Vector2(1, 28)
+shape = SubResource("CircleShape2D_wp1pd")
 
-[node name="Map1_City_Pengolahan#PBarrel_3" type="Sprite2D" parent="."]
+[node name="Map1_City_Pengolahan#PBarrel_3" type="Sprite2D" parent="StaticBody2D"]
 position = Vector2(2427, 2018)
 texture = ExtResource("16_c")
 
-[node name="Map1_City_Pengolahan#PBarrel_3_Collision" type="StaticBody2D" parent="Map1_City_Pengolahan#PBarrel_3"]
+[node name="Map1_City_Pengolahan#PBarrel_3_Collision" type="StaticBody2D" parent="StaticBody2D/Map1_City_Pengolahan#PBarrel_3"]
 
-[node name="@CollisionShape2D@60" type="CollisionShape2D" parent="Map1_City_Pengolahan#PBarrel_3/Map1_City_Pengolahan#PBarrel_3_Collision"]
-position = Vector2(-6, 0)
-shape = SubResource("RectangleShape2D_w54u7")
+[node name="@CollisionShape2D@60" type="CollisionShape2D" parent="StaticBody2D/Map1_City_Pengolahan#PBarrel_3/Map1_City_Pengolahan#PBarrel_3_Collision"]
+position = Vector2(1, 25)
+shape = SubResource("CircleShape2D_mibde")
 
-[node name="Map1_City_Pengolahan#PChest" type="Sprite2D" parent="."]
+[node name="Map1_City_Pengolahan#PChest" type="Sprite2D" parent="StaticBody2D"]
 position = Vector2(2555, 1819)
 texture = ExtResource("17_c")
 
-[node name="Map1_City_Pengolahan#PChest_Collision" type="StaticBody2D" parent="Map1_City_Pengolahan#PChest"]
+[node name="Map1_City_Pengolahan#PChest_Collision" type="StaticBody2D" parent="StaticBody2D/Map1_City_Pengolahan#PChest"]
 
-[node name="@CollisionShape2D@61" type="CollisionShape2D" parent="Map1_City_Pengolahan#PChest/Map1_City_Pengolahan#PChest_Collision"]
-position = Vector2(-9.5, 0)
+[node name="@CollisionShape2D@61" type="CollisionShape2D" parent="StaticBody2D/Map1_City_Pengolahan#PChest/Map1_City_Pengolahan#PChest_Collision"]
+position = Vector2(-1.5, 34.5)
 shape = SubResource("RectangleShape2D_nmuab")
 
-[node name="Map1_City_Pengolahan#PTower" type="Sprite2D" parent="."]
+[node name="Map1_City_Pengolahan#PTower" type="Sprite2D" parent="StaticBody2D"]
 position = Vector2(2300, 1718)
 texture = ExtResource("23_c")
 
-[node name="Map1_City_Pengolahan#PTower_Collision" type="StaticBody2D" parent="Map1_City_Pengolahan#PTower"]
+[node name="Map1_City_Pengolahan#PTower_Collision" type="StaticBody2D" parent="StaticBody2D/Map1_City_Pengolahan#PTower"]
 
-[node name="@CollisionShape2D@62" type="CollisionShape2D" parent="Map1_City_Pengolahan#PTower/Map1_City_Pengolahan#PTower_Collision"]
-position = Vector2(-16, 0)
+[node name="@CollisionShape2D@62" type="CollisionShape2D" parent="StaticBody2D/Map1_City_Pengolahan#PTower/Map1_City_Pengolahan#PTower_Collision"]
+position = Vector2(-6.5, 117.5)
 shape = SubResource("RectangleShape2D_tqd3v")
 
-[node name="Map1_City_Pengolahan#PStump1" type="Sprite2D" parent="."]
+[node name="Map1_City_Pengolahan#PStump1" type="Sprite2D" parent="StaticBody2D"]
 position = Vector2(2227, 1433)
 texture = ExtResource("18_c")
 
-[node name="Map1_City_Pengolahan#PStump1_Collision" type="StaticBody2D" parent="Map1_City_Pengolahan#PStump1"]
+[node name="Map1_City_Pengolahan#PStump1_Collision" type="StaticBody2D" parent="StaticBody2D/Map1_City_Pengolahan#PStump1"]
 
-[node name="@CollisionShape2D@63" type="CollisionShape2D" parent="Map1_City_Pengolahan#PStump1/Map1_City_Pengolahan#PStump1_Collision"]
-position = Vector2(1, 27.25)
+[node name="@CollisionShape2D@63" type="CollisionShape2D" parent="StaticBody2D/Map1_City_Pengolahan#PStump1/Map1_City_Pengolahan#PStump1_Collision"]
+position = Vector2(15.5, 10)
 shape = SubResource("RectangleShape2D_eh56a")
 
-[node name="Map1_City_Pengolahan#PStump2" type="Sprite2D" parent="."]
+[node name="Map1_City_Pengolahan#PStump2" type="Sprite2D" parent="StaticBody2D"]
 position = Vector2(2669, 1434)
 texture = ExtResource("18_c")
 
-[node name="Map1_City_Pengolahan#PStump2_Collision" type="StaticBody2D" parent="Map1_City_Pengolahan#PStump2"]
+[node name="Map1_City_Pengolahan#PStump2_Collision" type="StaticBody2D" parent="StaticBody2D/Map1_City_Pengolahan#PStump2"]
 
-[node name="@CollisionShape2D@64" type="CollisionShape2D" parent="Map1_City_Pengolahan#PStump2/Map1_City_Pengolahan#PStump2_Collision"]
-position = Vector2(1, 27.25)
+[node name="@CollisionShape2D@64" type="CollisionShape2D" parent="StaticBody2D/Map1_City_Pengolahan#PStump2/Map1_City_Pengolahan#PStump2_Collision"]
+position = Vector2(16.5, 10)
 shape = SubResource("RectangleShape2D_mswh5")
 
-[node name="Map1_City#DekorJalan" type="Node2D" parent="."]
+[node name="Map1_City#DekorJalan" type="Node2D" parent="StaticBody2D"]
 
-[node name="Map1_City_DekorJalan#StreetTreeTop_0" type="Sprite2D" parent="."]
+[node name="Map1_City_DekorJalan#StreetTreeTop_0" type="Sprite2D" parent="StaticBody2D"]
 position = Vector2(407, 898)
 texture = ExtResource("1_c")
 
-[node name="Map1_City_DekorJalan#StreetTreeTop_0_Collision" type="StaticBody2D" parent="Map1_City_DekorJalan#StreetTreeTop_0"]
+[node name="Map1_City_DekorJalan#StreetTreeTop_0_Collision" type="StaticBody2D" parent="StaticBody2D/Map1_City_DekorJalan#StreetTreeTop_0"]
 
-[node name="@CollisionShape2D@65" type="CollisionShape2D" parent="Map1_City_DekorJalan#StreetTreeTop_0/Map1_City_DekorJalan#StreetTreeTop_0_Collision"]
-position = Vector2(18, 68.225)
+[node name="@CollisionShape2D@65" type="CollisionShape2D" parent="StaticBody2D/Map1_City_DekorJalan#StreetTreeTop_0/Map1_City_DekorJalan#StreetTreeTop_0_Collision"]
+position = Vector2(16.5, 73)
 shape = SubResource("RectangleShape2D_s2yoy")
 
-[node name="Map1_City_DekorJalan#StreetTreeTop_1" type="Sprite2D" parent="."]
+[node name="Map1_City_DekorJalan#StreetTreeTop_1" type="Sprite2D" parent="StaticBody2D"]
 position = Vector2(373, 545)
 texture = ExtResource("1_c")
 
-[node name="Map1_City_DekorJalan#StreetTreeTop_1_Collision" type="StaticBody2D" parent="Map1_City_DekorJalan#StreetTreeTop_1"]
+[node name="Map1_City_DekorJalan#StreetTreeTop_1_Collision" type="StaticBody2D" parent="StaticBody2D/Map1_City_DekorJalan#StreetTreeTop_1"]
 
-[node name="@CollisionShape2D@66" type="CollisionShape2D" parent="Map1_City_DekorJalan#StreetTreeTop_1/Map1_City_DekorJalan#StreetTreeTop_1_Collision"]
-position = Vector2(3, 77.725)
+[node name="@CollisionShape2D@66" type="CollisionShape2D" parent="StaticBody2D/Map1_City_DekorJalan#StreetTreeTop_1/Map1_City_DekorJalan#StreetTreeTop_1_Collision"]
+position = Vector2(19, 69.5)
 shape = SubResource("RectangleShape2D_sjk44")
 
-[node name="Map1_City_DekorJalan#StreetTreeTop_2" type="Sprite2D" parent="."]
+[node name="Map1_City_DekorJalan#StreetTreeTop_2" type="Sprite2D" parent="StaticBody2D"]
 position = Vector2(1343, 695)
 texture = ExtResource("1_c")
 
-[node name="Map1_City_DekorJalan#StreetTreeTop_2_Collision" type="StaticBody2D" parent="Map1_City_DekorJalan#StreetTreeTop_2"]
+[node name="Map1_City_DekorJalan#StreetTreeTop_2_Collision" type="StaticBody2D" parent="StaticBody2D/Map1_City_DekorJalan#StreetTreeTop_2"]
 
-[node name="@CollisionShape2D@67" type="CollisionShape2D" parent="Map1_City_DekorJalan#StreetTreeTop_2/Map1_City_DekorJalan#StreetTreeTop_2_Collision"]
-position = Vector2(3, 77.725)
+[node name="@CollisionShape2D@67" type="CollisionShape2D" parent="StaticBody2D/Map1_City_DekorJalan#StreetTreeTop_2/Map1_City_DekorJalan#StreetTreeTop_2_Collision"]
+position = Vector2(16.5, 72)
 shape = SubResource("RectangleShape2D_4agai")
 
-[node name="Map1_City_DekorJalan#StreetTreeTop_3" type="Sprite2D" parent="."]
+[node name="Map1_City_DekorJalan#StreetTreeTop_3" type="Sprite2D" parent="StaticBody2D"]
 position = Vector2(1047, 897)
 texture = ExtResource("1_c")
 
-[node name="Map1_City_DekorJalan#StreetTreeTop_3_Collision" type="StaticBody2D" parent="Map1_City_DekorJalan#StreetTreeTop_3"]
+[node name="Map1_City_DekorJalan#StreetTreeTop_3_Collision" type="StaticBody2D" parent="StaticBody2D/Map1_City_DekorJalan#StreetTreeTop_3"]
 
-[node name="@CollisionShape2D@68" type="CollisionShape2D" parent="Map1_City_DekorJalan#StreetTreeTop_3/Map1_City_DekorJalan#StreetTreeTop_3_Collision"]
-position = Vector2(3, 77.725)
+[node name="@CollisionShape2D@68" type="CollisionShape2D" parent="StaticBody2D/Map1_City_DekorJalan#StreetTreeTop_3/Map1_City_DekorJalan#StreetTreeTop_3_Collision"]
+position = Vector2(15.5, 74.5)
 shape = SubResource("RectangleShape2D_htue1")
 
-[node name="Map1_City_DekorJalan#StreetTreeTop_4" type="Sprite2D" parent="."]
+[node name="Map1_City_DekorJalan#StreetTreeTop_4" type="Sprite2D" parent="StaticBody2D"]
 position = Vector2(1854, 766)
 texture = ExtResource("1_c")
 
-[node name="Map1_City_DekorJalan#StreetTreeTop_4_Collision" type="StaticBody2D" parent="Map1_City_DekorJalan#StreetTreeTop_4"]
+[node name="Map1_City_DekorJalan#StreetTreeTop_4_Collision" type="StaticBody2D" parent="StaticBody2D/Map1_City_DekorJalan#StreetTreeTop_4"]
 
-[node name="@CollisionShape2D@69" type="CollisionShape2D" parent="Map1_City_DekorJalan#StreetTreeTop_4/Map1_City_DekorJalan#StreetTreeTop_4_Collision"]
-position = Vector2(3, 77.725)
+[node name="@CollisionShape2D@69" type="CollisionShape2D" parent="StaticBody2D/Map1_City_DekorJalan#StreetTreeTop_4/Map1_City_DekorJalan#StreetTreeTop_4_Collision"]
+position = Vector2(15.5, 72)
 shape = SubResource("RectangleShape2D_u23n6")
 
-[node name="Map1_City_DekorJalan#StreetTreeTop_6" type="Sprite2D" parent="."]
+[node name="Map1_City_DekorJalan#StreetTreeTop_6" type="Sprite2D" parent="StaticBody2D"]
 position = Vector2(189, 2506)
 texture = ExtResource("1_c")
 
-[node name="Map1_City_DekorJalan#StreetTreeTop_6_Collision" type="StaticBody2D" parent="Map1_City_DekorJalan#StreetTreeTop_6"]
+[node name="Map1_City_DekorJalan#StreetTreeTop_6_Collision" type="StaticBody2D" parent="StaticBody2D/Map1_City_DekorJalan#StreetTreeTop_6"]
 
-[node name="@CollisionShape2D@70" type="CollisionShape2D" parent="Map1_City_DekorJalan#StreetTreeTop_6/Map1_City_DekorJalan#StreetTreeTop_6_Collision"]
-position = Vector2(3, 77.725)
+[node name="@CollisionShape2D@70" type="CollisionShape2D" parent="StaticBody2D/Map1_City_DekorJalan#StreetTreeTop_6/Map1_City_DekorJalan#StreetTreeTop_6_Collision"]
+position = Vector2(15, 63.7251)
 shape = SubResource("RectangleShape2D_27d5y")
 
-[node name="Map1_City_DekorJalan#StreetTreeTop_7" type="Sprite2D" parent="."]
+[node name="Map1_City_DekorJalan#StreetTreeTop_7" type="Sprite2D" parent="StaticBody2D"]
 position = Vector2(1198, 586)
 texture = ExtResource("1_c")
 
-[node name="Map1_City_DekorJalan#StreetTreeTop_7_Collision" type="StaticBody2D" parent="Map1_City_DekorJalan#StreetTreeTop_7"]
+[node name="Map1_City_DekorJalan#StreetTreeTop_7_Collision" type="StaticBody2D" parent="StaticBody2D/Map1_City_DekorJalan#StreetTreeTop_7"]
 
-[node name="@CollisionShape2D@71" type="CollisionShape2D" parent="Map1_City_DekorJalan#StreetTreeTop_7/Map1_City_DekorJalan#StreetTreeTop_7_Collision"]
-position = Vector2(3, 77.725)
+[node name="@CollisionShape2D@71" type="CollisionShape2D" parent="StaticBody2D/Map1_City_DekorJalan#StreetTreeTop_7/Map1_City_DekorJalan#StreetTreeTop_7_Collision"]
+position = Vector2(16.5, 71.5)
 shape = SubResource("RectangleShape2D_4sudi")
 
-[node name="Map1_City_DekorJalan#StreetBushTop_0" type="Sprite2D" parent="."]
+[node name="Map1_City_DekorJalan#StreetBushTop_0" type="Sprite2D" parent="StaticBody2D"]
 position = Vector2(327, 968)
 texture = ExtResource("5_c")
 
-[node name="Map1_City_DekorJalan#StreetBushTop_0_Collision" type="StaticBody2D" parent="Map1_City_DekorJalan#StreetBushTop_0"]
+[node name="Map1_City_DekorJalan#StreetBushTop_0_Collision" type="StaticBody2D" parent="StaticBody2D/Map1_City_DekorJalan#StreetBushTop_0"]
 
-[node name="@CollisionShape2D@72" type="CollisionShape2D" parent="Map1_City_DekorJalan#StreetBushTop_0/Map1_City_DekorJalan#StreetBushTop_0_Collision"]
-position = Vector2(2, -2)
-shape = SubResource("RectangleShape2D_jw5c1")
+[node name="@CollisionShape2D@72" type="CollisionShape2D" parent="StaticBody2D/Map1_City_DekorJalan#StreetBushTop_0/Map1_City_DekorJalan#StreetBushTop_0_Collision"]
+position = Vector2(10, 13)
+shape = SubResource("CircleShape2D_xogdn")
 
-[node name="Map1_City_DekorJalan#StreetBushTop_1" type="Sprite2D" parent="."]
+[node name="Map1_City_DekorJalan#StreetBushTop_1" type="Sprite2D" parent="StaticBody2D"]
 position = Vector2(1036, 700)
 texture = ExtResource("5_c")
 
-[node name="Map1_City_DekorJalan#StreetBushTop_1_Collision" type="StaticBody2D" parent="Map1_City_DekorJalan#StreetBushTop_1"]
+[node name="Map1_City_DekorJalan#StreetBushTop_1_Collision" type="StaticBody2D" parent="StaticBody2D/Map1_City_DekorJalan#StreetBushTop_1"]
 
-[node name="@CollisionShape2D@73" type="CollisionShape2D" parent="Map1_City_DekorJalan#StreetBushTop_1/Map1_City_DekorJalan#StreetBushTop_1_Collision"]
-position = Vector2(2, -2)
-shape = SubResource("RectangleShape2D_bmdj0")
+[node name="@CollisionShape2D@73" type="CollisionShape2D" parent="StaticBody2D/Map1_City_DekorJalan#StreetBushTop_1/Map1_City_DekorJalan#StreetBushTop_1_Collision"]
+position = Vector2(10, 9)
+shape = SubResource("CircleShape2D_h8q4n")
 
-[node name="Map1_City_DekorJalan#StreetBushTop_2" type="Sprite2D" parent="."]
+[node name="Map1_City_DekorJalan#StreetBushTop_2" type="Sprite2D" parent="StaticBody2D"]
 position = Vector2(252, 633)
 texture = ExtResource("5_c")
 
-[node name="Map1_City_DekorJalan#StreetBushTop_2_Collision" type="StaticBody2D" parent="Map1_City_DekorJalan#StreetBushTop_2"]
+[node name="Map1_City_DekorJalan#StreetBushTop_2_Collision" type="StaticBody2D" parent="StaticBody2D/Map1_City_DekorJalan#StreetBushTop_2"]
 
-[node name="@CollisionShape2D@74" type="CollisionShape2D" parent="Map1_City_DekorJalan#StreetBushTop_2/Map1_City_DekorJalan#StreetBushTop_2_Collision"]
-position = Vector2(2, -2)
-shape = SubResource("RectangleShape2D_8ms2c")
+[node name="@CollisionShape2D@74" type="CollisionShape2D" parent="StaticBody2D/Map1_City_DekorJalan#StreetBushTop_2/Map1_City_DekorJalan#StreetBushTop_2_Collision"]
+position = Vector2(11, 4)
+shape = SubResource("CircleShape2D_7p6yv")
 
-[node name="Map1_City_DekorJalan#StreetBushTop_3" type="Sprite2D" parent="."]
+[node name="Map1_City_DekorJalan#StreetBushTop_3" type="Sprite2D" parent="StaticBody2D"]
 position = Vector2(2203, 457)
 texture = ExtResource("5_c")
 
-[node name="Map1_City_DekorJalan#StreetBushTop_3_Collision" type="StaticBody2D" parent="Map1_City_DekorJalan#StreetBushTop_3"]
+[node name="Map1_City_DekorJalan#StreetBushTop_3_Collision" type="StaticBody2D" parent="StaticBody2D/Map1_City_DekorJalan#StreetBushTop_3"]
 
-[node name="@CollisionShape2D@75" type="CollisionShape2D" parent="Map1_City_DekorJalan#StreetBushTop_3/Map1_City_DekorJalan#StreetBushTop_3_Collision"]
-position = Vector2(2, -2)
-shape = SubResource("RectangleShape2D_dtku2")
+[node name="@CollisionShape2D@75" type="CollisionShape2D" parent="StaticBody2D/Map1_City_DekorJalan#StreetBushTop_3/Map1_City_DekorJalan#StreetBushTop_3_Collision"]
+position = Vector2(12, 10)
+shape = SubResource("CircleShape2D_vbiuf")
 
-[node name="Map1_City_DekorJalan#StreetBushTop_4" type="Sprite2D" parent="."]
+[node name="Map1_City_DekorJalan#StreetBushTop_4" type="Sprite2D" parent="StaticBody2D"]
 position = Vector2(2793, 469)
 texture = ExtResource("5_c")
 
-[node name="Map1_City_DekorJalan#StreetBushTop_4_Collision" type="StaticBody2D" parent="Map1_City_DekorJalan#StreetBushTop_4"]
+[node name="Map1_City_DekorJalan#StreetBushTop_4_Collision" type="StaticBody2D" parent="StaticBody2D/Map1_City_DekorJalan#StreetBushTop_4"]
 
-[node name="@CollisionShape2D@76" type="CollisionShape2D" parent="Map1_City_DekorJalan#StreetBushTop_4/Map1_City_DekorJalan#StreetBushTop_4_Collision"]
-position = Vector2(2, -2)
-shape = SubResource("RectangleShape2D_n4csn")
+[node name="@CollisionShape2D@76" type="CollisionShape2D" parent="StaticBody2D/Map1_City_DekorJalan#StreetBushTop_4/Map1_City_DekorJalan#StreetBushTop_4_Collision"]
+position = Vector2(12, 8)
+shape = SubResource("CircleShape2D_dhd3r")
 
-[node name="Map1_City_DekorJalan#StreetBushTop_5" type="Sprite2D" parent="."]
+[node name="Map1_City_DekorJalan#StreetBushTop_5" type="Sprite2D" parent="StaticBody2D"]
 position = Vector2(170, 2067)
 scale = Vector2(1.17857, 1.01667)
 texture = ExtResource("5_c")
 
-[node name="Map1_City_DekorJalan#StreetBushTop_5_Collision" type="StaticBody2D" parent="Map1_City_DekorJalan#StreetBushTop_5"]
+[node name="Map1_City_DekorJalan#StreetBushTop_5_Collision" type="StaticBody2D" parent="StaticBody2D/Map1_City_DekorJalan#StreetBushTop_5"]
 
-[node name="@CollisionShape2D@77" type="CollisionShape2D" parent="Map1_City_DekorJalan#StreetBushTop_5/Map1_City_DekorJalan#StreetBushTop_5_Collision"]
-position = Vector2(2, -2)
-shape = SubResource("RectangleShape2D_ny645")
+[node name="@CollisionShape2D@77" type="CollisionShape2D" parent="StaticBody2D/Map1_City_DekorJalan#StreetBushTop_5/Map1_City_DekorJalan#StreetBushTop_5_Collision"]
+position = Vector2(11.0303, 9.83614)
+shape = SubResource("CircleShape2D_h04cm")
 
-[node name="Map1_City_DekorJalan#StreetBushTop_6" type="Sprite2D" parent="."]
+[node name="Map1_City_DekorJalan#StreetBushTop_6" type="Sprite2D" parent="StaticBody2D"]
 position = Vector2(2186, 968)
 texture = ExtResource("5_c")
 
-[node name="Map1_City_DekorJalan#StreetBushTop_6_Collision" type="StaticBody2D" parent="Map1_City_DekorJalan#StreetBushTop_6"]
+[node name="Map1_City_DekorJalan#StreetBushTop_6_Collision" type="StaticBody2D" parent="StaticBody2D/Map1_City_DekorJalan#StreetBushTop_6"]
 
-[node name="@CollisionShape2D@78" type="CollisionShape2D" parent="Map1_City_DekorJalan#StreetBushTop_6/Map1_City_DekorJalan#StreetBushTop_6_Collision"]
-position = Vector2(2, -2)
-shape = SubResource("RectangleShape2D_wphc2")
+[node name="@CollisionShape2D@78" type="CollisionShape2D" parent="StaticBody2D/Map1_City_DekorJalan#StreetBushTop_6/Map1_City_DekorJalan#StreetBushTop_6_Collision"]
+position = Vector2(9, 5)
+shape = SubResource("CircleShape2D_tppsj")
 
-[node name="Map1_City_DekorJalan#StreetTreeSide_0" type="Sprite2D" parent="."]
+[node name="Map1_City_DekorJalan#StreetTreeSide_0" type="Sprite2D" parent="StaticBody2D"]
 position = Vector2(1939, 375)
 texture = ExtResource("1_c")
 
-[node name="Map1_City_DekorJalan#StreetTreeSide_0_Collision" type="StaticBody2D" parent="Map1_City_DekorJalan#StreetTreeSide_0"]
+[node name="Map1_City_DekorJalan#StreetTreeSide_0_Collision" type="StaticBody2D" parent="StaticBody2D/Map1_City_DekorJalan#StreetTreeSide_0"]
 
-[node name="@CollisionShape2D@79" type="CollisionShape2D" parent="Map1_City_DekorJalan#StreetTreeSide_0/Map1_City_DekorJalan#StreetTreeSide_0_Collision"]
-position = Vector2(3, 77.725)
+[node name="@CollisionShape2D@79" type="CollisionShape2D" parent="StaticBody2D/Map1_City_DekorJalan#StreetTreeSide_0/Map1_City_DekorJalan#StreetTreeSide_0_Collision"]
+position = Vector2(16.5, 72.5)
 shape = SubResource("RectangleShape2D_l5gxf")
 
-[node name="Map1_City_DekorJalan#StreetTreeSide_1" type="Sprite2D" parent="."]
+[node name="Map1_City_DekorJalan#StreetTreeSide_1" type="Sprite2D" parent="StaticBody2D"]
 position = Vector2(1341, 470)
 texture = ExtResource("1_c")
 
-[node name="Map1_City_DekorJalan#StreetTreeSide_1_Collision" type="StaticBody2D" parent="Map1_City_DekorJalan#StreetTreeSide_1"]
+[node name="Map1_City_DekorJalan#StreetTreeSide_1_Collision" type="StaticBody2D" parent="StaticBody2D/Map1_City_DekorJalan#StreetTreeSide_1"]
 
-[node name="@CollisionShape2D@80" type="CollisionShape2D" parent="Map1_City_DekorJalan#StreetTreeSide_1/Map1_City_DekorJalan#StreetTreeSide_1_Collision"]
-position = Vector2(3, 77.725)
+[node name="@CollisionShape2D@80" type="CollisionShape2D" parent="StaticBody2D/Map1_City_DekorJalan#StreetTreeSide_1/Map1_City_DekorJalan#StreetTreeSide_1_Collision"]
+position = Vector2(16, 73)
 shape = SubResource("RectangleShape2D_1urfl")
 
-[node name="Map1_City_DekorJalan#StreetTreeSide_2" type="Sprite2D" parent="."]
+[node name="Map1_City_DekorJalan#StreetTreeSide_2" type="Sprite2D" parent="StaticBody2D"]
 position = Vector2(1348, 1589)
 texture = ExtResource("1_c")
 
-[node name="Map1_City_DekorJalan#StreetTreeSide_2_Collision" type="StaticBody2D" parent="Map1_City_DekorJalan#StreetTreeSide_2"]
+[node name="Map1_City_DekorJalan#StreetTreeSide_2_Collision" type="StaticBody2D" parent="StaticBody2D/Map1_City_DekorJalan#StreetTreeSide_2"]
 
-[node name="@CollisionShape2D@81" type="CollisionShape2D" parent="Map1_City_DekorJalan#StreetTreeSide_2/Map1_City_DekorJalan#StreetTreeSide_2_Collision"]
-position = Vector2(3, 77.725)
+[node name="@CollisionShape2D@81" type="CollisionShape2D" parent="StaticBody2D/Map1_City_DekorJalan#StreetTreeSide_2/Map1_City_DekorJalan#StreetTreeSide_2_Collision"]
+position = Vector2(15.5, 71.5)
 shape = SubResource("RectangleShape2D_l8apr")
 
-[node name="Map1_City_DekorJalan#StreetTreeSide_3" type="Sprite2D" parent="."]
+[node name="Map1_City_DekorJalan#StreetTreeSide_3" type="Sprite2D" parent="StaticBody2D"]
 position = Vector2(1316, 2026)
 texture = ExtResource("1_c")
 
-[node name="Map1_City_DekorJalan#StreetTreeSide_3_Collision" type="StaticBody2D" parent="Map1_City_DekorJalan#StreetTreeSide_3"]
+[node name="Map1_City_DekorJalan#StreetTreeSide_3_Collision" type="StaticBody2D" parent="StaticBody2D/Map1_City_DekorJalan#StreetTreeSide_3"]
 
-[node name="@CollisionShape2D@82" type="CollisionShape2D" parent="Map1_City_DekorJalan#StreetTreeSide_3/Map1_City_DekorJalan#StreetTreeSide_3_Collision"]
-position = Vector2(3, 77.725)
+[node name="@CollisionShape2D@82" type="CollisionShape2D" parent="StaticBody2D/Map1_City_DekorJalan#StreetTreeSide_3/Map1_City_DekorJalan#StreetTreeSide_3_Collision"]
+position = Vector2(17.5, 72.5)
 shape = SubResource("RectangleShape2D_wr4gg")
 
-[node name="Map1_City_DekorJalan#StreetBushSide_0" type="Sprite2D" parent="."]
+[node name="Map1_City_DekorJalan#StreetBushSide_0" type="Sprite2D" parent="StaticBody2D"]
 position = Vector2(1823, 388)
 texture = ExtResource("5_c")
 
-[node name="Map1_City_DekorJalan#StreetBushSide_0_Collision" type="StaticBody2D" parent="Map1_City_DekorJalan#StreetBushSide_0"]
+[node name="Map1_City_DekorJalan#StreetBushSide_0_Collision" type="StaticBody2D" parent="StaticBody2D/Map1_City_DekorJalan#StreetBushSide_0"]
 
-[node name="@CollisionShape2D@83" type="CollisionShape2D" parent="Map1_City_DekorJalan#StreetBushSide_0/Map1_City_DekorJalan#StreetBushSide_0_Collision"]
-position = Vector2(2, -2)
-shape = SubResource("RectangleShape2D_oao2j")
+[node name="@CollisionShape2D@83" type="CollisionShape2D" parent="StaticBody2D/Map1_City_DekorJalan#StreetBushSide_0/Map1_City_DekorJalan#StreetBushSide_0_Collision"]
+position = Vector2(11, 10)
+shape = SubResource("CircleShape2D_fhuyo")
 
-[node name="Map1_City_DekorJalan#StreetBushSide_1" type="Sprite2D" parent="."]
+[node name="Map1_City_DekorJalan#StreetBushSide_1" type="Sprite2D" parent="StaticBody2D"]
 position = Vector2(952, 1477)
 texture = ExtResource("5_c")
 
-[node name="Map1_City_DekorJalan#StreetBushSide_1_Collision" type="StaticBody2D" parent="Map1_City_DekorJalan#StreetBushSide_1"]
+[node name="Map1_City_DekorJalan#StreetBushSide_1_Collision" type="StaticBody2D" parent="StaticBody2D/Map1_City_DekorJalan#StreetBushSide_1"]
 
-[node name="@CollisionShape2D@84" type="CollisionShape2D" parent="Map1_City_DekorJalan#StreetBushSide_1/Map1_City_DekorJalan#StreetBushSide_1_Collision"]
-position = Vector2(2, -2)
-shape = SubResource("RectangleShape2D_ud07j")
+[node name="@CollisionShape2D@84" type="CollisionShape2D" parent="StaticBody2D/Map1_City_DekorJalan#StreetBushSide_1/Map1_City_DekorJalan#StreetBushSide_1_Collision"]
+position = Vector2(11, 9)
+shape = SubResource("CircleShape2D_lf4a4")
 
-[node name="Map1_City_DekorJalan#StreetBushSide_2" type="Sprite2D" parent="."]
+[node name="Map1_City_DekorJalan#StreetBushSide_2" type="Sprite2D" parent="StaticBody2D"]
 position = Vector2(1033, 576)
 texture = ExtResource("5_c")
 
-[node name="Map1_City_DekorJalan#StreetBushSide_2_Collision" type="StaticBody2D" parent="Map1_City_DekorJalan#StreetBushSide_2"]
+[node name="Map1_City_DekorJalan#StreetBushSide_2_Collision" type="StaticBody2D" parent="StaticBody2D/Map1_City_DekorJalan#StreetBushSide_2"]
 
-[node name="@CollisionShape2D@85" type="CollisionShape2D" parent="Map1_City_DekorJalan#StreetBushSide_2/Map1_City_DekorJalan#StreetBushSide_2_Collision"]
-position = Vector2(2, -2)
-shape = SubResource("RectangleShape2D_3il4b")
+[node name="@CollisionShape2D@85" type="CollisionShape2D" parent="StaticBody2D/Map1_City_DekorJalan#StreetBushSide_2/Map1_City_DekorJalan#StreetBushSide_2_Collision"]
+position = Vector2(8, 7)
+shape = SubResource("CircleShape2D_knds6")
 
-[node name="Map1_City_DekorJalan#StreetBushSide_3" type="Sprite2D" parent="."]
+[node name="Map1_City_DekorJalan#StreetBushSide_3" type="Sprite2D" parent="StaticBody2D"]
 position = Vector2(766, 198)
 texture = ExtResource("5_c")
 
-[node name="Map1_City_DekorJalan#StreetBushSide_3_Collision" type="StaticBody2D" parent="Map1_City_DekorJalan#StreetBushSide_3"]
+[node name="Map1_City_DekorJalan#StreetBushSide_3_Collision" type="StaticBody2D" parent="StaticBody2D/Map1_City_DekorJalan#StreetBushSide_3"]
 
-[node name="@CollisionShape2D@86" type="CollisionShape2D" parent="Map1_City_DekorJalan#StreetBushSide_3/Map1_City_DekorJalan#StreetBushSide_3_Collision"]
-position = Vector2(2, -2)
-shape = SubResource("RectangleShape2D_31q6n")
+[node name="@CollisionShape2D@86" type="CollisionShape2D" parent="StaticBody2D/Map1_City_DekorJalan#StreetBushSide_3/Map1_City_DekorJalan#StreetBushSide_3_Collision"]
+position = Vector2(11, 8)
+shape = SubResource("CircleShape2D_3nwg0")
 
-[node name="Map1_City_DekorJalan#XBush1" type="Sprite2D" parent="."]
+[node name="Map1_City_DekorJalan#XBush1" type="Sprite2D" parent="StaticBody2D"]
 position = Vector2(1021, 423)
 texture = ExtResource("5_c")
 
-[node name="Map1_City_DekorJalan#XBush1_Collision" type="StaticBody2D" parent="Map1_City_DekorJalan#XBush1"]
+[node name="Map1_City_DekorJalan#XBush1_Collision" type="StaticBody2D" parent="StaticBody2D/Map1_City_DekorJalan#XBush1"]
 
-[node name="@CollisionShape2D@87" type="CollisionShape2D" parent="Map1_City_DekorJalan#XBush1/Map1_City_DekorJalan#XBush1_Collision"]
-position = Vector2(2, -2)
-shape = SubResource("RectangleShape2D_ux37n")
+[node name="@CollisionShape2D@87" type="CollisionShape2D" parent="StaticBody2D/Map1_City_DekorJalan#XBush1/Map1_City_DekorJalan#XBush1_Collision"]
+position = Vector2(14, 11)
+shape = SubResource("CircleShape2D_gn1qy")
 
-[node name="Map1_City_DekorJalan#XBush2" type="Sprite2D" parent="."]
+[node name="Map1_City_DekorJalan#XBush2" type="Sprite2D" parent="StaticBody2D"]
 position = Vector2(1983, 968)
 scale = Vector2(1, 0.966667)
 texture = ExtResource("5_c")
 
-[node name="Map1_City_DekorJalan#XBush2_Collision" type="StaticBody2D" parent="Map1_City_DekorJalan#XBush2"]
+[node name="Map1_City_DekorJalan#XBush2_Collision" type="StaticBody2D" parent="StaticBody2D/Map1_City_DekorJalan#XBush2"]
 
-[node name="@CollisionShape2D@88" type="CollisionShape2D" parent="Map1_City_DekorJalan#XBush2/Map1_City_DekorJalan#XBush2_Collision"]
-position = Vector2(2, -2)
-shape = SubResource("RectangleShape2D_c7po4")
+[node name="@CollisionShape2D@88" type="CollisionShape2D" parent="StaticBody2D/Map1_City_DekorJalan#XBush2/Map1_City_DekorJalan#XBush2_Collision"]
+position = Vector2(8, 10.3448)
+shape = SubResource("CircleShape2D_hoajt")
 
-[node name="Map1_City_DekorJalan#XBush3" type="Sprite2D" parent="."]
+[node name="Map1_City_DekorJalan#XBush3" type="Sprite2D" parent="StaticBody2D"]
 position = Vector2(2094, 3465)
 texture = ExtResource("5_c")
 
-[node name="Map1_City_DekorJalan#XBush3_Collision" type="StaticBody2D" parent="Map1_City_DekorJalan#XBush3"]
+[node name="Map1_City_DekorJalan#XBush3_Collision" type="StaticBody2D" parent="StaticBody2D/Map1_City_DekorJalan#XBush3"]
 
-[node name="@CollisionShape2D@89" type="CollisionShape2D" parent="Map1_City_DekorJalan#XBush3/Map1_City_DekorJalan#XBush3_Collision"]
-position = Vector2(2, -2)
+[node name="@CollisionShape2D@89" type="CollisionShape2D" parent="StaticBody2D/Map1_City_DekorJalan#XBush3/Map1_City_DekorJalan#XBush3_Collision"]
+position = Vector2(10, 10)
 shape = SubResource("RectangleShape2D_duwh2")
 
-[node name="Map1_City_DekorJalan#XBush4" type="Sprite2D" parent="."]
+[node name="Map1_City_DekorJalan#XBush4" type="Sprite2D" parent="StaticBody2D"]
 position = Vector2(2338, 221)
 texture = ExtResource("5_c")
 
-[node name="Map1_City_DekorJalan#XBush4_Collision" type="StaticBody2D" parent="Map1_City_DekorJalan#XBush4"]
+[node name="Map1_City_DekorJalan#XBush4_Collision" type="StaticBody2D" parent="StaticBody2D/Map1_City_DekorJalan#XBush4"]
 
-[node name="@CollisionShape2D@90" type="CollisionShape2D" parent="Map1_City_DekorJalan#XBush4/Map1_City_DekorJalan#XBush4_Collision"]
-position = Vector2(2, -2)
-shape = SubResource("RectangleShape2D_7uhyi")
+[node name="@CollisionShape2D@90" type="CollisionShape2D" parent="StaticBody2D/Map1_City_DekorJalan#XBush4/Map1_City_DekorJalan#XBush4_Collision"]
+position = Vector2(13, 7)
+shape = SubResource("CircleShape2D_8red2")
 
-[node name="Map1_City#Fence" type="Node2D" parent="."]
+[node name="Map1_City#Fence" type="Node2D" parent="StaticBody2D"]
 
-[node name="Map1_City_Fence#FenceTop_0" type="Sprite2D" parent="."]
+[node name="Map1_City_Fence#FenceTop_0" type="Sprite2D" parent="StaticBody2D"]
 position = Vector2(150, 60)
 texture = ExtResource("3_c")
 
-[node name="Map1_City_Fence#FenceTop_0_Collision" type="StaticBody2D" parent="Map1_City_Fence#FenceTop_0"]
+[node name="Map1_City_Fence#FenceTop_0_Collision" type="StaticBody2D" parent="StaticBody2D/Map1_City_Fence#FenceTop_0"]
 
-[node name="@CollisionShape2D@91" type="CollisionShape2D" parent="Map1_City_Fence#FenceTop_0/Map1_City_Fence#FenceTop_0_Collision"]
+[node name="@CollisionShape2D@91" type="CollisionShape2D" parent="StaticBody2D/Map1_City_Fence#FenceTop_0/Map1_City_Fence#FenceTop_0_Collision"]
 position = Vector2(-3, 1)
 shape = SubResource("RectangleShape2D_tsqj6")
 
-[node name="Map1_City_Fence#FenceBottom_0" type="Sprite2D" parent="."]
+[node name="Map1_City_Fence#FenceBottom_0" type="Sprite2D" parent="StaticBody2D"]
 position = Vector2(150, 2340)
 texture = ExtResource("3_c")
 
-[node name="Map1_City_Fence#FenceBottom_0_Collision" type="StaticBody2D" parent="Map1_City_Fence#FenceBottom_0"]
+[node name="Map1_City_Fence#FenceBottom_0_Collision" type="StaticBody2D" parent="StaticBody2D/Map1_City_Fence#FenceBottom_0"]
 
-[node name="@CollisionShape2D@92" type="CollisionShape2D" parent="Map1_City_Fence#FenceBottom_0/Map1_City_Fence#FenceBottom_0_Collision"]
+[node name="@CollisionShape2D@92" type="CollisionShape2D" parent="StaticBody2D/Map1_City_Fence#FenceBottom_0/Map1_City_Fence#FenceBottom_0_Collision"]
 position = Vector2(-3, 1)
 shape = SubResource("RectangleShape2D_et41c")
 
-[node name="Map1_City_Fence#FenceTop_1" type="Sprite2D" parent="."]
+[node name="Map1_City_Fence#FenceTop_1" type="Sprite2D" parent="StaticBody2D"]
 position = Vector2(370, 60)
 texture = ExtResource("3_c")
 
-[node name="Map1_City_Fence#FenceTop_1_Collision" type="StaticBody2D" parent="Map1_City_Fence#FenceTop_1"]
+[node name="Map1_City_Fence#FenceTop_1_Collision" type="StaticBody2D" parent="StaticBody2D/Map1_City_Fence#FenceTop_1"]
 
-[node name="@CollisionShape2D@93" type="CollisionShape2D" parent="Map1_City_Fence#FenceTop_1/Map1_City_Fence#FenceTop_1_Collision"]
+[node name="@CollisionShape2D@93" type="CollisionShape2D" parent="StaticBody2D/Map1_City_Fence#FenceTop_1/Map1_City_Fence#FenceTop_1_Collision"]
 position = Vector2(-3, 1)
 shape = SubResource("RectangleShape2D_0ba7g")
 
-[node name="Map1_City_Fence#FenceBottom_1" type="Sprite2D" parent="."]
+[node name="Map1_City_Fence#FenceBottom_1" type="Sprite2D" parent="StaticBody2D"]
 position = Vector2(370, 2340)
 texture = ExtResource("3_c")
 
-[node name="Map1_City_Fence#FenceBottom_1_Collision" type="StaticBody2D" parent="Map1_City_Fence#FenceBottom_1"]
+[node name="Map1_City_Fence#FenceBottom_1_Collision" type="StaticBody2D" parent="StaticBody2D/Map1_City_Fence#FenceBottom_1"]
 
-[node name="@CollisionShape2D@94" type="CollisionShape2D" parent="Map1_City_Fence#FenceBottom_1/Map1_City_Fence#FenceBottom_1_Collision"]
+[node name="@CollisionShape2D@94" type="CollisionShape2D" parent="StaticBody2D/Map1_City_Fence#FenceBottom_1/Map1_City_Fence#FenceBottom_1_Collision"]
 position = Vector2(-3, 1)
 shape = SubResource("RectangleShape2D_pj2gq")
 
-[node name="Map1_City_Fence#FenceTop_2" type="Sprite2D" parent="."]
+[node name="Map1_City_Fence#FenceTop_2" type="Sprite2D" parent="StaticBody2D"]
 position = Vector2(590, 60)
 texture = ExtResource("3_c")
 
-[node name="Map1_City_Fence#FenceTop_2_Collision" type="StaticBody2D" parent="Map1_City_Fence#FenceTop_2"]
+[node name="Map1_City_Fence#FenceTop_2_Collision" type="StaticBody2D" parent="StaticBody2D/Map1_City_Fence#FenceTop_2"]
 
-[node name="@CollisionShape2D@95" type="CollisionShape2D" parent="Map1_City_Fence#FenceTop_2/Map1_City_Fence#FenceTop_2_Collision"]
+[node name="@CollisionShape2D@95" type="CollisionShape2D" parent="StaticBody2D/Map1_City_Fence#FenceTop_2/Map1_City_Fence#FenceTop_2_Collision"]
 position = Vector2(-3, 1)
 shape = SubResource("RectangleShape2D_4d14o")
 
-[node name="Map1_City_Fence#FenceBottom_2" type="Sprite2D" parent="."]
+[node name="Map1_City_Fence#FenceBottom_2" type="Sprite2D" parent="StaticBody2D"]
 position = Vector2(590, 2340)
 texture = ExtResource("3_c")
 
-[node name="Map1_City_Fence#FenceBottom_2_Collision" type="StaticBody2D" parent="Map1_City_Fence#FenceBottom_2"]
+[node name="Map1_City_Fence#FenceBottom_2_Collision" type="StaticBody2D" parent="StaticBody2D/Map1_City_Fence#FenceBottom_2"]
 
-[node name="@CollisionShape2D@96" type="CollisionShape2D" parent="Map1_City_Fence#FenceBottom_2/Map1_City_Fence#FenceBottom_2_Collision"]
+[node name="@CollisionShape2D@96" type="CollisionShape2D" parent="StaticBody2D/Map1_City_Fence#FenceBottom_2/Map1_City_Fence#FenceBottom_2_Collision"]
 position = Vector2(-3, 1)
 shape = SubResource("RectangleShape2D_25dwo")
 
-[node name="Map1_City_Fence#FenceTop_3" type="Sprite2D" parent="."]
+[node name="Map1_City_Fence#FenceTop_3" type="Sprite2D" parent="StaticBody2D"]
 position = Vector2(810, 60)
 texture = ExtResource("3_c")
 
-[node name="Map1_City_Fence#FenceTop_3_Collision" type="StaticBody2D" parent="Map1_City_Fence#FenceTop_3"]
+[node name="Map1_City_Fence#FenceTop_3_Collision" type="StaticBody2D" parent="StaticBody2D/Map1_City_Fence#FenceTop_3"]
 
-[node name="@CollisionShape2D@97" type="CollisionShape2D" parent="Map1_City_Fence#FenceTop_3/Map1_City_Fence#FenceTop_3_Collision"]
+[node name="@CollisionShape2D@97" type="CollisionShape2D" parent="StaticBody2D/Map1_City_Fence#FenceTop_3/Map1_City_Fence#FenceTop_3_Collision"]
 position = Vector2(-3, 1)
 shape = SubResource("RectangleShape2D_if8cf")
 
-[node name="Map1_City_Fence#FenceBottom_3" type="Sprite2D" parent="."]
+[node name="Map1_City_Fence#FenceBottom_3" type="Sprite2D" parent="StaticBody2D"]
 position = Vector2(810, 2340)
 texture = ExtResource("3_c")
 
-[node name="Map1_City_Fence#FenceBottom_3_Collision" type="StaticBody2D" parent="Map1_City_Fence#FenceBottom_3"]
+[node name="Map1_City_Fence#FenceBottom_3_Collision" type="StaticBody2D" parent="StaticBody2D/Map1_City_Fence#FenceBottom_3"]
 
-[node name="@CollisionShape2D@98" type="CollisionShape2D" parent="Map1_City_Fence#FenceBottom_3/Map1_City_Fence#FenceBottom_3_Collision"]
+[node name="@CollisionShape2D@98" type="CollisionShape2D" parent="StaticBody2D/Map1_City_Fence#FenceBottom_3/Map1_City_Fence#FenceBottom_3_Collision"]
 position = Vector2(-3, 1)
 shape = SubResource("RectangleShape2D_cwvx8")
 
-[node name="Map1_City_Fence#FenceTop_4" type="Sprite2D" parent="."]
+[node name="Map1_City_Fence#FenceTop_4" type="Sprite2D" parent="StaticBody2D"]
 position = Vector2(1030, 60)
 texture = ExtResource("3_c")
 
-[node name="Map1_City_Fence#FenceTop_4_Collision" type="StaticBody2D" parent="Map1_City_Fence#FenceTop_4"]
+[node name="Map1_City_Fence#FenceTop_4_Collision" type="StaticBody2D" parent="StaticBody2D/Map1_City_Fence#FenceTop_4"]
 
-[node name="@CollisionShape2D@99" type="CollisionShape2D" parent="Map1_City_Fence#FenceTop_4/Map1_City_Fence#FenceTop_4_Collision"]
+[node name="@CollisionShape2D@99" type="CollisionShape2D" parent="StaticBody2D/Map1_City_Fence#FenceTop_4/Map1_City_Fence#FenceTop_4_Collision"]
 position = Vector2(-3, 1)
 shape = SubResource("RectangleShape2D_eocey")
 
-[node name="Map1_City_Fence#FenceBottom_4" type="Sprite2D" parent="."]
+[node name="Map1_City_Fence#FenceBottom_4" type="Sprite2D" parent="StaticBody2D"]
 position = Vector2(1030, 2340)
 texture = ExtResource("3_c")
 
-[node name="Map1_City_Fence#FenceBottom_4_Collision" type="StaticBody2D" parent="Map1_City_Fence#FenceBottom_4"]
+[node name="Map1_City_Fence#FenceBottom_4_Collision" type="StaticBody2D" parent="StaticBody2D/Map1_City_Fence#FenceBottom_4"]
 
-[node name="@CollisionShape2D@100" type="CollisionShape2D" parent="Map1_City_Fence#FenceBottom_4/Map1_City_Fence#FenceBottom_4_Collision"]
+[node name="@CollisionShape2D@100" type="CollisionShape2D" parent="StaticBody2D/Map1_City_Fence#FenceBottom_4/Map1_City_Fence#FenceBottom_4_Collision"]
 position = Vector2(-3, 1)
 shape = SubResource("RectangleShape2D_bigjk")
 
-[node name="Map1_City_Fence#FenceTop_5" type="Sprite2D" parent="."]
+[node name="Map1_City_Fence#FenceTop_5" type="Sprite2D" parent="StaticBody2D"]
 position = Vector2(1250, 60)
 texture = ExtResource("3_c")
 
-[node name="Map1_City_Fence#FenceTop_5_Collision" type="StaticBody2D" parent="Map1_City_Fence#FenceTop_5"]
+[node name="Map1_City_Fence#FenceTop_5_Collision" type="StaticBody2D" parent="StaticBody2D/Map1_City_Fence#FenceTop_5"]
 
-[node name="@CollisionShape2D@101" type="CollisionShape2D" parent="Map1_City_Fence#FenceTop_5/Map1_City_Fence#FenceTop_5_Collision"]
+[node name="@CollisionShape2D@101" type="CollisionShape2D" parent="StaticBody2D/Map1_City_Fence#FenceTop_5/Map1_City_Fence#FenceTop_5_Collision"]
 position = Vector2(-3, 1)
 shape = SubResource("RectangleShape2D_3ldnv")
 
-[node name="Map1_City_Fence#FenceBottom_5" type="Sprite2D" parent="."]
+[node name="Map1_City_Fence#FenceBottom_5" type="Sprite2D" parent="StaticBody2D"]
 position = Vector2(1250, 2340)
 texture = ExtResource("3_c")
 
-[node name="Map1_City_Fence#FenceBottom_5_Collision" type="StaticBody2D" parent="Map1_City_Fence#FenceBottom_5"]
+[node name="Map1_City_Fence#FenceBottom_5_Collision" type="StaticBody2D" parent="StaticBody2D/Map1_City_Fence#FenceBottom_5"]
 
-[node name="@CollisionShape2D@102" type="CollisionShape2D" parent="Map1_City_Fence#FenceBottom_5/Map1_City_Fence#FenceBottom_5_Collision"]
+[node name="@CollisionShape2D@102" type="CollisionShape2D" parent="StaticBody2D/Map1_City_Fence#FenceBottom_5/Map1_City_Fence#FenceBottom_5_Collision"]
 position = Vector2(-3, 1)
 shape = SubResource("RectangleShape2D_ru0fj")
 
-[node name="Map1_City_Fence#FenceTop_8" type="Sprite2D" parent="."]
+[node name="Map1_City_Fence#FenceTop_8" type="Sprite2D" parent="StaticBody2D"]
 position = Vector2(2098, 60)
 texture = ExtResource("3_c")
 
-[node name="Map1_City_Fence#FenceTop_8_Collision" type="StaticBody2D" parent="Map1_City_Fence#FenceTop_8"]
+[node name="Map1_City_Fence#FenceTop_8_Collision" type="StaticBody2D" parent="StaticBody2D/Map1_City_Fence#FenceTop_8"]
 
-[node name="@CollisionShape2D@103" type="CollisionShape2D" parent="Map1_City_Fence#FenceTop_8/Map1_City_Fence#FenceTop_8_Collision"]
+[node name="@CollisionShape2D@103" type="CollisionShape2D" parent="StaticBody2D/Map1_City_Fence#FenceTop_8/Map1_City_Fence#FenceTop_8_Collision"]
 position = Vector2(-3, 1)
 shape = SubResource("RectangleShape2D_dd7y7")
 
-[node name="Map1_City_Fence#FenceTop_9" type="Sprite2D" parent="."]
+[node name="Map1_City_Fence#FenceTop_9" type="Sprite2D" parent="StaticBody2D"]
 position = Vector2(2305, 63)
 texture = ExtResource("3_c")
 
-[node name="Map1_City_Fence#FenceTop_9_Collision" type="StaticBody2D" parent="Map1_City_Fence#FenceTop_9"]
+[node name="Map1_City_Fence#FenceTop_9_Collision" type="StaticBody2D" parent="StaticBody2D/Map1_City_Fence#FenceTop_9"]
 
-[node name="@CollisionShape2D@104" type="CollisionShape2D" parent="Map1_City_Fence#FenceTop_9/Map1_City_Fence#FenceTop_9_Collision"]
+[node name="@CollisionShape2D@104" type="CollisionShape2D" parent="StaticBody2D/Map1_City_Fence#FenceTop_9/Map1_City_Fence#FenceTop_9_Collision"]
 position = Vector2(-3, 1)
 shape = SubResource("RectangleShape2D_hj7ta")
 
-[node name="Map1_City_Fence#FenceBottom_9" type="Sprite2D" parent="."]
+[node name="Map1_City_Fence#FenceBottom_9" type="Sprite2D" parent="StaticBody2D"]
 position = Vector2(2130, 2340)
 texture = ExtResource("3_c")
 
-[node name="Map1_City_Fence#FenceBottom_9_Collision" type="StaticBody2D" parent="Map1_City_Fence#FenceBottom_9"]
+[node name="Map1_City_Fence#FenceBottom_9_Collision" type="StaticBody2D" parent="StaticBody2D/Map1_City_Fence#FenceBottom_9"]
 
-[node name="@CollisionShape2D@105" type="CollisionShape2D" parent="Map1_City_Fence#FenceBottom_9/Map1_City_Fence#FenceBottom_9_Collision"]
+[node name="@CollisionShape2D@105" type="CollisionShape2D" parent="StaticBody2D/Map1_City_Fence#FenceBottom_9/Map1_City_Fence#FenceBottom_9_Collision"]
 position = Vector2(-3, 1)
 shape = SubResource("RectangleShape2D_tvlm8")
 
-[node name="Map1_City_Fence#FenceBottom_10" type="Sprite2D" parent="."]
+[node name="Map1_City_Fence#FenceBottom_10" type="Sprite2D" parent="StaticBody2D"]
 position = Vector2(2350, 2340)
 texture = ExtResource("3_c")
 
-[node name="Map1_City_Fence#FenceBottom_10_Collision" type="StaticBody2D" parent="Map1_City_Fence#FenceBottom_10"]
+[node name="Map1_City_Fence#FenceBottom_10_Collision" type="StaticBody2D" parent="StaticBody2D/Map1_City_Fence#FenceBottom_10"]
 
-[node name="@CollisionShape2D@106" type="CollisionShape2D" parent="Map1_City_Fence#FenceBottom_10/Map1_City_Fence#FenceBottom_10_Collision"]
+[node name="@CollisionShape2D@106" type="CollisionShape2D" parent="StaticBody2D/Map1_City_Fence#FenceBottom_10/Map1_City_Fence#FenceBottom_10_Collision"]
 position = Vector2(-3, 1)
 shape = SubResource("RectangleShape2D_5d11y")
 
-[node name="Map1_City_Fence#FenceBottom_11" type="Sprite2D" parent="."]
+[node name="Map1_City_Fence#FenceBottom_11" type="Sprite2D" parent="StaticBody2D"]
 position = Vector2(2570, 2340)
 texture = ExtResource("3_c")
 
-[node name="Map1_City_Fence#FenceBottom_11_Collision" type="StaticBody2D" parent="Map1_City_Fence#FenceBottom_11"]
+[node name="Map1_City_Fence#FenceBottom_11_Collision" type="StaticBody2D" parent="StaticBody2D/Map1_City_Fence#FenceBottom_11"]
 
-[node name="@CollisionShape2D@107" type="CollisionShape2D" parent="Map1_City_Fence#FenceBottom_11/Map1_City_Fence#FenceBottom_11_Collision"]
+[node name="@CollisionShape2D@107" type="CollisionShape2D" parent="StaticBody2D/Map1_City_Fence#FenceBottom_11/Map1_City_Fence#FenceBottom_11_Collision"]
 position = Vector2(-3, 1)
 shape = SubResource("RectangleShape2D_goptj")
 
-[node name="Map1_City_Fence#FenceTop_12" type="Sprite2D" parent="."]
+[node name="Map1_City_Fence#FenceTop_12" type="Sprite2D" parent="StaticBody2D"]
 position = Vector2(2790, 60)
 texture = ExtResource("3_c")
 
-[node name="Map1_City_Fence#FenceTop_12_Collision" type="StaticBody2D" parent="Map1_City_Fence#FenceTop_12"]
+[node name="Map1_City_Fence#FenceTop_12_Collision" type="StaticBody2D" parent="StaticBody2D/Map1_City_Fence#FenceTop_12"]
 
-[node name="@CollisionShape2D@108" type="CollisionShape2D" parent="Map1_City_Fence#FenceTop_12/Map1_City_Fence#FenceTop_12_Collision"]
+[node name="@CollisionShape2D@108" type="CollisionShape2D" parent="StaticBody2D/Map1_City_Fence#FenceTop_12/Map1_City_Fence#FenceTop_12_Collision"]
 position = Vector2(-3, 1)
 shape = SubResource("RectangleShape2D_p7ob4")
 
-[node name="Map1_City_Fence#FenceBottom_12" type="Sprite2D" parent="."]
+[node name="Map1_City_Fence#FenceBottom_12" type="Sprite2D" parent="StaticBody2D"]
 position = Vector2(2790, 2340)
 texture = ExtResource("3_c")
 
-[node name="Map1_City_Fence#FenceBottom_12_Collision" type="StaticBody2D" parent="Map1_City_Fence#FenceBottom_12"]
+[node name="Map1_City_Fence#FenceBottom_12_Collision" type="StaticBody2D" parent="StaticBody2D/Map1_City_Fence#FenceBottom_12"]
 
-[node name="@CollisionShape2D@109" type="CollisionShape2D" parent="Map1_City_Fence#FenceBottom_12/Map1_City_Fence#FenceBottom_12_Collision"]
+[node name="@CollisionShape2D@109" type="CollisionShape2D" parent="StaticBody2D/Map1_City_Fence#FenceBottom_12/Map1_City_Fence#FenceBottom_12_Collision"]
 position = Vector2(-3, 1)
 shape = SubResource("RectangleShape2D_muqvj")
 
-[node name="Map1_City_Fence#FenceTop_13" type="Sprite2D" parent="."]
+[node name="Map1_City_Fence#FenceTop_13" type="Sprite2D" parent="StaticBody2D"]
 position = Vector2(3010, 60)
 texture = ExtResource("3_c")
 
-[node name="Map1_City_Fence#FenceTop_13_Collision" type="StaticBody2D" parent="Map1_City_Fence#FenceTop_13"]
+[node name="Map1_City_Fence#FenceTop_13_Collision" type="StaticBody2D" parent="StaticBody2D/Map1_City_Fence#FenceTop_13"]
 
-[node name="@CollisionShape2D@110" type="CollisionShape2D" parent="Map1_City_Fence#FenceTop_13/Map1_City_Fence#FenceTop_13_Collision"]
+[node name="@CollisionShape2D@110" type="CollisionShape2D" parent="StaticBody2D/Map1_City_Fence#FenceTop_13/Map1_City_Fence#FenceTop_13_Collision"]
 position = Vector2(-3, 1)
 shape = SubResource("RectangleShape2D_rklyx")
 
-[node name="Map1_City_Fence#FenceBottom_13" type="Sprite2D" parent="."]
+[node name="Map1_City_Fence#FenceBottom_13" type="Sprite2D" parent="StaticBody2D"]
 position = Vector2(3010, 2340)
 texture = ExtResource("3_c")
 
-[node name="Map1_City_Fence#FenceBottom_13_Collision" type="StaticBody2D" parent="Map1_City_Fence#FenceBottom_13"]
+[node name="Map1_City_Fence#FenceBottom_13_Collision" type="StaticBody2D" parent="StaticBody2D/Map1_City_Fence#FenceBottom_13"]
 
-[node name="@CollisionShape2D@111" type="CollisionShape2D" parent="Map1_City_Fence#FenceBottom_13/Map1_City_Fence#FenceBottom_13_Collision"]
+[node name="@CollisionShape2D@111" type="CollisionShape2D" parent="StaticBody2D/Map1_City_Fence#FenceBottom_13/Map1_City_Fence#FenceBottom_13_Collision"]
 position = Vector2(-3, 1)
 shape = SubResource("RectangleShape2D_s07px")
 
-[node name="Map1_City_Fence#FenceLeft_14" type="Sprite2D" parent="."]
+[node name="Map1_City_Fence#FenceLeft_14" type="Sprite2D" parent="StaticBody2D"]
 position = Vector2(60, 150)
 texture = ExtResource("4_c")
 
-[node name="Map1_City_Fence#FenceLeft_14_Collision" type="StaticBody2D" parent="Map1_City_Fence#FenceLeft_14"]
+[node name="Map1_City_Fence#FenceLeft_14_Collision" type="StaticBody2D" parent="StaticBody2D/Map1_City_Fence#FenceLeft_14"]
 
-[node name="@CollisionShape2D@112" type="CollisionShape2D" parent="Map1_City_Fence#FenceLeft_14/Map1_City_Fence#FenceLeft_14_Collision"]
+[node name="@CollisionShape2D@112" type="CollisionShape2D" parent="StaticBody2D/Map1_City_Fence#FenceLeft_14/Map1_City_Fence#FenceLeft_14_Collision"]
 shape = SubResource("RectangleShape2D_xkh4j")
 
-[node name="Map1_City_Fence#FenceRight_14" type="Sprite2D" parent="."]
+[node name="Map1_City_Fence#FenceRight_14" type="Sprite2D" parent="StaticBody2D"]
 position = Vector2(3140, 150)
 texture = ExtResource("4_c")
 
-[node name="Map1_City_Fence#FenceRight_14_Collision" type="StaticBody2D" parent="Map1_City_Fence#FenceRight_14"]
+[node name="Map1_City_Fence#FenceRight_14_Collision" type="StaticBody2D" parent="StaticBody2D/Map1_City_Fence#FenceRight_14"]
 
-[node name="@CollisionShape2D@113" type="CollisionShape2D" parent="Map1_City_Fence#FenceRight_14/Map1_City_Fence#FenceRight_14_Collision"]
+[node name="@CollisionShape2D@113" type="CollisionShape2D" parent="StaticBody2D/Map1_City_Fence#FenceRight_14/Map1_City_Fence#FenceRight_14_Collision"]
 shape = SubResource("RectangleShape2D_1v56n")
 
-[node name="Map1_City_Fence#FenceLeft_15" type="Sprite2D" parent="."]
+[node name="Map1_City_Fence#FenceLeft_15" type="Sprite2D" parent="StaticBody2D"]
 position = Vector2(60, 370)
 texture = ExtResource("4_c")
 
-[node name="Map1_City_Fence#FenceLeft_15_Collision" type="StaticBody2D" parent="Map1_City_Fence#FenceLeft_15"]
+[node name="Map1_City_Fence#FenceLeft_15_Collision" type="StaticBody2D" parent="StaticBody2D/Map1_City_Fence#FenceLeft_15"]
 
-[node name="@CollisionShape2D@114" type="CollisionShape2D" parent="Map1_City_Fence#FenceLeft_15/Map1_City_Fence#FenceLeft_15_Collision"]
+[node name="@CollisionShape2D@114" type="CollisionShape2D" parent="StaticBody2D/Map1_City_Fence#FenceLeft_15/Map1_City_Fence#FenceLeft_15_Collision"]
 shape = SubResource("RectangleShape2D_u4h13")
 
-[node name="Map1_City_Fence#FenceRight_15" type="Sprite2D" parent="."]
+[node name="Map1_City_Fence#FenceRight_15" type="Sprite2D" parent="StaticBody2D"]
 position = Vector2(3140, 370)
 texture = ExtResource("4_c")
 
-[node name="Map1_City_Fence#FenceRight_15_Collision" type="StaticBody2D" parent="Map1_City_Fence#FenceRight_15"]
+[node name="Map1_City_Fence#FenceRight_15_Collision" type="StaticBody2D" parent="StaticBody2D/Map1_City_Fence#FenceRight_15"]
 
-[node name="@CollisionShape2D@115" type="CollisionShape2D" parent="Map1_City_Fence#FenceRight_15/Map1_City_Fence#FenceRight_15_Collision"]
+[node name="@CollisionShape2D@115" type="CollisionShape2D" parent="StaticBody2D/Map1_City_Fence#FenceRight_15/Map1_City_Fence#FenceRight_15_Collision"]
 shape = SubResource("RectangleShape2D_ehnex")
 
-[node name="Map1_City_Fence#FenceLeft_16" type="Sprite2D" parent="."]
+[node name="Map1_City_Fence#FenceLeft_16" type="Sprite2D" parent="StaticBody2D"]
 position = Vector2(60, 590)
 texture = ExtResource("4_c")
 
-[node name="Map1_City_Fence#FenceLeft_16_Collision" type="StaticBody2D" parent="Map1_City_Fence#FenceLeft_16"]
+[node name="Map1_City_Fence#FenceLeft_16_Collision" type="StaticBody2D" parent="StaticBody2D/Map1_City_Fence#FenceLeft_16"]
 
-[node name="@CollisionShape2D@116" type="CollisionShape2D" parent="Map1_City_Fence#FenceLeft_16/Map1_City_Fence#FenceLeft_16_Collision"]
+[node name="@CollisionShape2D@116" type="CollisionShape2D" parent="StaticBody2D/Map1_City_Fence#FenceLeft_16/Map1_City_Fence#FenceLeft_16_Collision"]
 shape = SubResource("RectangleShape2D_ywxym")
 
-[node name="Map1_City_Fence#FenceLeft_17" type="Sprite2D" parent="."]
+[node name="Map1_City_Fence#FenceLeft_17" type="Sprite2D" parent="StaticBody2D"]
 position = Vector2(60, 810)
 texture = ExtResource("4_c")
 
-[node name="Map1_City_Fence#FenceLeft_17_Collision" type="StaticBody2D" parent="Map1_City_Fence#FenceLeft_17"]
+[node name="Map1_City_Fence#FenceLeft_17_Collision" type="StaticBody2D" parent="StaticBody2D/Map1_City_Fence#FenceLeft_17"]
 
-[node name="@CollisionShape2D@117" type="CollisionShape2D" parent="Map1_City_Fence#FenceLeft_17/Map1_City_Fence#FenceLeft_17_Collision"]
+[node name="@CollisionShape2D@117" type="CollisionShape2D" parent="StaticBody2D/Map1_City_Fence#FenceLeft_17/Map1_City_Fence#FenceLeft_17_Collision"]
 shape = SubResource("RectangleShape2D_xsurg")
 
-[node name="Map1_City_Fence#FenceRight_17" type="Sprite2D" parent="."]
+[node name="Map1_City_Fence#FenceRight_17" type="Sprite2D" parent="StaticBody2D"]
 position = Vector2(3146, 739)
 texture = ExtResource("4_c")
 
-[node name="Map1_City_Fence#FenceRight_17_Collision" type="StaticBody2D" parent="Map1_City_Fence#FenceRight_17"]
+[node name="Map1_City_Fence#FenceRight_17_Collision" type="StaticBody2D" parent="StaticBody2D/Map1_City_Fence#FenceRight_17"]
 
-[node name="@CollisionShape2D@118" type="CollisionShape2D" parent="Map1_City_Fence#FenceRight_17/Map1_City_Fence#FenceRight_17_Collision"]
+[node name="@CollisionShape2D@118" type="CollisionShape2D" parent="StaticBody2D/Map1_City_Fence#FenceRight_17/Map1_City_Fence#FenceRight_17_Collision"]
 shape = SubResource("RectangleShape2D_3mia3")
 
-[node name="Map1_City_Fence#FenceLeft_20" type="Sprite2D" parent="."]
+[node name="Map1_City_Fence#FenceLeft_20" type="Sprite2D" parent="StaticBody2D"]
 position = Vector2(60, 1470)
 texture = ExtResource("4_c")
 
-[node name="Map1_City_Fence#FenceLeft_20_Collision" type="StaticBody2D" parent="Map1_City_Fence#FenceLeft_20"]
+[node name="Map1_City_Fence#FenceLeft_20_Collision" type="StaticBody2D" parent="StaticBody2D/Map1_City_Fence#FenceLeft_20"]
 
-[node name="@CollisionShape2D@119" type="CollisionShape2D" parent="Map1_City_Fence#FenceLeft_20/Map1_City_Fence#FenceLeft_20_Collision"]
+[node name="@CollisionShape2D@119" type="CollisionShape2D" parent="StaticBody2D/Map1_City_Fence#FenceLeft_20/Map1_City_Fence#FenceLeft_20_Collision"]
 shape = SubResource("RectangleShape2D_sqbbm")
 
-[node name="Map1_City_Fence#FenceRight_20" type="Sprite2D" parent="."]
+[node name="Map1_City_Fence#FenceRight_20" type="Sprite2D" parent="StaticBody2D"]
 position = Vector2(3140, 1470)
 texture = ExtResource("4_c")
 
-[node name="Map1_City_Fence#FenceRight_20_Collision" type="StaticBody2D" parent="Map1_City_Fence#FenceRight_20"]
+[node name="Map1_City_Fence#FenceRight_20_Collision" type="StaticBody2D" parent="StaticBody2D/Map1_City_Fence#FenceRight_20"]
 
-[node name="@CollisionShape2D@120" type="CollisionShape2D" parent="Map1_City_Fence#FenceRight_20/Map1_City_Fence#FenceRight_20_Collision"]
+[node name="@CollisionShape2D@120" type="CollisionShape2D" parent="StaticBody2D/Map1_City_Fence#FenceRight_20/Map1_City_Fence#FenceRight_20_Collision"]
 shape = SubResource("RectangleShape2D_mopeu")
 
-[node name="Map1_City_Fence#FenceLeft_21" type="Sprite2D" parent="."]
+[node name="Map1_City_Fence#FenceLeft_21" type="Sprite2D" parent="StaticBody2D"]
 position = Vector2(60, 1690)
 texture = ExtResource("4_c")
 
-[node name="Map1_City_Fence#FenceLeft_21_Collision" type="StaticBody2D" parent="Map1_City_Fence#FenceLeft_21"]
+[node name="Map1_City_Fence#FenceLeft_21_Collision" type="StaticBody2D" parent="StaticBody2D/Map1_City_Fence#FenceLeft_21"]
 
-[node name="@CollisionShape2D@121" type="CollisionShape2D" parent="Map1_City_Fence#FenceLeft_21/Map1_City_Fence#FenceLeft_21_Collision"]
+[node name="@CollisionShape2D@121" type="CollisionShape2D" parent="StaticBody2D/Map1_City_Fence#FenceLeft_21/Map1_City_Fence#FenceLeft_21_Collision"]
 shape = SubResource("RectangleShape2D_357aq")
 
-[node name="Map1_City_Fence#FenceRight_21" type="Sprite2D" parent="."]
+[node name="Map1_City_Fence#FenceRight_21" type="Sprite2D" parent="StaticBody2D"]
 position = Vector2(3140, 1690)
 texture = ExtResource("4_c")
 
-[node name="Map1_City_Fence#FenceRight_21_Collision" type="StaticBody2D" parent="Map1_City_Fence#FenceRight_21"]
+[node name="Map1_City_Fence#FenceRight_21_Collision" type="StaticBody2D" parent="StaticBody2D/Map1_City_Fence#FenceRight_21"]
 
-[node name="@CollisionShape2D@122" type="CollisionShape2D" parent="Map1_City_Fence#FenceRight_21/Map1_City_Fence#FenceRight_21_Collision"]
+[node name="@CollisionShape2D@122" type="CollisionShape2D" parent="StaticBody2D/Map1_City_Fence#FenceRight_21/Map1_City_Fence#FenceRight_21_Collision"]
 shape = SubResource("RectangleShape2D_wesdb")
 
-[node name="Map1_City_Fence#FenceLeft_22" type="Sprite2D" parent="."]
+[node name="Map1_City_Fence#FenceLeft_22" type="Sprite2D" parent="StaticBody2D"]
 position = Vector2(60, 1910)
 texture = ExtResource("4_c")
 
-[node name="Map1_City_Fence#FenceLeft_22_Collision" type="StaticBody2D" parent="Map1_City_Fence#FenceLeft_22"]
+[node name="Map1_City_Fence#FenceLeft_22_Collision" type="StaticBody2D" parent="StaticBody2D/Map1_City_Fence#FenceLeft_22"]
 
-[node name="@CollisionShape2D@123" type="CollisionShape2D" parent="Map1_City_Fence#FenceLeft_22/Map1_City_Fence#FenceLeft_22_Collision"]
+[node name="@CollisionShape2D@123" type="CollisionShape2D" parent="StaticBody2D/Map1_City_Fence#FenceLeft_22/Map1_City_Fence#FenceLeft_22_Collision"]
 shape = SubResource("RectangleShape2D_agq36")
 
-[node name="Map1_City_Fence#FenceRight_22" type="Sprite2D" parent="."]
+[node name="Map1_City_Fence#FenceRight_22" type="Sprite2D" parent="StaticBody2D"]
 position = Vector2(3140, 1910)
 texture = ExtResource("4_c")
 
-[node name="Map1_City_Fence#FenceRight_22_Collision" type="StaticBody2D" parent="Map1_City_Fence#FenceRight_22"]
+[node name="Map1_City_Fence#FenceRight_22_Collision" type="StaticBody2D" parent="StaticBody2D/Map1_City_Fence#FenceRight_22"]
 
-[node name="@CollisionShape2D@124" type="CollisionShape2D" parent="Map1_City_Fence#FenceRight_22/Map1_City_Fence#FenceRight_22_Collision"]
+[node name="@CollisionShape2D@124" type="CollisionShape2D" parent="StaticBody2D/Map1_City_Fence#FenceRight_22/Map1_City_Fence#FenceRight_22_Collision"]
 shape = SubResource("RectangleShape2D_ed2ie")
 
-[node name="Map1_City_Fence#FenceLeft_23" type="Sprite2D" parent="."]
+[node name="Map1_City_Fence#FenceLeft_23" type="Sprite2D" parent="StaticBody2D"]
 position = Vector2(60, 2130)
 texture = ExtResource("4_c")
 
-[node name="Map1_City_Fence#FenceLeft_23_Collision" type="StaticBody2D" parent="Map1_City_Fence#FenceLeft_23"]
+[node name="Map1_City_Fence#FenceLeft_23_Collision" type="StaticBody2D" parent="StaticBody2D/Map1_City_Fence#FenceLeft_23"]
 
-[node name="@CollisionShape2D@125" type="CollisionShape2D" parent="Map1_City_Fence#FenceLeft_23/Map1_City_Fence#FenceLeft_23_Collision"]
+[node name="@CollisionShape2D@125" type="CollisionShape2D" parent="StaticBody2D/Map1_City_Fence#FenceLeft_23/Map1_City_Fence#FenceLeft_23_Collision"]
 shape = SubResource("RectangleShape2D_igwai")
 
-[node name="Map1_City_Fence#FenceRight_23" type="Sprite2D" parent="."]
+[node name="Map1_City_Fence#FenceRight_23" type="Sprite2D" parent="StaticBody2D"]
 position = Vector2(3140, 2130)
 texture = ExtResource("4_c")
 
-[node name="Map1_City_Fence#FenceRight_23_Collision" type="StaticBody2D" parent="Map1_City_Fence#FenceRight_23"]
+[node name="Map1_City_Fence#FenceRight_23_Collision" type="StaticBody2D" parent="StaticBody2D/Map1_City_Fence#FenceRight_23"]
 
-[node name="@CollisionShape2D@126" type="CollisionShape2D" parent="Map1_City_Fence#FenceRight_23/Map1_City_Fence#FenceRight_23_Collision"]
+[node name="@CollisionShape2D@126" type="CollisionShape2D" parent="StaticBody2D/Map1_City_Fence#FenceRight_23/Map1_City_Fence#FenceRight_23_Collision"]
 shape = SubResource("RectangleShape2D_pw2js")
 
-[node name="Map1_City#Desa" type="Node2D" parent="."]
+[node name="Map1_City#Desa" type="Node2D" parent="StaticBody2D"]
 
-[node name="Map1_City_Desa#FarmHouse" type="Sprite2D" parent="."]
+[node name="Map1_City_Desa#FarmHouse" type="Sprite2D" parent="StaticBody2D"]
 position = Vector2(2770, 2700)
 texture = ExtResource("0_c")
 
-[node name="Map1_City_Desa#FarmHouse_Collision" type="StaticBody2D" parent="Map1_City_Desa#FarmHouse"]
+[node name="Map1_City_Desa#FarmHouse_Collision" type="StaticBody2D" parent="StaticBody2D/Map1_City_Desa#FarmHouse"]
 
-[node name="@CollisionShape2D@127" type="CollisionShape2D" parent="Map1_City_Desa#FarmHouse/Map1_City_Desa#FarmHouse_Collision"]
-position = Vector2(2, -3)
+[node name="@CollisionShape2D@127" type="CollisionShape2D" parent="StaticBody2D/Map1_City_Desa#FarmHouse/Map1_City_Desa#FarmHouse_Collision"]
+position = Vector2(41, 243.46)
 shape = SubResource("RectangleShape2D_niwks")
 
-[node name="Map1_City_Desa#FarmFence" type="Sprite2D" parent="."]
+[node name="Map1_City_Desa#FarmFence" type="Sprite2D" parent="StaticBody2D"]
 position = Vector2(3072, 2963)
 texture = ExtResource("3_c")
 
-[node name="Map1_City_Desa#FarmFence_Collision" type="StaticBody2D" parent="Map1_City_Desa#FarmFence"]
+[node name="Map1_City_Desa#FarmFence_Collision" type="StaticBody2D" parent="StaticBody2D/Map1_City_Desa#FarmFence"]
 
-[node name="@CollisionShape2D@128" type="CollisionShape2D" parent="Map1_City_Desa#FarmFence/Map1_City_Desa#FarmFence_Collision"]
+[node name="@CollisionShape2D@128" type="CollisionShape2D" parent="StaticBody2D/Map1_City_Desa#FarmFence/Map1_City_Desa#FarmFence_Collision"]
 position = Vector2(-3, 1)
 shape = SubResource("RectangleShape2D_qaiwk")
 
-[node name="Map1_City_Desa#FarmBush1" type="Sprite2D" parent="."]
+[node name="Map1_City_Desa#FarmBush1" type="Sprite2D" parent="StaticBody2D"]
 position = Vector2(2464, 2956)
 texture = ExtResource("5_c")
 
-[node name="Map1_City_Desa#FarmBush1_Collision" type="StaticBody2D" parent="Map1_City_Desa#FarmBush1"]
+[node name="Map1_City_Desa#FarmBush1_Collision" type="StaticBody2D" parent="StaticBody2D/Map1_City_Desa#FarmBush1"]
 
-[node name="@CollisionShape2D@129" type="CollisionShape2D" parent="Map1_City_Desa#FarmBush1/Map1_City_Desa#FarmBush1_Collision"]
-position = Vector2(2, -2)
+[node name="@CollisionShape2D@129" type="CollisionShape2D" parent="StaticBody2D/Map1_City_Desa#FarmBush1/Map1_City_Desa#FarmBush1_Collision"]
+position = Vector2(15, 11)
 shape = SubResource("RectangleShape2D_eg8f7")
 
-[node name="Map1_City_Desa#FarmBush2" type="Sprite2D" parent="."]
+[node name="Map1_City_Desa#FarmBush2" type="Sprite2D" parent="StaticBody2D"]
 position = Vector2(3106, 3211)
 texture = ExtResource("5_c")
 
-[node name="Map1_City_Desa#FarmBush2_Collision" type="StaticBody2D" parent="Map1_City_Desa#FarmBush2"]
+[node name="Map1_City_Desa#FarmBush2_Collision" type="StaticBody2D" parent="StaticBody2D/Map1_City_Desa#FarmBush2"]
 
-[node name="@CollisionShape2D@130" type="CollisionShape2D" parent="Map1_City_Desa#FarmBush2/Map1_City_Desa#FarmBush2_Collision"]
-position = Vector2(2, -2)
+[node name="@CollisionShape2D@130" type="CollisionShape2D" parent="StaticBody2D/Map1_City_Desa#FarmBush2/Map1_City_Desa#FarmBush2_Collision"]
+position = Vector2(14, 9)
 shape = SubResource("RectangleShape2D_p3ceg")
 
-[node name="Map1_City_Desa#FarmStump" type="Sprite2D" parent="."]
+[node name="Map1_City_Desa#FarmStump" type="Sprite2D" parent="StaticBody2D"]
 position = Vector2(3086, 2815)
 texture = ExtResource("19_c")
 
-[node name="Map1_City_Desa#FarmStump_Collision" type="StaticBody2D" parent="Map1_City_Desa#FarmStump"]
+[node name="Map1_City_Desa#FarmStump_Collision" type="StaticBody2D" parent="StaticBody2D/Map1_City_Desa#FarmStump"]
 
-[node name="@CollisionShape2D@131" type="CollisionShape2D" parent="Map1_City_Desa#FarmStump/Map1_City_Desa#FarmStump_Collision"]
+[node name="@CollisionShape2D@131" type="CollisionShape2D" parent="StaticBody2D/Map1_City_Desa#FarmStump/Map1_City_Desa#FarmStump_Collision"]
 position = Vector2(0, 39.775)
 shape = SubResource("RectangleShape2D_yc3x7")
 
-[node name="Map1_City_Desa#FarmRock" type="Sprite2D" parent="."]
+[node name="Map1_City_Desa#FarmRock" type="Sprite2D" parent="StaticBody2D"]
 position = Vector2(2450, 2820)
 texture = ExtResource("8_c")
 
-[node name="Map1_City_Desa#FarmRock_Collision" type="StaticBody2D" parent="Map1_City_Desa#FarmRock"]
+[node name="Map1_City_Desa#FarmRock_Collision" type="StaticBody2D" parent="StaticBody2D/Map1_City_Desa#FarmRock"]
 
-[node name="@CollisionShape2D@132" type="CollisionShape2D" parent="Map1_City_Desa#FarmRock/Map1_City_Desa#FarmRock_Collision"]
-position = Vector2(2, 0)
+[node name="@CollisionShape2D@132" type="CollisionShape2D" parent="StaticBody2D/Map1_City_Desa#FarmRock/Map1_City_Desa#FarmRock_Collision"]
+position = Vector2(15, 2)
 shape = SubResource("CircleShape2D_k6dnq")
 
-[node name="Map1_City_Desa#Windmill" type="Sprite2D" parent="."]
+[node name="Map1_City_Desa#Windmill" type="Sprite2D" parent="StaticBody2D"]
 position = Vector2(539, 2863)
 texture = ExtResource("26_c")
 
-[node name="Map1_City_Desa#Windmill_Collision" type="StaticBody2D" parent="Map1_City_Desa#Windmill"]
+[node name="Map1_City_Desa#Windmill_Collision" type="StaticBody2D" parent="StaticBody2D/Map1_City_Desa#Windmill"]
 
-[node name="@CollisionShape2D@133" type="CollisionShape2D" parent="Map1_City_Desa#Windmill/Map1_City_Desa#Windmill_Collision"]
-position = Vector2(56, 175.91)
+[node name="@CollisionShape2D@133" type="CollisionShape2D" parent="StaticBody2D/Map1_City_Desa#Windmill/Map1_City_Desa#Windmill_Collision"]
+position = Vector2(-5.5, 216.5)
 shape = SubResource("RectangleShape2D_puibr")
 
-[node name="Map1_City_Desa#WindmillStump1" type="Sprite2D" parent="."]
+[node name="Map1_City_Desa#WindmillStump1" type="Sprite2D" parent="StaticBody2D"]
 position = Vector2(1895, 3439)
 texture = ExtResource("18_c")
 
-[node name="Map1_City_Desa#WindmillStump1_Collision" type="StaticBody2D" parent="Map1_City_Desa#WindmillStump1"]
+[node name="Map1_City_Desa#WindmillStump1_Collision" type="StaticBody2D" parent="StaticBody2D/Map1_City_Desa#WindmillStump1"]
 
-[node name="@CollisionShape2D@134" type="CollisionShape2D" parent="Map1_City_Desa#WindmillStump1/Map1_City_Desa#WindmillStump1_Collision"]
-position = Vector2(1, 27.25)
+[node name="@CollisionShape2D@134" type="CollisionShape2D" parent="StaticBody2D/Map1_City_Desa#WindmillStump1/Map1_City_Desa#WindmillStump1_Collision"]
+position = Vector2(18, -1)
 shape = SubResource("RectangleShape2D_g8jf1")
 
-[node name="Map1_City_Desa#WindmillStump2" type="Sprite2D" parent="."]
+[node name="Map1_City_Desa#WindmillStump2" type="Sprite2D" parent="StaticBody2D"]
 position = Vector2(1345, 3499)
 texture = ExtResource("18_c")
 
-[node name="Map1_City_Desa#WindmillStump2_Collision" type="StaticBody2D" parent="Map1_City_Desa#WindmillStump2"]
+[node name="Map1_City_Desa#WindmillStump2_Collision" type="StaticBody2D" parent="StaticBody2D/Map1_City_Desa#WindmillStump2"]
 
-[node name="@CollisionShape2D@135" type="CollisionShape2D" parent="Map1_City_Desa#WindmillStump2/Map1_City_Desa#WindmillStump2_Collision"]
+[node name="@CollisionShape2D@135" type="CollisionShape2D" parent="StaticBody2D/Map1_City_Desa#WindmillStump2/Map1_City_Desa#WindmillStump2_Collision"]
 position = Vector2(1, 27.25)
 shape = SubResource("RectangleShape2D_blmr3")
 
-[node name="Map1_City_Desa#WindmillRock" type="Sprite2D" parent="."]
+[node name="Map1_City_Desa#WindmillRock" type="Sprite2D" parent="StaticBody2D"]
 position = Vector2(1203, 3108)
 texture = ExtResource("9_c")
 
-[node name="Map1_City_Desa#WindmillRock_Collision" type="StaticBody2D" parent="Map1_City_Desa#WindmillRock"]
+[node name="Map1_City_Desa#WindmillRock_Collision" type="StaticBody2D" parent="StaticBody2D/Map1_City_Desa#WindmillRock"]
 
-[node name="@CollisionShape2D@136" type="CollisionShape2D" parent="Map1_City_Desa#WindmillRock/Map1_City_Desa#WindmillRock_Collision"]
-position = Vector2(2, -2)
+[node name="@CollisionShape2D@136" type="CollisionShape2D" parent="StaticBody2D/Map1_City_Desa#WindmillRock/Map1_City_Desa#WindmillRock_Collision"]
+position = Vector2(8, -2)
 shape = SubResource("CircleShape2D_xueip")
 
-[node name="Map1_City_Desa#WindmillBush" type="Sprite2D" parent="."]
+[node name="Map1_City_Desa#WindmillBush" type="Sprite2D" parent="StaticBody2D"]
 position = Vector2(1159, 3482)
 texture = ExtResource("6_c")
 
-[node name="Map1_City_Desa#WindmillBush_Collision" type="StaticBody2D" parent="Map1_City_Desa#WindmillBush"]
+[node name="Map1_City_Desa#WindmillBush_Collision" type="StaticBody2D" parent="StaticBody2D/Map1_City_Desa#WindmillBush"]
 
-[node name="@CollisionShape2D@137" type="CollisionShape2D" parent="Map1_City_Desa#WindmillBush/Map1_City_Desa#WindmillBush_Collision"]
-position = Vector2(2, -2)
+[node name="@CollisionShape2D@137" type="CollisionShape2D" parent="StaticBody2D/Map1_City_Desa#WindmillBush/Map1_City_Desa#WindmillBush_Collision"]
+position = Vector2(20, 19)
 shape = SubResource("RectangleShape2D_oboac")
 
-[node name="Map1_City_Desa#GuardTowerW" type="Sprite2D" parent="."]
+[node name="Map1_City_Desa#GuardTowerW" type="Sprite2D" parent="StaticBody2D"]
 position = Vector2(1065, 2457)
 texture = ExtResource("25_c")
 
-[node name="Map1_City_Desa#GuardTowerW_Collision" type="StaticBody2D" parent="Map1_City_Desa#GuardTowerW"]
+[node name="Map1_City_Desa#GuardTowerW_Collision" type="StaticBody2D" parent="StaticBody2D/Map1_City_Desa#GuardTowerW"]
 
-[node name="@CollisionShape2D@138" type="CollisionShape2D" parent="Map1_City_Desa#GuardTowerW/Map1_City_Desa#GuardTowerW_Collision"]
-position = Vector2(2, 0)
+[node name="@CollisionShape2D@138" type="CollisionShape2D" parent="StaticBody2D/Map1_City_Desa#GuardTowerW/Map1_City_Desa#GuardTowerW_Collision"]
+position = Vector2(10.5, 45.48)
 shape = SubResource("RectangleShape2D_6mxvs")
 
-[node name="Map1_City_Desa#GuardTowerE" type="Sprite2D" parent="."]
+[node name="Map1_City_Desa#GuardTowerE" type="Sprite2D" parent="StaticBody2D"]
 position = Vector2(2099, 2457)
 texture = ExtResource("25_c")
 
-[node name="Map1_City_Desa#GuardTowerE_Collision" type="StaticBody2D" parent="Map1_City_Desa#GuardTowerE"]
+[node name="Map1_City_Desa#GuardTowerE_Collision" type="StaticBody2D" parent="StaticBody2D/Map1_City_Desa#GuardTowerE"]
 
-[node name="@CollisionShape2D@139" type="CollisionShape2D" parent="Map1_City_Desa#GuardTowerE/Map1_City_Desa#GuardTowerE_Collision"]
-position = Vector2(2, 0)
+[node name="@CollisionShape2D@139" type="CollisionShape2D" parent="StaticBody2D/Map1_City_Desa#GuardTowerE/Map1_City_Desa#GuardTowerE_Collision"]
+position = Vector2(13, 45)
 shape = SubResource("RectangleShape2D_g8ucj")
 
-[node name="Map1_City_Desa#GateBush1" type="Sprite2D" parent="."]
+[node name="Map1_City_Desa#GateBush1" type="Sprite2D" parent="StaticBody2D"]
 position = Vector2(1298, 2485)
 texture = ExtResource("7_c")
 
-[node name="Map1_City_Desa#GateBush1_Collision" type="StaticBody2D" parent="Map1_City_Desa#GateBush1"]
+[node name="Map1_City_Desa#GateBush1_Collision" type="StaticBody2D" parent="StaticBody2D/Map1_City_Desa#GateBush1"]
 
-[node name="@CollisionShape2D@140" type="CollisionShape2D" parent="Map1_City_Desa#GateBush1/Map1_City_Desa#GateBush1_Collision"]
-position = Vector2(2, 0)
-shape = SubResource("RectangleShape2D_iuare")
+[node name="@CollisionShape2D@140" type="CollisionShape2D" parent="StaticBody2D/Map1_City_Desa#GateBush1/Map1_City_Desa#GateBush1_Collision"]
+position = Vector2(-42, 9)
+shape = SubResource("CircleShape2D_wv5u5")
 
-[node name="Map1_City_Desa#GateBush2" type="Sprite2D" parent="."]
+[node name="_CollisionShape2D_140" type="CollisionShape2D" parent="StaticBody2D/Map1_City_Desa#GateBush1/Map1_City_Desa#GateBush1_Collision"]
+position = Vector2(45, 1)
+shape = SubResource("CircleShape2D_wv5u5")
+
+[node name="Map1_City_Desa#GateBush2" type="Sprite2D" parent="StaticBody2D"]
 position = Vector2(1866, 2471)
 texture = ExtResource("7_c")
 
-[node name="Map1_City_Desa#GateBush2_Collision" type="StaticBody2D" parent="Map1_City_Desa#GateBush2"]
+[node name="Map1_City_Desa#GateBush2_Collision" type="StaticBody2D" parent="StaticBody2D/Map1_City_Desa#GateBush2"]
 
-[node name="@CollisionShape2D@141" type="CollisionShape2D" parent="Map1_City_Desa#GateBush2/Map1_City_Desa#GateBush2_Collision"]
-position = Vector2(2, 0)
-shape = SubResource("RectangleShape2D_22gpp")
+[node name="@CollisionShape2D@141" type="CollisionShape2D" parent="StaticBody2D/Map1_City_Desa#GateBush2/Map1_City_Desa#GateBush2_Collision"]
+position = Vector2(-42, 4)
+shape = SubResource("CircleShape2D_g65ja")
 
-[node name="Map1_City_Desa#WindbreakW_0" type="Sprite2D" parent="."]
+[node name="_CollisionShape2D_141" type="CollisionShape2D" parent="StaticBody2D/Map1_City_Desa#GateBush2/Map1_City_Desa#GateBush2_Collision"]
+position = Vector2(40, 15)
+shape = SubResource("CircleShape2D_g65ja")
+
+[node name="Map1_City_Desa#WindbreakW_0" type="Sprite2D" parent="StaticBody2D"]
 position = Vector2(435, 2500)
 texture = ExtResource("1_c")
 
-[node name="Map1_City_Desa#WindbreakW_0_Collision" type="StaticBody2D" parent="Map1_City_Desa#WindbreakW_0"]
+[node name="Map1_City_Desa#WindbreakW_0_Collision" type="StaticBody2D" parent="StaticBody2D/Map1_City_Desa#WindbreakW_0"]
 
-[node name="@CollisionShape2D@142" type="CollisionShape2D" parent="Map1_City_Desa#WindbreakW_0/Map1_City_Desa#WindbreakW_0_Collision"]
-position = Vector2(3, -4.5)
+[node name="@CollisionShape2D@142" type="CollisionShape2D" parent="StaticBody2D/Map1_City_Desa#WindbreakW_0/Map1_City_Desa#WindbreakW_0_Collision"]
+position = Vector2(16, 72.7949)
 shape = SubResource("RectangleShape2D_80afn")
 
-[node name="Map1_City_Desa#WindbreakW_1" type="Sprite2D" parent="."]
+[node name="Map1_City_Desa#WindbreakW_1" type="Sprite2D" parent="StaticBody2D"]
 position = Vector2(1319, 2638)
 texture = ExtResource("1_c")
 
-[node name="Map1_City_Desa#WindbreakW_1_Collision" type="StaticBody2D" parent="Map1_City_Desa#WindbreakW_1"]
+[node name="Map1_City_Desa#WindbreakW_1_Collision" type="StaticBody2D" parent="StaticBody2D/Map1_City_Desa#WindbreakW_1"]
 
-[node name="@CollisionShape2D@143" type="CollisionShape2D" parent="Map1_City_Desa#WindbreakW_1/Map1_City_Desa#WindbreakW_1_Collision"]
-position = Vector2(3, -4.5)
+[node name="@CollisionShape2D@143" type="CollisionShape2D" parent="StaticBody2D/Map1_City_Desa#WindbreakW_1/Map1_City_Desa#WindbreakW_1_Collision"]
+position = Vector2(16, 69)
 shape = SubResource("RectangleShape2D_pq8fx")
 
-[node name="Map1_City_Desa#WindbreakW_2" type="Sprite2D" parent="."]
+[node name="Map1_City_Desa#WindbreakW_2" type="Sprite2D" parent="StaticBody2D"]
 position = Vector2(680, 2500)
 texture = ExtResource("1_c")
 
-[node name="Map1_City_Desa#WindbreakW_2_Collision" type="StaticBody2D" parent="Map1_City_Desa#WindbreakW_2"]
+[node name="Map1_City_Desa#WindbreakW_2_Collision" type="StaticBody2D" parent="StaticBody2D/Map1_City_Desa#WindbreakW_2"]
 
-[node name="@CollisionShape2D@144" type="CollisionShape2D" parent="Map1_City_Desa#WindbreakW_2/Map1_City_Desa#WindbreakW_2_Collision"]
-position = Vector2(3, -4.5)
+[node name="@CollisionShape2D@144" type="CollisionShape2D" parent="StaticBody2D/Map1_City_Desa#WindbreakW_2/Map1_City_Desa#WindbreakW_2_Collision"]
+position = Vector2(18, 70)
 shape = SubResource("RectangleShape2D_jj8tx")
 
-[node name="Map1_City_Desa#WindbreakE" type="Sprite2D" parent="."]
+[node name="Map1_City_Desa#WindbreakE" type="Sprite2D" parent="StaticBody2D"]
 position = Vector2(1881, 2657)
 texture = ExtResource("1_c")
 
-[node name="Map1_City_Desa#WindbreakE_Collision" type="StaticBody2D" parent="Map1_City_Desa#WindbreakE"]
+[node name="Map1_City_Desa#WindbreakE_Collision" type="StaticBody2D" parent="StaticBody2D/Map1_City_Desa#WindbreakE"]
 
-[node name="@CollisionShape2D@145" type="CollisionShape2D" parent="Map1_City_Desa#WindbreakE/Map1_City_Desa#WindbreakE_Collision"]
-position = Vector2(3, -4.5)
+[node name="@CollisionShape2D@145" type="CollisionShape2D" parent="StaticBody2D/Map1_City_Desa#WindbreakE/Map1_City_Desa#WindbreakE_Collision"]
+position = Vector2(18, 71)
 shape = SubResource("RectangleShape2D_8yrj4")
 
-[node name="Map1_City_Desa#VillageWell" type="Sprite2D" parent="."]
+[node name="Map1_City_Desa#VillageWell" type="Sprite2D" parent="StaticBody2D"]
 position = Vector2(3064, 2513)
 texture = ExtResource("13_c")
 
-[node name="Map1_City_Desa#VillageWell_Collision" type="StaticBody2D" parent="Map1_City_Desa#VillageWell"]
+[node name="Map1_City_Desa#VillageWell_Collision" type="StaticBody2D" parent="StaticBody2D/Map1_City_Desa#VillageWell"]
 
-[node name="@CollisionShape2D@146" type="CollisionShape2D" parent="Map1_City_Desa#VillageWell/Map1_City_Desa#VillageWell_Collision"]
+[node name="@CollisionShape2D@146" type="CollisionShape2D" parent="StaticBody2D/Map1_City_Desa#VillageWell/Map1_City_Desa#VillageWell_Collision"]
 position = Vector2(1.5, -0.5)
-shape = SubResource("RectangleShape2D_udypu")
+shape = SubResource("CapsuleShape2D_10avt")
 
-[node name="Map1_City_Desa#VillageSeat1" type="Sprite2D" parent="."]
+[node name="Map1_City_Desa#VillageSeat1" type="Sprite2D" parent="StaticBody2D"]
 position = Vector2(2144, 3753)
 texture = ExtResource("19_c")
 
-[node name="Map1_City_Desa#VillageSeat1_Collision" type="StaticBody2D" parent="Map1_City_Desa#VillageSeat1"]
+[node name="Map1_City_Desa#VillageSeat1_Collision" type="StaticBody2D" parent="StaticBody2D/Map1_City_Desa#VillageSeat1"]
 
-[node name="@CollisionShape2D@147" type="CollisionShape2D" parent="Map1_City_Desa#VillageSeat1/Map1_City_Desa#VillageSeat1_Collision"]
-position = Vector2(0, -1.5)
+[node name="@CollisionShape2D@147" type="CollisionShape2D" parent="StaticBody2D/Map1_City_Desa#VillageSeat1/Map1_City_Desa#VillageSeat1_Collision"]
+position = Vector2(-4.5, 31.1899)
 shape = SubResource("RectangleShape2D_a0qiq")
 
-[node name="Map1_City_Desa#VillageSeat2" type="Sprite2D" parent="."]
+[node name="Map1_City_Desa#VillageSeat2" type="Sprite2D" parent="StaticBody2D"]
 position = Vector2(1891, 3075)
 texture = ExtResource("19_c")
 
-[node name="Map1_City_Desa#VillageSeat2_Collision" type="StaticBody2D" parent="Map1_City_Desa#VillageSeat2"]
+[node name="Map1_City_Desa#VillageSeat2_Collision" type="StaticBody2D" parent="StaticBody2D/Map1_City_Desa#VillageSeat2"]
 
-[node name="@CollisionShape2D@148" type="CollisionShape2D" parent="Map1_City_Desa#VillageSeat2/Map1_City_Desa#VillageSeat2_Collision"]
-position = Vector2(0, -1.5)
+[node name="@CollisionShape2D@148" type="CollisionShape2D" parent="StaticBody2D/Map1_City_Desa#VillageSeat2/Map1_City_Desa#VillageSeat2_Collision"]
+position = Vector2(-0.5, 29)
 shape = SubResource("RectangleShape2D_u7mox")
 
-[node name="Map1_City_Desa#VillageCart" type="Sprite2D" parent="."]
+[node name="Map1_City_Desa#VillageCart" type="Sprite2D" parent="StaticBody2D"]
 position = Vector2(2822, 1588)
 texture = ExtResource("15_c")
 
-[node name="Map1_City_Desa#VillageCart_Collision" type="StaticBody2D" parent="Map1_City_Desa#VillageCart"]
+[node name="Map1_City_Desa#VillageCart_Collision" type="StaticBody2D" parent="StaticBody2D/Map1_City_Desa#VillageCart"]
 
-[node name="@CollisionShape2D@149" type="CollisionShape2D" parent="Map1_City_Desa#VillageCart/Map1_City_Desa#VillageCart_Collision"]
-position = Vector2(2, 0)
+[node name="@CollisionShape2D@149" type="CollisionShape2D" parent="StaticBody2D/Map1_City_Desa#VillageCart/Map1_City_Desa#VillageCart_Collision"]
+position = Vector2(-9, 40)
 shape = SubResource("RectangleShape2D_rloq5")
 
-[node name="Map1_City_Desa#VillageBarrel_0" type="Sprite2D" parent="."]
+[node name="Map1_City_Desa#VillageBarrel_0" type="Sprite2D" parent="StaticBody2D"]
 position = Vector2(2469, 3062)
 texture = ExtResource("16_c")
 
-[node name="Map1_City_Desa#VillageBarrel_0_Collision" type="StaticBody2D" parent="Map1_City_Desa#VillageBarrel_0"]
+[node name="Map1_City_Desa#VillageBarrel_0_Collision" type="StaticBody2D" parent="StaticBody2D/Map1_City_Desa#VillageBarrel_0"]
 
-[node name="@CollisionShape2D@150" type="CollisionShape2D" parent="Map1_City_Desa#VillageBarrel_0/Map1_City_Desa#VillageBarrel_0_Collision"]
-position = Vector2(-6, 0)
-shape = SubResource("RectangleShape2D_148sf")
+[node name="@CollisionShape2D@150" type="CollisionShape2D" parent="StaticBody2D/Map1_City_Desa#VillageBarrel_0/Map1_City_Desa#VillageBarrel_0_Collision"]
+position = Vector2(-2, 32)
+shape = SubResource("CircleShape2D_3euij")
 
-[node name="Map1_City_Desa#VillageBarrel_1" type="Sprite2D" parent="."]
+[node name="Map1_City_Desa#VillageBarrel_1" type="Sprite2D" parent="StaticBody2D"]
 position = Vector2(2596, 3066)
 texture = ExtResource("16_c")
 
-[node name="Map1_City_Desa#VillageBarrel_1_Collision" type="StaticBody2D" parent="Map1_City_Desa#VillageBarrel_1"]
+[node name="Map1_City_Desa#VillageBarrel_1_Collision" type="StaticBody2D" parent="StaticBody2D/Map1_City_Desa#VillageBarrel_1"]
 
-[node name="@CollisionShape2D@151" type="CollisionShape2D" parent="Map1_City_Desa#VillageBarrel_1/Map1_City_Desa#VillageBarrel_1_Collision"]
-position = Vector2(-6, 0)
-shape = SubResource("RectangleShape2D_pamg6")
+[node name="@CollisionShape2D@151" type="CollisionShape2D" parent="StaticBody2D/Map1_City_Desa#VillageBarrel_1/Map1_City_Desa#VillageBarrel_1_Collision"]
+position = Vector2(0, 35)
+shape = SubResource("CircleShape2D_or1gs")
 
-[node name="Map1_City_Desa#VillageBarrel_2" type="Sprite2D" parent="."]
+[node name="Map1_City_Desa#VillageBarrel_2" type="Sprite2D" parent="StaticBody2D"]
 position = Vector2(3126, 3071)
 texture = ExtResource("16_c")
 
-[node name="Map1_City_Desa#VillageBarrel_2_Collision" type="StaticBody2D" parent="Map1_City_Desa#VillageBarrel_2"]
+[node name="Map1_City_Desa#VillageBarrel_2_Collision" type="StaticBody2D" parent="StaticBody2D/Map1_City_Desa#VillageBarrel_2"]
 
-[node name="@CollisionShape2D@152" type="CollisionShape2D" parent="Map1_City_Desa#VillageBarrel_2/Map1_City_Desa#VillageBarrel_2_Collision"]
-position = Vector2(-6, 0)
-shape = SubResource("RectangleShape2D_4sxxq")
+[node name="@CollisionShape2D@152" type="CollisionShape2D" parent="StaticBody2D/Map1_City_Desa#VillageBarrel_2/Map1_City_Desa#VillageBarrel_2_Collision"]
+position = Vector2(-1, 34)
+shape = SubResource("CapsuleShape2D_b4tk6")
 
-[node name="Map1_City_Desa#VillageBarrel_3" type="Sprite2D" parent="."]
+[node name="Map1_City_Desa#VillageBarrel_3" type="Sprite2D" parent="StaticBody2D"]
 position = Vector2(3003, 3071)
 texture = ExtResource("16_c")
 
-[node name="Map1_City_Desa#VillageBarrel_3_Collision" type="StaticBody2D" parent="Map1_City_Desa#VillageBarrel_3"]
+[node name="Map1_City_Desa#VillageBarrel_3_Collision" type="StaticBody2D" parent="StaticBody2D/Map1_City_Desa#VillageBarrel_3"]
 
-[node name="@CollisionShape2D@153" type="CollisionShape2D" parent="Map1_City_Desa#VillageBarrel_3/Map1_City_Desa#VillageBarrel_3_Collision"]
-position = Vector2(-6, 0)
-shape = SubResource("RectangleShape2D_kenn6")
+[node name="@CollisionShape2D@153" type="CollisionShape2D" parent="StaticBody2D/Map1_City_Desa#VillageBarrel_3/Map1_City_Desa#VillageBarrel_3_Collision"]
+position = Vector2(-1, 35)
+shape = SubResource("CircleShape2D_tg37j")
 
-[node name="Map1_City_Desa#PastureRock1" type="Sprite2D" parent="."]
+[node name="Map1_City_Desa#PastureRock1" type="Sprite2D" parent="StaticBody2D"]
 position = Vector2(1866, 2961)
 texture = ExtResource("8_c")
 
-[node name="Map1_City_Desa#PastureRock1_Collision" type="StaticBody2D" parent="Map1_City_Desa#PastureRock1"]
+[node name="Map1_City_Desa#PastureRock1_Collision" type="StaticBody2D" parent="StaticBody2D/Map1_City_Desa#PastureRock1"]
 
-[node name="@CollisionShape2D@154" type="CollisionShape2D" parent="Map1_City_Desa#PastureRock1/Map1_City_Desa#PastureRock1_Collision"]
-position = Vector2(2, 0)
+[node name="@CollisionShape2D@154" type="CollisionShape2D" parent="StaticBody2D/Map1_City_Desa#PastureRock1/Map1_City_Desa#PastureRock1_Collision"]
+position = Vector2(13, 0)
 shape = SubResource("CircleShape2D_cdex6")
 
-[node name="Map1_City_Desa#PastureRock2" type="Sprite2D" parent="."]
+[node name="Map1_City_Desa#PastureRock2" type="Sprite2D" parent="StaticBody2D"]
 position = Vector2(1356, 3398)
 texture = ExtResource("10_c")
 
-[node name="Map1_City_Desa#PastureRock2_Collision" type="StaticBody2D" parent="Map1_City_Desa#PastureRock2"]
+[node name="Map1_City_Desa#PastureRock2_Collision" type="StaticBody2D" parent="StaticBody2D/Map1_City_Desa#PastureRock2"]
 
-[node name="@CollisionShape2D@155" type="CollisionShape2D" parent="Map1_City_Desa#PastureRock2/Map1_City_Desa#PastureRock2_Collision"]
-position = Vector2(23, 16)
-shape = SubResource("CircleShape2D_fygux")
+[node name="@CollisionShape2D@155" type="CollisionShape2D" parent="StaticBody2D/Map1_City_Desa#PastureRock2/Map1_City_Desa#PastureRock2_Collision"]
+position = Vector2(7.5, 1)
+shape = SubResource("RectangleShape2D_6nuq1")
 
-[node name="Map1_City_Desa#PastureTree1" type="Sprite2D" parent="."]
+[node name="Map1_City_Desa#PastureTree1" type="Sprite2D" parent="StaticBody2D"]
 position = Vector2(1314, 3700)
 texture = ExtResource("1_c")
 
-[node name="Map1_City_Desa#PastureTree1_Collision" type="StaticBody2D" parent="Map1_City_Desa#PastureTree1"]
+[node name="Map1_City_Desa#PastureTree1_Collision" type="StaticBody2D" parent="StaticBody2D/Map1_City_Desa#PastureTree1"]
 
-[node name="@CollisionShape2D@156" type="CollisionShape2D" parent="Map1_City_Desa#PastureTree1/Map1_City_Desa#PastureTree1_Collision"]
-position = Vector2(3, 77.725)
+[node name="@CollisionShape2D@156" type="CollisionShape2D" parent="StaticBody2D/Map1_City_Desa#PastureTree1/Map1_City_Desa#PastureTree1_Collision"]
+position = Vector2(16.5, 64.5)
 shape = SubResource("RectangleShape2D_hwgwv")
 
-[node name="Map1_City_Desa#PastureTree2" type="Sprite2D" parent="."]
+[node name="Map1_City_Desa#PastureTree2" type="Sprite2D" parent="StaticBody2D"]
 position = Vector2(1836, 3689)
 texture = ExtResource("1_c")
 
-[node name="Map1_City_Desa#PastureTree2_Collision" type="StaticBody2D" parent="Map1_City_Desa#PastureTree2"]
+[node name="Map1_City_Desa#PastureTree2_Collision" type="StaticBody2D" parent="StaticBody2D/Map1_City_Desa#PastureTree2"]
 
-[node name="@CollisionShape2D@157" type="CollisionShape2D" parent="Map1_City_Desa#PastureTree2/Map1_City_Desa#PastureTree2_Collision"]
-position = Vector2(3, 77.725)
+[node name="@CollisionShape2D@157" type="CollisionShape2D" parent="StaticBody2D/Map1_City_Desa#PastureTree2/Map1_City_Desa#PastureTree2_Collision"]
+position = Vector2(16, 66)
 shape = SubResource("RectangleShape2D_kbvvt")
 
-[node name="Map1_City_Desa#SouthBush_0" type="Sprite2D" parent="."]
+[node name="Map1_City_Desa#SouthBush_0" type="Sprite2D" parent="StaticBody2D"]
 position = Vector2(1192, 3429)
 texture = ExtResource("5_c")
 
-[node name="Map1_City_Desa#SouthBush_0_Collision" type="StaticBody2D" parent="Map1_City_Desa#SouthBush_0"]
+[node name="Map1_City_Desa#SouthBush_0_Collision" type="StaticBody2D" parent="StaticBody2D/Map1_City_Desa#SouthBush_0"]
 
-[node name="@CollisionShape2D@158" type="CollisionShape2D" parent="Map1_City_Desa#SouthBush_0/Map1_City_Desa#SouthBush_0_Collision"]
-position = Vector2(2, -2)
+[node name="@CollisionShape2D@158" type="CollisionShape2D" parent="StaticBody2D/Map1_City_Desa#SouthBush_0/Map1_City_Desa#SouthBush_0_Collision"]
+position = Vector2(15, 10)
 shape = SubResource("RectangleShape2D_57ron")
 
-[node name="Map1_City_Desa#SouthBush_1" type="Sprite2D" parent="."]
+[node name="Map1_City_Desa#SouthBush_1" type="Sprite2D" parent="StaticBody2D"]
 position = Vector2(1310, 3084)
 texture = ExtResource("5_c")
 
-[node name="Map1_City_Desa#SouthBush_1_Collision" type="StaticBody2D" parent="Map1_City_Desa#SouthBush_1"]
+[node name="Map1_City_Desa#SouthBush_1_Collision" type="StaticBody2D" parent="StaticBody2D/Map1_City_Desa#SouthBush_1"]
 
-[node name="@CollisionShape2D@159" type="CollisionShape2D" parent="Map1_City_Desa#SouthBush_1/Map1_City_Desa#SouthBush_1_Collision"]
-position = Vector2(2, -2)
+[node name="@CollisionShape2D@159" type="CollisionShape2D" parent="StaticBody2D/Map1_City_Desa#SouthBush_1/Map1_City_Desa#SouthBush_1_Collision"]
+position = Vector2(12, 8)
 shape = SubResource("RectangleShape2D_4svmi")
 
-[node name="Map1_City_Desa#SouthBush_2" type="Sprite2D" parent="."]
+[node name="Map1_City_Desa#SouthBush_2" type="Sprite2D" parent="StaticBody2D"]
 position = Vector2(2365, 2488)
 texture = ExtResource("5_c")
 
-[node name="Map1_City_Desa#SouthBush_2_Collision" type="StaticBody2D" parent="Map1_City_Desa#SouthBush_2"]
+[node name="Map1_City_Desa#SouthBush_2_Collision" type="StaticBody2D" parent="StaticBody2D/Map1_City_Desa#SouthBush_2"]
 
-[node name="@CollisionShape2D@160" type="CollisionShape2D" parent="Map1_City_Desa#SouthBush_2/Map1_City_Desa#SouthBush_2_Collision"]
-position = Vector2(2, -2)
+[node name="@CollisionShape2D@160" type="CollisionShape2D" parent="StaticBody2D/Map1_City_Desa#SouthBush_2/Map1_City_Desa#SouthBush_2_Collision"]
+position = Vector2(11, 13)
 shape = SubResource("RectangleShape2D_idc63")
 
-[node name="Map1_City_Desa#SouthBush_3" type="Sprite2D" parent="."]
+[node name="Map1_City_Desa#SouthBush_3" type="Sprite2D" parent="StaticBody2D"]
 position = Vector2(2544, 2491)
 texture = ExtResource("5_c")
 
-[node name="Map1_City_Desa#SouthBush_3_Collision" type="StaticBody2D" parent="Map1_City_Desa#SouthBush_3"]
+[node name="Map1_City_Desa#SouthBush_3_Collision" type="StaticBody2D" parent="StaticBody2D/Map1_City_Desa#SouthBush_3"]
 
-[node name="@CollisionShape2D@161" type="CollisionShape2D" parent="Map1_City_Desa#SouthBush_3/Map1_City_Desa#SouthBush_3_Collision"]
-position = Vector2(2, -2)
+[node name="@CollisionShape2D@161" type="CollisionShape2D" parent="StaticBody2D/Map1_City_Desa#SouthBush_3/Map1_City_Desa#SouthBush_3_Collision"]
+position = Vector2(14, 7)
 shape = SubResource("RectangleShape2D_yxhfl")
 
-[node name="Map1_City_Desa#SouthBush_4" type="Sprite2D" parent="."]
+[node name="Map1_City_Desa#SouthBush_4" type="Sprite2D" parent="StaticBody2D"]
 position = Vector2(3108, 3350)
 texture = ExtResource("5_c")
 
-[node name="Map1_City_Desa#SouthBush_4_Collision" type="StaticBody2D" parent="Map1_City_Desa#SouthBush_4"]
+[node name="Map1_City_Desa#SouthBush_4_Collision" type="StaticBody2D" parent="StaticBody2D/Map1_City_Desa#SouthBush_4"]
 
-[node name="@CollisionShape2D@162" type="CollisionShape2D" parent="Map1_City_Desa#SouthBush_4/Map1_City_Desa#SouthBush_4_Collision"]
-position = Vector2(2, -2)
+[node name="@CollisionShape2D@162" type="CollisionShape2D" parent="StaticBody2D/Map1_City_Desa#SouthBush_4/Map1_City_Desa#SouthBush_4_Collision"]
+position = Vector2(13.1101, 10)
 shape = SubResource("RectangleShape2D_r5ii6")
 
-[node name="Stroke5-ezgif_com-crop" type="Sprite2D" parent="."]
-position = Vector2(1532, 41)
+[node name="Stroke5-ezgif_com-crop" type="Sprite2D" parent="StaticBody2D"]
+position = Vector2(1532, 13)
 texture = ExtResource("28_wjylu")
 
-[node name="Stroke5-ezgif_com-crop2" type="Sprite2D" parent="."]
-position = Vector2(1643, 42)
+[node name="Stroke5-ezgif_com-crop2" type="Sprite2D" parent="StaticBody2D"]
+position = Vector2(1643, 14)
 texture = ExtResource("28_wjylu")
 
-[node name="Stroke5-ezgif_com-crop3" type="Sprite2D" parent="."]
-position = Vector2(1423, 42)
+[node name="Stroke5-ezgif_com-crop3" type="Sprite2D" parent="StaticBody2D"]
+position = Vector2(1423, 14)
 texture = ExtResource("28_wjylu")
 
-[node name="Stroke5-ezgif_com-crop4" type="Sprite2D" parent="."]
-position = Vector2(1741, 43)
+[node name="Stroke5-ezgif_com-crop4" type="Sprite2D" parent="StaticBody2D"]
+position = Vector2(1741, 14)
 texture = ExtResource("28_wjylu")
 
-[node name="Stroke5-ezgif_com-crop5" type="Sprite2D" parent="."]
-position = Vector2(49, 1092)
+[node name="Stroke5-ezgif_com-crop5" type="Sprite2D" parent="StaticBody2D"]
+position = Vector2(22, 1092)
 texture = ExtResource("28_wjylu")
 
-[node name="Stroke5-ezgif_com-crop6" type="Sprite2D" parent="."]
-position = Vector2(46, 1183)
+[node name="Stroke5-ezgif_com-crop6" type="Sprite2D" parent="StaticBody2D"]
+position = Vector2(23, 1183)
 texture = ExtResource("28_wjylu")
 
-[node name="Stroke5-ezgif_com-crop7" type="Sprite2D" parent="."]
-position = Vector2(46, 1006)
+[node name="Stroke5-ezgif_com-crop7" type="Sprite2D" parent="StaticBody2D"]
+position = Vector2(25, 1006)
 texture = ExtResource("28_wjylu")
 
-[node name="Stroke5-ezgif_com-crop8" type="Sprite2D" parent="."]
-position = Vector2(46, 1271)
+[node name="Stroke5-ezgif_com-crop8" type="Sprite2D" parent="StaticBody2D"]
+position = Vector2(20, 1271)
 texture = ExtResource("28_wjylu")
 
-[node name="Stroke5-ezgif_com-crop9" type="Sprite2D" parent="."]
+[node name="Stroke5-ezgif_com-crop9" type="Sprite2D" parent="StaticBody2D"]
 position = Vector2(1520, 3983)
 texture = ExtResource("28_wjylu")
 
-[node name="Stroke5-ezgif_com-crop10" type="Sprite2D" parent="."]
+[node name="Stroke5-ezgif_com-crop10" type="Sprite2D" parent="StaticBody2D"]
 position = Vector2(1645, 3983)
 texture = ExtResource("28_wjylu")
 
-[node name="Stroke6-ezgif_com-crop" type="Sprite2D" parent="."]
+[node name="Stroke6-ezgif_com-crop" type="Sprite2D" parent="StaticBody2D"]
 position = Vector2(1857, 962)
 scale = Vector2(0.418719, 0.39701)
 texture = ExtResource("29_4by05")
 
-[node name="Stroke1-ezgif_com-crop" type="Sprite2D" parent="."]
+[node name="Stroke1-ezgif_com-crop" type="Sprite2D" parent="StaticBody2D"]
 position = Vector2(1748, 1292)
 scale = Vector2(0.80616, 0.707929)
 texture = ExtResource("35_ch1si")
 
-[node name="Stroke2-ezgif_com-crop" type="Sprite2D" parent="."]
+[node name="Stroke2-ezgif_com-crop" type="Sprite2D" parent="StaticBody2D"]
 position = Vector2(2085, 881)
 scale = Vector2(0.681818, 0.583141)
 texture = ExtResource("2_qsf01")
 
-[node name="Stroke8-ezgif_com-crop" type="Sprite2D" parent="."]
+[node name="Stroke8-ezgif_com-crop" type="Sprite2D" parent="StaticBody2D"]
 position = Vector2(551, 967)
 scale = Vector2(0.650769, 0.472154)
 texture = ExtResource("36_tnew8")
 
-[node name="Top-downSimpleSummerProp-WoodenBridgeVertical" type="Sprite2D" parent="."]
+[node name="Top-downSimpleSummerProp-WoodenBridgeVertical" type="Sprite2D" parent="StaticBody2D"]
 position = Vector2(2419, 3601)
 texture = ExtResource("3_y0njf")
 
-[node name="Top-downSimpleSummerProp-Flag" type="Sprite2D" parent="."]
+[node name="Top-downSimpleSummerProp-Flag" type="Sprite2D" parent="StaticBody2D"]
 position = Vector2(3023, 1398)
 scale = Vector2(1.3, 1)
 
-[node name="Top-downSimpleSummerProp-Rock01" type="Sprite2D" parent="."]
+[node name="Top-downSimpleSummerProp-Rock01" type="Sprite2D" parent="StaticBody2D"]
 position = Vector2(2065, 715)
 
-[node name="Top-downSimpleSummerProp-Rock02" type="Sprite2D" parent="."]
+[node name="Top-downSimpleSummerProp-Rock02" type="Sprite2D" parent="StaticBody2D"]
 position = Vector2(1256, 1448)
 
-[node name="Top-downSimpleSummerProp-Rock03" type="Sprite2D" parent="."]
+[node name="Top-downSimpleSummerProp-Rock03" type="Sprite2D" parent="StaticBody2D"]
 position = Vector2(377, 1428)
 
-[node name="Top-downSimpleSummerProp-TreeLarge" type="Sprite2D" parent="."]
+[node name="Top-downSimpleSummerProp-TreeLarge" type="Sprite2D" parent="StaticBody2D"]
 position = Vector2(190, 3384)
 
-[node name="Top-downSimpleSummerProp-TreeMedium" type="Sprite2D" parent="."]
+[node name="Top-downSimpleSummerProp-TreeMedium" type="Sprite2D" parent="StaticBody2D"]
 position = Vector2(134, 2773)
 
-[node name="Top-downSimpleSummerProp-WoodenFenceVertical" type="Sprite2D" parent="."]
+[node name="Top-downSimpleSummerProp-WoodenFenceVertical" type="Sprite2D" parent="StaticBody2D"]
 position = Vector2(3148, 928)
 
-[node name="Top-downSimpleSummerProp-WoodenFenceHorizontal" type="Sprite2D" parent="."]
+[node name="Top-downSimpleSummerProp-WoodenFenceHorizontal" type="Sprite2D" parent="StaticBody2D"]
 position = Vector2(1896, 60)
 
-[node name="Top-downSimpleSummerGround23" type="Sprite2D" parent="."]
+[node name="Top-downSimpleSummerGround23" type="Sprite2D" parent="StaticBody2D"]
 position = Vector2(2342, 3237)
 scale = Vector2(4.46094, 0.476562)
 
-[node name="Top-downSimpleSummerGround24" type="Sprite2D" parent="."]
+[node name="Top-downSimpleSummerGround24" type="Sprite2D" parent="StaticBody2D"]
 position = Vector2(2821, 3157)
 scale = Vector2(0.726562, 1)
 
-[node name="Top-downSimpleSummerGround25" type="Sprite2D" parent="."]
+[node name="Top-downSimpleSummerGround25" type="Sprite2D" parent="StaticBody2D"]
 position = Vector2(2034.5, 2873)
 scale = Vector2(1.86328, 0.585938)
 
-[node name="Top-downSimpleSummerGround26" type="Sprite2D" parent="."]
+[node name="Top-downSimpleSummerGround26" type="Sprite2D" parent="StaticBody2D"]
 position = Vector2(2193, 3089)
 scale = Vector2(0.628907, 1.36719)
 
-[node name="Top-downSimpleSummerGround27" type="Sprite2D" parent="."]
+[node name="Top-downSimpleSummerGround27" type="Sprite2D" parent="StaticBody2D"]
 position = Vector2(2492, 519.5)
 scale = Vector2(0.515625, 3.97266)
 
-[node name="Top-downSimpleSummerGround28" type="Sprite2D" parent="."]
+[node name="Top-downSimpleSummerGround28" type="Sprite2D" parent="StaticBody2D"]
 position = Vector2(2480.5, 580)
 scale = Vector2(5.58984, 0.40625)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(2016, 11)
+shape = SubResource("RectangleShape2D_pykmx")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(3219.25, 2017)
+scale = Vector2(20, 20)
+shape = SubResource("RectangleShape2D_wiqkh")
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(-58.5, 2033.5)
+scale = Vector2(20, 20)
+shape = SubResource("RectangleShape2D_7wuif")
+
+[node name="CollisionShape2D4" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(1608.5, 4092.5)
+scale = Vector2(20, 20)
+shape = SubResource("RectangleShape2D_2ck57")

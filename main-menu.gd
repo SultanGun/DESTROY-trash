@@ -27,4 +27,4 @@ func _on_unhover(button: Button) -> void:
 	_tweens[button] = tween
 
 func _on_button_pressed() -> void:
-	get_tree().change_scene_to_file("res://node_2d.tscn")
+	get_tree().change_scene_to_file("res://main.tscn")
