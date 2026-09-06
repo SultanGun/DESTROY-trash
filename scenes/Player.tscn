@@ -147,7 +147,8 @@ limit_right = 3200
 limit_bottom = 4000
 
 [node name="Collision" type="CollisionShape2D" parent="."]
-position = Vector2(1, -14)
+position = Vector2(1, -5)
+scale = Vector2(0.914959, 0.892564)
 shape = SubResource("CapsuleShape2D_p07f3")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
