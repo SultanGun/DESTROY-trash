@@ -1,0 +1,29 @@
+[gd_scene load_steps=5 format=3 uid="uid://cvmrx5sqy8g0b"]
+
+[ext_resource type="Script" path="res://scripts/machine.gd" id="1_machine"]
+[ext_resource type="Texture2D" uid="uid://bu0n8kfg1r1bt" path="res://assets/mesin/mesin.png" id="2_mesin"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_machine"]
+radius = 237.008
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_block"]
+size = Vector2(420, 173)
+
+[node name="Machine" type="Area2D"]
+collision_layer = 0
+script = ExtResource("1_machine")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(2927, 1751)
+shape = SubResource("CircleShape2D_machine")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(2919.32, 1727.3)
+scale = Vector2(0.162411, 0.173568)
+texture = ExtResource("2_mesin")
+
+[node name="SolidBody" type="StaticBody2D" parent="."]
+
+[node name="Block" type="CollisionShape2D" parent="SolidBody"]
+position = Vector2(2919.32, 1750.5)
+shape = SubResource("RectangleShape2D_block")

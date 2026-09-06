@@ -1,4 +1,4 @@
-[gd_scene load_steps=28 format=3 uid="uid://cm0kh7d2augt5"]
+[gd_scene load_steps=30 format=3 uid="uid://cm0kh7d2augt5"]
 
 [ext_resource type="Script" uid="uid://bnf38l5ug8d1" path="res://scripts/player.gd" id="1_player"]
 [ext_resource type="Texture2D" uid="uid://uu81up2dgeem" path="res://assets/sprites/mc/left/1.png" id="2_left1"]
@@ -24,6 +24,7 @@
 [ext_resource type="Texture2D" uid="uid://dsxq2kkqwpu8e" path="res://assets/sprites/mc/right/3.png" id="22_right3"]
 [ext_resource type="Texture2D" uid="uid://cs70cvhv1lw8q" path="res://assets/sprites/mc/right/4.png" id="23_right4"]
 [ext_resource type="Texture2D" uid="uid://y8l2bfg23lvh" path="res://assets/sprites/mc/right/5.png" id="24_right5"]
+[ext_resource type="Script" path="res://scripts/inventory.gd" id="25_inventory"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_player"]
 animations = [{
@@ -129,6 +130,9 @@ height = 84.0
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_viqgg"]
 size = Vector2(104, 20)
 
+[sub_resource type="CircleShape2D" id="CircleShape2D_pickup"]
+radius = 56.0357
+
 [node name="Player" type="CharacterBody2D" groups=["player"]]
 script = ExtResource("1_player")
 
@@ -154,6 +158,18 @@ shape = SubResource("CapsuleShape2D_p07f3")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0, 53)
 shape = SubResource("RectangleShape2D_viqgg")
+disabled = true
+
+[node name="PickupRadius" type="Area2D" parent="."]
+collision_layer = 4
+collision_mask = 4
+monitorable = false
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="PickupRadius"]
+shape = SubResource("CircleShape2D_pickup")
+
+[node name="Inventory" type="Node" parent="."]
+script = ExtResource("25_inventory")
 
 [node name="DebugHUD" type="CanvasLayer" parent="."]
 
@@ -163,3 +179,51 @@ offset_top = 8.0
 offset_right = 300.0
 offset_bottom = 120.0
 text = "..."
+
+[node name="InventoryHUD" type="CanvasLayer" parent="."]
+
+[node name="Panel" type="PanelContainer" parent="InventoryHUD"]
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -130.0
+offset_top = -78.0
+offset_right = 130.0
+offset_bottom = -20.0
+grow_horizontal = 2
+grow_vertical = 0
+
+[node name="VBox" type="VBoxContainer" parent="InventoryHUD/Panel"]
+layout_mode = 2
+
+[node name="Title" type="Label" parent="InventoryHUD/Panel/VBox"]
+layout_mode = 2
+text = "INVENTORY"
+horizontal_alignment = 1
+
+[node name="HBox" type="HBoxContainer" parent="InventoryHUD/Panel/VBox"]
+layout_mode = 2
+
+[node name="OrganicLabel" type="Label" parent="InventoryHUD/Panel/VBox/HBox"]
+layout_mode = 2
+text = "Organic: "
+
+[node name="OrganicCount" type="Label" parent="InventoryHUD/Panel/VBox/HBox"]
+layout_mode = 2
+text = "0"
+
+[node name="SepA" type="Label" parent="InventoryHUD/Panel/VBox/HBox"]
+layout_mode = 2
+text = "   "
+
+[node name="AnorganicLabel" type="Label" parent="InventoryHUD/Panel/VBox/HBox"]
+layout_mode = 2
+text = "Anorganic: "
+
+[node name="AnorganicCount" type="Label" parent="InventoryHUD/Panel/VBox/HBox"]
+layout_mode = 2
+text = "0"
+
+[connection signal="area_entered" from="PickupRadius" to="." method="_on_pickup_radius_area_entered"]

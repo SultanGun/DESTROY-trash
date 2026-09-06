@@ -1,0 +1,19 @@
+[gd_scene load_steps=4 format=3 uid="uid://dcofex3qbytau"]
+
+[ext_resource type="Script" uid="uid://bg37xbeasilde" path="res://scripts/trash.gd" id="1_trash"]
+[ext_resource type="Texture2D" uid="uid://ichcjxwa4eu" path="res://assets/sampah/kemasan.png" id="2_kemasan"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_trash"]
+radius = 18.0
+
+[node name="Trash" type="Area2D"]
+collision_layer = 4
+collision_mask = 4
+script = ExtResource("1_trash")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_trash")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(0.02, 0.02)
+texture = ExtResource("2_kemasan")

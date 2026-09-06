@@ -7,6 +7,19 @@ var facing: Vector2 = Vector2.DOWN
 
 @onready var anim: AnimatedSprite2D = $Visual/Anim
 @onready var debug_label: Label = $DebugHUD/Label
+@onready var inventory: Inventory = $Inventory
+@onready var organic_count_label: Label = $InventoryHUD/Panel/VBox/HBox/OrganicCount
+@onready var anorganic_count_label: Label = $InventoryHUD/Panel/VBox/HBox/AnorganicCount
+
+
+func _ready() -> void:
+	inventory.inventory_changed.connect(_on_inventory_changed)
+	_on_inventory_changed(inventory.organic_count, inventory.anorganic_count, inventory.capacity)
+
+
+func _on_inventory_changed(organic: int, anorganic: int, _capacity: int) -> void:
+	organic_count_label.text = str(organic)
+	anorganic_count_label.text = str(anorganic)
 
 
 func _physics_process(_delta: float) -> void:
@@ -56,3 +69,13 @@ func _update_animation(input_dir: Vector2) -> void:
 			target = "front" if facing.y > 0.0 else "back"
 	if anim.animation != target:
 		anim.play(target)
+
+
+func collect_trash(trash_type: int) -> void:
+	inventory.add_trash(trash_type)
+	print("Collected: ", trash_type, " | Total: ", inventory.total_count(), "/", inventory.capacity)
+
+
+func _on_pickup_radius_area_entered(area: Area2D) -> void:
+	if area.is_in_group("trash"):
+		area.start_collect(self)
