@@ -1,4 +1,4 @@
-[gd_scene load_steps=27 format=3 uid="uid://c2l5m8cts6w3p"]
+[gd_scene load_steps=28 format=3 uid="uid://c2l5m8cts6w3p"]
 
 [ext_resource type="Script" uid="uid://b5x8xn4mi0bo6" path="res://navmen.gd" id="1_pjjg0"]
 [ext_resource type="Texture2D" uid="uid://d072otbnes2m0" path="res://navmen/Frame 2 (3).png" id="1_s7y6i"]
@@ -10,6 +10,7 @@
 [ext_resource type="Texture2D" uid="uid://djh0t65pjgypt" path="res://navmen/Group 16.png" id="7_qmxi3"]
 [ext_resource type="Texture2D" uid="uid://0yeqlsjndbl0" path="res://navmen/Group 11.png" id="8_dy3o5"]
 [ext_resource type="Texture2D" uid="uid://bqb75a1fttjlo" path="res://navmen/Group 14.png" id="9_4iiua"]
+[ext_resource type="Texture2D" uid="uid://x7uoq1y4p11g" path="res://navmen/erasebg-transformed (7).png" id="11_h4b4f"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_68wxt"]
 
@@ -60,58 +61,79 @@ scale = Vector2(0.5, 0.5)
 transform = Transform2D(0.5, 0, 0, 0.5, 0, 0)
 script = ExtResource("1_pjjg0")
 
-[node name="TextureRect" type="TextureRect" parent="."]
-offset_right = 40.0
+[node name="Control" type="Control" parent="."]
+visible = false
+layout_mode = 3
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -20.0
+offset_right = 20.0
 offset_bottom = 40.0
+grow_horizontal = 2
+
+[node name="TextureRect" type="TextureRect" parent="Control"]
+offset_right = 1280.0
+offset_bottom = 859.0
+scale = Vector2(1.2, 1.2)
 texture = ExtResource("1_s7y6i")
 
-[node name="VBoxContainer" type="VBoxContainer" parent="."]
+[node name="BTMM" type="Button" parent="Control"]
 custom_minimum_size = Vector2(500, 100)
-offset_left = 150.0
-offset_top = 342.0
-offset_right = 1150.0
-offset_bottom = 754.0
-
-[node name="Button" type="Button" parent="."]
-custom_minimum_size = Vector2(500, 100)
-offset_left = 150.0
-offset_top = 330.0
-offset_right = 1150.0
-offset_bottom = 430.0
+offset_left = 300.0
+offset_top = 378.0
+offset_right = 1300.0
+offset_bottom = 478.0
+scale = Vector2(1.2, 1.2)
 theme_override_styles/focus = SubResource("StyleBoxTexture_68wxt")
 theme_override_styles/hover = SubResource("StyleBoxTexture_842yo")
 theme_override_styles/pressed = SubResource("StyleBoxTexture_ng1yd")
 theme_override_styles/normal = SubResource("StyleBoxTexture_qvtm7")
 
-[node name="Button2" type="Button" parent="."]
+[node name="RSM" type="Button" parent="Control"]
 custom_minimum_size = Vector2(500, 100)
-offset_left = 150.0
-offset_top = 464.0
-offset_right = 1150.0
-offset_bottom = 564.0
+offset_left = 300.0
+offset_top = 528.0
+offset_right = 1300.0
+offset_bottom = 628.0
+scale = Vector2(1.2, 1.2)
 theme_override_styles/focus = SubResource("StyleBoxTexture_ety0b")
 theme_override_styles/hover = SubResource("StyleBoxTexture_bnl2s")
 theme_override_styles/pressed = SubResource("StyleBoxTexture_yy4t1")
 theme_override_styles/normal = SubResource("StyleBoxTexture_8lymr")
 
-[node name="Button3" type="Button" parent="."]
+[node name="STTNG" type="Button" parent="Control"]
 custom_minimum_size = Vector2(500, 100)
-offset_left = 150.0
-offset_top = 586.0
-offset_right = 1150.0
-offset_bottom = 686.0
+offset_left = 300.0
+offset_top = 670.0
+offset_right = 1300.0
+offset_bottom = 770.0
+scale = Vector2(1.2, 1.2)
 theme_override_styles/focus = SubResource("StyleBoxTexture_5n1h1")
 theme_override_styles/hover = SubResource("StyleBoxTexture_3xs06")
 theme_override_styles/pressed = SubResource("StyleBoxTexture_065gr")
 theme_override_styles/normal = SubResource("StyleBoxTexture_50y6x")
 
-[node name="Button4" type="Button" parent="."]
+[node name="EXT" type="Button" parent="Control"]
 custom_minimum_size = Vector2(500, 100)
-offset_left = 150.0
-offset_top = 702.0
-offset_right = 1150.0
-offset_bottom = 802.0
+offset_left = 300.0
+offset_top = 802.0
+offset_right = 1300.0
+offset_bottom = 902.0
+scale = Vector2(1.2, 1.2)
 theme_override_styles/focus = SubResource("StyleBoxTexture_dsetb")
 theme_override_styles/hover = SubResource("StyleBoxTexture_jqhhm")
 theme_override_styles/pressed = SubResource("StyleBoxTexture_l6v5r")
 theme_override_styles/normal = SubResource("StyleBoxTexture_j0bg4")
+
+[node name="TextureButton" type="TextureButton" parent="."]
+offset_left = 38.0
+offset_top = 32.0
+offset_right = 422.0
+offset_bottom = 416.0
+scale = Vector2(0.4, 0.4)
+texture_normal = ExtResource("11_h4b4f")
+
+[connection signal="pressed" from="Control/BTMM" to="." method="_on_btmm_pressed"]
+[connection signal="pressed" from="Control/EXT" to="." method="_on_button_4_pressed"]
+[connection signal="pressed" from="TextureButton" to="." method="_on_texture_button_pressed"]
