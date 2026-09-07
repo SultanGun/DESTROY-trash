@@ -34,8 +34,8 @@
 [ext_resource type="Texture2D" uid="uid://bojnwrx0gqed" path="res://assets/sprites/properti_jalan/stroke6-ezgif.com-crop.png" id="29_4by05"]
 [ext_resource type="Texture2D" uid="uid://yhaqtjhhxbl8" path="res://assets/sprites/properti_jalan/stroke1-ezgif.com-crop.png" id="35_ch1si"]
 [ext_resource type="Texture2D" uid="uid://cor5mvjtabeyv" path="res://assets/sprites/properti_jalan/stroke8-ezgif.com-crop.png" id="36_tnew8"]
-[ext_resource type="PackedScene" uid="uid://dcofex3qbytau" path="res://scenes/Trash.tscn" id="37_trash"]
 [ext_resource type="PackedScene" uid="uid://cvmrx5sqy8g0b" path="res://scenes/Machine.tscn" id="38_machine"]
+[ext_resource type="Script" uid="uid://uv7sofbd4xgs" path="res://scripts/trash_spawner.gd" id="39_spawner"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_pykmx"]
 radius = 15.1327
@@ -527,21 +527,15 @@ size = Vector2(160.65, 2.94998)
 
 [node name="Map1_City" type="Node2D"]
 
-[node name="Trash1" parent="." instance=ExtResource("37_trash")]
-position = Vector2(790, 920)
-
-[node name="Trash2" parent="." instance=ExtResource("37_trash")]
-position = Vector2(860, 870)
-
-[node name="Trash3" parent="." instance=ExtResource("37_trash")]
-position = Vector2(640, 760)
-
 [node name="MachinePilah" parent="." instance=ExtResource("38_machine")]
 position = Vector2(-157, 23)
 
 [node name="MachineRecycle" parent="." instance=ExtResource("38_machine")]
 position = Vector2(-652, -1)
 kind = 1
+
+[node name="TrashSpawner" type="Node2D" parent="."]
+script = ExtResource("39_spawner")
 
 [node name="Ground" type="Node2D" parent="."]
 z_index = -28

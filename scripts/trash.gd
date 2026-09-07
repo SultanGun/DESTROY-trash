@@ -2,19 +2,28 @@ extends Area2D
 class_name Trash
 
 ## Dummy trash item buat test loop "ambil -> sortir -> olah".
-## Ganti ColorRect/Sprite2D placeholder ini dengan asset asli nanti —
-## logic di bawah ini gak perlu diubah sama sekali.
+## Logic di bawah ini gak perlu diubah sama sekali.
 
 enum TrashType { ORGANIC, ANORGANIC }
 
 const ORGANIC_TEXTURES := [
-	preload("res://assets/sampah/tulang_ikan.png"),
 	preload("res://assets/sampah/koran.png"),
+	preload("res://assets/sampah/tulang_ikan.png"),
+	preload("res://assets/sampah_organic/eco_enzyme.png"),
+	preload("res://assets/sampah_organic/kulit_kacang.png"),
+	preload("res://assets/sampah_organic/pisang.png"),
+	preload("res://assets/sampah_organic/ranting.png"),
+	preload("res://assets/sampah_organic/roti.png"),
+	preload("res://assets/sampah_organic/teh.png"),
 ]
 const ANORGANIC_TEXTURES := [
 	preload("res://assets/sampah/kemasan.png"),
 	preload("res://assets/sampah/sedotan.png"),
 ]
+
+## Ukuran tampilan target (px) buat lebar/tinggi terpanjang sprite sampah,
+## biar asset yang gede (organic sering 1000px+) tetap kelihatan seragam.
+const DISPLAY_SIZE := 64.0
 
 @export var trash_type: TrashType = TrashType.ORGANIC
 @export var move_speed: float = 300.0
@@ -27,7 +36,10 @@ func _ready() -> void:
 	# Kasih visual beda per tipe: organic = bahan alami, anorganic = kemasan/plastik
 	if has_node("Sprite2D"):
 		var textures: Array = ORGANIC_TEXTURES if trash_type == TrashType.ORGANIC else ANORGANIC_TEXTURES
-		$Sprite2D.texture = textures[randi() % textures.size()]
+		var tex: Texture2D = textures[randi() % textures.size()]
+		$Sprite2D.texture = tex
+		var s := DISPLAY_SIZE / maxf(tex.get_width(), tex.get_height())
+		$Sprite2D.scale = Vector2(s, s)
 
 func _physics_process(delta: float) -> void:
 	if _being_collected and is_instance_valid(_target):
