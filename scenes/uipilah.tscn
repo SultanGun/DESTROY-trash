@@ -1,0 +1,82 @@
+[gd_scene load_steps=15 format=3 uid="uid://bxc6m451ahpi0"]
+
+[ext_resource type="Texture2D" uid="uid://b8cnjbql77fyq" path="res://assets/mesin/uimesin/uipilah/erasebg-transformed (12) 2.png" id="1_3am8f"]
+[ext_resource type="Texture2D" uid="uid://dal615d5efcvr" path="res://assets/mesin/uimesin/uipilah/Group 29.png" id="2_7ye3y"]
+[ext_resource type="Texture2D" uid="uid://bsp8tv410g45x" path="res://assets/mesin/uimesin/uipilah/Rectangle 6.png" id="3_shdba"]
+[ext_resource type="Texture2D" uid="uid://bhhdriylho5gj" path="res://assets/mesin/uimesin/uipilah/Group 31.png" id="4_ebvpn"]
+[ext_resource type="Texture2D" uid="uid://bmih7snxr7s4t" path="res://assets/mesin/uimesin/uipilah/Group 30.png" id="5_rhknu"]
+[ext_resource type="Texture2D" uid="uid://d1byr58p15xoq" path="res://assets/mesin/uimesin/uipilah/wood_arrow 1.png" id="6_gsevk"]
+[ext_resource type="Texture2D" uid="uid://40gkgq4vspld" path="res://assets/mesin/uimesin/uipilah/wood_arrow 2.png" id="7_nu57c"]
+[ext_resource type="Texture2D" uid="uid://dqdhrf46p46rh" path="res://assets/mesin/uimesin/uipilah/Group 32.png" id="8_a35ia"]
+[ext_resource type="Texture2D" uid="uid://dinx2nt4n2pm1" path="res://assets/mesin/uimesin/uipilah/Group 33.png" id="9_s7746"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_5leuk"]
+size = Vector2(1713.89, 929.324)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_qn3l7"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_378sv"]
+texture = ExtResource("8_a35ia")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_yo3ml"]
+texture = ExtResource("9_s7746")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_ebr71"]
+texture = ExtResource("8_a35ia")
+
+[node name="uipilah" type="CanvasLayer"]
+
+[node name="TextureRect" type="TextureRect" parent="."]
+offset_left = -31.0
+offset_top = -29.0
+offset_right = 2321.0
+offset_bottom = 1319.0
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("1_3am8f")
+
+[node name="Group29" type="Sprite2D" parent="."]
+position = Vector2(561, 90)
+scale = Vector2(0.615429, 0.7)
+texture = ExtResource("2_7ye3y")
+
+[node name="Rectangle6" type="Sprite2D" parent="."]
+position = Vector2(559, 314.625)
+scale = Vector2(0.565966, 0.610177)
+texture = ExtResource("3_shdba")
+
+[node name="Area2D" type="Area2D" parent="Rectangle6"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Rectangle6/Area2D"]
+position = Vector2(-0.264038, 0.695007)
+scale = Vector2(0.61, 0.61)
+shape = SubResource("RectangleShape2D_5leuk")
+
+[node name="Group31" type="Sprite2D" parent="."]
+position = Vector2(167, 190)
+scale = Vector2(0.624, 0.624)
+texture = ExtResource("4_ebvpn")
+
+[node name="Group30" type="Sprite2D" parent="."]
+position = Vector2(965, 187)
+scale = Vector2(0.624, 0.624)
+texture = ExtResource("5_rhknu")
+
+[node name="WoodArrow1" type="Sprite2D" parent="."]
+position = Vector2(969, 340)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("6_gsevk")
+
+[node name="WoodArrow2" type="Sprite2D" parent="."]
+position = Vector2(158, 341)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("7_nu57c")
+
+[node name="Button" type="Button" parent="."]
+offset_left = 222.0
+offset_top = 502.0
+offset_right = 922.0
+offset_bottom = 572.0
+theme_override_styles/focus = SubResource("StyleBoxTexture_qn3l7")
+theme_override_styles/hover = SubResource("StyleBoxTexture_378sv")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_yo3ml")
+theme_override_styles/normal = SubResource("StyleBoxTexture_ebr71")

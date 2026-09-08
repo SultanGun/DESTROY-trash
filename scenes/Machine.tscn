@@ -1,6 +1,6 @@
 [gd_scene load_steps=5 format=3 uid="uid://cvmrx5sqy8g0b"]
 
-[ext_resource type="Script" path="res://scripts/machine.gd" id="1_machine"]
+[ext_resource type="Script" uid="uid://dd2cbjv5uavhb" path="res://scripts/machine.gd" id="1_machine"]
 [ext_resource type="Texture2D" uid="uid://bu0n8kfg1r1bt" path="res://assets/mesin/mesin.png" id="2_mesin"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_machine"]

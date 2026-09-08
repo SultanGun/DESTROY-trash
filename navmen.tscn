@@ -67,60 +67,57 @@ layout_mode = 3
 anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
-offset_left = -20.0
-offset_right = 20.0
-offset_bottom = 40.0
+offset_left = -40.0
+offset_top = 200.0
+offset_right = -40.0
+offset_bottom = 200.0
 grow_horizontal = 2
 
 [node name="TextureRect" type="TextureRect" parent="Control"]
+layout_mode = 0
 offset_right = 1280.0
 offset_bottom = 859.0
-scale = Vector2(1.2, 1.2)
 texture = ExtResource("1_s7y6i")
 
 [node name="BTMM" type="Button" parent="Control"]
-custom_minimum_size = Vector2(500, 100)
-offset_left = 300.0
-offset_top = 378.0
-offset_right = 1300.0
-offset_bottom = 478.0
-scale = Vector2(1.2, 1.2)
+layout_mode = 0
+offset_left = 208.0
+offset_top = 298.0
+offset_right = 1208.0
+offset_bottom = 398.0
 theme_override_styles/focus = SubResource("StyleBoxTexture_68wxt")
 theme_override_styles/hover = SubResource("StyleBoxTexture_842yo")
 theme_override_styles/pressed = SubResource("StyleBoxTexture_ng1yd")
 theme_override_styles/normal = SubResource("StyleBoxTexture_qvtm7")
 
 [node name="RSM" type="Button" parent="Control"]
-custom_minimum_size = Vector2(500, 100)
-offset_left = 300.0
-offset_top = 528.0
-offset_right = 1300.0
-offset_bottom = 628.0
-scale = Vector2(1.2, 1.2)
+layout_mode = 0
+offset_left = 208.0
+offset_top = 416.0
+offset_right = 1208.0
+offset_bottom = 516.0
 theme_override_styles/focus = SubResource("StyleBoxTexture_ety0b")
 theme_override_styles/hover = SubResource("StyleBoxTexture_bnl2s")
 theme_override_styles/pressed = SubResource("StyleBoxTexture_yy4t1")
 theme_override_styles/normal = SubResource("StyleBoxTexture_8lymr")
 
 [node name="STTNG" type="Button" parent="Control"]
-custom_minimum_size = Vector2(500, 100)
-offset_left = 300.0
-offset_top = 670.0
-offset_right = 1300.0
-offset_bottom = 770.0
-scale = Vector2(1.2, 1.2)
+layout_mode = 0
+offset_left = 208.0
+offset_top = 538.0
+offset_right = 1208.0
+offset_bottom = 638.0
 theme_override_styles/focus = SubResource("StyleBoxTexture_5n1h1")
 theme_override_styles/hover = SubResource("StyleBoxTexture_3xs06")
 theme_override_styles/pressed = SubResource("StyleBoxTexture_065gr")
 theme_override_styles/normal = SubResource("StyleBoxTexture_50y6x")
 
 [node name="EXT" type="Button" parent="Control"]
-custom_minimum_size = Vector2(500, 100)
-offset_left = 300.0
-offset_top = 802.0
-offset_right = 1300.0
-offset_bottom = 902.0
-scale = Vector2(1.2, 1.2)
+layout_mode = 0
+offset_left = 208.0
+offset_top = 652.0
+offset_right = 1208.0
+offset_bottom = 752.0
 theme_override_styles/focus = SubResource("StyleBoxTexture_dsetb")
 theme_override_styles/hover = SubResource("StyleBoxTexture_jqhhm")
 theme_override_styles/pressed = SubResource("StyleBoxTexture_l6v5r")
