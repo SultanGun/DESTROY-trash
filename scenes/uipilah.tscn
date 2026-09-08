@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=3 uid="uid://bxc6m451ahpi0"]
+[gd_scene load_steps=16 format=3 uid="uid://bxc6m451ahpi0"]
 
 [ext_resource type="Texture2D" uid="uid://b8cnjbql77fyq" path="res://assets/mesin/uimesin/uipilah/erasebg-transformed (12) 2.png" id="1_3am8f"]
 [ext_resource type="Texture2D" uid="uid://dal615d5efcvr" path="res://assets/mesin/uimesin/uipilah/Group 29.png" id="2_7ye3y"]
@@ -9,6 +9,7 @@
 [ext_resource type="Texture2D" uid="uid://40gkgq4vspld" path="res://assets/mesin/uimesin/uipilah/wood_arrow 2.png" id="7_nu57c"]
 [ext_resource type="Texture2D" uid="uid://dqdhrf46p46rh" path="res://assets/mesin/uimesin/uipilah/Group 32.png" id="8_a35ia"]
 [ext_resource type="Texture2D" uid="uid://dinx2nt4n2pm1" path="res://assets/mesin/uimesin/uipilah/Group 33.png" id="9_s7746"]
+[ext_resource type="Script" uid="uid://3vbd5pj7mxgo" path="res://uipilah.gd" id="10_script"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_5leuk"]
 size = Vector2(1713.89, 929.324)
@@ -25,6 +26,7 @@ texture = ExtResource("9_s7746")
 texture = ExtResource("8_a35ia")
 
 [node name="uipilah" type="CanvasLayer"]
+script = ExtResource("10_script")
 
 [node name="TextureRect" type="TextureRect" parent="."]
 offset_left = -31.0

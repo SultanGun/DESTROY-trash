@@ -21,12 +21,22 @@ const ANORGANIC_TEXTURES := [
 	preload("res://assets/sampah/sedotan.png"),
 ]
 
+## Id jenis per tipe (nyambung ke GameData.ITEM_NAMES / ITEM_PRICES).
+const ORGANIC_KINDS := [
+	"koran", "tulang_ikan", "eco_enzyme", "kulit_kacang",
+	"pisang", "ranting", "roti", "teh",
+]
+const ANORGANIC_KINDS := ["kemasan", "sedotan"]
+
 ## Ukuran tampilan target (px) buat lebar/tinggi terpanjang sprite sampah,
 ## biar asset yang gede (organic sering 1000px+) tetap kelihatan seragam.
 const DISPLAY_SIZE := 64.0
 
 @export var trash_type: TrashType = TrashType.ORGANIC
 @export var move_speed: float = 300.0
+
+## Id jenis sampah instance ini (dipakai buat harga jual di GameData).
+var kind: String = ""
 
 var _target: Node2D = null
 var _being_collected: bool = false
@@ -36,7 +46,10 @@ func _ready() -> void:
 	# Kasih visual beda per tipe: organic = bahan alami, anorganic = kemasan/plastik
 	if has_node("Sprite2D"):
 		var textures: Array = ORGANIC_TEXTURES if trash_type == TrashType.ORGANIC else ANORGANIC_TEXTURES
-		var tex: Texture2D = textures[randi() % textures.size()]
+		var kinds: Array = ORGANIC_KINDS if trash_type == TrashType.ORGANIC else ANORGANIC_KINDS
+		var i := randi() % textures.size()
+		kind = kinds[i]
+		var tex: Texture2D = textures[i]
 		$Sprite2D.texture = tex
 		var s := DISPLAY_SIZE / maxf(tex.get_width(), tex.get_height())
 		$Sprite2D.scale = Vector2(s, s)
@@ -60,9 +73,20 @@ func _finish_collect() -> void:
 	if not is_instance_valid(_target):
 		queue_free()
 		return
+	var ok := true
 	if _target.has_method("collect_trash"):
-		_target.collect_trash(trash_type)
-	queue_free()
+		ok = _target.collect_trash(trash_type, kind)
+	if ok:
+		queue_free()
+	else:
+		# Inventory penuh: sampah gak ikut kecandu, balik ke lantai
+		# biar bisa diambil lagi nanti (gak ilang).
+		_being_collected = false
+		_target = null
+		set_deferred("monitoring", true)
 
 func get_trash_type_name() -> String:
 	return "Organic" if trash_type == TrashType.ORGANIC else "Anorganic"
+
+func get_kind() -> String:
+	return kind

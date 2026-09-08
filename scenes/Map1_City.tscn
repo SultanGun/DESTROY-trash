@@ -1,4 +1,4 @@
-[gd_scene load_steps=199 format=3 uid="uid://dr6msqg3adjhk"]
+[gd_scene load_steps=200 format=3 uid="uid://dr6msqg3adjhk"]
 
 [ext_resource type="Texture2D" uid="uid://bhet6hy5sn2cy" path="res://assets/sprites/props/Top-Down Simple Summer_Prop - House.png" id="0_c"]
 [ext_resource type="Texture2D" uid="uid://dkvi4bk7tnt4l" path="res://assets/sprites/properti_jalan/stroke7-ezgif.com-crop.png" id="1_556fm"]
@@ -11,6 +11,7 @@
 [ext_resource type="Texture2D" uid="uid://cyffhqt7lu8uj" path="res://assets/sprites/props/Top-Down Simple Summer_Prop - Bushes Small.png" id="5_c"]
 [ext_resource type="Texture2D" uid="uid://pwveumpmhxbf" path="res://assets/sprites/props/Top-Down Simple Summer_Prop - Bushes Medium.png" id="6_c"]
 [ext_resource type="Texture2D" uid="uid://cvqqk1g2q13g1" path="res://assets/sprites/props/Top-Down Simple Summer_Prop - Bushes Large.png" id="7_c"]
+[ext_resource type="Texture2D" uid="uid://blxo3s22lklvo" path="res://assets/sprites/PNG/Top-Down Simple Summer_Ground 23.png" id="7_y0njf"]
 [ext_resource type="Texture2D" uid="uid://b1s0mbwiprfm1" path="res://assets/sprites/props/Top-Down Simple Summer_Prop - Rock 01.png" id="8_c"]
 [ext_resource type="Texture2D" uid="uid://i3x44e0i0up5" path="res://assets/sprites/props/Top-Down Simple Summer_Prop - Rock 02.png" id="9_c"]
 [ext_resource type="Texture2D" uid="uid://boa6v4kr4ewqw" path="res://assets/sprites/properti_jalan/stroke4-ezgif.com-crop.png" id="9_o2ig1"]
@@ -1179,10 +1180,6 @@ position = Vector2(1352, 901)
 scale = Vector2(0.786364, 0.564665)
 texture = ExtResource("2_qsf01")
 
-[node name="Top-downSimpleSummerProp-WoodenBridgeVertical" type="Sprite2D" parent="Ground"]
-position = Vector2(497, 3605)
-texture = ExtResource("3_y0njf")
-
 [node name="Stroke4-ezgif_com-crop" type="Sprite2D" parent="Ground"]
 position = Vector2(1391, 2243)
 scale = Vector2(0.743243, 0.663973)
@@ -1214,6 +1211,26 @@ texture = ExtResource("10_u2wxr")
 position = Vector2(944.25, 3226)
 scale = Vector2(3.7832, 0.429688)
 texture = ExtResource("10_u2wxr")
+
+[node name="Top-downSimpleSummerGround26" type="Sprite2D" parent="Ground"]
+position = Vector2(2455, 3333.25)
+scale = Vector2(0.515625, 1.23242)
+texture = ExtResource("7_y0njf")
+
+[node name="Top-downSimpleSummerGround27" type="Sprite2D" parent="Ground"]
+position = Vector2(498, 3326.5)
+scale = Vector2(0.519531, 1.21484)
+texture = ExtResource("7_y0njf")
+
+[node name="Stroke4-ezgif_com-crop2" type="Sprite2D" parent="Ground"]
+position = Vector2(1811, 3016)
+scale = Vector2(0.718468, 0.671478)
+texture = ExtResource("9_o2ig1")
+
+[node name="Stroke4-ezgif_com-crop3" type="Sprite2D" parent="Ground"]
+position = Vector2(1403, 3022)
+scale = Vector2(0.75075, 0.669601)
+texture = ExtResource("9_o2ig1")
 
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
 
@@ -2887,10 +2904,6 @@ position = Vector2(551, 967)
 scale = Vector2(0.650769, 0.472154)
 texture = ExtResource("36_tnew8")
 
-[node name="Top-downSimpleSummerProp-WoodenBridgeVertical" type="Sprite2D" parent="StaticBody2D"]
-position = Vector2(2419, 3601)
-texture = ExtResource("3_y0njf")
-
 [node name="Top-downSimpleSummerProp-Flag" type="Sprite2D" parent="StaticBody2D"]
 position = Vector2(3023, 1398)
 scale = Vector2(1.3, 1)
@@ -2958,3 +2971,11 @@ shape = SubResource("RectangleShape2D_7wuif")
 position = Vector2(1608.5, 4092.5)
 scale = Vector2(20, 20)
 shape = SubResource("RectangleShape2D_2ck57")
+
+[node name="Top-downSimpleSummerProp-WoodenBridgeVertical" type="Sprite2D" parent="."]
+position = Vector2(2459, 3612)
+texture = ExtResource("3_y0njf")
+
+[node name="Top-downSimpleSummerProp-WoodenBridgeVertical2" type="Sprite2D" parent="."]
+position = Vector2(499, 3603)
+texture = ExtResource("3_y0njf")

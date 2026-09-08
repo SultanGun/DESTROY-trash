@@ -1,30 +1,27 @@
 extends Area2D
 class_name Machine
 
-## Mesin interaksi untuk mekanik setor-pilah-recycle.
-## E = Mesin Pilah (mindahin sampah player -> sorted di GameData)
-## F = Mesin Recycle (ngolah sorted -> poin daur ulang)
-## UI dibangun real-time via code (Godot 4.4.1 compatible).
+## Mesin interaksi untuk mekanik setor-pilah-olah:
+## E = Mesin Pilah  (buka UI uipilah, mindahin sampah player -> GameData.sorted)
+## F = Mesin Olah   (buka UI uiolah, ngolah GameData.sorted -> Koin GameManager)
+## UI yang muncul = scene visual (res://scenes/uipilah.tscn / uiolah.tscn).
 
 enum Kind { PILAH, RECYCLE }
+
+const PILAH_UI := preload("res://scenes/uipilah.tscn")
+const OLAH_UI := preload("res://scenes/uiolah.tscn")
 
 @export var kind: Kind = Kind.PILAH
 
 var _player: CharacterBody2D = null
 var _ui_open := false
-var _ui: Control = null
-var _stats_label: Label = null
-var _action_label: Label = null
+var _ui: CanvasLayer = null
 
 func _ready() -> void:
 	add_to_group("machines")
 	body_entered.connect(_on_body_entered)
 	body_exited.connect(_on_body_exited)
 	_set_prompt_visible(false)
-
-func _process(_delta: float) -> void:
-	if _ui_open and _stats_label:
-		_refresh_stats()
 
 func _on_body_entered(body: Node2D) -> void:
 	if body.is_in_group("player"):
@@ -51,121 +48,42 @@ func _unhandled_input(event: InputEvent) -> void:
 				_open_ui()
 				get_viewport().set_input_as_handled()
 
+func get_player() -> CharacterBody2D:
+	return _player
+
 ## --- UI ---
 
 func _open_ui() -> void:
 	if _ui_open:
 		return
 	_ui_open = true
-	if not _ui:
-		_build_ui()
-	_refresh_stats()
+	if not _ui or not is_instance_valid(_ui):
+		_instantiate_ui()
+	if _ui and _ui.has_method("setup"):
+		_ui.setup(self)
 	_ui.visible = true
+	_set_inventory_visible(false)
 
 func _close_ui() -> void:
 	if not _ui_open:
 		return
 	_ui_open = false
-	if _ui:
+	if is_instance_valid(_ui):
 		_ui.visible = false
+	_set_inventory_visible(true)
 
-func _build_ui() -> void:
-	var layer := CanvasLayer.new()
-	layer.name = "MachineUI"
-	add_child(layer)
+## Sembunyikan HUD inventory player selama UI mesin kebuka, biar layar fokus ke mesin.
+func _set_inventory_visible(vis: bool) -> void:
+	for p in get_tree().get_nodes_in_group("player"):
+		if p.has_node("InventoryHUD"):
+			p.get_node("InventoryHUD").visible = vis
 
-	_ui = Control.new()
-	_ui.set_anchors_preset(Control.PRESET_FULL_RECT)
-	layer.add_child(_ui)
+func _instantiate_ui() -> void:
+	_ui = (PILAH_UI if kind == Kind.PILAH else OLAH_UI).instantiate()
+	add_child(_ui)
+	if _ui.has_signal("close_requested"):
+		_ui.close_requested.connect(_close_ui)
 	_ui.visible = false
-
-	var dim := ColorRect.new()
-	dim.color = Color(0, 0, 0, 0.55)
-	dim.set_anchors_preset(Control.PRESET_FULL_RECT)
-	_ui.add_child(dim)
-
-	var panel := PanelContainer.new()
-	panel.set_anchors_preset(Control.PRESET_CENTER)
-	panel.grow_horizontal = Control.GROW_DIRECTION_BOTH
-	panel.grow_vertical = Control.GROW_DIRECTION_BOTH
-	_ui.add_child(panel)
-
-	var margin := MarginContainer.new()
-	margin.add_theme_constant_override("margin_left", 28)
-	margin.add_theme_constant_override("margin_right", 28)
-	margin.add_theme_constant_override("margin_top", 20)
-	margin.add_theme_constant_override("margin_bottom", 20)
-	panel.add_child(margin)
-
-	var vbox := VBoxContainer.new()
-	vbox.add_theme_constant_override("separation", 10)
-	margin.add_child(vbox)
-
-	var title := Label.new()
-	title.text = "Mesin Pilah & Sortir" if kind == Kind.PILAH else "Mesin Daur Ulang"
-	title.add_theme_font_size_override("font_size", 26)
-	title.horizontal_alignment = HORIZONTAL_ALIGNMENT_CENTER
-	vbox.add_child(title)
-
-	_stats_label = Label.new()
-	_stats_label.horizontal_alignment = HORIZONTAL_ALIGNMENT_CENTER
-	vbox.add_child(_stats_label)
-
-	_action_label = Label.new()
-	_action_label.horizontal_alignment = HORIZONTAL_ALIGNMENT_CENTER
-	vbox.add_child(_action_label)
-
-	var actions := HBoxContainer.new()
-	actions.alignment = BoxContainer.ALIGNMENT_CENTER
-	actions.add_theme_constant_override("separation", 12)
-	vbox.add_child(actions)
-
-	actions.add_child(_make_button("Aksi Utama", _on_action_pressed))
-	actions.add_child(_make_button("Tutup (Esc)", Callable(self, "_close_ui")))
-
-func _make_button(text: String, callback: Callable) -> Button:
-	var btn := Button.new()
-	btn.text = text
-	btn.custom_minimum_size = Vector2(0, 44)
-	btn.pressed.connect(callback)
-	return btn
-
-func _refresh_stats() -> void:
-	if not is_instance_valid(_player):
-		return
-	var inv: Inventory = _player.get_node("Inventory")
-	if kind == Kind.PILAH:
-		_stats_label.text = "Inventory Player\nOrganic: %d | Anorganic: %d | Total: %d/%d\n\nSudah dipilah di mesin ini:\nOrganic: %d | Anorganic: %d" % [
-			inv.organic_count, inv.anorganic_count, inv.total_count(), inv.capacity,
-			GameData.sorted_organic, GameData.sorted_anorganic,
-		]
-		_action_label.text = "Aksi: pindahkan semua sampah ke temp penampung"
-	else:
-		_stats_label.text = "Terkumpul utk didaur ulang\nOrganic: %d | Anorganic: %d\n\nTotal sampah yg sudah didaur ulang: %d\nPoin: %d" % [
-			GameData.sorted_organic, GameData.sorted_anorganic,
-			GameData.recycled_total, GameData.recycle_points,
-		]
-		_action_label.text = "Aksi: proses semua sampah -> poin"
-
-func _on_action_pressed() -> void:
-	if not is_instance_valid(_player):
-		return
-	var inv: Inventory = _player.get_node("Inventory")
-	if kind == Kind.PILAH:
-		var o := inv.organic_count
-		var a := inv.anorganic_count
-		if o + a == 0:
-			_action_label.text = "Tidak ada sampah utk dipilah. Ambil sampah dulu (E dibuka lewat pickup radius)."
-			return
-		inv.clear()
-		GameData.add_sorted(o, a)
-		_action_label.text = "Sampah dipilah & dipindah ke penampung. Lanjutkan ke Mesin Daur Ulang (F)."
-	else:
-		var processed := GameData.recycle_all()
-		if processed == 0:
-			_action_label.text = "Belum ada sampah terpilah. Pilah di mesin lain dulu (E)."
-			return
-		_action_label.text = "Daur ulang %d sampah -> %d poin." % [processed, GameData.recycle_points]
 
 ## --- Prompt badge di atas mesin ---
 
@@ -178,7 +96,7 @@ func _set_prompt_visible(vis: bool) -> void:
 		return
 	if not _prompt_label:
 		_build_prompt()
-	_prompt_label.text = "[E] Pilah" if kind == Kind.PILAH else "[F] Recycle"
+	_prompt_label.text = "[E] Pilah" if kind == Kind.PILAH else "[F] Olah"
 	_prompt_label.visible = true
 
 func _build_prompt() -> void:
