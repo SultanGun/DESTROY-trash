@@ -1,4 +1,4 @@
-extends CanvasLayer
+extends Control
 
 const BOUNCE := 1.15
 var _tweens: Dictionary = {}

@@ -1,4 +1,4 @@
-[gd_scene load_steps=39 format=3 uid="uid://cf0ly85hvtlgc"]
+[gd_scene load_steps=36 format=3 uid="uid://cf0ly85hvtlgc"]
 
 [ext_resource type="Script" uid="uid://dr121cbacxaim" path="res://uiolah.gd" id="1_cfc24"]
 [ext_resource type="Texture2D" uid="uid://b8ta0l8ilnrv7" path="res://mesin asset/erasebg-transformed (12) 1.png" id="2_x4o8c"]
@@ -6,11 +6,8 @@
 [ext_resource type="Texture2D" uid="uid://b66x7jhdqchm8" path="res://mesin asset/Group 18 (1).png" id="3_xemy8"]
 [ext_resource type="Texture2D" uid="uid://bvhdhpkx0rr2k" path="res://mesin asset/Group 19.png" id="4_bh406"]
 [ext_resource type="Texture2D" uid="uid://5jqksy8iaeuq" path="res://mesin asset/Group 20.png" id="5_80f4i"]
-[ext_resource type="Texture2D" uid="uid://cqst7rhtmoh3x" path="res://mesin asset/Group 26.png" id="6_vgibn"]
-[ext_resource type="Texture2D" uid="uid://irp3h2wnlcle" path="res://mesin asset/Group 25.png" id="7_puli2"]
-[ext_resource type="Texture2D" uid="uid://cb1v0aadja11u" path="res://mesin asset/Group 27.png" id="8_a5ep5"]
-[ext_resource type="Texture2D" uid="uid://pwuymuwk2h4x" path="res://mesin asset/Group 28.png" id="9_p8uvk"]
-[ext_resource type="Texture2D" uid="uid://cv2l8247ujuhf" path="res://mesin asset/Group 24.png" id="10_dvk3c"]
+[ext_resource type="Texture2D" uid="uid://ij1cibdkosde" path="res://assets/mesin/uimesin/Group 35.png" id="7_r4mlo"]
+[ext_resource type="Texture2D" uid="uid://cshsikote2elr" path="res://assets/mesin/uimesin/Group 40.png" id="8_yght4"]
 [ext_resource type="Texture2D" uid="uid://bl4qroy5pn8jg" path="res://mesin asset/frame_no_bg_stretched (1).png" id="11_k615x"]
 [ext_resource type="Texture2D" uid="uid://b3fcup3ypvdkl" path="res://icon.svg" id="12_cf6jq"]
 [ext_resource type="Texture2D" uid="uid://b733x221t6nkt" path="res://mesin asset/Group 29.png" id="13_5y45v"]
@@ -19,49 +16,49 @@
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_gho4j"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_jj2r5"]
-texture = ExtResource("6_vgibn")
+texture = ExtResource("7_r4mlo")
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_of5tr"]
-texture = ExtResource("6_vgibn")
+texture = ExtResource("8_yght4")
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_cc56x"]
-texture = ExtResource("6_vgibn")
+texture = ExtResource("7_r4mlo")
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_uuo7i"]
-texture = ExtResource("7_puli2")
+texture = ExtResource("7_r4mlo")
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_hkbpr"]
-texture = ExtResource("7_puli2")
+texture = ExtResource("8_yght4")
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_mimb6"]
-texture = ExtResource("7_puli2")
+texture = ExtResource("7_r4mlo")
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_fdup2"]
-texture = ExtResource("8_a5ep5")
+texture = ExtResource("7_r4mlo")
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_1m3lk"]
-texture = ExtResource("8_a5ep5")
+texture = ExtResource("8_yght4")
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_dfhi5"]
-texture = ExtResource("8_a5ep5")
+texture = ExtResource("7_r4mlo")
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_k58ot"]
-texture = ExtResource("9_p8uvk")
+texture = ExtResource("7_r4mlo")
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_sky8n"]
-texture = ExtResource("9_p8uvk")
+texture = ExtResource("8_yght4")
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_hcmca"]
-texture = ExtResource("9_p8uvk")
+texture = ExtResource("7_r4mlo")
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_dvkek"]
-texture = ExtResource("10_dvk3c")
+texture = ExtResource("7_r4mlo")
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_tx78t"]
-texture = ExtResource("10_dvk3c")
+texture = ExtResource("8_yght4")
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_ish33"]
-texture = ExtResource("10_dvk3c")
+texture = ExtResource("7_r4mlo")
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_qv33b"]
 
