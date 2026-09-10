@@ -88,6 +88,7 @@ scale = Vector2(0.9, 0.9)
 texture = ExtResource("4_upudm")
 
 [node name="Button" type="Button" parent="."]
+layout_mode = 0
 offset_left = 337.0
 offset_top = 511.0
 offset_right = 345.0
@@ -99,6 +100,7 @@ theme_override_styles/pressed = SubResource("StyleBoxTexture_enm30")
 theme_override_styles/normal = SubResource("StyleBoxTexture_4gyfd")
 
 [node name="Button2" type="Button" parent="."]
+layout_mode = 0
 offset_left = 519.0
 offset_top = 509.0
 offset_right = 527.0
@@ -110,6 +112,7 @@ theme_override_styles/pressed = SubResource("StyleBoxTexture_46a5s")
 theme_override_styles/normal = SubResource("StyleBoxTexture_cc6s4")
 
 [node name="Button3" type="Button" parent="."]
+layout_mode = 0
 offset_left = 701.0
 offset_top = 506.0
 offset_right = 709.0
@@ -121,6 +124,7 @@ theme_override_styles/pressed = SubResource("StyleBoxTexture_hf31h")
 theme_override_styles/normal = SubResource("StyleBoxTexture_4k5jk")
 
 [node name="Button4" type="Button" parent="."]
+layout_mode = 0
 offset_left = 853.0
 offset_top = 505.0
 offset_right = 861.0

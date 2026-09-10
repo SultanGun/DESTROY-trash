@@ -1,84 +1,86 @@
-[gd_scene load_steps=36 format=3 uid="uid://cf0ly85hvtlgc"]
+[gd_scene load_steps=38 format=3 uid="uid://cf0ly85hvtlgc"]
 
 [ext_resource type="Script" uid="uid://dr121cbacxaim" path="res://uiolah.gd" id="1_cfc24"]
-[ext_resource type="Texture2D" uid="uid://b8ta0l8ilnrv7" path="res://mesin asset/erasebg-transformed (12) 1.png" id="2_x4o8c"]
 [ext_resource type="Texture2D" uid="uid://bsp8tv410g45x" path="res://assets/mesin/uimesin/uipilah/Rectangle 6.png" id="2_xemy8"]
-[ext_resource type="Texture2D" uid="uid://b66x7jhdqchm8" path="res://mesin asset/Group 18 (1).png" id="3_xemy8"]
-[ext_resource type="Texture2D" uid="uid://bvhdhpkx0rr2k" path="res://mesin asset/Group 19.png" id="4_bh406"]
-[ext_resource type="Texture2D" uid="uid://5jqksy8iaeuq" path="res://mesin asset/Group 20.png" id="5_80f4i"]
-[ext_resource type="Texture2D" uid="uid://ij1cibdkosde" path="res://assets/mesin/uimesin/Group 35.png" id="7_r4mlo"]
-[ext_resource type="Texture2D" uid="uid://cshsikote2elr" path="res://assets/mesin/uimesin/Group 40.png" id="8_yght4"]
-[ext_resource type="Texture2D" uid="uid://bl4qroy5pn8jg" path="res://mesin asset/frame_no_bg_stretched (1).png" id="11_k615x"]
+[ext_resource type="Texture2D" uid="uid://b4npf72fur620" path="res://scenes/sprites/erasebg-transformed (17).png" id="3_8bvo1"]
+[ext_resource type="Texture2D" uid="uid://cflrp3k4yetwk" path="res://assets/uipael_/Untitled (14)/Group 49.png" id="4_kjwmq"]
+[ext_resource type="Texture2D" uid="uid://q0lc5mhoe0a0" path="res://assets/uipael_/Untitled (14)/Group 52.png" id="5_2i2da"]
+[ext_resource type="Texture2D" uid="uid://dtvpm12xm1u7p" path="res://assets/uipael_/Untitled (14)/Group 50.png" id="6_wx42e"]
+[ext_resource type="Texture2D" uid="uid://6ylc8cgh7oc7" path="res://assets/uipael_/Untitled (14)/erasebg-transformed (22) 2.png" id="7_d6bkp"]
+[ext_resource type="Texture2D" uid="uid://8sk267vbia6r" path="res://assets/uipael_/Untitled (14)/erasebg-transformed (22) 3.png" id="8_h0nwp"]
+[ext_resource type="Texture2D" uid="uid://b7acgy7jicnoe" path="res://assets/uipael_/erasebg-transformed (16).png" id="8_kjwmq"]
+[ext_resource type="Texture2D" uid="uid://bntktcxqj24vo" path="res://assets/uipael_/Untitled (14)/Group 60.png" id="11_dughc"]
 [ext_resource type="Texture2D" uid="uid://b3fcup3ypvdkl" path="res://icon.svg" id="12_cf6jq"]
-[ext_resource type="Texture2D" uid="uid://b733x221t6nkt" path="res://mesin asset/Group 29.png" id="13_5y45v"]
-[ext_resource type="Texture2D" uid="uid://cnsrja3yks1xm" path="res://assets/mesin/uimesin/olah/Group 30.png" id="14_15mwr"]
+[ext_resource type="Texture2D" uid="uid://b7mtkbgqqy0a0" path="res://assets/uipael_/Untitled (14)/Group 61.png" id="12_yi3sl"]
+[ext_resource type="Texture2D" uid="uid://ch7hkiasgp1ln" path="res://assets/uipael_/Untitled (14)/Group 48.png" id="13_vtpog"]
+[ext_resource type="Texture2D" uid="uid://dsxmopkg0jt0v" path="res://assets/uipael_/Untitled (14)/Group 59.png" id="14_8wvcm"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_gho4j"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_jj2r5"]
-texture = ExtResource("7_r4mlo")
+texture = ExtResource("7_d6bkp")
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_of5tr"]
-texture = ExtResource("8_yght4")
+texture = ExtResource("8_h0nwp")
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_cc56x"]
-texture = ExtResource("7_r4mlo")
+texture = ExtResource("7_d6bkp")
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_uuo7i"]
-texture = ExtResource("7_r4mlo")
+texture = ExtResource("7_d6bkp")
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_hkbpr"]
-texture = ExtResource("8_yght4")
+texture = ExtResource("8_h0nwp")
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_mimb6"]
-texture = ExtResource("7_r4mlo")
+texture = ExtResource("7_d6bkp")
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_fdup2"]
-texture = ExtResource("7_r4mlo")
+texture = ExtResource("7_d6bkp")
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_1m3lk"]
-texture = ExtResource("8_yght4")
+texture = ExtResource("8_h0nwp")
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_dfhi5"]
-texture = ExtResource("7_r4mlo")
+texture = ExtResource("7_d6bkp")
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_k58ot"]
-texture = ExtResource("7_r4mlo")
+texture = ExtResource("7_d6bkp")
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_sky8n"]
-texture = ExtResource("8_yght4")
+texture = ExtResource("8_h0nwp")
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_hcmca"]
-texture = ExtResource("7_r4mlo")
+texture = ExtResource("7_d6bkp")
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_dvkek"]
-texture = ExtResource("7_r4mlo")
+texture = ExtResource("7_d6bkp")
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_tx78t"]
-texture = ExtResource("8_yght4")
+texture = ExtResource("8_h0nwp")
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_ish33"]
-texture = ExtResource("7_r4mlo")
+texture = ExtResource("7_d6bkp")
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_qv33b"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_f3igp"]
-texture = ExtResource("13_5y45v")
+texture = ExtResource("11_dughc")
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_0etqt"]
-texture = ExtResource("13_5y45v")
+texture = ExtResource("12_yi3sl")
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_lyml8"]
-texture = ExtResource("13_5y45v")
+texture = ExtResource("11_dughc")
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_6ffho"]
-texture = ExtResource("14_15mwr")
+texture = ExtResource("13_vtpog")
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_tadlm"]
-texture = ExtResource("14_15mwr")
+texture = ExtResource("14_8wvcm")
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_tmr4u"]
-texture = ExtResource("14_15mwr")
+texture = ExtResource("13_vtpog")
 
 [node name="Control" type="CanvasLayer"]
 script = ExtResource("1_cfc24")
@@ -89,41 +91,41 @@ scale = Vector2(1.10038, 1.14425)
 texture = ExtResource("2_xemy8")
 
 [node name="TextureRect" type="TextureRect" parent="."]
-offset_left = -29.0
-offset_top = -24.0
-offset_right = 2387.0
-offset_bottom = 1226.0
+offset_left = -10.0
+offset_top = -175.0
+offset_right = 2346.0
+offset_bottom = 1961.0
 scale = Vector2(0.5, 0.5)
-texture = ExtResource("2_x4o8c")
+texture = ExtResource("3_8bvo1")
 
 [node name="Group18(1)" type="Sprite2D" parent="."]
-position = Vector2(161, 103)
+position = Vector2(993, 91)
 scale = Vector2(0.7, 0.7)
-texture = ExtResource("3_xemy8")
+texture = ExtResource("4_kjwmq")
 
 [node name="Label" type="Label" parent="Group18(1)"]
-offset_left = -111.429
-offset_top = 2.85715
-offset_right = 44.5714
-offset_bottom = 25.8571
+offset_left = -134.286
+offset_top = -5.71429
+offset_right = 21.7149
+offset_bottom = 17.2857
 scale = Vector2(1.5, 1.5)
 text = "0"
 
 [node name="Group19" type="Sprite2D" parent="."]
 position = Vector2(573, 101)
 scale = Vector2(0.6, 0.6)
-texture = ExtResource("4_bh406")
+texture = ExtResource("5_2i2da")
 
 [node name="Group20" type="Sprite2D" parent="."]
-position = Vector2(992, 101)
+position = Vector2(170, 93)
 scale = Vector2(0.7, 0.7)
-texture = ExtResource("5_80f4i")
+texture = ExtResource("6_wx42e")
 
 [node name="Label" type="Label" parent="Group20"]
-offset_left = -110.0
-offset_top = 4.0
-offset_right = 35.0
-offset_bottom = 27.0
+offset_left = -135.714
+offset_top = -7.14286
+offset_right = 9.28571
+offset_bottom = 15.8571
 scale = Vector2(1.5, 1.5)
 text = "0"
 
@@ -178,9 +180,9 @@ theme_override_styles/pressed = SubResource("StyleBoxTexture_tx78t")
 theme_override_styles/normal = SubResource("StyleBoxTexture_ish33")
 
 [node name="FrameNoBgStretched(1)" type="Sprite2D" parent="."]
-position = Vector2(876.75, 327)
-scale = Vector2(1.24413, 0.732743)
-texture = ExtResource("11_k615x")
+position = Vector2(887.5, 352.389)
+scale = Vector2(0.617333, 0.665038)
+texture = ExtResource("8_kjwmq")
 
 [node name="TextureRect" type="TextureRect" parent="FrameNoBgStretched(1)"]
 offset_left = -109.917
@@ -228,20 +230,20 @@ horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="Button6" type="Button" parent="."]
-offset_left = 4.0
-offset_top = 583.0
-offset_right = 604.0
-offset_bottom = 646.0
+offset_left = 55.0
+offset_top = 542.0
+offset_right = 755.0
+offset_bottom = 607.0
 theme_override_styles/focus = SubResource("StyleBoxTexture_qv33b")
 theme_override_styles/hover = SubResource("StyleBoxTexture_f3igp")
 theme_override_styles/pressed = SubResource("StyleBoxTexture_0etqt")
 theme_override_styles/normal = SubResource("StyleBoxTexture_lyml8")
 
 [node name="Button7" type="Button" parent="."]
-offset_left = 993.0
-offset_top = 580.0
-offset_right = 1146.0
-offset_bottom = 643.0
+offset_left = 946.0
+offset_top = 543.0
+offset_right = 1099.0
+offset_bottom = 606.0
 scale = Vector2(1, 0.97831)
 theme_override_styles/focus = SubResource("StyleBoxTexture_qv33b")
 theme_override_styles/hover = SubResource("StyleBoxTexture_6ffho")

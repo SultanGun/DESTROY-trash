@@ -1,9 +1,10 @@
-[gd_scene load_steps=10 format=3 uid="uid://nvsp8wfpsoey"]
+[gd_scene load_steps=11 format=3 uid="uid://nvsp8wfpsoey"]
 
-[ext_resource type="Texture2D" uid="uid://ubc7ejkacyhb" path="res://assets/uiventory/Frame 5.png" id="1_iovwl"]
+[ext_resource type="Texture2D" uid="uid://b4npf72fur620" path="res://scenes/sprites/erasebg-transformed (17).png" id="1_qdh6v"]
 [ext_resource type="Texture2D" uid="uid://b1dtb2ddle0gg" path="res://assets/uiventory/Rectangle 7.png" id="2_d8fli"]
 [ext_resource type="Texture2D" uid="uid://uubiakj4ndjh" path="res://assets/uiventory/erasebg-transformed (10) 1.png" id="3_qdh6v"]
-[ext_resource type="Texture2D" uid="uid://bdljwb3awl8s0" path="res://assets/uiventory/Group 34.png" id="4_d8fli"]
+[ext_resource type="Texture2D" uid="uid://cemqvblasvtt7" path="res://assets/uipael_/Untitled (14)/Group 44.png" id="4_v4ln0"]
+[ext_resource type="Texture2D" uid="uid://dxwqkdfxus773" path="res://assets/uipael_/Untitled (14)/Group 53.png" id="5_dfy2b"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_qdh6v"]
 size = Vector2(216, 188)
@@ -11,215 +12,233 @@ size = Vector2(216, 188)
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_v4ln0"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_dfy2b"]
-texture = ExtResource("4_d8fli")
+texture = ExtResource("4_v4ln0")
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_6jfqu"]
-texture = ExtResource("4_d8fli")
+texture = ExtResource("5_dfy2b")
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_vlq6c"]
-texture = ExtResource("4_d8fli")
+texture = ExtResource("4_v4ln0")
 
 [node name="CanvasLayer" type="CanvasLayer"]
 
 [node name="TextureRect" type="TextureRect" parent="."]
-offset_left = -31.0
-offset_top = -29.0
-offset_right = 2321.0
-offset_bottom = 1319.0
+offset_left = -10.0
+offset_top = -175.0
+offset_right = 2346.0
+offset_bottom = 1961.0
 scale = Vector2(0.5, 0.5)
-texture = ExtResource("1_iovwl")
+texture = ExtResource("1_qdh6v")
 
 [node name="Rectangle7" type="Sprite2D" parent="TextureRect"]
-position = Vector2(1184.5, 618.25)
+position = Vector2(1184.5, 898.25)
 scale = Vector2(1.17687, 1.4517)
 texture = ExtResource("2_d8fli")
 
-[node name="Erasebg-transformed(10)1" type="Sprite2D" parent="TextureRect"]
-position = Vector2(412, 344)
+[node name="Erasebg-transformed(10)1" type="Sprite2D" parent="TextureRect/Rectangle7"]
+position = Vector2(-656.402, -188.916)
+scale = Vector2(0.849712, 0.688848)
 texture = ExtResource("3_qdh6v")
 
-[node name="Area2D" type="Area2D" parent="TextureRect/Erasebg-transformed(10)1"]
+[node name="Area2D" type="Area2D" parent="TextureRect/Rectangle7/Erasebg-transformed(10)1"]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="TextureRect/Erasebg-transformed(10)1/Area2D"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="TextureRect/Rectangle7/Erasebg-transformed(10)1/Area2D"]
 position = Vector2(10, 6)
 shape = SubResource("RectangleShape2D_qdh6v")
 
-[node name="Erasebg-transformed(10)2" type="Sprite2D" parent="TextureRect"]
-position = Vector2(720, 344)
+[node name="Erasebg-transformed(10)2" type="Sprite2D" parent="TextureRect/Rectangle7"]
+position = Vector2(-394.691, -188.916)
+scale = Vector2(0.849712, 0.688848)
 texture = ExtResource("3_qdh6v")
 
-[node name="Area2D" type="Area2D" parent="TextureRect/Erasebg-transformed(10)2"]
+[node name="Area2D" type="Area2D" parent="TextureRect/Rectangle7/Erasebg-transformed(10)2"]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="TextureRect/Erasebg-transformed(10)2/Area2D"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="TextureRect/Rectangle7/Erasebg-transformed(10)2/Area2D"]
 position = Vector2(10, 6)
 shape = SubResource("RectangleShape2D_qdh6v")
 
-[node name="Erasebg-transformed(10)3" type="Sprite2D" parent="TextureRect"]
-position = Vector2(1028, 344)
+[node name="Erasebg-transformed(10)3" type="Sprite2D" parent="TextureRect/Rectangle7"]
+position = Vector2(-132.98, -188.916)
+scale = Vector2(0.849712, 0.688848)
 texture = ExtResource("3_qdh6v")
 
-[node name="Area2D" type="Area2D" parent="TextureRect/Erasebg-transformed(10)3"]
+[node name="Area2D" type="Area2D" parent="TextureRect/Rectangle7/Erasebg-transformed(10)3"]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="TextureRect/Erasebg-transformed(10)3/Area2D"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="TextureRect/Rectangle7/Erasebg-transformed(10)3/Area2D"]
 position = Vector2(10, 6)
 shape = SubResource("RectangleShape2D_qdh6v")
 
-[node name="Erasebg-transformed(10)4" type="Sprite2D" parent="TextureRect"]
-position = Vector2(1338, 344)
+[node name="Erasebg-transformed(10)4" type="Sprite2D" parent="TextureRect/Rectangle7"]
+position = Vector2(130.431, -188.916)
+scale = Vector2(0.849712, 0.688848)
 texture = ExtResource("3_qdh6v")
 
-[node name="Area2D" type="Area2D" parent="TextureRect/Erasebg-transformed(10)4"]
+[node name="Area2D" type="Area2D" parent="TextureRect/Rectangle7/Erasebg-transformed(10)4"]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="TextureRect/Erasebg-transformed(10)4/Area2D"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="TextureRect/Rectangle7/Erasebg-transformed(10)4/Area2D"]
 position = Vector2(10, 6)
 shape = SubResource("RectangleShape2D_qdh6v")
 
-[node name="Erasebg-transformed(10)5" type="Sprite2D" parent="TextureRect"]
-position = Vector2(1648, 344)
+[node name="Erasebg-transformed(10)5" type="Sprite2D" parent="TextureRect/Rectangle7"]
+position = Vector2(393.841, -188.916)
+scale = Vector2(0.849712, 0.688848)
 texture = ExtResource("3_qdh6v")
 
-[node name="Area2D" type="Area2D" parent="TextureRect/Erasebg-transformed(10)5"]
+[node name="Area2D" type="Area2D" parent="TextureRect/Rectangle7/Erasebg-transformed(10)5"]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="TextureRect/Erasebg-transformed(10)5/Area2D"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="TextureRect/Rectangle7/Erasebg-transformed(10)5/Area2D"]
 position = Vector2(10, 6)
 shape = SubResource("RectangleShape2D_qdh6v")
 
-[node name="Erasebg-transformed(10)6" type="Sprite2D" parent="TextureRect"]
-position = Vector2(1956, 344)
+[node name="Erasebg-transformed(10)6" type="Sprite2D" parent="TextureRect/Rectangle7"]
+position = Vector2(655.552, -188.916)
+scale = Vector2(0.849712, 0.688848)
 texture = ExtResource("3_qdh6v")
 
-[node name="Area2D" type="Area2D" parent="TextureRect/Erasebg-transformed(10)6"]
+[node name="Area2D" type="Area2D" parent="TextureRect/Rectangle7/Erasebg-transformed(10)6"]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="TextureRect/Erasebg-transformed(10)6/Area2D"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="TextureRect/Rectangle7/Erasebg-transformed(10)6/Area2D"]
 position = Vector2(10, 6)
 shape = SubResource("RectangleShape2D_qdh6v")
 
-[node name="Erasebg-transformed(10)7" type="Sprite2D" parent="TextureRect"]
-position = Vector2(412, 600)
+[node name="Erasebg-transformed(10)7" type="Sprite2D" parent="TextureRect/Rectangle7"]
+position = Vector2(-656.402, -12.5715)
+scale = Vector2(0.849712, 0.688848)
 texture = ExtResource("3_qdh6v")
 
-[node name="Area2D" type="Area2D" parent="TextureRect/Erasebg-transformed(10)7"]
+[node name="Area2D" type="Area2D" parent="TextureRect/Rectangle7/Erasebg-transformed(10)7"]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="TextureRect/Erasebg-transformed(10)7/Area2D"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="TextureRect/Rectangle7/Erasebg-transformed(10)7/Area2D"]
 position = Vector2(10, 6)
 shape = SubResource("RectangleShape2D_qdh6v")
 
-[node name="Erasebg-transformed(10)8" type="Sprite2D" parent="TextureRect"]
-position = Vector2(720, 600)
+[node name="Erasebg-transformed(10)8" type="Sprite2D" parent="TextureRect/Rectangle7"]
+position = Vector2(-394.691, -12.5715)
+scale = Vector2(0.849712, 0.688848)
 texture = ExtResource("3_qdh6v")
 
-[node name="Area2D" type="Area2D" parent="TextureRect/Erasebg-transformed(10)8"]
+[node name="Area2D" type="Area2D" parent="TextureRect/Rectangle7/Erasebg-transformed(10)8"]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="TextureRect/Erasebg-transformed(10)8/Area2D"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="TextureRect/Rectangle7/Erasebg-transformed(10)8/Area2D"]
 position = Vector2(10, 6)
 shape = SubResource("RectangleShape2D_qdh6v")
 
-[node name="Erasebg-transformed(10)9" type="Sprite2D" parent="TextureRect"]
-position = Vector2(1028, 600)
+[node name="Erasebg-transformed(10)9" type="Sprite2D" parent="TextureRect/Rectangle7"]
+position = Vector2(-132.98, -12.5715)
+scale = Vector2(0.849712, 0.688848)
 texture = ExtResource("3_qdh6v")
 
-[node name="Area2D" type="Area2D" parent="TextureRect/Erasebg-transformed(10)9"]
+[node name="Area2D" type="Area2D" parent="TextureRect/Rectangle7/Erasebg-transformed(10)9"]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="TextureRect/Erasebg-transformed(10)9/Area2D"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="TextureRect/Rectangle7/Erasebg-transformed(10)9/Area2D"]
 position = Vector2(10, 6)
 shape = SubResource("RectangleShape2D_qdh6v")
 
-[node name="Erasebg-transformed(10)10" type="Sprite2D" parent="TextureRect"]
-position = Vector2(1338, 600)
+[node name="Erasebg-transformed(10)10" type="Sprite2D" parent="TextureRect/Rectangle7"]
+position = Vector2(130.431, -12.5715)
+scale = Vector2(0.849712, 0.688848)
 texture = ExtResource("3_qdh6v")
 
-[node name="Area2D" type="Area2D" parent="TextureRect/Erasebg-transformed(10)10"]
+[node name="Area2D" type="Area2D" parent="TextureRect/Rectangle7/Erasebg-transformed(10)10"]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="TextureRect/Erasebg-transformed(10)10/Area2D"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="TextureRect/Rectangle7/Erasebg-transformed(10)10/Area2D"]
 position = Vector2(10, 6)
 shape = SubResource("RectangleShape2D_qdh6v")
 
-[node name="Erasebg-transformed(10)11" type="Sprite2D" parent="TextureRect"]
-position = Vector2(1648, 600)
+[node name="Erasebg-transformed(10)11" type="Sprite2D" parent="TextureRect/Rectangle7"]
+position = Vector2(393.841, -12.5715)
+scale = Vector2(0.849712, 0.688848)
 texture = ExtResource("3_qdh6v")
 
-[node name="Area2D" type="Area2D" parent="TextureRect/Erasebg-transformed(10)11"]
+[node name="Area2D" type="Area2D" parent="TextureRect/Rectangle7/Erasebg-transformed(10)11"]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="TextureRect/Erasebg-transformed(10)11/Area2D"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="TextureRect/Rectangle7/Erasebg-transformed(10)11/Area2D"]
 position = Vector2(10, 6)
 shape = SubResource("RectangleShape2D_qdh6v")
 
-[node name="Erasebg-transformed(10)12" type="Sprite2D" parent="TextureRect"]
-position = Vector2(1956, 600)
+[node name="Erasebg-transformed(10)12" type="Sprite2D" parent="TextureRect/Rectangle7"]
+position = Vector2(655.552, -12.5715)
+scale = Vector2(0.849712, 0.688848)
 texture = ExtResource("3_qdh6v")
 
-[node name="Area2D" type="Area2D" parent="TextureRect/Erasebg-transformed(10)12"]
+[node name="Area2D" type="Area2D" parent="TextureRect/Rectangle7/Erasebg-transformed(10)12"]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="TextureRect/Erasebg-transformed(10)12/Area2D"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="TextureRect/Rectangle7/Erasebg-transformed(10)12/Area2D"]
 position = Vector2(10, 6)
 shape = SubResource("RectangleShape2D_qdh6v")
 
-[node name="Erasebg-transformed(10)13" type="Sprite2D" parent="TextureRect"]
-position = Vector2(412, 852)
+[node name="Erasebg-transformed(10)13" type="Sprite2D" parent="TextureRect/Rectangle7"]
+position = Vector2(-656.402, 161.018)
+scale = Vector2(0.849712, 0.688848)
 texture = ExtResource("3_qdh6v")
 
-[node name="Area2D" type="Area2D" parent="TextureRect/Erasebg-transformed(10)13"]
+[node name="Area2D" type="Area2D" parent="TextureRect/Rectangle7/Erasebg-transformed(10)13"]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="TextureRect/Erasebg-transformed(10)13/Area2D"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="TextureRect/Rectangle7/Erasebg-transformed(10)13/Area2D"]
 position = Vector2(10, 6)
 shape = SubResource("RectangleShape2D_qdh6v")
 
-[node name="Erasebg-transformed(10)14" type="Sprite2D" parent="TextureRect"]
-position = Vector2(720, 852)
+[node name="Erasebg-transformed(10)14" type="Sprite2D" parent="TextureRect/Rectangle7"]
+position = Vector2(-394.691, 161.018)
+scale = Vector2(0.849712, 0.688848)
 texture = ExtResource("3_qdh6v")
 
-[node name="Area2D" type="Area2D" parent="TextureRect/Erasebg-transformed(10)14"]
+[node name="Area2D" type="Area2D" parent="TextureRect/Rectangle7/Erasebg-transformed(10)14"]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="TextureRect/Erasebg-transformed(10)14/Area2D"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="TextureRect/Rectangle7/Erasebg-transformed(10)14/Area2D"]
 position = Vector2(10, 6)
 shape = SubResource("RectangleShape2D_qdh6v")
 
-[node name="Erasebg-transformed(10)15" type="Sprite2D" parent="TextureRect"]
-position = Vector2(1028, 852)
+[node name="Erasebg-transformed(10)15" type="Sprite2D" parent="TextureRect/Rectangle7"]
+position = Vector2(-132.98, 161.018)
+scale = Vector2(0.849712, 0.688848)
 texture = ExtResource("3_qdh6v")
 
-[node name="Area2D" type="Area2D" parent="TextureRect/Erasebg-transformed(10)15"]
+[node name="Area2D" type="Area2D" parent="TextureRect/Rectangle7/Erasebg-transformed(10)15"]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="TextureRect/Erasebg-transformed(10)15/Area2D"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="TextureRect/Rectangle7/Erasebg-transformed(10)15/Area2D"]
 position = Vector2(10, 6)
 shape = SubResource("RectangleShape2D_qdh6v")
 
-[node name="Erasebg-transformed(10)16" type="Sprite2D" parent="TextureRect"]
-position = Vector2(1338, 852)
+[node name="Erasebg-transformed(10)16" type="Sprite2D" parent="TextureRect/Rectangle7"]
+position = Vector2(130.431, 161.018)
+scale = Vector2(0.849712, 0.688848)
 texture = ExtResource("3_qdh6v")
 
-[node name="Area2D" type="Area2D" parent="TextureRect/Erasebg-transformed(10)16"]
+[node name="Area2D" type="Area2D" parent="TextureRect/Rectangle7/Erasebg-transformed(10)16"]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="TextureRect/Erasebg-transformed(10)16/Area2D"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="TextureRect/Rectangle7/Erasebg-transformed(10)16/Area2D"]
 position = Vector2(10, 6)
 shape = SubResource("RectangleShape2D_qdh6v")
 
-[node name="Erasebg-transformed(10)17" type="Sprite2D" parent="TextureRect"]
-position = Vector2(1648, 852)
+[node name="Erasebg-transformed(10)17" type="Sprite2D" parent="TextureRect/Rectangle7"]
+position = Vector2(393.841, 161.018)
+scale = Vector2(0.849712, 0.688848)
 texture = ExtResource("3_qdh6v")
 
-[node name="Area2D" type="Area2D" parent="TextureRect/Erasebg-transformed(10)17"]
+[node name="Area2D" type="Area2D" parent="TextureRect/Rectangle7/Erasebg-transformed(10)17"]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="TextureRect/Erasebg-transformed(10)17/Area2D"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="TextureRect/Rectangle7/Erasebg-transformed(10)17/Area2D"]
 position = Vector2(10, 6)
 shape = SubResource("RectangleShape2D_qdh6v")
 
-[node name="Erasebg-transformed(10)18" type="Sprite2D" parent="TextureRect"]
-position = Vector2(1956, 852)
+[node name="Erasebg-transformed(10)18" type="Sprite2D" parent="TextureRect/Rectangle7"]
+position = Vector2(655.552, 161.018)
+scale = Vector2(0.849712, 0.688848)
 texture = ExtResource("3_qdh6v")
 
-[node name="Area2D" type="Area2D" parent="TextureRect/Erasebg-transformed(10)18"]
+[node name="Area2D" type="Area2D" parent="TextureRect/Rectangle7/Erasebg-transformed(10)18"]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="TextureRect/Erasebg-transformed(10)18/Area2D"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="TextureRect/Rectangle7/Erasebg-transformed(10)18/Area2D"]
 position = Vector2(10, 6)
 shape = SubResource("RectangleShape2D_qdh6v")
 
 [node name="Button" type="Button" parent="TextureRect"]
 layout_mode = 0
-offset_left = 462.0
-offset_top = 1050.0
-offset_right = 1912.0
-offset_bottom = 1195.0
+offset_left = 442.0
+offset_top = 1340.0
+offset_right = 1942.0
+offset_bottom = 1540.0
 theme_override_styles/focus = SubResource("StyleBoxTexture_v4ln0")
 theme_override_styles/hover = SubResource("StyleBoxTexture_dfy2b")
 theme_override_styles/pressed = SubResource("StyleBoxTexture_6jfqu")
