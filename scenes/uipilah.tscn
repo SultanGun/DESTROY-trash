@@ -1,6 +1,6 @@
 [gd_scene load_steps=16 format=3 uid="uid://bxc6m451ahpi0"]
 
-[ext_resource type="Texture2D" uid="uid://b4npf72fur620" path="res://scenes/sprites/erasebg-transformed (17).png" id="2_yn12j"]
+[ext_resource type="Texture2D" uid="uid://b4npf72fur620" path="res://assets/sprites/erasebg-transformed (17).png" id="2_yn12j"]
 [ext_resource type="Texture2D" uid="uid://dk8q4tjcey0wb" path="res://assets/uipael_/Untitled (14)/Group 51.png" id="3_q4p52"]
 [ext_resource type="Texture2D" uid="uid://bsp8tv410g45x" path="res://assets/mesin/uimesin/uipilah/Rectangle 6.png" id="3_shdba"]
 [ext_resource type="Texture2D" uid="uid://uhdx7dgkcuka" path="res://assets/uipael_/Untitled (14)/Group 46.png" id="5_xl5qn"]

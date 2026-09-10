@@ -1,6 +1,6 @@
 [gd_scene load_steps=11 format=3 uid="uid://nvsp8wfpsoey"]
 
-[ext_resource type="Texture2D" uid="uid://b4npf72fur620" path="res://scenes/sprites/erasebg-transformed (17).png" id="1_qdh6v"]
+[ext_resource type="Texture2D" uid="uid://b4npf72fur620" path="res://assets/sprites/erasebg-transformed (17).png" id="1_qdh6v"]
 [ext_resource type="Texture2D" uid="uid://b1dtb2ddle0gg" path="res://assets/uiventory/Rectangle 7.png" id="2_d8fli"]
 [ext_resource type="Texture2D" uid="uid://uubiakj4ndjh" path="res://assets/uiventory/erasebg-transformed (10) 1.png" id="3_qdh6v"]
 [ext_resource type="Texture2D" uid="uid://cemqvblasvtt7" path="res://assets/uipael_/Untitled (14)/Group 44.png" id="4_v4ln0"]

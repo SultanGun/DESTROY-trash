@@ -1,7 +1,7 @@
 [gd_scene load_steps=29 format=3 uid="uid://c2l5m8cts6w3p"]
 
 [ext_resource type="Script" uid="uid://b5x8xn4mi0bo6" path="res://navmen.gd" id="1_pjjg0"]
-[ext_resource type="Texture2D" uid="uid://b4npf72fur620" path="res://scenes/sprites/erasebg-transformed (17).png" id="2_h4b4f"]
+[ext_resource type="Texture2D" uid="uid://b4npf72fur620" path="res://assets/sprites/erasebg-transformed (17).png" id="2_h4b4f"]
 [ext_resource type="Texture2D" uid="uid://qqgc6mwpaakj" path="res://navmen/Group 9.png" id="2_pjjg0"]
 [ext_resource type="Texture2D" uid="uid://drbvfra22g8g6" path="res://Untitled (3)/Frame 1.png" id="3_f3mj7"]
 [ext_resource type="Texture2D" uid="uid://bvwauxb5oh2k3" path="res://navmen/Group 13.png" id="3_h4b4f"]

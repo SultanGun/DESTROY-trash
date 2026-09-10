@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://dr121cbacxaim" path="res://uiolah.gd" id="1_cfc24"]
 [ext_resource type="Texture2D" uid="uid://bsp8tv410g45x" path="res://assets/mesin/uimesin/uipilah/Rectangle 6.png" id="2_xemy8"]
-[ext_resource type="Texture2D" uid="uid://b4npf72fur620" path="res://scenes/sprites/erasebg-transformed (17).png" id="3_8bvo1"]
+[ext_resource type="Texture2D" uid="uid://b4npf72fur620" path="res://assets/sprites/erasebg-transformed (17).png" id="3_8bvo1"]
 [ext_resource type="Texture2D" uid="uid://cflrp3k4yetwk" path="res://assets/uipael_/Untitled (14)/Group 49.png" id="4_kjwmq"]
 [ext_resource type="Texture2D" uid="uid://q0lc5mhoe0a0" path="res://assets/uipael_/Untitled (14)/Group 52.png" id="5_2i2da"]
 [ext_resource type="Texture2D" uid="uid://dtvpm12xm1u7p" path="res://assets/uipael_/Untitled (14)/Group 50.png" id="6_wx42e"]
