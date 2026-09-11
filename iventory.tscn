@@ -2,23 +2,23 @@
 
 [ext_resource type="Texture2D" uid="uid://b4npf72fur620" path="res://assets/sprites/erasebg-transformed (17).png" id="1_qdh6v"]
 [ext_resource type="Texture2D" uid="uid://b1dtb2ddle0gg" path="res://assets/uiventory/Rectangle 7.png" id="2_d8fli"]
-[ext_resource type="Texture2D" uid="uid://uubiakj4ndjh" path="res://assets/uiventory/erasebg-transformed (10) 1.png" id="3_qdh6v"]
-[ext_resource type="Texture2D" uid="uid://cemqvblasvtt7" path="res://assets/uipael_/Untitled (14)/Group 44.png" id="4_v4ln0"]
-[ext_resource type="Texture2D" uid="uid://dxwqkdfxus773" path="res://assets/uipael_/Untitled (14)/Group 53.png" id="5_dfy2b"]
+[ext_resource type="Texture2D" uid="uid://cxwnopeur5xaq" path="res://assets/uipael_/Untitled (14)/erasebg-transformed (16).png" id="3_qdh6v"]
+[ext_resource type="Texture2D" uid="uid://dj0ipvissc80u" path="res://assets/uipael_/Untitled (14)/Group 40.png" id="4_qdh6v"]
+[ext_resource type="Texture2D" uid="uid://vbrepij3axga" path="res://assets/uipael_/Untitled (14)/Group 58.png" id="5_v4ln0"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_qdh6v"]
-size = Vector2(216, 188)
+size = Vector2(549.48, 440.862)
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_v4ln0"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_dfy2b"]
-texture = ExtResource("4_v4ln0")
+texture = ExtResource("4_qdh6v")
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_6jfqu"]
-texture = ExtResource("5_dfy2b")
+texture = ExtResource("5_v4ln0")
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_vlq6c"]
-texture = ExtResource("4_v4ln0")
+texture = ExtResource("4_qdh6v")
 
 [node name="CanvasLayer" type="CanvasLayer"]
 
@@ -37,18 +37,19 @@ texture = ExtResource("2_d8fli")
 
 [node name="Erasebg-transformed(10)1" type="Sprite2D" parent="TextureRect/Rectangle7"]
 position = Vector2(-656.402, -188.916)
-scale = Vector2(0.849712, 0.688848)
+scale = Vector2(0.3, 0.3)
 texture = ExtResource("3_qdh6v")
 
 [node name="Area2D" type="Area2D" parent="TextureRect/Rectangle7/Erasebg-transformed(10)1"]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="TextureRect/Rectangle7/Erasebg-transformed(10)1/Area2D"]
-position = Vector2(10, 6)
+position = Vector2(-2.83289, 4.59076)
+scale = Vector2(1, 1)
 shape = SubResource("RectangleShape2D_qdh6v")
 
 [node name="Erasebg-transformed(10)2" type="Sprite2D" parent="TextureRect/Rectangle7"]
 position = Vector2(-394.691, -188.916)
-scale = Vector2(0.849712, 0.688848)
+scale = Vector2(0.3, 0.3)
 texture = ExtResource("3_qdh6v")
 
 [node name="Area2D" type="Area2D" parent="TextureRect/Rectangle7/Erasebg-transformed(10)2"]
@@ -59,7 +60,7 @@ shape = SubResource("RectangleShape2D_qdh6v")
 
 [node name="Erasebg-transformed(10)3" type="Sprite2D" parent="TextureRect/Rectangle7"]
 position = Vector2(-132.98, -188.916)
-scale = Vector2(0.849712, 0.688848)
+scale = Vector2(0.3, 0.3)
 texture = ExtResource("3_qdh6v")
 
 [node name="Area2D" type="Area2D" parent="TextureRect/Rectangle7/Erasebg-transformed(10)3"]
@@ -70,7 +71,7 @@ shape = SubResource("RectangleShape2D_qdh6v")
 
 [node name="Erasebg-transformed(10)4" type="Sprite2D" parent="TextureRect/Rectangle7"]
 position = Vector2(130.431, -188.916)
-scale = Vector2(0.849712, 0.688848)
+scale = Vector2(0.3, 0.3)
 texture = ExtResource("3_qdh6v")
 
 [node name="Area2D" type="Area2D" parent="TextureRect/Rectangle7/Erasebg-transformed(10)4"]
@@ -81,7 +82,7 @@ shape = SubResource("RectangleShape2D_qdh6v")
 
 [node name="Erasebg-transformed(10)5" type="Sprite2D" parent="TextureRect/Rectangle7"]
 position = Vector2(393.841, -188.916)
-scale = Vector2(0.849712, 0.688848)
+scale = Vector2(0.3, 0.3)
 texture = ExtResource("3_qdh6v")
 
 [node name="Area2D" type="Area2D" parent="TextureRect/Rectangle7/Erasebg-transformed(10)5"]
@@ -92,7 +93,7 @@ shape = SubResource("RectangleShape2D_qdh6v")
 
 [node name="Erasebg-transformed(10)6" type="Sprite2D" parent="TextureRect/Rectangle7"]
 position = Vector2(655.552, -188.916)
-scale = Vector2(0.849712, 0.688848)
+scale = Vector2(0.3, 0.3)
 texture = ExtResource("3_qdh6v")
 
 [node name="Area2D" type="Area2D" parent="TextureRect/Rectangle7/Erasebg-transformed(10)6"]
@@ -103,7 +104,7 @@ shape = SubResource("RectangleShape2D_qdh6v")
 
 [node name="Erasebg-transformed(10)7" type="Sprite2D" parent="TextureRect/Rectangle7"]
 position = Vector2(-656.402, -12.5715)
-scale = Vector2(0.849712, 0.688848)
+scale = Vector2(0.3, 0.3)
 texture = ExtResource("3_qdh6v")
 
 [node name="Area2D" type="Area2D" parent="TextureRect/Rectangle7/Erasebg-transformed(10)7"]
@@ -114,7 +115,7 @@ shape = SubResource("RectangleShape2D_qdh6v")
 
 [node name="Erasebg-transformed(10)8" type="Sprite2D" parent="TextureRect/Rectangle7"]
 position = Vector2(-394.691, -12.5715)
-scale = Vector2(0.849712, 0.688848)
+scale = Vector2(0.3, 0.3)
 texture = ExtResource("3_qdh6v")
 
 [node name="Area2D" type="Area2D" parent="TextureRect/Rectangle7/Erasebg-transformed(10)8"]
@@ -125,7 +126,7 @@ shape = SubResource("RectangleShape2D_qdh6v")
 
 [node name="Erasebg-transformed(10)9" type="Sprite2D" parent="TextureRect/Rectangle7"]
 position = Vector2(-132.98, -12.5715)
-scale = Vector2(0.849712, 0.688848)
+scale = Vector2(0.3, 0.3)
 texture = ExtResource("3_qdh6v")
 
 [node name="Area2D" type="Area2D" parent="TextureRect/Rectangle7/Erasebg-transformed(10)9"]
@@ -136,7 +137,7 @@ shape = SubResource("RectangleShape2D_qdh6v")
 
 [node name="Erasebg-transformed(10)10" type="Sprite2D" parent="TextureRect/Rectangle7"]
 position = Vector2(130.431, -12.5715)
-scale = Vector2(0.849712, 0.688848)
+scale = Vector2(0.3, 0.3)
 texture = ExtResource("3_qdh6v")
 
 [node name="Area2D" type="Area2D" parent="TextureRect/Rectangle7/Erasebg-transformed(10)10"]
@@ -147,7 +148,7 @@ shape = SubResource("RectangleShape2D_qdh6v")
 
 [node name="Erasebg-transformed(10)11" type="Sprite2D" parent="TextureRect/Rectangle7"]
 position = Vector2(393.841, -12.5715)
-scale = Vector2(0.849712, 0.688848)
+scale = Vector2(0.3, 0.3)
 texture = ExtResource("3_qdh6v")
 
 [node name="Area2D" type="Area2D" parent="TextureRect/Rectangle7/Erasebg-transformed(10)11"]
@@ -158,7 +159,7 @@ shape = SubResource("RectangleShape2D_qdh6v")
 
 [node name="Erasebg-transformed(10)12" type="Sprite2D" parent="TextureRect/Rectangle7"]
 position = Vector2(655.552, -12.5715)
-scale = Vector2(0.849712, 0.688848)
+scale = Vector2(0.3, 0.3)
 texture = ExtResource("3_qdh6v")
 
 [node name="Area2D" type="Area2D" parent="TextureRect/Rectangle7/Erasebg-transformed(10)12"]
@@ -169,7 +170,7 @@ shape = SubResource("RectangleShape2D_qdh6v")
 
 [node name="Erasebg-transformed(10)13" type="Sprite2D" parent="TextureRect/Rectangle7"]
 position = Vector2(-656.402, 161.018)
-scale = Vector2(0.849712, 0.688848)
+scale = Vector2(0.3, 0.3)
 texture = ExtResource("3_qdh6v")
 
 [node name="Area2D" type="Area2D" parent="TextureRect/Rectangle7/Erasebg-transformed(10)13"]
@@ -180,7 +181,7 @@ shape = SubResource("RectangleShape2D_qdh6v")
 
 [node name="Erasebg-transformed(10)14" type="Sprite2D" parent="TextureRect/Rectangle7"]
 position = Vector2(-394.691, 161.018)
-scale = Vector2(0.849712, 0.688848)
+scale = Vector2(0.3, 0.3)
 texture = ExtResource("3_qdh6v")
 
 [node name="Area2D" type="Area2D" parent="TextureRect/Rectangle7/Erasebg-transformed(10)14"]
@@ -191,7 +192,7 @@ shape = SubResource("RectangleShape2D_qdh6v")
 
 [node name="Erasebg-transformed(10)15" type="Sprite2D" parent="TextureRect/Rectangle7"]
 position = Vector2(-132.98, 161.018)
-scale = Vector2(0.849712, 0.688848)
+scale = Vector2(0.3, 0.3)
 texture = ExtResource("3_qdh6v")
 
 [node name="Area2D" type="Area2D" parent="TextureRect/Rectangle7/Erasebg-transformed(10)15"]
@@ -202,7 +203,7 @@ shape = SubResource("RectangleShape2D_qdh6v")
 
 [node name="Erasebg-transformed(10)16" type="Sprite2D" parent="TextureRect/Rectangle7"]
 position = Vector2(130.431, 161.018)
-scale = Vector2(0.849712, 0.688848)
+scale = Vector2(0.3, 0.3)
 texture = ExtResource("3_qdh6v")
 
 [node name="Area2D" type="Area2D" parent="TextureRect/Rectangle7/Erasebg-transformed(10)16"]
@@ -213,7 +214,7 @@ shape = SubResource("RectangleShape2D_qdh6v")
 
 [node name="Erasebg-transformed(10)17" type="Sprite2D" parent="TextureRect/Rectangle7"]
 position = Vector2(393.841, 161.018)
-scale = Vector2(0.849712, 0.688848)
+scale = Vector2(0.3, 0.3)
 texture = ExtResource("3_qdh6v")
 
 [node name="Area2D" type="Area2D" parent="TextureRect/Rectangle7/Erasebg-transformed(10)17"]
@@ -224,7 +225,7 @@ shape = SubResource("RectangleShape2D_qdh6v")
 
 [node name="Erasebg-transformed(10)18" type="Sprite2D" parent="TextureRect/Rectangle7"]
 position = Vector2(655.552, 161.018)
-scale = Vector2(0.849712, 0.688848)
+scale = Vector2(0.3, 0.3)
 texture = ExtResource("3_qdh6v")
 
 [node name="Area2D" type="Area2D" parent="TextureRect/Rectangle7/Erasebg-transformed(10)18"]

@@ -1,15 +1,15 @@
 [gd_scene load_steps=16 format=3 uid="uid://bxc6m451ahpi0"]
 
 [ext_resource type="Texture2D" uid="uid://b4npf72fur620" path="res://assets/sprites/erasebg-transformed (17).png" id="2_yn12j"]
-[ext_resource type="Texture2D" uid="uid://dk8q4tjcey0wb" path="res://assets/uipael_/Untitled (14)/Group 51.png" id="3_q4p52"]
 [ext_resource type="Texture2D" uid="uid://bsp8tv410g45x" path="res://assets/mesin/uimesin/uipilah/Rectangle 6.png" id="3_shdba"]
+[ext_resource type="Texture2D" uid="uid://ueyaox6nwt7l" path="res://assets/uipael_/butenglish/Group 51.png" id="3_yn12j"]
 [ext_resource type="Texture2D" uid="uid://uhdx7dgkcuka" path="res://assets/uipael_/Untitled (14)/Group 46.png" id="5_xl5qn"]
 [ext_resource type="Texture2D" uid="uid://nirlxiglaysx" path="res://assets/uipael_/Untitled (14)/Group 47.png" id="6_vn000"]
 [ext_resource type="Texture2D" uid="uid://dyipr0p7utsx2" path="res://assets/uipael_/Untitled (14)/erasebg-transformed (18) 3.png" id="7_xx1ye"]
 [ext_resource type="Texture2D" uid="uid://bit5jxwlwebyj" path="res://assets/uipael_/Untitled (14)/erasebg-transformed (18) 2.png" id="8_kgvrj"]
-[ext_resource type="Texture2D" uid="uid://drb1l3xbkuiwd" path="res://assets/uipael_/Untitled (14)/Group 45.png" id="9_w11tc"]
-[ext_resource type="Texture2D" uid="uid://dycyonvpe7jf2" path="res://assets/uipael_/Untitled (14)/Group 54.png" id="10_mk2p2"]
+[ext_resource type="Texture2D" uid="uid://bwnw5tgcubcjs" path="res://assets/uipael_/butenglish/Group 45.png" id="9_q4p52"]
 [ext_resource type="Script" uid="uid://3vbd5pj7mxgo" path="res://uipilah.gd" id="10_script"]
+[ext_resource type="Texture2D" uid="uid://u3lic2vsswxh" path="res://assets/uipael_/butenglish/Group 54.png" id="10_xl5qn"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_5leuk"]
 size = Vector2(1713.89, 929.324)
@@ -17,13 +17,13 @@ size = Vector2(1713.89, 929.324)
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_qn3l7"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_378sv"]
-texture = ExtResource("9_w11tc")
+texture = ExtResource("9_q4p52")
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_yo3ml"]
-texture = ExtResource("10_mk2p2")
+texture = ExtResource("10_xl5qn")
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_ebr71"]
-texture = ExtResource("9_w11tc")
+texture = ExtResource("9_q4p52")
 
 [node name="uipilah" type="CanvasLayer"]
 script = ExtResource("10_script")
@@ -39,7 +39,7 @@ texture = ExtResource("2_yn12j")
 [node name="Group29" type="Sprite2D" parent="."]
 position = Vector2(582, 93)
 scale = Vector2(0.615429, 0.7)
-texture = ExtResource("3_q4p52")
+texture = ExtResource("3_yn12j")
 
 [node name="Rectangle6" type="Sprite2D" parent="."]
 position = Vector2(579, 314.625)
@@ -77,7 +77,7 @@ texture = ExtResource("8_kgvrj")
 offset_left = 222.0
 offset_top = 502.0
 offset_right = 922.0
-offset_bottom = 572.0
+offset_bottom = 592.0
 theme_override_styles/focus = SubResource("StyleBoxTexture_qn3l7")
 theme_override_styles/hover = SubResource("StyleBoxTexture_378sv")
 theme_override_styles/pressed = SubResource("StyleBoxTexture_yo3ml")

@@ -2,60 +2,60 @@
 
 [ext_resource type="Script" uid="uid://b5x8xn4mi0bo6" path="res://navmen.gd" id="1_pjjg0"]
 [ext_resource type="Texture2D" uid="uid://b4npf72fur620" path="res://assets/sprites/erasebg-transformed (17).png" id="2_h4b4f"]
-[ext_resource type="Texture2D" uid="uid://qqgc6mwpaakj" path="res://navmen/Group 9.png" id="2_pjjg0"]
 [ext_resource type="Texture2D" uid="uid://drbvfra22g8g6" path="res://Untitled (3)/Frame 1.png" id="3_f3mj7"]
-[ext_resource type="Texture2D" uid="uid://bvwauxb5oh2k3" path="res://navmen/Group 13.png" id="3_h4b4f"]
-[ext_resource type="Texture2D" uid="uid://ooorxfhill2h" path="res://navmen/Group 10.png" id="4_f3mj7"]
-[ext_resource type="Texture2D" uid="uid://wh2fbi235reh" path="res://navmen/Group 15.png" id="5_lxkwp"]
-[ext_resource type="Texture2D" uid="uid://duvn055bhqnw0" path="res://navmen/Group 12.png" id="6_fy0wo"]
-[ext_resource type="Texture2D" uid="uid://djh0t65pjgypt" path="res://navmen/Group 16.png" id="7_qmxi3"]
-[ext_resource type="Texture2D" uid="uid://0yeqlsjndbl0" path="res://navmen/Group 11.png" id="8_dy3o5"]
-[ext_resource type="Texture2D" uid="uid://bqb75a1fttjlo" path="res://navmen/Group 14.png" id="9_4iiua"]
+[ext_resource type="Texture2D" uid="uid://cxlka016kreeb" path="res://assets/uipael_/Untitled (14)/Group 41.png" id="4_f3mj7"]
+[ext_resource type="Texture2D" uid="uid://dyf34jnol7h1m" path="res://assets/uipael_/Untitled (14)/Group 57.png" id="5_lxkwp"]
+[ext_resource type="Texture2D" uid="uid://cuw1f118t0xej" path="res://assets/uipael_/Untitled (14)/Group 43.png" id="6_fy0wo"]
+[ext_resource type="Texture2D" uid="uid://bvao3wsvid6h5" path="res://assets/uipael_/Untitled (14)/Group 55.png" id="7_qmxi3"]
+[ext_resource type="Texture2D" uid="uid://c5nlsxlrixotr" path="res://assets/uipael_/Untitled (14)/Group 42.png" id="8_dy3o5"]
+[ext_resource type="Texture2D" uid="uid://b04xg2r7rb6jj" path="res://assets/uipael_/Untitled (14)/Group 56.png" id="9_4iiua"]
+[ext_resource type="Texture2D" uid="uid://dj0ipvissc80u" path="res://assets/uipael_/Untitled (14)/Group 40.png" id="10_68wxt"]
+[ext_resource type="Texture2D" uid="uid://vbrepij3axga" path="res://assets/uipael_/Untitled (14)/Group 58.png" id="11_842yo"]
 [ext_resource type="Texture2D" uid="uid://x7uoq1y4p11g" path="res://navmen/erasebg-transformed (7).png" id="11_h4b4f"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_68wxt"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_842yo"]
-texture = ExtResource("2_pjjg0")
+texture = ExtResource("4_f3mj7")
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_ng1yd"]
-texture = ExtResource("3_h4b4f")
+texture = ExtResource("5_lxkwp")
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_qvtm7"]
-texture = ExtResource("2_pjjg0")
+texture = ExtResource("4_f3mj7")
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_ety0b"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_bnl2s"]
-texture = ExtResource("4_f3mj7")
+texture = ExtResource("6_fy0wo")
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_yy4t1"]
-texture = ExtResource("5_lxkwp")
+texture = ExtResource("7_qmxi3")
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_8lymr"]
-texture = ExtResource("4_f3mj7")
+texture = ExtResource("6_fy0wo")
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_5n1h1"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_3xs06"]
-texture = ExtResource("6_fy0wo")
+texture = ExtResource("8_dy3o5")
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_065gr"]
-texture = ExtResource("7_qmxi3")
+texture = ExtResource("9_4iiua")
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_50y6x"]
-texture = ExtResource("6_fy0wo")
+texture = ExtResource("8_dy3o5")
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_dsetb"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_jqhhm"]
-texture = ExtResource("8_dy3o5")
+texture = ExtResource("10_68wxt")
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_l6v5r"]
-texture = ExtResource("9_4iiua")
+texture = ExtResource("11_842yo")
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_j0bg4"]
-texture = ExtResource("8_dy3o5")
+texture = ExtResource("10_68wxt")
 
 [node name="Frame2(3)" type="CanvasLayer"]
 scale = Vector2(0.5, 0.5)

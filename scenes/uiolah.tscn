@@ -4,14 +4,14 @@
 [ext_resource type="Texture2D" uid="uid://bsp8tv410g45x" path="res://assets/mesin/uimesin/uipilah/Rectangle 6.png" id="2_xemy8"]
 [ext_resource type="Texture2D" uid="uid://b4npf72fur620" path="res://assets/sprites/erasebg-transformed (17).png" id="3_8bvo1"]
 [ext_resource type="Texture2D" uid="uid://cflrp3k4yetwk" path="res://assets/uipael_/Untitled (14)/Group 49.png" id="4_kjwmq"]
-[ext_resource type="Texture2D" uid="uid://q0lc5mhoe0a0" path="res://assets/uipael_/Untitled (14)/Group 52.png" id="5_2i2da"]
+[ext_resource type="Texture2D" uid="uid://bs878cku5y6bk" path="res://assets/uipael_/butenglish/Group 52.png" id="5_kjwmq"]
 [ext_resource type="Texture2D" uid="uid://dtvpm12xm1u7p" path="res://assets/uipael_/Untitled (14)/Group 50.png" id="6_wx42e"]
 [ext_resource type="Texture2D" uid="uid://6ylc8cgh7oc7" path="res://assets/uipael_/Untitled (14)/erasebg-transformed (22) 2.png" id="7_d6bkp"]
 [ext_resource type="Texture2D" uid="uid://8sk267vbia6r" path="res://assets/uipael_/Untitled (14)/erasebg-transformed (22) 3.png" id="8_h0nwp"]
 [ext_resource type="Texture2D" uid="uid://b7acgy7jicnoe" path="res://assets/uipael_/erasebg-transformed (16).png" id="8_kjwmq"]
-[ext_resource type="Texture2D" uid="uid://bntktcxqj24vo" path="res://assets/uipael_/Untitled (14)/Group 60.png" id="11_dughc"]
+[ext_resource type="Texture2D" uid="uid://c6y2wpd6qrano" path="res://assets/uipael_/butenglish/Group 60.png" id="11_2i2da"]
 [ext_resource type="Texture2D" uid="uid://b3fcup3ypvdkl" path="res://icon.svg" id="12_cf6jq"]
-[ext_resource type="Texture2D" uid="uid://b7mtkbgqqy0a0" path="res://assets/uipael_/Untitled (14)/Group 61.png" id="12_yi3sl"]
+[ext_resource type="Texture2D" uid="uid://ceg84otxgmy0c" path="res://assets/uipael_/butenglish/Group 61.png" id="12_wx42e"]
 [ext_resource type="Texture2D" uid="uid://ch7hkiasgp1ln" path="res://assets/uipael_/Untitled (14)/Group 48.png" id="13_vtpog"]
 [ext_resource type="Texture2D" uid="uid://dsxmopkg0jt0v" path="res://assets/uipael_/Untitled (14)/Group 59.png" id="14_8wvcm"]
 
@@ -65,13 +65,13 @@ texture = ExtResource("7_d6bkp")
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_qv33b"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_f3igp"]
-texture = ExtResource("11_dughc")
+texture = ExtResource("11_2i2da")
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_0etqt"]
-texture = ExtResource("12_yi3sl")
+texture = ExtResource("12_wx42e")
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_lyml8"]
-texture = ExtResource("11_dughc")
+texture = ExtResource("11_2i2da")
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_6ffho"]
 texture = ExtResource("13_vtpog")
@@ -114,7 +114,7 @@ text = "0"
 [node name="Group19" type="Sprite2D" parent="."]
 position = Vector2(573, 101)
 scale = Vector2(0.6, 0.6)
-texture = ExtResource("5_2i2da")
+texture = ExtResource("5_kjwmq")
 
 [node name="Group20" type="Sprite2D" parent="."]
 position = Vector2(170, 93)
@@ -233,7 +233,7 @@ vertical_alignment = 1
 offset_left = 55.0
 offset_top = 542.0
 offset_right = 755.0
-offset_bottom = 607.0
+offset_bottom = 612.0
 theme_override_styles/focus = SubResource("StyleBoxTexture_qv33b")
 theme_override_styles/hover = SubResource("StyleBoxTexture_f3igp")
 theme_override_styles/pressed = SubResource("StyleBoxTexture_0etqt")
