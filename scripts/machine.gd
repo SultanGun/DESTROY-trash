@@ -72,11 +72,14 @@ func _close_ui() -> void:
 		_ui.visible = false
 	_set_inventory_visible(true)
 
-## Sembunyikan HUD inventory player selama UI mesin kebuka, biar layar fokus ke mesin.
+## Sembunyikan tombol & overlay inventory player selama UI mesin kebuka,
+## biar layar fokus ke mesin.
 func _set_inventory_visible(vis: bool) -> void:
 	for p in get_tree().get_nodes_in_group("player"):
-		if p.has_node("InventoryHUD"):
-			p.get_node("InventoryHUD").visible = vis
+		if p.has_node("InventoryToggle"):
+			p.get_node("InventoryToggle").visible = vis
+		if p.has_node("InventoryUI"):
+			p.get_node("InventoryUI").visible = vis
 
 func _instantiate_ui() -> void:
 	_ui = (PILAH_UI if kind == Kind.PILAH else OLAH_UI).instantiate()

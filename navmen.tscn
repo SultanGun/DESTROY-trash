@@ -131,9 +131,9 @@ theme_override_styles/pressed = SubResource("StyleBoxTexture_l6v5r")
 theme_override_styles/normal = SubResource("StyleBoxTexture_j0bg4")
 
 [node name="TextureButton" type="TextureButton" parent="."]
-offset_left = 2436.0
+offset_left = 12.0
 offset_top = 14.0
-offset_right = 2820.0
+offset_right = 396.0
 offset_bottom = 398.0
 scale = Vector2(0.283032, 0.251256)
 texture_normal = ExtResource("11_h4b4f")
