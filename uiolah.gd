@@ -186,8 +186,8 @@ func _render_preview() -> void:
 				GameData.sorted[_selected] * GameData.ITEM_PRICES.get(_selected, 1),
 			]
 
-## Baris = tombol pilih; cuma "xN" EMAS di kanan (gak ada teks putih).
-## Nama barang & harga jual tampil di frame kanan. Rebuild cuma kalau isi berubah.
+## Baris = tombol pilih; teks nama & xN = Label ANAK node scene (RowName/RowQty)
+## yang bisa digeser-geser langsung di editor Godot. Kode cuma isi text & visible.
 var _last_rows: Array = []
 
 func _render_rows() -> void:
@@ -201,23 +201,22 @@ func _render_rows() -> void:
 	_last_rows = sig
 	for i in MAX_ROWS:
 		var btn: Button = _row_buttons[i]
-		for c in btn.get_children():
-			c.queue_free()
+		var name_lbl: Label = btn.get_node_or_null("RowName")
+		var qty_lbl: Label = btn.get_node_or_null("RowQty")
 		if i < kinds.size():
 			var k: String = kinds[i]
 			btn.disabled = false
-
-			var qty_lbl := Label.new()
-			qty_lbl.name = "RowQty"
-			qty_lbl.text = "x%d" % GameData.sorted[k]
-			qty_lbl.position = Vector2(btn.size.x - 140, 14)
-			qty_lbl.size = Vector2(110, 38)
-			qty_lbl.horizontal_alignment = HORIZONTAL_ALIGNMENT_RIGHT
-			qty_lbl.vertical_alignment = VERTICAL_ALIGNMENT_CENTER
-			qty_lbl.add_theme_font_size_override("font_size", 26)
-			qty_lbl.add_theme_color_override("font_color", Color(1, 0.85, 0.4))
-			qty_lbl.add_theme_color_override("font_outline_color", Color(0.2, 0.13, 0.02))
-			qty_lbl.add_theme_constant_override("outline_size", 4)
-			btn.add_child(qty_lbl)
+			if name_lbl:
+				name_lbl.text = GameData.ITEM_NAMES.get(k, k)
+				name_lbl.visible = true
+			if qty_lbl:
+				qty_lbl.text = "x%d" % GameData.sorted[k]
+				qty_lbl.visible = true
 		else:
+			btn.text = ""
 			btn.disabled = true
+			if name_lbl:
+				name_lbl.text = ""
+				name_lbl.visible = false
+			if qty_lbl:
+				qty_lbl.visible = false

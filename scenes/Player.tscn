@@ -1,4 +1,4 @@
-[gd_scene load_steps=31 format=3 uid="uid://cm0kh7d2augt5"]
+[gd_scene load_steps=32 format=3 uid="uid://cm0kh7d2augt5"]
 
 [ext_resource type="Script" uid="uid://bnf38l5ug8d1" path="res://scripts/player.gd" id="1_player"]
 [ext_resource type="Texture2D" uid="uid://uu81up2dgeem" path="res://assets/sprites/mc/left/1.png" id="2_left1"]
@@ -26,7 +26,8 @@
 [ext_resource type="Texture2D" uid="uid://y8l2bfg23lvh" path="res://assets/sprites/mc/right/5.png" id="24_right5"]
 [ext_resource type="Script" uid="uid://bxteuaxic3km2" path="res://scripts/inventory.gd" id="25_inventory"]
 [ext_resource type="Texture2D" uid="uid://cawq3rgq3ulhi" path="res://assets/coin/coin.png" id="26_coin"]
-[ext_resource type="Texture2D" uid="uid://bsp8tv410g45x" path="res://assets/mesin/uimesin/uipilah/Rectangle 6.png" id="27_bg"]
+[ext_resource type="Texture2D" uid="uid://bpfhne8hrsbe0" path="res://assets/uipael_/Untitled (14)/erasebg-transformed (21) 1.png" id="27_bg"]
+[ext_resource type="PackedScene" uid="uid://bvoym4b76267e" path="res://scenes/TimeHUD.tscn" id="28_timehud"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_player"]
 animations = [{
@@ -165,102 +166,72 @@ shape = SubResource("CircleShape2D_pickup")
 [node name="Inventory" type="Node" parent="."]
 script = ExtResource("25_inventory")
 
-[node name="DebugHUD" type="CanvasLayer" parent="."]
+[node name="InventoryToggle" type="CanvasLayer" parent="."]
 
-[node name="Label" type="Label" parent="DebugHUD"]
-offset_left = 8.0
-offset_top = 8.0
-offset_right = 300.0
-offset_bottom = 120.0
-text = "..."
-
-[node name="InventoryHUD" type="CanvasLayer" parent="."]
-
-[node name="Panel" type="PanelContainer" parent="InventoryHUD"]
+[node name="Button" type="Button" parent="InventoryToggle"]
 anchors_preset = 7
 anchor_left = 0.5
 anchor_top = 1.0
 anchor_right = 0.5
 anchor_bottom = 1.0
-offset_left = -130.0
-offset_top = -78.0
-offset_right = 130.0
-offset_bottom = -20.0
+offset_left = -35.0
+offset_top = -65.0
+offset_right = 35.0
+offset_bottom = -12.0
 grow_horizontal = 2
 grow_vertical = 0
-
-[node name="VBox" type="VBoxContainer" parent="InventoryHUD/Panel"]
-layout_mode = 2
-
-[node name="Title" type="Label" parent="InventoryHUD/Panel/VBox"]
-layout_mode = 2
-text = "INVENTORY"
-horizontal_alignment = 1
-
-[node name="HBox" type="HBoxContainer" parent="InventoryHUD/Panel/VBox"]
-layout_mode = 2
-
-[node name="OrganicLabel" type="Label" parent="InventoryHUD/Panel/VBox/HBox"]
-layout_mode = 2
-text = "Organic: "
-
-[node name="OrganicCount" type="Label" parent="InventoryHUD/Panel/VBox/HBox"]
-layout_mode = 2
-text = "0"
-
-[node name="SepA" type="Label" parent="InventoryHUD/Panel/VBox/HBox"]
-layout_mode = 2
-text = "   "
-
-[node name="AnorganicLabel" type="Label" parent="InventoryHUD/Panel/VBox/HBox"]
-layout_mode = 2
-text = "Anorganic: "
-
-[node name="AnorganicCount" type="Label" parent="InventoryHUD/Panel/VBox/HBox"]
-layout_mode = 2
-text = "0"
+text = "R"
 
 [node name="CoinHUD" type="CanvasLayer" parent="."]
 
-[node name="Margin" type="MarginContainer" parent="CoinHUD"]
+[node name="Box" type="Control" parent="CoinHUD"]
+layout_mode = 3
 anchors_preset = 1
 anchor_left = 1.0
 anchor_right = 1.0
-offset_left = -143.0
-offset_top = 53.0
-offset_right = 3.0
-offset_bottom = 140.0
+offset_left = -200.0
+offset_top = 75.0
+offset_right = 4.0
+offset_bottom = 139.0
 grow_horizontal = 0
 rotation = -3.18301e-05
-scale = Vector2(1, 0.763039)
-theme_override_constants/margin_left = 8
-theme_override_constants/margin_top = 5
-theme_override_constants/margin_right = 8
-theme_override_constants/margin_bottom = 5
+scale = Vector2(1.00792, 0.963047)
 
-[node name="BG" type="TextureRect" parent="CoinHUD/Margin"]
-layout_mode = 2
+[node name="BG" type="TextureRect" parent="CoinHUD/Box"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 5.0
+offset_right = -10.0
+grow_horizontal = 2
+grow_vertical = 2
 texture = ExtResource("27_bg")
 expand_mode = 1
+stretch_mode = 6
 
-[node name="HBox" type="HBoxContainer" parent="CoinHUD/Margin"]
-layout_mode = 2
-theme_override_constants/separation = 10
-alignment = 1
-
-[node name="Icon" type="TextureRect" parent="CoinHUD/Margin/HBox"]
-custom_minimum_size = Vector2(68, 68)
-layout_mode = 2
+[node name="Icon" type="TextureRect" parent="CoinHUD/Box"]
+layout_mode = 0
+offset_left = 0.992214
+offset_top = -2.07671
+offset_right = 86.9922
+offset_bottom = 67.9233
 texture = ExtResource("26_coin")
 expand_mode = 1
 stretch_mode = 5
 
-[node name="CoinLabel" type="Label" parent="CoinHUD/Margin/HBox"]
-layout_mode = 2
+[node name="CoinLabel" type="Label" parent="CoinHUD/Box"]
+layout_mode = 0
+offset_left = 103.0
+offset_top = 17.0
+offset_right = 184.0
+offset_bottom = 50.0
 theme_override_colors/font_color = Color(1, 0.92, 0.55, 1)
 theme_override_colors/font_outline_color = Color(0.25, 0.16, 0.03, 1)
 theme_override_constants/outline_size = 6
 theme_override_font_sizes/font_size = 22
 text = "0"
+
+[node name="TimeHUD" parent="." instance=ExtResource("28_timehud")]
 
 [connection signal="area_entered" from="PickupRadius" to="." method="_on_pickup_radius_area_entered"]

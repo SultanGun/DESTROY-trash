@@ -1,10 +1,11 @@
-[gd_scene load_steps=11 format=3 uid="uid://nvsp8wfpsoey"]
+[gd_scene load_steps=12 format=3 uid="uid://nvsp8wfpsoey"]
 
 [ext_resource type="Texture2D" uid="uid://b4npf72fur620" path="res://assets/sprites/erasebg-transformed (17).png" id="1_qdh6v"]
 [ext_resource type="Texture2D" uid="uid://b1dtb2ddle0gg" path="res://assets/uiventory/Rectangle 7.png" id="2_d8fli"]
 [ext_resource type="Texture2D" uid="uid://uubiakj4ndjh" path="res://assets/uiventory/erasebg-transformed (10) 1.png" id="3_qdh6v"]
 [ext_resource type="Texture2D" uid="uid://cemqvblasvtt7" path="res://assets/uipael_/Untitled (14)/Group 44.png" id="4_v4ln0"]
 [ext_resource type="Texture2D" uid="uid://dxwqkdfxus773" path="res://assets/uipael_/Untitled (14)/Group 53.png" id="5_dfy2b"]
+[ext_resource type="Script" uid="uid://ckkaa0jc170qf" path="res://scripts/iventory.gd" id="6_ivnt"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_qdh6v"]
 size = Vector2(216, 188)
@@ -21,13 +22,14 @@ texture = ExtResource("5_dfy2b")
 texture = ExtResource("4_v4ln0")
 
 [node name="CanvasLayer" type="CanvasLayer"]
+script = ExtResource("6_ivnt")
 
 [node name="TextureRect" type="TextureRect" parent="."]
-offset_left = -10.0
-offset_top = -175.0
-offset_right = 2346.0
-offset_bottom = 1961.0
-scale = Vector2(0.5, 0.5)
+offset_left = 249.0
+offset_top = 63.0
+offset_right = 2605.0
+offset_bottom = 2199.0
+scale = Vector2(0.33, 0.33)
 texture = ExtResource("1_qdh6v")
 
 [node name="Rectangle7" type="Sprite2D" parent="TextureRect"]

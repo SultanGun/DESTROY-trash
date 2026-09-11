@@ -16,68 +16,40 @@ var facing: Vector2 = Vector2.DOWN
 var _occluded: Dictionary = {}
 
 var _probe_shape: RectangleShape2D
-var _slot_style: StyleBoxFlat = null
-var _inv_vbox: VBoxContainer = null
+
+const INVENTORY_UI := preload("res://iventory.tscn")
+var _inv_ui: CanvasLayer = null
 
 @onready var anim: AnimatedSprite2D = $Visual/Anim
-@onready var debug_label: Label = $DebugHUD/Label
 @onready var inventory: Inventory = $Inventory
-@onready var coin_label: Label = $CoinHUD/Margin/HBox/CoinLabel
+@onready var coin_label: Label = $CoinHUD/Box/CoinLabel
+@onready var inv_toggle: Button = $InventoryToggle/Button
 
 func _ready() -> void:
 	_probe_shape = RectangleShape2D.new()
 	_probe_shape.size = OCCLUSION_PROBE_SIZE
-	_inv_vbox = $InventoryHUD/Panel/VBox
-	# panel inventory diresize biar cukup muat grid 2 baris (defaultnya tinggi 58px)
-	$InventoryHUD/Panel.offset_top = -132.0
-	$InventoryHUD/Panel.offset_bottom = -6.0
-	_slot_style = StyleBoxFlat.new()
-	_slot_style.bg_color = Color(0.09, 0.09, 0.1, 0.55)
-	_slot_style.set_corner_radius_all(6)
-	_slot_style.set_border_width_all(2)
-	_slot_style.border_color = Color(0.9, 0.85, 0.6, 0.7)
-	inventory.inventory_changed.connect(_on_inventory_changed)
-	_on_inventory_changed(inventory.organic_count, inventory.anorganic_count, inventory.capacity)
+	_instantiate_inventory_ui()
+	inv_toggle.pressed.connect(_toggle_inventory)
 	_build_coin_hud()
 
+func _instantiate_inventory_ui() -> void:
+	_inv_ui = INVENTORY_UI.instantiate()
+	_inv_ui.name = "InventoryUI"
+	add_child(_inv_ui)
+	_inv_ui.visible = false
+	_inv_ui.setup(self)
+	_inv_ui.close_requested.connect(_close_inventory)
 
-## HUD inventory: tampilin isi ransel sebagai GAMBAR sampah (bukan label
-## organik/anorganik) — di mesin pilah player-lah yang belajar memilah.
-func _on_inventory_changed(_organic: int, _anorganic: int, _capacity: int) -> void:
-	if not is_instance_valid(_inv_vbox):
+func _toggle_inventory() -> void:
+	if _inv_ui == null:
 		return
-	for c in _inv_vbox.get_children():
-		if c.name != "Title":
-			c.queue_free()
+	_inv_ui.visible = not _inv_ui.visible
+	if _inv_ui.visible:
+		_inv_ui.refresh()
 
-	_inv_vbox.get_node("Title").text = "RANGSEL  %d/%d" % [inventory.total_count(), inventory.capacity]
-
-	var grid := GridContainer.new()
-	grid.columns = 5
-	grid.add_theme_constant_override("h_separation", 5)
-	grid.add_theme_constant_override("v_separation", 5)
-	var kinds := inventory.stocks.keys()
-	for i in inventory.capacity:
-		var slot := PanelContainer.new()
-		slot.custom_minimum_size = Vector2(40, 40)
-		slot.add_theme_stylebox_override("panel", _slot_style)
-		if i < kinds.size():
-			var kind: String = kinds[i]
-			var icon := TextureRect.new()
-			icon.name = "icon"
-			icon.texture = GameData.ITEM_TEXTURES.get(kind)
-			icon.stretch_mode = TextureRect.STRETCH_KEEP_ASPECT_CENTERED
-			icon.expand_mode = TextureRect.EXPAND_IGNORE_SIZE
-			icon.custom_minimum_size = Vector2(36, 36)
-			slot.add_child(icon)
-			var qty := Label.new()
-			qty.text = "x%d" % inventory.stocks[kind]
-			qty.add_theme_font_size_override("font_size", 12)
-			qty.set_anchors_preset(Control.PRESET_BOTTOM_RIGHT)
-			qty.position = Vector2(-30, -2)
-			slot.add_child(qty)
-		grid.add_child(slot)
-	_inv_vbox.add_child(grid)
+func _close_inventory() -> void:
+	if _inv_ui:
+		_inv_ui.visible = false
 
 
 func _physics_process(_delta: float) -> void:
@@ -93,14 +65,6 @@ func _physics_process(_delta: float) -> void:
 	move_and_slide()
 	_update_animation(input_dir)
 	_update_occlusion()
-
-	if debug_label:
-		debug_label.text = "frame=%d\npos=%s\ninput=%s\nanim=%s" % [
-			Engine.get_process_frames(),
-			position.round(),
-			Vector2i(input_dir),
-			anim.animation,
-		]
 
 
 func _read_input() -> Vector2:
@@ -140,10 +104,10 @@ func collect_trash(trash_type: int, kind: String) -> bool:
 
 ## ---------- HUD Koin (STEP 6) ----------
 ## Node CoinHUD sekarang NODE ASLI di scenes/Player.tscn (CanvasLayer):
-##    CoinHUD/Margin  -> geser utk posisi panil & ukuran kotak (offset)
-##    CoinHUD/Margin/BG  -> gambar latar kotak
-##    CoinHUD/Margin/HBox/Icon  -> ikon koin
-##    CoinHUD/Margin/HBox/CoinLabel  -> angka koin
+##    CoinHUD/Box  -> geser utk posisi panil & ukuran kotak (offset)
+##    CoinHUD/Box/BG  -> gambar latar kotak
+##    CoinHUD/Box/Icon  -> ikon koin
+##    CoinHUD/Box/CoinLabel  -> angka koin
 ## Di sini cuma sambungin sinyal GameManager.coins_changed -> update angka.
 func _build_coin_hud() -> void:
 	var gm := get_node("/root/GameManager")
