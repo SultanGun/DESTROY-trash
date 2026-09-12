@@ -43,6 +43,7 @@ var _being_collected: bool = false
 
 func _ready() -> void:
 	add_to_group("trash")
+	_update_depth()
 	# Kasih visual beda per tipe: organic = bahan alami, anorganic = kemasan/plastik
 	if has_node("Sprite2D"):
 		var textures: Array = ORGANIC_TEXTURES if trash_type == TrashType.ORGANIC else ANORGANIC_TEXTURES
@@ -55,6 +56,7 @@ func _ready() -> void:
 		$Sprite2D.scale = Vector2(s, s)
 
 func _physics_process(delta: float) -> void:
+	_update_depth()
 	if _being_collected and is_instance_valid(_target):
 		global_position = global_position.move_toward(_target.global_position, move_speed * delta)
 		if global_position.distance_to(_target.global_position) < 6.0:
@@ -87,6 +89,12 @@ func _finish_collect() -> void:
 
 func get_trash_type_name() -> String:
 	return "Organic" if trash_type == TrashType.ORGANIC else "Anorganic"
+
+
+## Sampah kecil di lantai: depth = posisi Y, update tiap frame karena
+## sampah bisa terbang ke arah player saat dikoleksi.
+func _update_depth() -> void:
+	z_index = int(global_position.y)
 
 func get_kind() -> String:
 	return kind

@@ -6,6 +6,7 @@
 [ext_resource type="Script" uid="uid://bhkweuyo50gkc" path="res://scripts/time_manager.gd" id="4_tmgm"]
 
 [node name="Main" type="Node2D"]
+y_sort_enabled = true
 
 [node name="TimeManager" type="Node" parent="."]
 script = ExtResource("4_tmgm")

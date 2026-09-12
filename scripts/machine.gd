@@ -19,9 +19,21 @@ var _ui: CanvasLayer = null
 
 func _ready() -> void:
 	add_to_group("machines")
+	_snap_depth()
 	body_entered.connect(_on_body_entered)
 	body_exited.connect(_on_body_exited)
 	_set_prompt_visible(false)
+
+
+## Kunci depth = dasar Sprite2D (bukan origin root yang jauh dari visual),
+## sejajar dengan player.gd (global.y + FOOT_Y) dan map_depth.gd.
+func _snap_depth() -> void:
+	if has_node("Sprite2D"):
+		var sprite := $Sprite2D as Sprite2D
+		var half := 0.0
+		if sprite.texture:
+			half = sprite.texture.get_size().y * 0.5 * sprite.scale.y
+		z_index = int(sprite.global_position.y + half)
 
 func _on_body_entered(body: Node2D) -> void:
 	if body.is_in_group("player"):

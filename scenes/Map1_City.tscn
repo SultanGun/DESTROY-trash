@@ -1,4 +1,4 @@
-[gd_scene load_steps=200 format=3 uid="uid://dr6msqg3adjhk"]
+[gd_scene load_steps=201 format=3 uid="uid://dr6msqg3adjhk"]
 
 [ext_resource type="Texture2D" uid="uid://bhet6hy5sn2cy" path="res://assets/sprites/props/Top-Down Simple Summer_Prop - House.png" id="0_c"]
 [ext_resource type="Texture2D" uid="uid://dkvi4bk7tnt4l" path="res://assets/sprites/properti_jalan/stroke7-ezgif.com-crop.png" id="1_556fm"]
@@ -37,6 +37,7 @@
 [ext_resource type="Texture2D" uid="uid://cor5mvjtabeyv" path="res://assets/sprites/properti_jalan/stroke8-ezgif.com-crop.png" id="36_tnew8"]
 [ext_resource type="PackedScene" uid="uid://cvmrx5sqy8g0b" path="res://scenes/Machine.tscn" id="38_machine"]
 [ext_resource type="Script" uid="uid://uv7sofbd4xgs" path="res://scripts/trash_spawner.gd" id="39_spawner"]
+[ext_resource type="Script" uid="uid://dwsp766a1u5xb" path="res://scripts/map_depth.gd" id="40_depth"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_pykmx"]
 radius = 15.1327
@@ -528,6 +529,7 @@ size = Vector2(160.65, 2.94998)
 
 [node name="Map1_City" type="Node2D"]
 y_sort_enabled = true
+script = ExtResource("40_depth")
 
 [node name="MachinePilah" parent="." instance=ExtResource("38_machine")]
 position = Vector2(-157, 23)
@@ -541,7 +543,6 @@ script = ExtResource("39_spawner")
 
 [node name="Ground" type="Node2D" parent="."]
 z_index = -28
-y_sort_enabled = true
 
 [node name="Ground_0 (ColorRect)" type="ColorRect" parent="Ground"]
 offset_left = 2.0

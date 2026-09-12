@@ -10,6 +10,10 @@ extends CharacterBody2D
 const OCCLUSION_PROBE_SIZE := Vector2(160, 360)
 const OCCLUSION_MASK := 1
 
+## Offset kaki dari origin (Collision ada di y=37): dipakai sebagai kunci
+## depth sort global biar sejajar dengan dasar sprite prop.
+const FOOT_Y := 40.0
+
 var facing: Vector2 = Vector2.DOWN
 
 ## body (StaticBody2D) -> { sprite, alpha }
@@ -28,6 +32,7 @@ var _inv_ui: CanvasLayer = null
 func _ready() -> void:
 	_probe_shape = RectangleShape2D.new()
 	_probe_shape.size = OCCLUSION_PROBE_SIZE
+	_update_depth()
 	_instantiate_inventory_ui()
 	inv_toggle.pressed.connect(_toggle_inventory)
 	_build_coin_hud()
@@ -63,6 +68,7 @@ func _physics_process(_delta: float) -> void:
 
 	velocity = input_dir * target_speed
 	move_and_slide()
+	_update_depth()
 	_update_animation(input_dir)
 	_update_occlusion()
 
@@ -122,6 +128,14 @@ func _on_coins_changed(new_amount: int) -> void:
 func _on_pickup_radius_area_entered(area: Area2D) -> void:
 	if area.is_in_group("trash") and not inventory.is_full():
 		area.start_collect(self)
+
+
+## ---------- Depth sort global ----------
+## z_index = posisi kaki, supaya bisa saling menutupi dengan prop yang
+## parent-nya beda (Player di Main, prop di Map1_City). Prop statis di-snap
+## sekali di map_depth.gd dengan kunci yang sama (dasar sprite).
+func _update_depth() -> void:
+	z_index = int(global_position.y + FOOT_Y)
 
 
 ## ---------- Occlusion ala Stardew Valley ----------
