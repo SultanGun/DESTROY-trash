@@ -11,7 +11,7 @@ const TRASH_SCENE := preload("res://scenes/Trash.tscn")
 
 ## Area spawn (koordinat map). Disesuaikan biar gak masuk sungai (y>3550)
 ## dan di dalem pagar/batas map.
-@export var spawn_area: Rect2 = Rect2(90, 100, 3020, 3300)
+@export var spawn_area: Rect2 = Rect2(90, 100, 5460, 3300)
 
 ## Jarak minimal antar sampah biar gak numpuk.
 @export var min_gap := 90.0

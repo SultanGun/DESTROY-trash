@@ -1,4 +1,4 @@
-[gd_scene load_steps=201 format=3 uid="uid://dr6msqg3adjhk"]
+[gd_scene load_steps=204 format=3 uid="uid://dr6msqg3adjhk"]
 
 [ext_resource type="Texture2D" uid="uid://bhet6hy5sn2cy" path="res://assets/sprites/props/Top-Down Simple Summer_Prop - House.png" id="0_c"]
 [ext_resource type="Texture2D" uid="uid://dkvi4bk7tnt4l" path="res://assets/sprites/properti_jalan/stroke7-ezgif.com-crop.png" id="1_556fm"]
@@ -36,6 +36,8 @@
 [ext_resource type="Texture2D" uid="uid://yhaqtjhhxbl8" path="res://assets/sprites/properti_jalan/stroke1-ezgif.com-crop.png" id="35_ch1si"]
 [ext_resource type="Texture2D" uid="uid://cor5mvjtabeyv" path="res://assets/sprites/properti_jalan/stroke8-ezgif.com-crop.png" id="36_tnew8"]
 [ext_resource type="PackedScene" uid="uid://cvmrx5sqy8g0b" path="res://scenes/Machine.tscn" id="38_machine"]
+[ext_resource type="Texture2D" uid="uid://lwjs7aqyh06e" path="res://assets/tileset_tropical/PNG/decor/decor_4.png" id="39_6sk8p"]
+[ext_resource type="PackedScene" uid="uid://dthysg2vn3bxf" path="res://scenes/House.tscn" id="39_house"]
 [ext_resource type="Script" uid="uid://uv7sofbd4xgs" path="res://scripts/trash_spawner.gd" id="39_spawner"]
 [ext_resource type="Script" uid="uid://dwsp766a1u5xb" path="res://scripts/map_depth.gd" id="40_depth"]
 
@@ -379,7 +381,7 @@ size = Vector2(36, 176.4)
 size = Vector2(36, 176.4)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_3mia3"]
-size = Vector2(36, 176.4)
+size = Vector2(62, 457)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_sqbbm"]
 size = Vector2(36, 176.4)
@@ -516,16 +518,19 @@ size = Vector2(26.56, 24)
 size = Vector2(27.78, 28)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_pykmx"]
-size = Vector2(1318, 131)
+size = Vector2(1318, 62.5)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_wiqkh"]
-size = Vector2(2.175, 204.9)
+size = Vector2(2.175, 135.45)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_7wuif"]
 size = Vector2(5.75, 201.75)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_2ck57"]
 size = Vector2(160.65, 2.94998)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ch1si"]
+size = Vector2(53, 400)
 
 [node name="Map1_City" type="Node2D"]
 y_sort_enabled = true
@@ -554,7 +559,7 @@ color = Color(0.44, 0.66, 0.33, 1)
 [node name="Ground_1 (ColorRect)" type="ColorRect" parent="Ground"]
 offset_left = 1732.0
 offset_top = 3.0
-offset_right = 3196.0
+offset_right = 5561.0
 offset_bottom = 1034.0
 color = Color(0.439216, 0.658824, 0.329412, 1)
 
@@ -583,8 +588,8 @@ color = Color(0.48, 0.48, 0.45, 1)
 [node name="Ground_7 (ColorRect)" type="ColorRect" parent="Ground"]
 z_index = -27
 offset_left = 7.0
-offset_top = 2408.0
-offset_right = 3193.0
+offset_top = 1373.0
+offset_right = 5646.0
 offset_bottom = 4059.0
 pivot_offset = Vector2(1233, 568)
 color = Color(0.44, 0.66, 0.34, 1)
@@ -593,21 +598,21 @@ color = Color(0.44, 0.66, 0.34, 1)
 z_index = -27
 offset_left = -5.0
 offset_top = 3572.0
-offset_right = 3195.0
+offset_right = 5637.0
 offset_bottom = 3672.0
 color = Color(0.3, 0.58, 0.87, 1)
 
 [node name="Ground_10 (ColorRect)" type="ColorRect" parent="Ground"]
 z_index = -25
 offset_top = 1030.0
-offset_right = 3200.0
+offset_right = 5566.0
 offset_bottom = 1080.0
 color = Color(0.68, 0.68, 0.66, 1)
 
 [node name="Ground_11 (ColorRect)" type="ColorRect" parent="Ground"]
 z_index = -25
 offset_top = 1320.0
-offset_right = 3200.0
+offset_right = 5589.0
 offset_bottom = 1370.0
 color = Color(0.68, 0.68, 0.66, 1)
 
@@ -629,7 +634,7 @@ color = Color(0.68, 0.68, 0.66, 1)
 z_index = -23
 offset_left = -3.0
 offset_top = 1080.0
-offset_right = 3200.0
+offset_right = 5606.0
 offset_bottom = 1320.0
 color = Color(0.24, 0.24, 0.26, 1)
 
@@ -1386,6 +1391,9 @@ texture = ExtResource("0_c")
 [node name="@CollisionShape2D@16" type="CollisionShape2D" parent="StaticBody2D/Map1_City_Perumahan#HouseA/Map1_City_Perumahan#HouseA_Collision"]
 position = Vector2(43.5, 235.5)
 shape = SubResource("RectangleShape2D_eho6h")
+
+[node name="HouseDoorTrigger" parent="StaticBody2D" instance=ExtResource("39_house")]
+position = Vector2(648, 806)
 
 [node name="Map1_City_Perumahan#FenceA" type="Sprite2D" parent="StaticBody2D"]
 position = Vector2(370, 835)
@@ -2403,6 +2411,7 @@ texture = ExtResource("4_c")
 [node name="Map1_City_Fence#FenceRight_17_Collision" type="StaticBody2D" parent="StaticBody2D/Map1_City_Fence#FenceRight_17"]
 
 [node name="@CollisionShape2D@118" type="CollisionShape2D" parent="StaticBody2D/Map1_City_Fence#FenceRight_17/Map1_City_Fence#FenceRight_17_Collision"]
+position = Vector2(4, -490.5)
 shape = SubResource("RectangleShape2D_3mia3")
 
 [node name="Map1_City_Fence#FenceLeft_20" type="Sprite2D" parent="StaticBody2D"]
@@ -2957,11 +2966,11 @@ position = Vector2(2480.5, 580)
 scale = Vector2(5.58984, 0.40625)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
-position = Vector2(2016, 11)
+position = Vector2(2016, 45.25)
 shape = SubResource("RectangleShape2D_pykmx")
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="StaticBody2D"]
-position = Vector2(3219.25, 2017)
+position = Vector2(3219.25, 2711.5)
 scale = Vector2(20, 20)
 shape = SubResource("RectangleShape2D_wiqkh")
 
@@ -2974,6 +2983,15 @@ shape = SubResource("RectangleShape2D_7wuif")
 position = Vector2(1608.5, 4092.5)
 scale = Vector2(20, 20)
 shape = SubResource("RectangleShape2D_2ck57")
+
+[node name="CollisionShape2D5" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(3150.5, 835)
+shape = SubResource("RectangleShape2D_ch1si")
+
+[node name="Decor4" type="Sprite2D" parent="StaticBody2D"]
+position = Vector2(3152, 934.25)
+scale = Vector2(0.828025, 0.828042)
+texture = ExtResource("39_6sk8p")
 
 [node name="Top-downSimpleSummerProp-WoodenBridgeVertical" type="Sprite2D" parent="."]
 position = Vector2(2459, 3612)

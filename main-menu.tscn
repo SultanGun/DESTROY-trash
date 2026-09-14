@@ -1,4 +1,4 @@
-[gd_scene load_steps=31 format=3 uid="uid://cbmb84xlkyi31"]
+[gd_scene load_steps=32 format=3 uid="uid://cbmb84xlkyi31"]
 
 [ext_resource type="Script" uid="uid://dx50wab1g8tig" path="res://main-menu.gd" id="1_52n7k"]
 [ext_resource type="Texture2D" uid="uid://cd3fp7ovjwa3e" path="res://assets/Gemini_Generated_Image_edp93uedp93uedp9.jpg" id="2_if514"]
@@ -13,6 +13,7 @@
 [ext_resource type="Texture2D" uid="uid://drbvfra22g8g6" path="res://Untitled (3)/Frame 1.png" id="9_87lju"]
 [ext_resource type="Texture2D" uid="uid://c0uyjrvaagsf8" path="res://assets/Group 7.png" id="9_by3rn"]
 [ext_resource type="Texture2D" uid="uid://dr7kr0wd8be1v" path="res://assets/Group 8.png" id="10_gck0f"]
+[ext_resource type="PackedScene" uid="uid://dgbp7jbcvs23" path="res://scenes/load_slots.tscn" id="11_ldsl"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_crh45"]
 shader = ExtResource("3_id8dr")
@@ -140,5 +141,8 @@ position = Vector2(624, 195)
 scale = Vector2(0.5, 0.5)
 texture = ExtResource("9_87lju")
 
+[node name="LoadSlots" parent="." instance=ExtResource("11_ldsl")]
+
 [connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
+[connection signal="pressed" from="Button2" to="." method="_on_button_2_pressed"]
 [connection signal="pressed" from="Button4" to="." method="_on_button_4_pressed"]

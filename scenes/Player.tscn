@@ -147,7 +147,7 @@ animation = &"right"
 zoom = Vector2(1.25, 1.25)
 limit_left = 0
 limit_top = 0
-limit_right = 3200
+limit_right = 7200
 limit_bottom = 4000
 
 [node name="Collision" type="CollisionShape2D" parent="."]

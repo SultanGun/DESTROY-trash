@@ -22,7 +22,7 @@ layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = -15.0
+offset_left = -31.0
 offset_top = -128.0
 offset_right = 1.0
 offset_bottom = -128.0
@@ -42,9 +42,9 @@ stretch_mode = 5
 
 [node name="DayLabel" type="Label" parent="Box"]
 layout_mode = 0
-offset_left = 8.0
+offset_left = -12.0
 offset_top = -102.0
-offset_right = 82.0
+offset_right = 62.0
 offset_bottom = -76.0
 theme_override_colors/font_color = Color(1, 0.98, 0.9, 1)
 theme_override_colors/font_outline_color = Color(0.3, 0.2, 0.05, 1)
@@ -63,3 +63,20 @@ theme_override_colors/font_outline_color = Color(0.25, 0.16, 0.03, 1)
 theme_override_constants/outline_size = 5
 theme_override_font_sizes/font_size = 20
 text = "06:00"
+
+[node name="MidnightBanner" type="Label" parent="."]
+visible = false
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -300.0
+offset_top = 300.0
+offset_right = 300.0
+offset_bottom = 350.0
+grow_horizontal = 2
+theme_override_colors/font_color = Color(1, 0.35, 0.3, 1)
+theme_override_colors/font_outline_color = Color(0.1, 0, 0, 1)
+theme_override_constants/outline_size = 6
+theme_override_font_sizes/font_size = 30
+text = "00:00 - WAKTU TIDUR!"
+horizontal_alignment = 1

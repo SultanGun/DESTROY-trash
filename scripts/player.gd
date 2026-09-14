@@ -24,6 +24,13 @@ var _probe_shape: RectangleShape2D
 const INVENTORY_UI := preload("res://iventory.tscn")
 var _inv_ui: CanvasLayer = null
 
+## HUD koordinat (toggle Tombol B) — dibuat saat _ready biar kelihatan
+## & nggak perlu nambah node manual di Player.tscn.
+const COORD_HUD_OFFSET := Vector2(14, 14)
+var _coord_layer: CanvasLayer = null
+var _coord_label: Label = null
+var _show_coords := false
+
 @onready var anim: AnimatedSprite2D = $Visual/Anim
 @onready var inventory: Inventory = $Inventory
 @onready var coin_label: Label = $CoinHUD/Box/CoinLabel
@@ -36,6 +43,7 @@ func _ready() -> void:
 	_instantiate_inventory_ui()
 	inv_toggle.pressed.connect(_toggle_inventory)
 	_build_coin_hud()
+	_build_coord_hud()
 
 func _instantiate_inventory_ui() -> void:
 	_inv_ui = INVENTORY_UI.instantiate()
@@ -55,6 +63,40 @@ func _toggle_inventory() -> void:
 func _close_inventory() -> void:
 	if _inv_ui:
 		_inv_ui.visible = false
+
+
+## ---------- HUD KOORDINAT (tombol B) ----------
+func _build_coord_hud() -> void:
+	_coord_layer = CanvasLayer.new()
+	_coord_layer.name = "CoordHUD"
+	add_child(_coord_layer)
+	_coord_label = Label.new()
+	_coord_label.name = "CoordLabel"
+	_coord_label.position = Vector2(14, 52)
+	_coord_label.add_theme_font_size_override("font_size", 16)
+	_coord_label.horizontal_alignment = HORIZONTAL_ALIGNMENT_LEFT
+	_coord_label.modulate = Color(1.0, 1.0, 0.4)
+	_coord_label.visible = false
+	_coord_layer.add_child(_coord_label)
+
+
+func _toggle_coords() -> void:
+	_show_coords = not _show_coords
+	_coord_label.visible = _show_coords
+
+
+func _unhandled_input(event: InputEvent) -> void:
+	if not event is InputEventKey:
+		return
+	if not event.pressed:
+		return
+	match event.keycode:
+		KEY_TAB:
+			_toggle_inventory()
+			get_viewport().set_input_as_handled()
+		KEY_B:
+			_toggle_coords()
+			get_viewport().set_input_as_handled()
 
 
 func _physics_process(_delta: float) -> void:

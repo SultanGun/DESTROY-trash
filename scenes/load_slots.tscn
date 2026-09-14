@@ -1,0 +1,58 @@
+[gd_scene load_steps=2 format=3 uid="uid://dgbp7jbcvs23"]
+
+[ext_resource type="Script" uid="uid://bjycx2n2l8xyh" path="res://scripts/load_slots.gd" id="1_ldsl"]
+
+[node name="LoadSlots" type="Control"]
+visible = false
+layout_mode = 3
+anchors_preset = 0
+offset_right = 1280.0
+offset_bottom = 720.0
+mouse_filter = 2
+script = ExtResource("1_ldsl")
+
+[node name="Dim" type="ColorRect" parent="."]
+layout_mode = 0
+offset_right = 1280.0
+offset_bottom = 720.0
+color = Color(0, 0, 0, 0.6)
+
+[node name="Panel" type="PanelContainer" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -190.0
+offset_top = -150.0
+offset_right = 190.0
+offset_bottom = 160.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBox" type="VBoxContainer" parent="Panel"]
+layout_mode = 2
+theme_override_constants/separation = 12
+
+[node name="Title" type="Label" parent="Panel/VBox"]
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 0.95, 0.8, 1)
+theme_override_font_sizes/font_size = 26
+text = "MUAT GAME"
+horizontal_alignment = 1
+
+[node name="Slot1" type="Button" parent="Panel/VBox"]
+custom_minimum_size = Vector2(0, 46)
+layout_mode = 2
+text = "SLOT 1"
+
+[node name="Slot2" type="Button" parent="Panel/VBox"]
+custom_minimum_size = Vector2(0, 46)
+layout_mode = 2
+text = "SLOT 2"
+
+[node name="Batal" type="Button" parent="Panel/VBox"]
+custom_minimum_size = Vector2(0, 40)
+layout_mode = 2
+text = "BATAL"

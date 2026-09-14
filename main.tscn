@@ -1,21 +1,27 @@
-[gd_scene load_steps=5 format=3 uid="uid://54gklywk3wyu"]
+[gd_scene load_steps=6 format=3 uid="uid://54gklywk3wyu"]
 
 [ext_resource type="PackedScene" uid="uid://cm0kh7d2augt5" path="res://scenes/Player.tscn" id="1_0xm2m"]
 [ext_resource type="PackedScene" uid="uid://dr6msqg3adjhk" path="res://scenes/Map1_City.tscn" id="2_h2yge"]
 [ext_resource type="PackedScene" uid="uid://c2l5m8cts6w3p" path="res://navmen.tscn" id="3_h2yge"]
 [ext_resource type="Script" uid="uid://bhkweuyo50gkc" path="res://scripts/time_manager.gd" id="4_tmgm"]
+[ext_resource type="Script" uid="uid://drivsk7xj3l8t" path="res://scripts/main.gd" id="5_main"]
 
 [node name="Main" type="Node2D"]
 y_sort_enabled = true
+script = ExtResource("5_main")
 
 [node name="TimeManager" type="Node" parent="."]
 script = ExtResource("4_tmgm")
+
+[node name="WorldLight" type="CanvasModulate" parent="."]
 
 [node name="Map1_City" parent="." instance=ExtResource("2_h2yge")]
 position = Vector2(11, -49)
 scale = Vector2(1, 1.00788)
 
 [node name="Frame2(3)" parent="." instance=ExtResource("3_h2yge")]
+
+
 
 [node name="Player" parent="." instance=ExtResource("1_0xm2m")]
 position = Vector2(711, 803)

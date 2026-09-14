@@ -46,7 +46,6 @@ texture = ExtResource("3_qdh6v")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="TextureRect/Rectangle7/Erasebg-transformed(10)1/Area2D"]
 position = Vector2(-2.83289, 4.59076)
-scale = Vector2(1, 1)
 shape = SubResource("RectangleShape2D_qdh6v")
 
 [node name="Erasebg-transformed(10)2" type="Sprite2D" parent="TextureRect/Rectangle7"]

@@ -33,8 +33,9 @@ func _build_slots() -> void:
 			continue
 		var icon := TextureRect.new()
 		icon.name = "Icon"
-		icon.size = Vector2(215, 188)
-		icon.position = Vector2(-97.5, -88)
+		# Kotak slot 750px * scale 0.3 = ~225px; ikon full-isi kotak.
+		icon.size = Vector2(750, 750)
+		icon.position = Vector2(-375, -375)
 		icon.expand_mode = TextureRect.EXPAND_IGNORE_SIZE
 		icon.stretch_mode = TextureRect.STRETCH_KEEP_ASPECT_CENTERED
 		icon.mouse_filter = Control.MOUSE_FILTER_IGNORE
@@ -42,8 +43,8 @@ func _build_slots() -> void:
 
 		var qty := Label.new()
 		qty.name = "Qty"
-		qty.size = Vector2(110, 54)
-		qty.position = Vector2(30, 66)
+		qty.size = Vector2(160, 70)
+		qty.position = Vector2(140, 250)
 		qty.horizontal_alignment = HORIZONTAL_ALIGNMENT_RIGHT
 		qty.add_theme_font_size_override("font_size", 50)
 		qty.add_theme_color_override("font_color", Color(1, 0.92, 0.55, 1))

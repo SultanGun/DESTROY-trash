@@ -141,10 +141,10 @@ theme_override_styles/normal = SubResource("StyleBoxTexture_cc56x")
 
 [node name="RowName" type="Label" parent="Button"]
 layout_mode = 0
-offset_left = 217.0
-offset_top = 16.0
-offset_right = 467.0
-offset_bottom = 56.0
+offset_left = 182.0
+offset_top = 8.0
+offset_right = 432.0
+offset_bottom = 48.0
 theme_override_colors/font_color = Color(1, 0.85, 0.4, 1)
 theme_override_colors/font_outline_color = Color(0.2, 0.13, 0.02, 1)
 theme_override_constants/outline_size = 4
@@ -176,10 +176,10 @@ theme_override_styles/normal = SubResource("StyleBoxTexture_mimb6")
 
 [node name="RowName" type="Label" parent="Button2"]
 layout_mode = 0
-offset_left = 219.0
-offset_top = 15.0
-offset_right = 469.0
-offset_bottom = 55.0
+offset_left = 180.0
+offset_top = 12.0
+offset_right = 430.0
+offset_bottom = 52.0
 theme_override_colors/font_color = Color(1, 0.85, 0.4, 1)
 theme_override_colors/font_outline_color = Color(0.2, 0.13, 0.02, 1)
 theme_override_constants/outline_size = 4
@@ -211,10 +211,10 @@ theme_override_styles/normal = SubResource("StyleBoxTexture_dfhi5")
 
 [node name="RowName" type="Label" parent="Button3"]
 layout_mode = 0
-offset_left = 213.0
-offset_top = 17.0
-offset_right = 463.0
-offset_bottom = 57.0
+offset_left = 176.0
+offset_top = 12.0
+offset_right = 426.0
+offset_bottom = 52.0
 theme_override_colors/font_color = Color(1, 0.85, 0.4, 1)
 theme_override_colors/font_outline_color = Color(0.2, 0.13, 0.02, 1)
 theme_override_constants/outline_size = 4
@@ -246,10 +246,10 @@ theme_override_styles/normal = SubResource("StyleBoxTexture_hcmca")
 
 [node name="RowName" type="Label" parent="Button4"]
 layout_mode = 0
-offset_left = 216.0
-offset_top = 15.0
-offset_right = 466.0
-offset_bottom = 55.0
+offset_left = 183.0
+offset_top = 11.0
+offset_right = 433.0
+offset_bottom = 51.0
 theme_override_colors/font_color = Color(1, 0.85, 0.4, 1)
 theme_override_colors/font_outline_color = Color(0.2, 0.13, 0.02, 1)
 theme_override_constants/outline_size = 4
@@ -281,10 +281,10 @@ theme_override_styles/normal = SubResource("StyleBoxTexture_ish33")
 
 [node name="RowName" type="Label" parent="Button5"]
 layout_mode = 0
-offset_left = 213.0
-offset_top = 15.0
-offset_right = 463.0
-offset_bottom = 55.0
+offset_left = 174.0
+offset_top = 12.0
+offset_right = 424.0
+offset_bottom = 52.0
 theme_override_colors/font_color = Color(1, 0.85, 0.4, 1)
 theme_override_colors/font_outline_color = Color(0.2, 0.13, 0.02, 1)
 theme_override_constants/outline_size = 4
@@ -334,19 +334,19 @@ offset_bottom = 193.227
 scale = Vector2(1.06945, 1)
 
 [node name="Preview" type="TextureRect" parent="FrameNoBgStretched(1)"]
-offset_left = -80.1765
-offset_top = -167.862
-offset_right = 119.823
-offset_bottom = -17.8624
+offset_left = -166.0
+offset_top = -192.0
+offset_right = 234.0
+offset_bottom = -26.0
 scale = Vector2(0.923698, 1.48372)
 expand_mode = 1
 stretch_mode = 5
 
 [node name="PreviewValue" type="Label" parent="FrameNoBgStretched(1)"]
-offset_left = -118.758
-offset_top = 152.85
-offset_right = 108.242
-offset_bottom = 212.85
+offset_left = -202.0
+offset_top = 132.0
+offset_right = 216.0
+offset_bottom = 213.0
 scale = Vector2(1.01121, 1)
 theme_override_colors/font_color = Color(1, 0.85, 0.4, 1)
 theme_override_colors/font_outline_color = Color(0.2, 0.13, 0.02, 1)
