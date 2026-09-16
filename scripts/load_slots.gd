@@ -5,17 +5,16 @@ extends Control
 
 signal request_load(slot: int)
 
-@onready var slot1_btn: Button = $Panel/VBox/Slot1
-@onready var slot2_btn: Button = $Panel/VBox/Slot2
-@onready var batal_btn: Button = $Panel/VBox/Batal
+@onready var slot1_btn: Button = $Slot1
+@onready var slot2_btn: Button = $Slot2
+@onready var batal_btn: Button = $Batal
 
 func _ready() -> void:
 	slot1_btn.pressed.connect(_pick.bind(1))
 	slot2_btn.pressed.connect(_pick.bind(2))
 	batal_btn.pressed.connect(func() -> void: visible = false)
 
-## Update label & disable slot yang kosong.
-func refresh() -> void:
+## Update label & disable slot yang kosong.func refresh() -> void:
 	var slot1_data := SaveLoad.read_slot(1)
 	var slot2_data := SaveLoad.read_slot(2)
 	_configure_slot(slot1_btn, 1, slot1_data)

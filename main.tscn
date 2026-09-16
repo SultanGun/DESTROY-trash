@@ -21,7 +21,5 @@ scale = Vector2(1, 1.00788)
 
 [node name="Frame2(3)" parent="." instance=ExtResource("3_h2yge")]
 
-
-
 [node name="Player" parent="." instance=ExtResource("1_0xm2m")]
 position = Vector2(711, 803)
