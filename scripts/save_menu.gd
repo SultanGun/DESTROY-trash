@@ -7,12 +7,12 @@ extends CanvasLayer
 
 signal close_requested
 
-@onready var status_label: Label = $Dim/Panel/VBox/Status
-@onready var slot_label: Label = $Dim/Panel/VBox/SlotLabel
-@onready var slot1_btn: Button = $Dim/Panel/VBox/Slots/Slot1
-@onready var slot2_btn: Button = $Dim/Panel/VBox/Slots/Slot2
-@onready var save_sleep_btn: Button = $Dim/Panel/VBox/Save
-@onready var close_btn: Button = $Dim/Panel/VBox/Close
+@onready var status_label: Label = $Dim/Status
+@onready var slot_label: Label = $Dim/SlotLabel
+@onready var slot1_btn: Button = $Dim/Slot1
+@onready var slot2_btn: Button = $Dim/Slot2
+@onready var save_sleep_btn: Button = $Dim/Save
+@onready var close_btn: Button = $Dim/Close
 
 func _ready() -> void:
 	slot1_btn.pressed.connect(_pick_slot.bind(1))

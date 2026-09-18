@@ -1,9 +1,58 @@
-[gd_scene load_steps=2 format=3 uid="uid://ds2kyhx4p3x7q"]
+[gd_scene load_steps=24 format=3 uid="uid://ds2kyhx4p3x7q"]
 
-[ext_resource type="Script" path="res://scripts/save_menu.gd" id="1_svmn"]
+[ext_resource type="Script" uid="uid://cooi0f5cskg5h" path="res://scripts/save_menu.gd" id="1_svmn"]
+[ext_resource type="Texture2D" uid="uid://b7acgy7jicnoe" path="res://assets/uipael_/erasebg-transformed (16).png" id="2_0aupr"]
+[ext_resource type="Texture2D" uid="uid://bpfhne8hrsbe0" path="res://assets/uipael_/Untitled (14)/erasebg-transformed (21) 1.png" id="3_24ngm"]
+[ext_resource type="Texture2D" uid="uid://6ylc8cgh7oc7" path="res://assets/uipael_/Untitled (14)/erasebg-transformed (22) 2.png" id="4_idnoy"]
+[ext_resource type="Texture2D" uid="uid://8sk267vbia6r" path="res://assets/uipael_/Untitled (14)/erasebg-transformed (22) 3.png" id="5_1bd7a"]
+[ext_resource type="Texture2D" uid="uid://bmql7o2eewbht" path="res://assets/uipael_/Untitled (14)/erasebg-transformed (22) 1.png" id="6_mgftn"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_qi7ii"]
+texture = ExtResource("2_0aupr")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_nnj2o"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_y2cc8"]
+texture = ExtResource("3_24ngm")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_78pur"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_i8r4w"]
+texture = ExtResource("3_24ngm")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_2xqym"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_woxok"]
+texture = ExtResource("3_24ngm")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_sj640"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_0cseo"]
+texture = ExtResource("3_24ngm")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_htpta"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_sxt1q"]
+texture = ExtResource("4_idnoy")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_0o473"]
+texture = ExtResource("5_1bd7a")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_fro71"]
+texture = ExtResource("6_mgftn")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_s4mo4"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_d4yk1"]
+texture = ExtResource("4_idnoy")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_w2sw6"]
+texture = ExtResource("5_1bd7a")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_hbkq7"]
+texture = ExtResource("4_idnoy")
 
 [node name="SaveMenu" type="CanvasLayer"]
-layer = 1
 script = ExtResource("1_svmn")
 
 [node name="Dim" type="ColorRect" parent="."]
@@ -20,61 +69,98 @@ anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
 offset_left = -200.0
-offset_top = -170.0
-offset_right = 200.0
+offset_top = -255.0
+offset_right = 195.0
 offset_bottom = 170.0
 grow_horizontal = 2
 grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxTexture_qi7ii")
 
-[node name="VBox" type="VBoxContainer" parent="Dim/Panel"]
+[node name="Title" type="Label" parent="Dim"]
 layout_mode = 2
-theme_override_constants/separation = 10
-
-[node name="Title" type="Label" parent="Dim/Panel/VBox"]
-layout_mode = 2
+offset_left = 440.0
+offset_top = 181.0
+offset_right = 835.0
+offset_bottom = 217.0
 theme_override_colors/font_color = Color(1, 0.95, 0.8, 1)
 theme_override_font_sizes/font_size = 26
 text = "SAVE / LOAD"
 horizontal_alignment = 1
 
-[node name="SlotLabel" type="Label" parent="Dim/Panel/VBox"]
+[node name="SlotLabel" type="Label" parent="Dim"]
 layout_mode = 2
+offset_left = 440.0
+offset_top = 227.0
+offset_right = 835.0
+offset_bottom = 251.0
 theme_override_colors/font_color = Color(1, 0.85, 0.5, 1)
 theme_override_font_sizes/font_size = 17
 text = "SLOT 1"
 horizontal_alignment = 1
 
-[node name="Slots" type="HBoxContainer" parent="Dim/Panel/VBox"]
-layout_mode = 2
-theme_override_constants/separation = 10
-
-[node name="Slot1" type="Button" parent="Dim/Panel/VBox/Slots"]
+[node name="Slot1" type="Button" parent="Dim"]
 custom_minimum_size = Vector2(0, 36)
 layout_mode = 2
+offset_left = 474.0
+offset_top = 261.0
+offset_right = 632.0
+offset_bottom = 297.0
 size_flags_horizontal = 3
+theme_override_styles/focus = SubResource("StyleBoxTexture_nnj2o")
+theme_override_styles/hover = SubResource("StyleBoxTexture_y2cc8")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_78pur")
+theme_override_styles/normal = SubResource("StyleBoxTexture_i8r4w")
 toggle_mode = true
 text = "SLOT 1"
 
-[node name="Slot2" type="Button" parent="Dim/Panel/VBox/Slots"]
+[node name="Slot2" type="Button" parent="Dim"]
 custom_minimum_size = Vector2(0, 36)
 layout_mode = 2
+offset_left = 642.0
+offset_top = 261.0
+offset_right = 803.0
+offset_bottom = 297.0
 size_flags_horizontal = 3
+theme_override_styles/focus = SubResource("StyleBoxTexture_2xqym")
+theme_override_styles/hover = SubResource("StyleBoxTexture_woxok")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_sj640")
+theme_override_styles/normal = SubResource("StyleBoxTexture_0cseo")
 toggle_mode = true
 text = "SLOT 2"
 
-[node name="Status" type="Label" parent="Dim/Panel/VBox"]
+[node name="Status" type="Label" parent="Dim"]
 layout_mode = 2
+offset_left = 440.0
+offset_top = 307.0
+offset_right = 835.0
+offset_bottom = 329.0
 theme_override_colors/font_color = Color(0.7, 0.7, 0.75, 1)
 theme_override_font_sizes/font_size = 15
 text = "Simpan & tidur lanjut hari berikutnya."
 horizontal_alignment = 1
 
-[node name="Save" type="Button" parent="Dim/Panel/VBox"]
+[node name="Save" type="Button" parent="Dim"]
 custom_minimum_size = Vector2(0, 42)
 layout_mode = 2
+offset_left = 472.0
+offset_top = 339.0
+offset_right = 805.0
+offset_bottom = 381.0
+theme_override_styles/focus = SubResource("StyleBoxTexture_htpta")
+theme_override_styles/hover = SubResource("StyleBoxTexture_sxt1q")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_0o473")
+theme_override_styles/normal = SubResource("StyleBoxTexture_fro71")
 text = "SIMPAN & TIDUR"
 
-[node name="Close" type="Button" parent="Dim/Panel/VBox"]
+[node name="Close" type="Button" parent="Dim"]
 custom_minimum_size = Vector2(0, 42)
 layout_mode = 2
+offset_left = 472.0
+offset_top = 391.0
+offset_right = 805.0
+offset_bottom = 433.0
+theme_override_styles/focus = SubResource("StyleBoxTexture_s4mo4")
+theme_override_styles/hover = SubResource("StyleBoxTexture_d4yk1")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_w2sw6")
+theme_override_styles/normal = SubResource("StyleBoxTexture_hbkq7")
 text = "KELUAR"
