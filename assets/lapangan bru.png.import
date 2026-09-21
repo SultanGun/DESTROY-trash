@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cqeb1wp4o81ut"
-path="res://.godot/imported/Top-Down Simple Summer_Prop - Tree Small.png-3eca13889c620c8883891883f3ab3625.ctex"
+uid="uid://dnxcwqtlchbs4"
+path="res://.godot/imported/lapangan bru.png-8878f5273de93f49a1c0ad2922ac83db.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/sprites/props/Top-Down Simple Summer_Prop - Tree Small.png"
-dest_files=["res://.godot/imported/Top-Down Simple Summer_Prop - Tree Small.png-3eca13889c620c8883891883f3ab3625.ctex"]
+source_file="res://assets/lapangan bru.png"
+dest_files=["res://.godot/imported/lapangan bru.png-8878f5273de93f49a1c0ad2922ac83db.ctex"]
 
 [params]
 

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://yvlyomr321dk"
-path="res://.godot/imported/AIR_MANCUR-removebg-preview.png-3438363cc36c5c2a5346585de481c990.ctex"
+uid="uid://0eqr0mq8ur1v"
+path="res://.godot/imported/lapangan bru.png-e9c280a29cdda3d2d18534ce46b741ec.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/rumah_gedung/AIR_MANCUR-removebg-preview.png"
-dest_files=["res://.godot/imported/AIR_MANCUR-removebg-preview.png-3438363cc36c5c2a5346585de481c990.ctex"]
+source_file="res://assets/rumah_gedung/lapangan bru.png"
+dest_files=["res://.godot/imported/lapangan bru.png-e9c280a29cdda3d2d18534ce46b741ec.ctex"]
 
 [params]
 

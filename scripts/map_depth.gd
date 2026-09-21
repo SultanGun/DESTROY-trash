@@ -29,13 +29,35 @@ func _ready() -> void:
 			_snap_machine(machine)
 
 
-## Dasar sprite = tengah + setengah tinggi texture (asumsi centered).
+## Dasar sprite = dasar CollisionShape2D jika ada, fallback ke setengah tinggi texture.
 static func foot_of(sprite: Sprite2D) -> float:
+	var col_shape := _find_collision_shape(sprite)
+	if col_shape:
+		var shape_bottom := 0.0
+		if col_shape.shape is RectangleShape2D:
+			shape_bottom = (col_shape.shape as RectangleShape2D).size.y * 0.5 * col_shape.scale.y
+		elif col_shape.shape is CircleShape2D:
+			shape_bottom = (col_shape.shape as CircleShape2D).radius * col_shape.scale.y
+		elif col_shape.shape is CapsuleShape2D:
+			shape_bottom = (col_shape.shape as CapsuleShape2D).height * 0.5 * col_shape.scale.y
+		return col_shape.global_position.y + shape_bottom
+
 	var half := 0.0
 	var tex := sprite.texture
 	if tex:
 		half = tex.get_size().y * 0.5 * sprite.scale.y
 	return sprite.global_position.y + half
+
+
+static func _find_collision_shape(node: Node) -> CollisionShape2D:
+	for child in node.get_children():
+		if child is CollisionShape2D:
+			return child as CollisionShape2D
+		if child is StaticBody2D or child is Area2D:
+			for subchild in child.get_children():
+				if subchild is CollisionShape2D:
+					return subchild as CollisionShape2D
+	return null
 
 
 func _snap_sprite(sprite: Sprite2D) -> void:
