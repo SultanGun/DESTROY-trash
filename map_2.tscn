@@ -1,4 +1,4 @@
-[gd_scene load_steps=58 format=4 uid="uid://caea8pkobye60"]
+[gd_scene load_steps=57 format=4 uid="uid://caea8pkobye60"]
 
 [ext_resource type="Texture2D" uid="uid://rdi8dpsv2sox" path="res://assets/sprites/ground/Top-Down Simple Summer_Ground 43.png" id="1_frbht"]
 [ext_resource type="Texture2D" uid="uid://c73n7ocko5dbu" path="res://assets/rumah_gedung/gedung dpr.png" id="2_rcsii"]
@@ -17,7 +17,6 @@
 [ext_resource type="Texture2D" uid="uid://cki0qg8jue5j4" path="res://assets/rumah_gedung/grobak.png" id="10_lvl6k"]
 [ext_resource type="Texture2D" uid="uid://cqeb1wp4o81ut" path="res://assets/sprites/PNG/Top-Down Simple Summer_Prop - Tree Small.png" id="10_wwcrg"]
 [ext_resource type="Texture2D" uid="uid://cyffhqt7lu8uj" path="res://assets/sprites/props/Top-Down Simple Summer_Prop - Bushes Small.png" id="11_6cupr"]
-[ext_resource type="PackedScene" uid="uid://cm0kh7d2augt5" path="res://scenes/Player.tscn" id="11_mdskg"]
 [ext_resource type="Texture2D" uid="uid://pwveumpmhxbf" path="res://assets/sprites/props/Top-Down Simple Summer_Prop - Bushes Medium.png" id="12_b03pn"]
 [ext_resource type="Texture2D" uid="uid://cvqqk1g2q13g1" path="res://assets/sprites/props/Top-Down Simple Summer_Prop - Bushes Large.png" id="13_owjsh"]
 [ext_resource type="Texture2D" uid="uid://x4wlhe8j7i8b" path="res://assets/rumah_gedung/aer_mancur.png" id="14_hbtm2"]
@@ -15094,9 +15093,6 @@ position = Vector2(44.9999, 30)
 rotation = 0.401426
 scale = Vector2(0.999999, 0.999999)
 shape = SubResource("RectangleShape2D_6cupr")
-
-[node name="Player" parent="." instance=ExtResource("11_mdskg")]
-position = Vector2(280, 852)
 
 [node name="Rumah3-removebg-preview" type="Sprite2D" parent="."]
 z_index = 2680
