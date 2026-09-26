@@ -5,6 +5,7 @@ extends Area2D
 ## Posisi trigger di set dari editor (CollisionShape2D di depan pintu).
 
 const SAVE_MENU := preload("res://scenes/save_menu.tscn")
+const PromptBadge := preload("res://scripts/prompt_badge.gd")
 
 var _player: CharacterBody2D = null
 var _menu_open := false
@@ -54,6 +55,7 @@ func _open_menu() -> void:
 			p.get_node("InventoryToggle").visible = false
 		if p.has_node("InventoryUI"):
 			p.get_node("InventoryUI").visible = false
+	_set_prompt_visible(false)
 
 func _close_menu() -> void:
 	if not _menu_open:
@@ -66,32 +68,21 @@ func _close_menu() -> void:
 			p.get_node("InventoryToggle").visible = true
 		if p.has_node("InventoryUI"):
 			p.get_node("InventoryUI").visible = true
+	if is_instance_valid(_player):
+		_set_prompt_visible(true)
 
-## --- Prompt badge di atas pintu ---
-
-var _prompt_label: Label = null
+var _prompt: CanvasLayer = null
 
 func _set_prompt_visible(vis: bool) -> void:
-	if not vis:
-		if _prompt_label:
-			_prompt_label.visible = false
-		return
-	if not _prompt_label:
+	if _prompt == null:
 		_build_prompt()
-	_prompt_label.text = "[E] Tidur"
-	_prompt_label.visible = true
+	if vis and _menu_open:
+		vis = false
+	_prompt.visible = vis
 
 func _build_prompt() -> void:
-	var layer := CanvasLayer.new()
-	layer.name = "PromptLayer"
-	add_child(layer)
-	var label := Label.new()
-	label.position = Vector2(-55, -80)
-	var f := label.get_theme_font("font")
-	label.text = "[E] Tidur"
-	label.add_theme_color_override("font_color", Color.WHITE)
-	label.add_theme_color_override("font_outline_color", Color.BLACK)
-	label.add_theme_font_size_override("font_size", 18)
-	label.add_theme_constant_override("outline_size", 4)
-	layer.add_child(label)
-	_prompt_label = label
+	_prompt = PromptBadge.new()
+	_prompt.name = "PromptBadge"
+	add_child(_prompt)
+	_prompt.setup(self, "[E]", "Save/Load", Vector2(0, -62))
+	_prompt.visible = false

@@ -8,11 +8,13 @@ signal close_requested
 
 var _inventory: Inventory = null
 var _slots: Array[Sprite2D] = []
+var _esc_hint: Label = null
 
 func _ready() -> void:
 	var close_btn := get_node_or_null("TextureRect/Button")
 	if close_btn is Button:
 		(close_btn as Button).pressed.connect(func() -> void: close_requested.emit())
+	_build_esc_hint()
 
 ## Panggil sekali dari Player pas scene ke-instantiate.
 func setup(player: CharacterBody2D) -> void:
@@ -77,6 +79,19 @@ func _refresh(_organic: int = 0, _anorganic: int = 0, _capacity: int = 0) -> voi
 			icon.texture = null
 			icon.visible = false
 			qty.visible = false
+
+func _build_esc_hint() -> void:
+	_esc_hint = Label.new()
+	_esc_hint.name = "EscHint"
+	_esc_hint.text = "[ESC] Tutup"
+	_esc_hint.position = Vector2(1080, 620)
+	_esc_hint.size = Vector2(160, 24)
+	_esc_hint.horizontal_alignment = HORIZONTAL_ALIGNMENT_CENTER
+	_esc_hint.add_theme_font_size_override("font_size", 15)
+	_esc_hint.add_theme_color_override("font_color", Color(1, 1, 1, 0.9))
+	_esc_hint.add_theme_color_override("font_outline_color", Color.BLACK)
+	_esc_hint.add_theme_constant_override("outline_size", 4)
+	add_child(_esc_hint)
 
 func _unhandled_input(event: InputEvent) -> void:
 	if not visible:

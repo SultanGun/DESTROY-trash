@@ -10,6 +10,7 @@ enum Kind { PILAH, RECYCLE }
 
 const PILAH_UI := preload("res://scenes/uipilah.tscn")
 const OLAH_UI := preload("res://scenes/uiolah.tscn")
+const PromptBadge := preload("res://scripts/prompt_badge.gd")
 
 @export var kind: Kind = Kind.PILAH
 
@@ -75,6 +76,7 @@ func _open_ui() -> void:
 		_ui.setup(self)
 	_ui.visible = true
 	_set_inventory_visible(false)
+	_set_prompt_visible(false)
 
 func _close_ui() -> void:
 	if not _ui_open:
@@ -83,6 +85,8 @@ func _close_ui() -> void:
 	if is_instance_valid(_ui):
 		_ui.visible = false
 	_set_inventory_visible(true)
+	if is_instance_valid(_player):
+		_set_prompt_visible(true)
 
 ## Sembunyikan tombol & overlay inventory player selama UI mesin kebuka,
 ## biar layar fokus ke mesin.
@@ -100,34 +104,23 @@ func _instantiate_ui() -> void:
 		_ui.close_requested.connect(_close_ui)
 	_ui.visible = false
 
-## --- Prompt badge di atas mesin ---
-
-var _prompt_label: Label = null
+var _prompt: CanvasLayer = null
 
 func _set_prompt_visible(vis: bool) -> void:
-	if not vis:
-		if _prompt_label:
-			_prompt_label.visible = false
-		return
-	if not _prompt_label:
+	if _prompt == null:
 		_build_prompt()
-	_prompt_label.text = "[E] Pilah" if kind == Kind.PILAH else "[F] Olah"
-	_prompt_label.visible = true
+	if vis and _ui_open:
+		vis = false
+	_prompt.visible = vis
 
 func _build_prompt() -> void:
-	var layer := CanvasLayer.new()
-	layer.name = "PromptLayer"
-	add_child(layer)
-	var label := Label.new()
-	label.position = Vector2(-60, -70)
-	label.text = "[E] Pilah"
-	add_theme_override(label)
-	layer.add_child(label)
-	_prompt_label = label
-
-func add_theme_override(lbl: Label) -> void:
-	lbl.add_theme_color_override("font_color", Color.WHITE)
-	lbl.add_theme_color_override("font_outline_color", Color.BLACK)
-	var f := lbl.get_theme_font("font")
-	lbl.add_theme_font_size_override("font_size", 18)
-	lbl.add_theme_constant_override("outline_size", 4)
+	_prompt = PromptBadge.new()
+	_prompt.name = "PromptBadge"
+	add_child(_prompt)
+	var spr := get_node_or_null("Sprite2D")
+	var target: Node2D = spr if spr is Node2D else self
+	var key: String = "[E]" if kind == Kind.PILAH else "[F]"
+	var txt: String = "Pilah" if kind == Kind.PILAH else "Olah"
+	var off := Vector2(0, -95) if spr else Vector2(0, -55)
+	_prompt.setup(target, key, txt, off)
+	_prompt.visible = false

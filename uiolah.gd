@@ -17,6 +17,7 @@ var _status := ""
 
 var _scaler: Node2D = null
 var _status_label: Label = null
+var _esc_hint: Label = null
 
 @onready var _olah_button: Button = $Button6
 @onready var _tutup_button: Button = $Button7
@@ -43,6 +44,7 @@ func _ready() -> void:
 		_row_buttons[i].focus_mode = Control.FOCUS_NONE
 	_build_preview()
 	_build_status()
+	_build_esc_hint()
 	_refresh()
 
 func setup(machine: Node) -> void:
@@ -142,6 +144,19 @@ func _build_status() -> void:
 	_status_label.add_theme_color_override("font_outline_color", Color.BLACK)
 	_status_label.add_theme_constant_override("outline_size", 5)
 	_ensure_scaler().add_child(_status_label)
+
+func _build_esc_hint() -> void:
+	_esc_hint = Label.new()
+	_esc_hint.name = "EscHint"
+	_esc_hint.text = "[ESC] Tutup"
+	_esc_hint.position = Vector2(620, 575)
+	_esc_hint.size = Vector2(160, 24)
+	_esc_hint.horizontal_alignment = HORIZONTAL_ALIGNMENT_CENTER
+	_esc_hint.add_theme_font_size_override("font_size", 14)
+	_esc_hint.add_theme_color_override("font_color", Color(1, 1, 1, 0.85))
+	_esc_hint.add_theme_color_override("font_outline_color", Color.BLACK)
+	_esc_hint.add_theme_constant_override("outline_size", 4)
+	_ensure_scaler().add_child(_esc_hint)
 
 ## ---------- Refresh ----------
 

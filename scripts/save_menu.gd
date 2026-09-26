@@ -19,7 +19,21 @@ func _ready() -> void:
 	slot2_btn.pressed.connect(_pick_slot.bind(2))
 	save_sleep_btn.pressed.connect(_on_save_sleep)
 	close_btn.pressed.connect(close_requested.emit)
+	_build_esc_hint()
 	_sync_slot_ui()
+
+func _build_esc_hint() -> void:
+	var hint := Label.new()
+	hint.name = "EscHint"
+	hint.text = "[ESC] Tutup"
+	hint.position = Vector2(560, 445)
+	hint.size = Vector2(160, 24)
+	hint.horizontal_alignment = HORIZONTAL_ALIGNMENT_CENTER
+	hint.add_theme_font_size_override("font_size", 14)
+	hint.add_theme_color_override("font_color", Color(1, 1, 1, 0.9))
+	hint.add_theme_color_override("font_outline_color", Color.BLACK)
+	hint.add_theme_constant_override("outline_size", 4)
+	$Dim.add_child(hint)
 
 func _pick_slot(slot: int) -> void:
 	SaveLoad.current_slot = slot
