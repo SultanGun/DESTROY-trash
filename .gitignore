@@ -1,6 +1,29 @@
 # Godot 4+ specific ignores
 .godot/
+.opencode/node_modules/
 /android/
+
+# Godot web export output (regenerable via Export menu, jangan commit binary)
+/game-export/
+*.pck
+*.wasm
+*.zip
+DESTROY trash.js
+DESTROY trash.pck
+DESTROY trash.wasm
+DESTROY trash.png
+DESTROY trash.icon.png
+DESTROY trash.apple-touch-icon.png
+DESTROY trash.audio.worklet.js
+DESTROY trash.audio.position.worklet.js
+index.js
+index.pck
+index.wasm
+index.png
+index.icon.png
+index.apple-touch-icon.png
+index.audio.worklet.js
+index.audio.position.worklet.js
 
 # Editor AI tools (local only, not for the repo)
 addons/
