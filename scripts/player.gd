@@ -169,6 +169,9 @@ func _on_coins_changed(new_amount: int) -> void:
 
 func _on_pickup_radius_area_entered(area: Area2D) -> void:
 	if area.is_in_group("trash") and not inventory.is_full():
+		var am := get_node_or_null("/root/AudioManager")
+		if am != null and am.has_method("play_vacuum"):
+			am.play_vacuum()
 		area.start_collect(self)
 
 

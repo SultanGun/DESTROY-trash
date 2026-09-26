@@ -20,6 +20,7 @@ config/icon="res://icon.svg"
 GameData="*res://scripts/game_data.gd"
 GameManager="*res://scripts/game_manager.gd"
 SaveLoad="*res://scripts/save_load.gd"
+AudioManager="*res://scripts/audio_manager.gd"
 
 [display]
 
@@ -35,3 +36,4 @@ enabled=PackedStringArray()
 
 renderer/rendering_method="gl_compatibility"
 renderer/rendering_method.mobile="gl_compatibility"
+textures/vram_compression/import_etc2_astc=true

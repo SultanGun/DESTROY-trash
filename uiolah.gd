@@ -67,6 +67,10 @@ func _on_olah_pressed() -> void:
 		return
 	var coins := GameData.sell_sorted()
 	get_node("/root/GameManager").add_coins(coins)
+	if coins > 0:
+		var am := get_node_or_null("/root/AudioManager")
+		if am != null and am.has_method("play_coin"):
+			am.play_coin()
 	_selected = ""
 	_index = 0
 	_status = "+%d koin!" % coins
