@@ -10,6 +10,9 @@ var _inventory: Inventory = null
 var _slots: Array[Sprite2D] = []
 var _esc_hint: Label = null
 
+## Batas slot UI = kapasitas maksimum inventori (upgrade toko).
+const MAX_SLOTS := 20
+
 func _ready() -> void:
 	var close_btn := get_node_or_null("TextureRect/Button")
 	if close_btn is Button:
@@ -27,7 +30,10 @@ func setup(player: CharacterBody2D) -> void:
 
 func _build_slots() -> void:
 	_slots.clear()
-	for i in 18:
+	# Kapasitas maksimum inventori = 20 (upgrade toko 10 -> 15 -> 20).
+	# Slot 19/20 belum di-author di iventory.tscn; loop aman karena slot yang
+	# tidak ada di scene dilewati (continue).
+	for i in MAX_SLOTS:
 		var slot := get_node_or_null(
 			"TextureRect/Rectangle7/Erasebg-transformed(10)%d" % (i + 1)
 		) as Sprite2D

@@ -11,6 +11,9 @@ signal inventory_full
 
 @export var capacity: int = 10
 
+## Batas atas kapasitas (upgrade toko mentok di 20 slot).
+const MAX_CAPACITY := 20
+
 var organic_count: int = 0
 var anorganic_count: int = 0
 ## kind -> qty (mengikuti trash.gd / GameData.ITEM_NAMES)
@@ -18,6 +21,15 @@ var stocks: Dictionary = {}
 
 func total_count() -> int:
 	return organic_count + anorganic_count
+
+## Ubah kapasitas (upgrade toko / load save). Dijepit ke 1..MAX_CAPACITY
+## supaya ga bisa melebihi batas upgrade, lalu emit signal biar UI sinkron.
+func set_capacity(value: int) -> void:
+	capacity = clampi(value, 1, MAX_CAPACITY)
+	emit_signal_refresh()
+
+func emit_signal_refresh() -> void:
+	inventory_changed.emit(organic_count, anorganic_count, capacity)
 
 func is_full() -> bool:
 	return total_count() >= capacity

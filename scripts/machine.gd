@@ -54,7 +54,7 @@ func _unhandled_input(event: InputEvent) -> void:
 		if event.keycode == KEY_ESCAPE and _ui_open:
 			_close_ui()
 			get_viewport().set_input_as_handled()
-		elif not _ui_open:
+		elif not _ui_open and not _other_interaction_active():
 			var open: bool = (kind == Kind.PILAH and event.keycode == KEY_E) \
 				or (kind == Kind.RECYCLE and event.keycode == KEY_F)
 			if open:
@@ -63,6 +63,17 @@ func _unhandled_input(event: InputEvent) -> void:
 
 func get_player() -> CharacterBody2D:
 	return _player
+
+## Dipakai NPC toko buat cek apakah ada interaksi yang lagi aktif, supaya E
+## tidak membuka dua UI sekaligus di titik yang berdekatan.
+func is_ui_open() -> bool:
+	return _ui_open
+
+func _other_interaction_active() -> bool:
+	for node in get_tree().get_nodes_in_group("shops"):
+		if node != self and node.has_method("is_ui_open") and node.is_ui_open():
+			return true
+	return false
 
 ## --- UI ---
 

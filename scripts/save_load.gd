@@ -70,6 +70,7 @@ func gather_data() -> Dictionary:
 		"seconds_per_game_hour": tm.seconds_per_game_hour if tm else 60.0,
 		"player_pos": [pos.x, pos.y],
 		"inventory_stocks": inv.stocks.duplicate() if inv else {},
+		"inventory_capacity": inv.capacity if inv else 10,
 		"sorted": GameData.sorted.duplicate(),
 	}
 
@@ -88,6 +89,7 @@ func _apply_data(data: Dictionary) -> void:
 	var pos: Array = data.get("player_pos", [711, 803])
 	player.global_position = Vector2(pos[0], pos[1])
 	var inv: Inventory = player.inventory
+	inv.set_capacity(int(data.get("inventory_capacity", 10)))
 	inv.stocks = (data.get("inventory_stocks", {}) as Dictionary).duplicate()
 	inv.organic_count = 0
 	inv.anorganic_count = 0

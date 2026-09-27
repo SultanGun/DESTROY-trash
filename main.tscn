@@ -1,10 +1,13 @@
-[gd_scene load_steps=6 format=3 uid="uid://54gklywk3wyu"]
+[gd_scene load_steps=9 format=3 uid="uid://54gklywk3wyu"]
 
 [ext_resource type="PackedScene" uid="uid://cm0kh7d2augt5" path="res://scenes/Player.tscn" id="1_0xm2m"]
 [ext_resource type="PackedScene" uid="uid://dr6msqg3adjhk" path="res://scenes/Map1_City.tscn" id="2_h2yge"]
 [ext_resource type="PackedScene" uid="uid://c2l5m8cts6w3p" path="res://navmen.tscn" id="3_h2yge"]
 [ext_resource type="Script" uid="uid://bhkweuyo50gkc" path="res://scripts/time_manager.gd" id="4_tmgm"]
 [ext_resource type="Script" uid="uid://drivsk7xj3l8t" path="res://scripts/main.gd" id="5_main"]
+[ext_resource type="PackedScene" uid="uid://bk5vdafw12ylf" path="res://scenes/ShopNPC.tscn" id="6_shopnpc"]
+[ext_resource type="PackedScene" uid="uid://dlan82y4ltsm6" path="res://scenes/MapSeam.tscn" id="8_seam"]
+[ext_resource type="PackedScene" uid="uid://caea8pkobye60" path="res://scenes/Map2.tscn" id="9_map2"]
 
 [node name="Main" type="Node2D"]
 y_sort_enabled = true
@@ -19,7 +22,15 @@ script = ExtResource("4_tmgm")
 position = Vector2(11, -49)
 scale = Vector2(1, 1.00788)
 
+[node name="Map2" parent="." instance=ExtResource("9_map2")]
+position = Vector2(3268, -49)
+
+[node name="MapSeam" parent="." instance=ExtResource("8_seam")]
+
 [node name="Frame2(3)" parent="." instance=ExtResource("3_h2yge")]
 
 [node name="Player" parent="." instance=ExtResource("1_0xm2m")]
 position = Vector2(711, 803)
+
+[node name="ShopNPC" parent="." instance=ExtResource("6_shopnpc")]
+position = Vector2(870, 3083)

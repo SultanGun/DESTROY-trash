@@ -26,7 +26,10 @@ var _inv_ui: CanvasLayer = null
 
 ## HUD koordinat (toggle Tombol B) — dibuat saat _ready biar kelihatan
 ## & nggak perlu nambah node manual di Player.tscn.
+## Nempel di kiri-bawah layar (anchor pojok kiri-bawah, jadi tetap di sana
+## walau ukuran jendela/resolusi berubah).
 const COORD_HUD_OFFSET := Vector2(14, 14)
+const COORD_HUD_FONT_SIZE := 12
 var _coord_layer: CanvasLayer = null
 var _coord_label: Label = null
 var _show_coords := false
@@ -72,10 +75,26 @@ func _build_coord_hud() -> void:
 	add_child(_coord_layer)
 	_coord_label = Label.new()
 	_coord_label.name = "CoordLabel"
-	_coord_label.position = Vector2(14, 52)
-	_coord_label.add_theme_font_size_override("font_size", 16)
+	# Anchor ke pojok kiri-bawah layar (bukan position absolut) supaya tetap
+	# di kiri-bawah walau resolusi jendela berubah.
+	_coord_label.anchor_left = 0.0
+	_coord_label.anchor_top = 1.0
+	_coord_label.anchor_right = 0.0
+	_coord_label.anchor_bottom = 1.0
+	_coord_label.offset_left = COORD_HUD_OFFSET.x
+	_coord_label.offset_top = -COORD_HUD_OFFSET.y - 20.0
+	_coord_label.offset_right = COORD_HUD_OFFSET.x
+	_coord_label.offset_bottom = -COORD_HUD_OFFSET.y
+	_coord_label.grow_horizontal = Control.GROW_DIRECTION_END
+	_coord_label.grow_vertical = Control.GROW_DIRECTION_BEGIN
+	_coord_label.add_theme_font_size_override("font_size", COORD_HUD_FONT_SIZE)
+	# Outline gelap biar teks tetap kebaca di atas map terang/gelap.
+	_coord_label.add_theme_color_override("font_color", Color(1.0, 1.0, 0.4))
+	_coord_label.add_theme_color_override("font_outline_color", Color(0, 0, 0, 1))
+	_coord_label.add_theme_constant_override("outline_size", 4)
 	_coord_label.horizontal_alignment = HORIZONTAL_ALIGNMENT_LEFT
-	_coord_label.modulate = Color(1.0, 1.0, 0.4)
+	_coord_label.mouse_filter = Control.MOUSE_FILTER_IGNORE
+	_coord_label.text = "X: 0   Y: 0"
 	_coord_label.visible = false
 	_coord_layer.add_child(_coord_label)
 
@@ -83,6 +102,23 @@ func _build_coord_hud() -> void:
 func _toggle_coords() -> void:
 	_show_coords = not _show_coords
 	_coord_label.visible = _show_coords
+	if _show_coords:
+		_update_coord_label()
+
+
+## Isi label dengan posisi dunia player. Dipanggil tiap frame selama HUD
+## tampil, jadi koordinat ikut bergerak.
+func _update_coord_label() -> void:
+	if _coord_label == null:
+		return
+	var p := global_position
+	_coord_label.text = "X: %d   Y: %d" % [roundi(p.x), roundi(p.y)]
+
+
+func _process(_delta: float) -> void:
+	# Murah: cuma jalan kalau HUD koordinat sedang tampil.
+	if _show_coords:
+		_update_coord_label()
 
 
 func _unhandled_input(event: InputEvent) -> void:

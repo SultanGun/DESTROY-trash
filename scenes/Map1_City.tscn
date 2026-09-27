@@ -1,4 +1,4 @@
-[gd_scene load_steps=204 format=3 uid="uid://dr6msqg3adjhk"]
+[gd_scene load_steps=202 format=3 uid="uid://dr6msqg3adjhk"]
 
 [ext_resource type="Texture2D" uid="uid://bhet6hy5sn2cy" path="res://assets/sprites/props/Top-Down Simple Summer_Prop - House.png" id="0_c"]
 [ext_resource type="Texture2D" uid="uid://dkvi4bk7tnt4l" path="res://assets/sprites/properti_jalan/stroke7-ezgif.com-crop.png" id="1_556fm"]
@@ -381,7 +381,7 @@ size = Vector2(36, 176.4)
 size = Vector2(36, 176.4)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_3mia3"]
-size = Vector2(62, 457)
+size = Vector2(62, 821)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_sqbbm"]
 size = Vector2(36, 176.4)
@@ -405,7 +405,7 @@ size = Vector2(36, 176.4)
 size = Vector2(36, 176.4)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_pw2js"]
-size = Vector2(36, 176.4)
+size = Vector2(36, 337.2)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_niwks"]
 size = Vector2(244, 107.08)
@@ -520,17 +520,11 @@ size = Vector2(27.78, 28)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_pykmx"]
 size = Vector2(1318, 62.5)
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_wiqkh"]
-size = Vector2(2.175, 135.45)
-
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_7wuif"]
 size = Vector2(5.75, 201.75)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_2ck57"]
 size = Vector2(160.65, 2.94998)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_ch1si"]
-size = Vector2(53, 400)
 
 [node name="Map1_City" type="Node2D"]
 y_sort_enabled = true
@@ -545,6 +539,8 @@ kind = 1
 
 [node name="TrashSpawner" type="Node2D" parent="."]
 script = ExtResource("39_spawner")
+max_trash = 50
+spawn_area = Rect2(60, 100, 3230, 3300)
 
 [node name="Ground" type="Node2D" parent="."]
 z_index = -28
@@ -559,7 +555,7 @@ color = Color(0.44, 0.66, 0.33, 1)
 [node name="Ground_1 (ColorRect)" type="ColorRect" parent="Ground"]
 offset_left = 1732.0
 offset_top = 3.0
-offset_right = 5561.0
+offset_right = 3290.0
 offset_bottom = 1034.0
 color = Color(0.439216, 0.658824, 0.329412, 1)
 
@@ -587,10 +583,10 @@ color = Color(0.48, 0.48, 0.45, 1)
 
 [node name="Ground_7 (ColorRect)" type="ColorRect" parent="Ground"]
 z_index = -27
-offset_left = 7.0
-offset_top = 1373.0
-offset_right = 5646.0
-offset_bottom = 4059.0
+offset_left = 5.0
+offset_top = 1364.0
+offset_right = 3275.0
+offset_bottom = 4121.0
 pivot_offset = Vector2(1233, 568)
 color = Color(0.44, 0.66, 0.34, 1)
 
@@ -598,21 +594,21 @@ color = Color(0.44, 0.66, 0.34, 1)
 z_index = -27
 offset_left = -5.0
 offset_top = 3572.0
-offset_right = 5637.0
+offset_right = 3277.0
 offset_bottom = 3672.0
 color = Color(0.3, 0.58, 0.87, 1)
 
 [node name="Ground_10 (ColorRect)" type="ColorRect" parent="Ground"]
 z_index = -25
 offset_top = 1030.0
-offset_right = 5566.0
-offset_bottom = 1080.0
+offset_right = 3268.0
+offset_bottom = 1079.0
 color = Color(0.68, 0.68, 0.66, 1)
 
 [node name="Ground_11 (ColorRect)" type="ColorRect" parent="Ground"]
 z_index = -25
 offset_top = 1320.0
-offset_right = 5589.0
+offset_right = 3265.0
 offset_bottom = 1370.0
 color = Color(0.68, 0.68, 0.66, 1)
 
@@ -634,7 +630,7 @@ color = Color(0.68, 0.68, 0.66, 1)
 z_index = -23
 offset_left = -3.0
 offset_top = 1080.0
-offset_right = 5606.0
+offset_right = 3272.0
 offset_bottom = 1320.0
 color = Color(0.24, 0.24, 0.26, 1)
 
@@ -1239,6 +1235,11 @@ texture = ExtResource("9_o2ig1")
 position = Vector2(1403, 3022)
 scale = Vector2(0.75075, 0.669601)
 texture = ExtResource("9_o2ig1")
+
+[node name="Top-downSimpleSummerProp-WoodenFenceVertical" type="Sprite2D" parent="Ground"]
+position = Vector2(3139, 2288)
+scale = Vector2(1, 0.540909)
+texture = ExtResource("4_c")
 
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
 
@@ -2411,7 +2412,7 @@ texture = ExtResource("4_c")
 [node name="Map1_City_Fence#FenceRight_17_Collision" type="StaticBody2D" parent="StaticBody2D/Map1_City_Fence#FenceRight_17"]
 
 [node name="@CollisionShape2D@118" type="CollisionShape2D" parent="StaticBody2D/Map1_City_Fence#FenceRight_17/Map1_City_Fence#FenceRight_17_Collision"]
-position = Vector2(4, -490.5)
+position = Vector2(4, -308.5)
 shape = SubResource("RectangleShape2D_3mia3")
 
 [node name="Map1_City_Fence#FenceLeft_20" type="Sprite2D" parent="StaticBody2D"]
@@ -2484,6 +2485,7 @@ texture = ExtResource("4_c")
 [node name="Map1_City_Fence#FenceRight_23_Collision" type="StaticBody2D" parent="StaticBody2D/Map1_City_Fence#FenceRight_23"]
 
 [node name="@CollisionShape2D@126" type="CollisionShape2D" parent="StaticBody2D/Map1_City_Fence#FenceRight_23/Map1_City_Fence#FenceRight_23_Collision"]
+position = Vector2(0, 80.3999)
 shape = SubResource("RectangleShape2D_pw2js")
 
 [node name="Map1_City#Desa" type="Node2D" parent="StaticBody2D"]
@@ -2969,11 +2971,6 @@ scale = Vector2(5.58984, 0.40625)
 position = Vector2(2016, 45.25)
 shape = SubResource("RectangleShape2D_pykmx")
 
-[node name="CollisionShape2D2" type="CollisionShape2D" parent="StaticBody2D"]
-position = Vector2(3219.25, 2711.5)
-scale = Vector2(20, 20)
-shape = SubResource("RectangleShape2D_wiqkh")
-
 [node name="CollisionShape2D3" type="CollisionShape2D" parent="StaticBody2D"]
 position = Vector2(-58.5, 2033.5)
 scale = Vector2(20, 20)
@@ -2983,10 +2980,6 @@ shape = SubResource("RectangleShape2D_7wuif")
 position = Vector2(1608.5, 4092.5)
 scale = Vector2(20, 20)
 shape = SubResource("RectangleShape2D_2ck57")
-
-[node name="CollisionShape2D5" type="CollisionShape2D" parent="StaticBody2D"]
-position = Vector2(3150.5, 835)
-shape = SubResource("RectangleShape2D_ch1si")
 
 [node name="Decor4" type="Sprite2D" parent="StaticBody2D"]
 position = Vector2(3152, 934.25)
@@ -3000,3 +2993,36 @@ texture = ExtResource("3_y0njf")
 [node name="Top-downSimpleSummerProp-WoodenBridgeVertical2" type="Sprite2D" parent="."]
 position = Vector2(499, 3603)
 texture = ExtResource("3_y0njf")
+
+[node name="Top-downSimpleSummerProp-WoodenFenceVertical" type="Sprite2D" parent="."]
+position = Vector2(3143, 554)
+scale = Vector2(1, 0.781818)
+texture = ExtResource("4_c")
+
+[node name="Top-downSimpleSummerProp-WoodenFenceVertical2" type="Sprite2D" parent="."]
+position = Vector2(3219, 2457)
+texture = ExtResource("4_c")
+
+[node name="Top-downSimpleSummerProp-WoodenFenceVertical3" type="Sprite2D" parent="."]
+position = Vector2(3221, 2699)
+texture = ExtResource("4_c")
+
+[node name="Top-downSimpleSummerProp-WoodenFenceVertical4" type="Sprite2D" parent="."]
+position = Vector2(3219, 2948)
+texture = ExtResource("4_c")
+
+[node name="Top-downSimpleSummerProp-WoodenFenceVertical5" type="Sprite2D" parent="."]
+position = Vector2(3221, 3189)
+texture = ExtResource("4_c")
+
+[node name="Top-downSimpleSummerProp-WoodenFenceVertical6" type="Sprite2D" parent="."]
+position = Vector2(3224, 3444)
+texture = ExtResource("4_c")
+
+[node name="Top-downSimpleSummerProp-WoodenFenceVertical7" type="Sprite2D" parent="."]
+position = Vector2(3220, 3794)
+texture = ExtResource("4_c")
+
+[node name="Top-downSimpleSummerProp-WoodenFenceVertical8" type="Sprite2D" parent="."]
+position = Vector2(3219, 4004)
+texture = ExtResource("4_c")
