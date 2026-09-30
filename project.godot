@@ -21,6 +21,8 @@ GameData="*res://scripts/game_data.gd"
 GameManager="*res://scripts/game_manager.gd"
 SaveLoad="*res://scripts/save_load.gd"
 AudioManager="*res://scripts/audio_manager.gd"
+NightPatrol="*res://scripts/night_patrol.gd"
+RainSystem="*res://scripts/rain_system.gd"
 
 [display]
 

@@ -187,26 +187,35 @@ func _on_node_added(node: Node) -> void:
 	# node_added terpancar SEBELUM _ready() node tersebut jalan, sedangkan
 	# TimeManager baru masuk grup di dalam _ready() (add_to_group) — jadi
 	# cek grup harus ditunda ke akhir frame via deferred.
-	call_deferred("_check_node_tm", node)
+	#
+	# Yang dikirim ke deferred adalah INSTANCE ID, bukan objeknya. Kalau objeknya
+	# di-free sebelum frame berakhir, konversi argumen akan gagal ("Cannot convert
+	# argument 1 from Object to Object") dan guard is_instance_valid() di dalam
+	# fungsi tidak pernah sempat jalan. ID integer aman; nodanya di-resolve ulang
+	# dengan instance_from_id().
+	var id := node.get_instance_id()
+	call_deferred("_check_node_tm", id)
 	# Hook click sound ke semua tombol (termasuk yang dibuat saat runtime,
 	# misal panah/bin mesin pilah) — deferred dengan alasan yang sama.
-	call_deferred("_hook_buttons_deep", node)
+	call_deferred("_hook_buttons_deep", id)
 
 
-func _check_node_tm(node: Node) -> void:
-	if is_instance_valid(node) and node.is_in_group("time_manager"):
+func _check_node_tm(node_id: int) -> void:
+	var node := instance_from_id(node_id) as Node
+	if node != null and node.is_in_group("time_manager"):
 		_attach_tm(node)
 
 
 ## Pasang click sound ke node + seluruh turunannya. Guard meta cegah
 ## koneksi ganda saat scene di-reload. Tombol disabled tidak memancarkan
 ## pressed, jadi tidak ada bunyi palsu.
-func _hook_buttons_deep(node: Node) -> void:
-	if not is_instance_valid(node):
+func _hook_buttons_deep(node_id: int) -> void:
+	var node := instance_from_id(node_id) as Node
+	if node == null:
 		return
 	_hook_one_button(node)
 	for c in node.get_children():
-		_hook_buttons_deep(c)
+		_hook_buttons_deep(c.get_instance_id())
 
 
 func _hook_one_button(node: Node) -> void:
@@ -268,3 +277,25 @@ func _kill_fade() -> void:
 	if _fade_tween != null and _fade_tween.is_valid():
 		_fade_tween.kill()
 	_fade_tween = null
+
+
+## Berhentiin semua player sebelum autoload di-free.
+##
+## Tanpa ini, playback object (AudioStreamPlaybackOggVorbis / MP3) masih
+## dipegang thread audio saat ObjectDB dibersihkan, dan engine mencetak
+## "4 resources still in use at exit" + "ObjectDB instances leaked" di SETIAP
+## test headless. Semua player di-stop supaya playback-nya dilepas duluan.
+func _exit_tree() -> void:
+	_kill_fade()
+	if _music_fade != null and _music_fade.is_valid():
+		_music_fade.kill()
+	_music_fade = null
+	_stop_all([_music, _day, _night])
+	_stop_all(_sfx_pool)
+	_stop_all(_ui_pool)
+
+
+func _stop_all(players: Array) -> void:
+	for p in players:
+		if p is AudioStreamPlayer and is_instance_valid(p):
+			(p as AudioStreamPlayer).stop()

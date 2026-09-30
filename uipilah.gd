@@ -23,6 +23,13 @@ var _esc_hint: Label = null
 @onready var _item_container: Sprite2D = $Rectangle6
 @onready var _close_button: Button = $Button
 
+## Autoload GameData diambil lewat /root, bukan identifier global, supaya
+## skrip ini tetap bisa dikompilasi pada mode --script headless. Pola sama
+## dengan NightPatrol._game_manager(). Menunjuk node autoload yang
+## sungguhan -- tidak pernah membuat instance baru.
+func _gd() -> Node:
+	return get_node("/root/GameData")
+
 func _ready() -> void:
 	_build_dim()
 	_wrap_and_center()
@@ -64,12 +71,12 @@ func _on_bin_pressed(zone: String) -> void:
 		return
 	var kind: String = _kinds[_index]
 	if inv.take_one(kind):
-		var actual: String = "ORGANIK" if GameData.ITEM_TYPE.get(kind, Trash.TrashType.ORGANIC) == Trash.TrashType.ORGANIC else "ANORGANIK"
-		GameData.add_sorted({kind: 1})
+		var actual: String = "ORGANIK" if _gd().ITEM_TYPE.get(kind, Trash.TrashType.ORGANIC) == Trash.TrashType.ORGANIC else "ANORGANIK"
+		_gd().add_sorted({kind: 1})
 		if zone == actual:
-			_status = "Benar! %s = %s. Masuk mesin olah." % [GameData.ITEM_NAMES.get(kind, kind), actual]
+			_status = "Benar! %s = %s. Masuk mesin olah." % [_gd().ITEM_NAMES.get(kind, kind), actual]
 		else:
-			_status = "Aduh, %s itu %s, bukan %s." % [GameData.ITEM_NAMES.get(kind, kind), actual, zone]
+			_status = "Aduh, %s itu %s, bukan %s." % [_gd().ITEM_NAMES.get(kind, kind), actual, zone]
 	_index = clampi(_index, 0, maxi(_kinds.size() - 1, 0))
 	_refresh()
 
@@ -196,9 +203,9 @@ func _refresh() -> void:
 	_index = clampi(_index, 0, _kinds.size() - 1)
 	var kind: String = _kinds[_index]
 	if _item_view:
-		_item_view.texture = GameData.ITEM_TEXTURES.get(kind)
+		_item_view.texture = _gd().ITEM_TEXTURES.get(kind)
 	if _item_name:
-		_item_name.text = "%s  x%d" % [GameData.ITEM_NAMES.get(kind, kind), inv.stocks[kind]]
+		_item_name.text = "%s  x%d" % [_gd().ITEM_NAMES.get(kind, kind), inv.stocks[kind]]
 	if _status_label:
 		_status_label.text = _status
 

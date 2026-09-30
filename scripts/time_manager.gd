@@ -1,4 +1,4 @@
-extends Node
+﻿extends Node
 class_name TimeManager
 
 ## STEP 8 — Sistem Waktu (Day/Night) + Jam 24h ala Stardew.
@@ -20,6 +20,10 @@ enum Phase { DAY, SUNSET, NIGHT }
 signal phase_changed(phase: int)
 signal time_updated(current_time: float, day_length: float)
 signal midnight
+## Dipancarkan sekali tiap kali `day` naik, dengan angka hari BARU. Dipakai
+## RainSystem supaya aturan "hujan setiap 3 hari" dievaluasi saat hari
+## berganti, bukan tiap frame.
+signal day_started(day: int)
 
 ## Detik real per 1 jam game. 20 = 24 jam game = 8 menit real.
 @export var seconds_per_game_hour: float = 20.0
@@ -51,6 +55,7 @@ func _process(delta: float) -> void:
 		# lewat tengah malam (00:00) => hari baru
 		day += 1
 		midnight.emit()
+		day_started.emit(day)
 	_update_phase()
 	_update_light(delta)
 	_prev_hour = hour
@@ -91,6 +96,9 @@ func sleep_one_day() -> void:
 	_update_phase()
 	_update_light(0.0)
 	time_updated.emit(current_time, day_length)
+	# Tidur juga menaikkan hari, jadi cuaca harus ikut di-update. Kalau tidak,
+	# RainSystem masih memegang cuaca lama sampai tengah malam pertama.
+	day_started.emit(day)
 
 func phase() -> int:
 	var h := game_hour()

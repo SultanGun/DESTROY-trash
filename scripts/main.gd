@@ -6,12 +6,20 @@ extends Node2D
 func _ready() -> void:
 	call_deferred("_apply_pending_load")
 
+## Autoload SaveLoad diambil lewat /root, bukan identifier global, supaya
+## skrip ini tetap bisa dikompilasi pada mode --script headless. Pola sama
+## dengan NightPatrol._game_manager(). Menunjuk node autoload yang
+## sungguhan -- tidak pernah membuat instance baru.
+func _save_load() -> Node:
+	return get_node("/root/SaveLoad")
+
 func _apply_pending_load() -> void:
-	var slot := SaveLoad.pending_slot
+	var sl := _save_load()
+	var slot: int = sl.pending_slot
 	if slot < 1:
 		return
-	SaveLoad.pending_slot = -1
-	if SaveLoad.apply_slot(slot):
+	sl.pending_slot = -1
+	if sl.apply_slot(slot):
 		print("Main: slot ", slot, " di-load.")
 	else:
 		print("Main: slot ", slot, " kosong/tidak ada.")

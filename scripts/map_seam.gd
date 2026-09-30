@@ -310,6 +310,7 @@ func _try_cross(player: CharacterBody2D, to_map2: bool) -> void:
 	await _fade_to(1.0)
 	_place_player(player, to_map2, arrival_y)
 	_apply_camera_cut(to_map2)
+	_report_map(to_map2)
 	await _fade_to(0.0)
 	# Dilepas SESUDAH fade balik selesai, bukan sebelumnya. Kalau dilepas
 	# duluan, player dilepas saat layar masih ~100% hitam (alpha 1.0), jadi
@@ -319,6 +320,20 @@ func _try_cross(player: CharacterBody2D, to_map2: bool) -> void:
 	_release_player()
 	_cooldown_left = COOLDOWN_TIME
 	_transitioning = false
+
+## Kabari `NightPatrol` peta tujuan. Dipanggil di tengah fade (player sudah
+## dipindah, layar masih hitam) supaya NPC yang akan muncul malam itu tahu
+## peta yang sedang dimasuki.
+##
+## Dicari lewat `/root` dan tidak diesensuaikan ke compile artifact test
+## headless (`--script` tidak memuat autoload), jadi_scene ini tetap bisa
+## diuji tanpa `NightPatrol` di tree.
+func _report_map(to_map2: bool) -> void:
+	var np := get_tree().root.get_node_or_null(^"NightPatrol")
+	if np == null:
+		return
+	np.call("set_current_map", 2 if to_map2 else 1)
+
 
 ## Pindahkan batas kamera ke map tujuan.
 ##
