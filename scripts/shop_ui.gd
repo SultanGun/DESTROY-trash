@@ -16,9 +16,9 @@ const DEBUG_COIN_KEY := KEY_P
 const DEBUG_COIN_AMOUNT := 100
 
 func _ready() -> void:
-	_coin_label = get_node_or_null("PanelContainer/VBoxContainer/CoinRow/CoinLabel")
-	_upgrades_container = get_node_or_null("PanelContainer/VBoxContainer/Upgrades")
-	_exit_button = get_node_or_null("PanelContainer/VBoxContainer/ButtonRow/ExitButton")
+	_coin_label = get_node_or_null("CoinLabel")
+	_upgrades_container = get_node_or_null("Upgrades")
+	_exit_button = get_node_or_null("ExitButton")
 
 	if _exit_button:
 		_exit_button.pressed.connect(_on_close_pressed)
