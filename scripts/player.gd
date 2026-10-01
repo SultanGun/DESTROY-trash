@@ -216,7 +216,8 @@ func _on_pickup_radius_area_entered(area: Area2D) -> void:
 ## parent-nya beda (Player di Main, prop di Map1_City). Prop statis di-snap
 ## sekali di map_depth.gd dengan kunci yang sama (dasar sprite).
 func _update_depth() -> void:
-	z_index = int(global_position.y + FOOT_Y)
+	z_as_relative = false
+	z_index = clampi(int(global_position.y + FOOT_Y), -4096, 4096)
 
 
 ## ---------- Occlusion ala Stardew Valley ----------
@@ -236,11 +237,16 @@ func _update_occlusion() -> void:
 		var body: Object = hit.collider
 		if body == self or not body is StaticBody2D:
 			continue
-		# Hanya objek yang "di depan" player (pivot lebih bawah di layar).
-		if body.global_position.y < global_position.y - 8.0:
-			continue
 		var sprite := _find_visual(body)
 		if sprite == null:
+			continue
+		# Dasar objek dalam koordinat global: pakai sprite.z_index jika sudah di-snap absolut,
+		# atau dasar texture
+		var foot_y: float = float(sprite.z_index) if (not sprite.z_as_relative and sprite.z_index > 0) else (sprite.global_position.y + (sprite.texture.get_size().y * 0.5 * sprite.global_scale.y if sprite.texture else 0.0))
+		# Hanya fade jika kaki player berada di belakang dasar objek (di area atap/kanopi).
+		# Jika kaki player di depan/sejajar dasar objek, player berada di depan, jangan fade.
+		var player_foot_y: float = global_position.y + FOOT_Y
+		if player_foot_y >= foot_y:
 			continue
 		# Sprite-nya harus beneran nutupin posisi player, biar fence pendek
 		# & objek yang jauh gak ikut nge-fade.
@@ -289,5 +295,5 @@ func _sprite_aabb(sprite: Sprite2D) -> Rect2:
 	var texture := sprite.texture
 	if texture == null:
 		return Rect2()
-	var size := texture.get_size() * sprite.scale
+	var size := texture.get_size() * sprite.global_scale
 	return Rect2(sprite.global_position - size / 2.0, size)

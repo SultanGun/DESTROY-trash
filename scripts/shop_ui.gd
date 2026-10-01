@@ -43,6 +43,8 @@ func _populate_upgrades() -> void:
 	# Upgrade 1: Inventory capacity expansion (max 20)
 	if inv.capacity < 20:
 		var btn := Button.new()
+		btn.set_meta("am_no_click", true)
+		btn.set_meta("am_click_hooked", true)
 		var price := _price_for_capacity(inv.capacity)
 		btn.text = "Tambah kapasitas %d -> %d  (%d koin)" % [inv.capacity, mini(inv.capacity + 5, 20), price]
 		btn.add_theme_font_size_override("font_size", FONT_SIZE_UPGRADE)
@@ -61,6 +63,9 @@ func _get_inventory() -> Inventory:
 func _get_game_manager() -> Node:
 	return get_node_or_null("/root/GameManager")
 
+func _get_audio_manager() -> Node:
+	return get_node_or_null("/root/AudioManager")
+
 func _price_for_capacity(current_capacity: int) -> int:
 	# Base 100, +50 per extra slot beyond 10
 	return 100 + (current_capacity - 10) * 50
@@ -72,7 +77,9 @@ func _on_buy_capacity(price: int, inventory: Inventory) -> void:
 
 	if gm.spend_coins(price):
 		inventory.set_capacity(inventory.capacity + 5)
-		# Refresh UI
+		var am = _get_audio_manager()
+		if am and am.has_method("play_upgrade"):
+			am.play_upgrade()
 		_update_coin_label()
 		_populate_upgrades()
 		print("Kapasitas inventori ditingkatkan menjadi ", inventory.capacity)

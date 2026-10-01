@@ -94,7 +94,8 @@ func get_trash_type_name() -> String:
 ## Sampah kecil di lantai: depth = posisi Y, update tiap frame karena
 ## sampah bisa terbang ke arah player saat dikoleksi.
 func _update_depth() -> void:
-	z_index = int(global_position.y)
+	z_as_relative = false
+	z_index = clampi(int(global_position.y), -4096, 4096)
 
 func get_kind() -> String:
 	return kind

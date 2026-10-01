@@ -16,7 +16,7 @@ const PROMPT_WIDTH := 160.0
 const PROMPT_HEIGHT := 26.0
 const PROMPT_HEAD_GAP := 18.0
 
-@export var shop_open_hour: float = 8.0
+@export var shop_open_hour: float = 6.0
 @export var shop_close_hour: float = 16.0
 
 @onready var _sensor_shape: CollisionShape2D = $CollisionShape2D
@@ -85,7 +85,8 @@ func _setup_idle_animation() -> void:
 ## Kunci depth = dasar sprite, sejajar machine.gd / player.gd / map_depth.gd
 ## supaya NPC gak ketimpa layer player.
 func _snap_depth() -> void:
-	z_index = int(_sprite.global_position.y + _sprite_half_height())
+	z_as_relative = false
+	z_index = clampi(int(_sprite.global_position.y + _sprite_half_height()), -4096, 4096)
 
 ## Setengah tinggi sprite dalam pixel world. Dipakai depth sort sama prompt,
 ## jadi ikut otomatis kalo skala NPC diubah.
@@ -93,7 +94,7 @@ func _sprite_half_height() -> float:
 	if _sprite and _sprite.sprite_frames:
 		var tex := _sprite.sprite_frames.get_frame_texture("idle", 0)
 		if tex:
-			return tex.get_size().y * 0.5 * _sprite.scale.y
+			return tex.get_size().y * 0.5 * _sprite.global_scale.y
 	return 0.0
 
 ## --- Proximity ---

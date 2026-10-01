@@ -1,4 +1,4 @@
-[gd_scene load_steps=60 format=4 uid="uid://caea8pkobye60"]
+[gd_scene load_steps=61 format=4 uid="uid://caea8pkobye60"]
 
 [ext_resource type="Texture2D" uid="uid://rdi8dpsv2sox" path="res://assets/sprites/ground/Top-Down Simple Summer_Ground 43.png" id="1_frbht"]
 [ext_resource type="Texture2D" uid="uid://c73n7ocko5dbu" path="res://assets/rumah_gedung/gedung dpr.png" id="2_rcsii"]
@@ -26,6 +26,7 @@
 [ext_resource type="Texture2D" uid="uid://ddxmugtefk7i7" path="res://assets/rumah_gedung/farm ternak 1.png" id="24_wwcrg"]
 [ext_resource type="Texture2D" uid="uid://b40ivvhgwyg17" path="res://assets/rumah_gedung/farm ternak 2.png" id="25_6cupr"]
 [ext_resource type="Script" uid="uid://uv7sofbd4xgs" path="res://scripts/trash_spawner.gd" id="26_spawner"]
+[ext_resource type="Script" uid="uid://dwsp766a1u5xb" path="res://scripts/map_depth.gd" id="27_depth"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_dbeie"]
 size = Vector2(23.0001, 4110)
@@ -14516,6 +14517,8 @@ size = Vector2(482.727, 42.7274)
 size = Vector2(49, 43)
 
 [node name="Node2D" type="Node2D"]
+y_sort_enabled = true
+script = ExtResource("27_depth")
 
 [node name="TrashSpawner" type="Node2D" parent="."]
 script = ExtResource("26_spawner")

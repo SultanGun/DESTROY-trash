@@ -6,14 +6,17 @@ extends Node
 ## - SFX: vacuum suck, one-shot per sampah mulai kesedot, pool anti-kepotong.
 
 const MUSIC_STREAM := preload("res://assets/audio/music_main_dolphin_shores.ogg")
+const MUSIC_NIGHT_STREAM := preload("res://assets/audio/music_night_clouds.mp3")
 const DAY_STREAM := preload("res://assets/audio/ambience_day_birds.mp3")
 const NIGHT_STREAM := preload("res://assets/audio/ambience_night_crickets.mp3")
 const VACUUM_STREAM := preload("res://assets/audio/sfx_vacuum_suck.mp3")
 const CLICK_STREAM := preload("res://assets/audio/sfx_ui_click.mp3")
 const COIN_STREAM := preload("res://assets/audio/sfx_coin_reward.mp3")
+const UPGRADE_STREAM := preload("res://assets/audio/sfx_upgrade.mp3")
 
 const MENU_MUSIC_VOL_DB := -12.0
 const GAME_MUSIC_VOL_DB := -14.0
+const NIGHT_MUSIC_VOL_DB := -5.0
 const MUSIC_FADE_SECS := 1.5
 const DAY_ON_DB := -18.0
 const NIGHT_ON_DB := -12.0
@@ -24,8 +27,10 @@ const SFX_POOL_SIZE := 6
 const UI_POOL_SIZE := 6
 const CLICK_VOL_DB := -6.0
 const COIN_VOL_DB := -3.0
+const UPGRADE_VOL_DB := 0.0
 
 var _music: AudioStreamPlayer
+var _music_night: AudioStreamPlayer
 var _day: AudioStreamPlayer
 var _night: AudioStreamPlayer
 var _sfx_pool: Array[AudioStreamPlayer] = []
@@ -37,11 +42,13 @@ var _music_fade: Tween = null
 var _tm: Node = null
 var _last_scene_path := ""
 var _ambience_off := true
+var _current_phase := 0
 
 
 func _ready() -> void:
 	process_mode = Node.PROCESS_MODE_ALWAYS
 	_music = _make_player(MUSIC_STREAM, MENU_MUSIC_VOL_DB)
+	_music_night = _make_player(MUSIC_NIGHT_STREAM, AMBI_OFF_DB)
 	_day = _make_player(DAY_STREAM, AMBI_OFF_DB)
 	_night = _make_player(NIGHT_STREAM, AMBI_OFF_DB)
 	for i in SFX_POOL_SIZE:
@@ -56,6 +63,7 @@ func _ready() -> void:
 		add_child(u)
 		_ui_pool.append(u)
 	_music.play()
+	_music_night.play()
 	_day.play()
 	_night.play()
 	# TimeManager adalah node di Main (bukan autoload) dan siap SETELAH
@@ -65,6 +73,7 @@ func _ready() -> void:
 
 
 ## Musik normal di menu, turun sedikit saat di game (main.tscn).
+## Saat malam (phase 2), bgm berganti ke music_night_clouds.
 ## Dicek tiap frame tapi cuma bereaksi saat scene berganti (murah).
 func _process(_delta: float) -> void:
 	var path := ""
@@ -74,10 +83,7 @@ func _process(_delta: float) -> void:
 	if path == _last_scene_path:
 		return
 	_last_scene_path = path
-	var target := MENU_MUSIC_VOL_DB
-	if path.get_file() == "main.tscn":
-		target = GAME_MUSIC_VOL_DB
-	_set_music_vol(target)
+	_update_music(false)
 	_update_ambience_presence()
 
 
@@ -99,6 +105,8 @@ func _update_ambience_presence() -> void:
 
 
 func _silence_ambience() -> void:
+	_current_phase = 0
+	_update_music(false)
 	if _day == null or _night == null:
 		return
 	_kill_fade()
@@ -108,15 +116,39 @@ func _silence_ambience() -> void:
 	_fade_tween.tween_property(_night, "volume_db", AMBI_OFF_DB, 1.5)
 
 
-func _set_music_vol(target_db: float) -> void:
-	if _music == null:
+func _update_music(instant: bool) -> void:
+	if _music == null or _music_night == null:
 		return
-	if is_equal_approx(_music.volume_db, target_db):
+	var is_game := (_tm != null and is_instance_valid(_tm)) or (_last_scene_path.get_file() == "main.tscn")
+	var day_music_target := AMBI_OFF_DB
+	var night_music_target := AMBI_OFF_DB
+
+	if not is_game:
+		day_music_target = MENU_MUSIC_VOL_DB
+		night_music_target = AMBI_OFF_DB
+	else:
+		if _current_phase == 2:
+			day_music_target = AMBI_OFF_DB
+			night_music_target = NIGHT_MUSIC_VOL_DB
+		else:
+			day_music_target = GAME_MUSIC_VOL_DB
+			night_music_target = AMBI_OFF_DB
+
+	if instant:
+		if _music_fade != null and _music_fade.is_valid():
+			_music_fade.kill()
+		_music.volume_db = day_music_target
+		_music_night.volume_db = night_music_target
 		return
+
+	if is_equal_approx(_music.volume_db, day_music_target) and is_equal_approx(_music_night.volume_db, night_music_target):
+		return
+
 	if _music_fade != null and _music_fade.is_valid():
 		_music_fade.kill()
-	_music_fade = create_tween()
-	_music_fade.tween_property(_music, "volume_db", target_db, MUSIC_FADE_SECS)
+	_music_fade = create_tween().set_parallel(true)
+	_music_fade.tween_property(_music, "volume_db", day_music_target, MUSIC_FADE_SECS)
+	_music_fade.tween_property(_music_night, "volume_db", night_music_target, MUSIC_FADE_SECS)
 
 
 func _make_player(stream: AudioStream, vol_db: float) -> AudioStreamPlayer:
@@ -157,6 +189,10 @@ func play_click() -> void:
 
 func play_coin() -> void:
 	_play_ui(COIN_STREAM, COIN_VOL_DB, 1.0)
+
+
+func play_upgrade() -> void:
+	_play_ui(UPGRADE_STREAM, UPGRADE_VOL_DB, 1.0)
 
 
 func _play_ui(stream: AudioStream, vol_db: float, pitch: float) -> void:
@@ -212,7 +248,7 @@ func _hook_buttons_deep(node: Node) -> void:
 func _hook_one_button(node: Node) -> void:
 	if not (node is BaseButton):
 		return
-	if node.has_meta("am_click_hooked"):
+	if node.has_meta("am_no_click") or node.has_meta("am_click_hooked"):
 		return
 	node.set_meta("am_click_hooked", true)
 	(node as BaseButton).pressed.connect(play_click)
@@ -240,6 +276,8 @@ func _on_phase_changed(phase: int) -> void:
 
 ## Phase TimeManager: 0 DAY, 1 SUNSET, 2 NIGHT.
 func _apply_phase(phase: int, instant: bool) -> void:
+	_current_phase = phase
+	_update_music(instant)
 	if _day == null or _night == null:
 		return
 	_ambience_off = false

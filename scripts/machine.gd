@@ -33,7 +33,8 @@ func _snap_depth() -> void:
 		var sprite := $Sprite2D as Sprite2D
 		var half := 0.0
 		if sprite.texture:
-			half = sprite.texture.get_size().y * 0.5 * sprite.scale.y
+			half = sprite.texture.get_size().y * 0.5 * sprite.global_scale.y
+		z_as_relative = false
 		z_index = int(sprite.global_position.y + half)
 
 func _on_body_entered(body: Node2D) -> void:
