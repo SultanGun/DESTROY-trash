@@ -1,0 +1,27 @@
+~ start
+Kepala Desa: Browli? Kamu Browli, kan?
+Browli: Eh, iya, Pak Kades. Baru banget sampai.
+Kepala Desa: Sudah lama sekali sejak keluargamu pindah ke kota. Gimana kabarmu sekarang?
+Browli: Baik, Pak. Cuma ya... di kota belum dapat kerjaan tetap. Rencananya mau tinggal sementara dulu di rumah peninggalan keluarga sambil mikir langkah selanjutnya.
+Kepala Desa: Begitu rupanya...
+Kepala Desa: Sayangnya, kamu pulang pas keadaan desa kita lagi memprihatinkan begini.
+Browli: Tadi pas jalan masuk saya sempat kaget juga, Pak. Sampahnya lumayan parah berserakannya.
+Kepala Desa: Bukan lumayan lagi, Li. Tempat pengolahan sampah desa sekarang mati total. Warga mulai masa bodoh, buang sampah sembarangan, dan akhirnya nggak ada yang mau mengurus.
+Browli: Kenapa warga nggak diajak kerja bakti bareng seperti dulu lagi, Pak?
+Kepala Desa: Semua sibuk dengan urusan masing-masing. Kalau cuma himbauan tanpa ada orang yang benar-benar turun tangan, masalahnya bakal terus menumpuk.
+Kepala Desa: Mumpung kamu di sini dan belum ada ikatan kerja, saya mau kasih penawaran.
+Browli: Pekerjaan, Pak?
+Kepala Desa: Betul. Bantu desa ini beres-beres.
+Kepala Desa: Tugasmu sederhana untuk awalan: kumpulkan sampah yang tercecer di jalan.
+Kepala Desa: Pilah jenisnya, lalu masukkan ke mesin pengolahan di dekat balai warga.
+Kepala Desa: Hasil penjualan dari daur ulang dan dana kas desa bakal jadi upah buat kamu.
+Browli: Daripada saya cuma bengong di rumah lama, boleh juga, Pak. Saya coba.
+Kepala Desa: Bagus! Saya tahu kamu bisa diandalkan seperti keluargamu dulu.
+Kepala Desa: Kalau jalur utama ini sudah beres, kita bisa mulai bersihkan area perumahan dan sungai.
+Kepala Desa: Selamat bekerja, Browli. Mulai dari yang paling dekat dulu.
+=> END
+
+~ reminder
+Kepala Desa: Gimana, Li? Jalur utama sudah beres-beres belum? Kumpulkan sampah di jalan, pilah, lalu olah di dekat balai warga.
+Browli: Siap, Pak. Lagi dikerjakan.
+=> END

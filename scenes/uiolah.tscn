@@ -10,7 +10,7 @@
 [ext_resource type="Texture2D" uid="uid://8sk267vbia6r" path="res://assets/uipael_/Untitled (14)/erasebg-transformed (22) 3.png" id="8_h0nwp"]
 [ext_resource type="Texture2D" uid="uid://b7acgy7jicnoe" path="res://assets/uipael_/erasebg-transformed (16).png" id="8_kjwmq"]
 [ext_resource type="Texture2D" uid="uid://c6y2wpd6qrano" path="res://assets/uipael_/butenglish/Group 60.png" id="11_2i2da"]
-[ext_resource type="Texture2D" uid="uid://b3fcup3ypvdkl" path="res://icon.svg" id="12_cf6jq"]
+[ext_resource type="Texture2D" uid="uid://did8mvw70h3fc" path="res://icon.svg" id="12_cf6jq"]
 [ext_resource type="Texture2D" uid="uid://ceg84otxgmy0c" path="res://assets/uipael_/butenglish/Group 61.png" id="12_wx42e"]
 [ext_resource type="Texture2D" uid="uid://ch7hkiasgp1ln" path="res://assets/uipael_/Untitled (14)/Group 48.png" id="13_vtpog"]
 [ext_resource type="Texture2D" uid="uid://dsxmopkg0jt0v" path="res://assets/uipael_/Untitled (14)/Group 59.png" id="14_8wvcm"]

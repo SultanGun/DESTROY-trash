@@ -1,0 +1,59 @@
+[gd_scene load_steps=9 format=3 uid="uid://ckcu84yq6bsfg"]
+
+[ext_resource type="Texture2D" uid="uid://1eskykd606j7" path="res://assets/shop_npc/Group 46.png" id="1_3357s"]
+[ext_resource type="Script" uid="uid://bkj4fhmt7j181" path="res://scripts/kades.gd" id="2_kades"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_pytmf"]
+atlas = ExtResource("1_3357s")
+region = Rect2(0, 0, 960, 960)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vefli"]
+atlas = ExtResource("1_3357s")
+region = Rect2(960, 0, 960, 960)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_55emd"]
+atlas = ExtResource("1_3357s")
+region = Rect2(1920, 0, 960, 960)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_qodov"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_pytmf")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vefli")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_55emd")
+}],
+"loop": true,
+"name": &"idlekades",
+"speed": 5.0
+}]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_wmntp"]
+radius = 111.0
+height = 286.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_waxql"]
+radius = 1106.76
+
+[node name="CharacterBody2D" type="Area2D"]
+scale = Vector2(0.13, 0.13)
+script = ExtResource("2_kades")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_qodov")
+animation = &"idlekades"
+autoplay = "idlekades"
+frame_progress = 0.675272
+
+[node name="Area2D" type="StaticBody2D" parent="AnimatedSprite2D"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="AnimatedSprite2D/Area2D"]
+position = Vector2(0, 267)
+shape = SubResource("CapsuleShape2D_wmntp")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_waxql")

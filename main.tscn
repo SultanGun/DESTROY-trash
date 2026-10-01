@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://54gklywk3wyu"]
+[gd_scene load_steps=10 format=3 uid="uid://54gklywk3wyu"]
 
 [ext_resource type="PackedScene" uid="uid://cm0kh7d2augt5" path="res://scenes/Player.tscn" id="1_0xm2m"]
 [ext_resource type="PackedScene" uid="uid://dr6msqg3adjhk" path="res://scenes/Map1_City.tscn" id="2_h2yge"]
@@ -7,6 +7,7 @@
 [ext_resource type="Script" uid="uid://drivsk7xj3l8t" path="res://scripts/main.gd" id="5_main"]
 [ext_resource type="PackedScene" uid="uid://bk5vdafw12ylf" path="res://scenes/ShopNPC.tscn" id="6_shopnpc"]
 [ext_resource type="PackedScene" uid="uid://dlan82y4ltsm6" path="res://scenes/MapSeam.tscn" id="8_seam"]
+[ext_resource type="PackedScene" uid="uid://ckcu84yq6bsfg" path="res://scenes/kades.tscn" id="9_kek77"]
 [ext_resource type="PackedScene" uid="uid://caea8pkobye60" path="res://scenes/Map2.tscn" id="9_map2"]
 
 [node name="Main" type="Node2D"]
@@ -34,3 +35,6 @@ position = Vector2(711, 803)
 
 [node name="ShopNPC" parent="." instance=ExtResource("6_shopnpc")]
 position = Vector2(870, 3083)
+
+[node name="CharacterBody2D" parent="." instance=ExtResource("9_kek77")]
+position = Vector2(900, 937)

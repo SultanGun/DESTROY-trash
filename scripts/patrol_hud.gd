@@ -71,6 +71,25 @@ func _ready() -> void:
 	_apply_panel_size()
 	# Palse pertama: belum ada malam yang berjalan, jadi 0/N dan tombol mati.
 	_on_patrol_progress(0, 0)
+	# Quest baru muncul saat dialog prolog dengan Kades selesai
+	visible = _is_prologue_done()
+	var gd := r.get_node_or_null(^"GameData")
+	if gd != null and gd.has_signal("prologue_finished"):
+		gd.prologue_finished.connect(_on_prologue_finished)
+
+
+func _is_prologue_done() -> bool:
+	var gd := get_tree().root.get_node_or_null(^"GameData")
+	return bool(gd.prologue_completed) if gd != null else true
+
+
+func _on_prologue_finished() -> void:
+	visible = true
+	var box := _box()
+	if box != null:
+		box.modulate.a = 0.0
+		var tween := create_tween()
+		tween.tween_property(box, "modulate:a", 1.0, 0.4)
 
 
 ## Perkecil / perbesar panel.

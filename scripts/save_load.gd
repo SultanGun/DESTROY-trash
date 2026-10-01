@@ -75,6 +75,7 @@ func gather_data() -> Dictionary:
 		"inventory_stocks": inv.stocks.duplicate() if inv else {},
 		"inventory_capacity": inv.capacity if inv else 10,
 		"sorted": GameData.sorted.duplicate(),
+		"prologue_completed": GameData.prologue_completed,
 		# Key baru, default 0 saat dibaca save lama (lihat _apply_data).
 		"recycled_total": GameData.recycled_total,
 	}
@@ -113,6 +114,7 @@ func _apply_data(data: Dictionary) -> void:
 		else:
 			inv.anorganic_count += inv.stocks[kind]
 	inv.inventory_changed.emit(inv.organic_count, inv.anorganic_count, inv.capacity)
+	GameData.prologue_completed = bool(data.get("prologue_completed", true))
 	GameData.sorted = (data.get("sorted", {}) as Dictionary).duplicate()
 	# sorted_organic/sorted_anorganic adalah turunan yang biasanya dihitung
 	# add_sorted(), terpisah dari dict `sorted` di atas. Kalau hanya dict-nya

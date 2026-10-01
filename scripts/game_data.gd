@@ -11,6 +11,7 @@ extends Node
 ## Siap-siap: kalau butuh, tambahin ITEM_PRODUCTS { kind_bahan: kind_barang }.
 
 signal stats_changed
+signal prologue_finished
 
 ## Nilai jual BAHAN OLAHAN langsung -> koin. Bedo tiap jenis sampah.
 const ITEM_NAMES := {
@@ -67,6 +68,13 @@ const ITEM_TEXTURES := {
 	"kemasan": preload("res://assets/sampah/kemasan.png"),
 	"sedotan": preload("res://assets/sampah/sedotan.png"),
 }
+
+var prologue_completed: bool = false:
+	set(val):
+		var was_completed := prologue_completed
+		prologue_completed = val
+		if val and not was_completed:
+			prologue_finished.emit()
 
 ## Buffer hasil pilah, siap diolah jadi koin. kind -> qty.
 var sorted: Dictionary = {}

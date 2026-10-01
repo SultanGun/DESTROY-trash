@@ -29,6 +29,7 @@ const FOOT_Y := 40.0
 const CATCH_RANGE_PX := 50.0
 
 var facing: Vector2 = Vector2.DOWN
+var is_cutscene: bool = false
 
 ## body (StaticBody2D) -> { sprite, alpha }
 var _occluded: Dictionary = {}
@@ -163,7 +164,49 @@ func _process(_delta: float) -> void:
 		_update_coord_label()
 
 
+func is_in_cutscene() -> bool:
+	return is_cutscene
+
+func set_cutscene_mode(enabled: bool) -> void:
+	is_cutscene = enabled
+	velocity = Vector2.ZERO
+	if enabled:
+		if _minigame != null and _minigame.call("is_active"):
+			_minigame.call("dismiss")
+		_clear_catch_prompt()
+		_close_inventory()
+		if has_node("InventoryToggle"):
+			get_node("InventoryToggle").visible = false
+	else:
+		if has_node("InventoryToggle"):
+			get_node("InventoryToggle").visible = true
+
+func move_towards_point(target_point: Vector2, _delta: float) -> bool:
+	var diff := target_point - global_position
+	if diff.length() < 4.0:
+		global_position = target_point
+		velocity = Vector2.ZERO
+		_update_depth()
+		_update_occlusion()
+		return true
+	var dir := diff.normalized()
+	facing = dir
+	velocity = dir * walk_speed
+	move_and_slide()
+	_update_depth()
+	_update_animation(dir)
+	_update_occlusion()
+	return false
+
+func face_direction(dir: Vector2) -> void:
+	if dir != Vector2.ZERO:
+		facing = dir.normalized()
+		_update_animation(dir)
+		anim.stop()
+
 func _unhandled_input(event: InputEvent) -> void:
+	if is_cutscene:
+		return
 	if not event is InputEventKey:
 		return
 	if not event.pressed:
@@ -360,6 +403,13 @@ func _shop_ui_open() -> bool:
 
 
 func _physics_process(_delta: float) -> void:
+	if is_cutscene:
+		_clear_catch_prompt()
+		velocity = Vector2.ZERO
+		move_and_slide()
+		_update_depth()
+		_update_occlusion()
+		return
 	# Prompt TERCANGKAP dihitung lebih dulu, sebelum cabang minigame. Kalau
 	# urutannya dibalik, cabang minigame akan return sebelum badge disembunyikan
 	# - dan badge itu tetap menempel di atas panel minigame, menutupi teks
