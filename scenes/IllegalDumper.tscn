@@ -1,0 +1,147 @@
+[gd_scene load_steps=26 format=3 uid="uid://dk3yp0f448qx0"]
+
+[ext_resource type="Script" path="res://scripts/illegal_dumper.gd" id="1_dumper"]
+
+[ext_resource type="Texture2D" path="res://assets/sprites/dumper/back/1.png" id="10_b1"]
+[ext_resource type="Texture2D" path="res://assets/sprites/dumper/back/2.png" id="11_b2"]
+[ext_resource type="Texture2D" path="res://assets/sprites/dumper/back/3.png" id="12_b3"]
+[ext_resource type="Texture2D" path="res://assets/sprites/dumper/back/4.png" id="13_b4"]
+[ext_resource type="Texture2D" path="res://assets/sprites/dumper/back/5.png" id="14_b5"]
+[ext_resource type="Texture2D" path="res://assets/sprites/dumper/front/1.png" id="20_f1"]
+[ext_resource type="Texture2D" path="res://assets/sprites/dumper/front/2.png" id="21_f2"]
+[ext_resource type="Texture2D" path="res://assets/sprites/dumper/front/3.png" id="22_f3"]
+[ext_resource type="Texture2D" path="res://assets/sprites/dumper/front/4.png" id="23_f4"]
+[ext_resource type="Texture2D" path="res://assets/sprites/dumper/idle/1.png" id="30_i1"]
+[ext_resource type="Texture2D" path="res://assets/sprites/dumper/idle/2.png" id="31_i2"]
+[ext_resource type="Texture2D" path="res://assets/sprites/dumper/idle/3.png" id="32_i3"]
+[ext_resource type="Texture2D" path="res://assets/sprites/dumper/idle/4.png" id="33_i4"]
+[ext_resource type="Texture2D" path="res://assets/sprites/dumper/left/1.png" id="40_l1"]
+[ext_resource type="Texture2D" path="res://assets/sprites/dumper/left/2.png" id="41_l2"]
+[ext_resource type="Texture2D" path="res://assets/sprites/dumper/left/3.png" id="42_l3"]
+[ext_resource type="Texture2D" path="res://assets/sprites/dumper/left/4.png" id="43_l4"]
+[ext_resource type="Texture2D" path="res://assets/sprites/dumper/right/1.png" id="50_r1"]
+[ext_resource type="Texture2D" path="res://assets/sprites/dumper/right/2.png" id="51_r2"]
+[ext_resource type="Texture2D" path="res://assets/sprites/dumper/right/3.png" id="52_r3"]
+[ext_resource type="Texture2D" path="res://assets/sprites/dumper/right/4.png" id="53_r4"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_dumper"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("10_b1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_b2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_b3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("13_b4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("14_b5")
+}],
+"loop": true,
+"name": &"back",
+"speed": 8.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("20_f1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("21_f2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("22_f3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("23_f4")
+}],
+"loop": true,
+"name": &"front",
+"speed": 8.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("30_i1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("31_i2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("32_i3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("33_i4")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("40_l1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("41_l2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("42_l3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("43_l4")
+}],
+"loop": true,
+"name": &"left",
+"speed": 8.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("50_r1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("51_r2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("52_r3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("53_r4")
+}],
+"loop": true,
+"name": &"right",
+"speed": 8.0
+}]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_body"]
+radius = 18.0
+height = 51.5369
+
+[node name="IllegalDumper" type="CharacterBody2D"]
+collision_layer = 2
+collision_mask = 0
+script = ExtResource("1_dumper")
+
+[node name="Visual" type="Node2D" parent="."]
+
+[node name="Anim" type="AnimatedSprite2D" parent="Visual"]
+scale = Vector2(0.1, 0.1)
+sprite_frames = SubResource("SpriteFrames_dumper")
+animation = &"front"
+
+[node name="Carry" type="Polygon2D" parent="Visual"]
+visible = false
+polygon = PackedVector2Array(-9, -30, 9, -30, 7, -16, -7, -16)
+color = Color(0.24, 0.2, 0.16, 1)
+
+[node name="StateIcon" type="Polygon2D" parent="Visual"]
+position = Vector2(0, -34)
+polygon = PackedVector2Array(-5, 0, 5, 0, 0, -9)
+color = Color(0.55, 0.55, 0.55, 0)
+
+[node name="Collision" type="CollisionShape2D" parent="."]
+position = Vector2(1, 37)
+scale = Vector2(0.914959, 0.892564)
+shape = SubResource("CapsuleShape2D_body")

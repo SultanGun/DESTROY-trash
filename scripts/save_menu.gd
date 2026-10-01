@@ -36,17 +36,25 @@ func _build_esc_hint() -> void:
 	$Dim.add_child(hint)
 
 func _pick_slot(slot: int) -> void:
-	SaveLoad.current_slot = slot
+	_save_load().current_slot = slot
 	_sync_slot_ui()
+
+## Autoload SaveLoad diambil lewat /root, bukan identifier global, supaya
+## skrip ini tetap bisa dikompilasi pada mode --script headless. Pola sama
+## dengan NightPatrol._game_manager(). Menunjuk node autoload yang
+## sungguhan -- tidak pernah membuat instance baru.
+func _save_load() -> Node:
+	return get_node("/root/SaveLoad")
 
 ## Tandai tombol slot yang aktif + update label status.
 func _sync_slot_ui() -> void:
-	var slot := SaveLoad.current_slot
+	var sl := _save_load()
+	var slot: int = sl.current_slot
 	slot_label.text = "SLOT %d" % slot
 	slot1_btn.button_pressed = (slot == 1)
 	slot2_btn.button_pressed = (slot == 2)
-	if SaveLoad.has_save(slot):
-		var data: Dictionary = SaveLoad.read_slot(slot)
+	if sl.has_save(slot):
+		var data: Dictionary = sl.read_slot(slot)
 		status_label.text = "Slot %d ada HARI %d. Simpan akan menimpa." % [slot, data.get("day", 1)]
 	else:
 		status_label.text = "Slot %d kosong — mulai dari sini." % slot
@@ -55,10 +63,11 @@ func _sync_slot_ui() -> void:
 
 func _on_save_sleep() -> void:
 	var tm := get_tree().get_first_node_in_group("time_manager")
-	var slot := SaveLoad.current_slot
+	var sl := _save_load()
+	var slot: int = sl.current_slot
 	if tm:
 		tm.call("sleep_one_day")
-	if not SaveLoad.save_slot(slot):
+	if not sl.save_slot(slot):
 		status_label.text = "Gagal nyimpen!"
 		return
 	status_label.text = "Tersimpan SLOT %d — HARI %d" % [slot, tm.day if tm else 2]

@@ -29,6 +29,13 @@ var _esc_hint: Label = null
 @onready var _preview: TextureRect = _frame.get_node_or_null("Preview") if _frame else null
 @onready var _preview_value: Label = _frame.get_node_or_null("PreviewValue") if _frame else null
 
+## Autoload GameData diambil lewat /root, bukan identifier global, supaya
+## skrip ini tetap bisa dikompilasi pada mode --script headless. Pola sama
+## dengan NightPatrol._game_manager(). Menunjuk node autoload yang
+## sungguhan -- tidak pernah membuat instance baru.
+func _gd() -> Node:
+	return get_node("/root/GameData")
+
 func _ready() -> void:
 	_build_dim()
 	_wrap_and_center()
@@ -63,11 +70,11 @@ func _on_row_pressed(i: int) -> void:
 	_refresh()
 
 func _on_olah_pressed() -> void:
-	if GameData.sorted.is_empty():
+	if _gd().sorted.is_empty():
 		_status = "Belum ada bahan olahan. Pilah di Mesin Pilah dulu."
 		_refresh()
 		return
-	var coins := GameData.sell_sorted()
+	var coins: int = _gd().sell_sorted()
 	get_node("/root/GameManager").add_coins(coins)
 	if coins > 0:
 		var am := get_node_or_null("/root/AudioManager")
@@ -161,9 +168,9 @@ func _build_esc_hint() -> void:
 ## ---------- Refresh ----------
 
 func _sorted_list() -> Array:
-	var kinds := GameData.sorted.keys()
+	var kinds: Array = _gd().sorted.keys()
 	kinds.sort_custom(func(a, b) -> bool:
-		return GameData.sorted[a] > GameData.sorted[b]
+		return _gd().sorted[a] > _gd().sorted[b]
 	)
 	return kinds
 
@@ -171,9 +178,9 @@ func _refresh() -> void:
 	if not is_instance_valid(_count_organic):
 		return
 	if _count_organic:
-		_count_organic.text = str(GameData.sorted_organic)
+		_count_organic.text = str(_gd().sorted_organic)
 	if _count_anorganic:
-		_count_anorganic.text = str(GameData.sorted_anorganic)
+		_count_anorganic.text = str(_gd().sorted_anorganic)
 	if _status_label:
 		_status_label.text = _status
 
@@ -189,20 +196,20 @@ func _sync_row_selection() -> void:
 		_row_buttons[i].set_pressed_no_signal(k != "" and k == _selected)
 
 func _render_preview() -> void:
-	if not _selected.is_empty() and GameData.sorted.has(_selected):
+	if not _selected.is_empty() and _gd().sorted.has(_selected):
 		_index = _sorted_list().find(_selected)
-	if _selected.is_empty() or not GameData.sorted.has(_selected):
+	if _selected.is_empty() or not _gd().sorted.has(_selected):
 		var kinds := _sorted_list()
 		_selected = kinds[_index] if not kinds.is_empty() else ""
 	if _preview:
-		_preview.texture = GameData.ITEM_TEXTURES.get(_selected)
+		_preview.texture = _gd().ITEM_TEXTURES.get(_selected)
 	if _preview_value:
 		if _selected.is_empty():
 			_preview_value.text = "Pilih bahan olahan"
 		else:
 			_preview_value.text = "x%d (+%d)" % [
-				GameData.sorted[_selected],
-				GameData.sorted[_selected] * GameData.ITEM_PRICES.get(_selected, 1),
+				_gd().sorted[_selected],
+				_gd().sorted[_selected] * _gd().ITEM_PRICES.get(_selected, 1),
 			]
 
 ## Baris = tombol pilih; teks nama & xN = Label ANAK node scene (RowName/RowQty)
@@ -226,10 +233,10 @@ func _render_rows() -> void:
 			var k: String = kinds[i]
 			btn.disabled = false
 			if name_lbl:
-				name_lbl.text = GameData.ITEM_NAMES.get(k, k)
+				name_lbl.text = _gd().ITEM_NAMES.get(k, k)
 				name_lbl.visible = true
 			if qty_lbl:
-				qty_lbl.text = "x%d" % GameData.sorted[k]
+				qty_lbl.text = "x%d" % _gd().sorted[k]
 				qty_lbl.visible = true
 		else:
 			btn.text = ""

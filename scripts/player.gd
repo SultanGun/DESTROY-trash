@@ -1,5 +1,15 @@
 extends CharacterBody2D
 
+## Player: gerak WASD, sprint Shift, inventaris B, koordinat B, tangkapan E.
+##
+## Tangkapan tidak lagi "tekan E = langsung tertangkap". E membuka minigame bar
+## + zona target (lihat catch_minigame.gd); tekan E kedua kalinya saat bar pas
+## di zona yang benar-benar menutup NPC.
+##
+## Ringkasan: bar bolak-balik, tiga percobaan, gagal tiga kali = NPC kabur.
+## Selama minigame aktif player dikunci di tempat dan NPC-nya dibekukan, supaya
+## tantangannya timing, bukan mengejar.
+
 @export var walk_speed: float = 240.0
 @export var run_speed: float = 380.0
 
@@ -14,6 +24,10 @@ const OCCLUSION_MASK := 1
 ## depth sort global biar sejajar dengan dasar sprite prop.
 const FOOT_Y := 40.0
 
+## Jarak tangkap maksimum, diukur dari titik tengah player. 50px kira-kira
+## satu langkah ditambah lengan: dekat tanpa menempel, longgak tanpa jauh.
+const CATCH_RANGE_PX := 50.0
+
 var facing: Vector2 = Vector2.DOWN
 
 ## body (StaticBody2D) -> { sprite, alpha }
@@ -23,6 +37,20 @@ var _probe_shape: RectangleShape2D
 
 const INVENTORY_UI := preload("res://iventory.tscn")
 var _inv_ui: CanvasLayer = null
+
+## Minigame tangkapan (bar + zona target). Dibuat sekali di _ready, bukan
+## tiap kali E ditekan, supaya tidak ada alokasi node di tengah gameplay.
+const CATCH_MINIGAME := preload("res://scenes/CatchMinigame.tscn")
+var _minigame: CanvasLayer = null
+
+## NPC yang sedang dinilai minigame. null = tidak ada tangkapan yang berjalan.
+var _minigame_target: Node2D = null
+
+## Prompt badge di atas NPC yang bisa ditutup. Mengikuti pola yang sama dengan
+## shop ("[E] Beli") supaya player sudah tahu cara pakainya tanpa ditebak.
+const PROMPT_BADGE := preload("res://scenes/PromptBadge.tscn")
+const CATCH_PROMPT_OFFSET := Vector2(0, -84)
+var _prompt_badge: CanvasLayer = null
 
 ## HUD koordinat (toggle Tombol B) — dibuat saat _ready biar kelihatan
 ## & nggak perlu nambah node manual di Player.tscn.
@@ -38,15 +66,21 @@ var _show_coords := false
 @onready var inventory: Inventory = $Inventory
 @onready var coin_label: Label = $CoinHUD/Box/CoinLabel
 @onready var inv_toggle: Button = $InventoryToggle/Button
+@onready var rogue_marker: CanvasLayer = $RogueMarker
 
 func _ready() -> void:
 	_probe_shape = RectangleShape2D.new()
 	_probe_shape.size = OCCLUSION_PROBE_SIZE
 	_update_depth()
 	_instantiate_inventory_ui()
+	_instantiate_catch_minigame()
 	inv_toggle.pressed.connect(_toggle_inventory)
 	_build_coin_hud()
 	_build_coord_hud()
+	# Penunjuk pembuang liar butuh tahu posisinya di mana supaya bisa
+	# menggambar chevron / panah tepi relatif terhadap player.
+	if rogue_marker != null and rogue_marker.has_method("setup"):
+		rogue_marker.call("setup", self)
 
 func _instantiate_inventory_ui() -> void:
 	_inv_ui = INVENTORY_UI.instantiate()
@@ -55,6 +89,14 @@ func _instantiate_inventory_ui() -> void:
 	_inv_ui.visible = false
 	_inv_ui.setup(self)
 	_inv_ui.close_requested.connect(_close_inventory)
+
+func _instantiate_catch_minigame() -> void:
+	_minigame = CATCH_MINIGAME.instantiate()
+	_minigame.name = "CatchMinigame"
+	add_child(_minigame)
+	_minigame.connect("succeeded", _on_minigame_succeeded)
+	_minigame.connect("failed", _on_minigame_failed)
+	_minigame.connect("dismissed", _on_minigame_dismissed)
 
 func _toggle_inventory() -> void:
 	if _inv_ui == null:
@@ -133,9 +175,205 @@ func _unhandled_input(event: InputEvent) -> void:
 		KEY_B:
 			_toggle_coords()
 			get_viewport().set_input_as_handled()
+		KEY_E:
+			if _press_e():
+				get_viewport().set_input_as_handled()
+
+
+## Satu pintu untuk semua yang dipicu E, supaya tidak ada dua tempat yang
+## sama-sama memutuskan "apakah E dipakai untuk apa".
+##
+## Dua mode:
+##   1. Minigame sedang jalan -> E ditekan sebagai jawaban timing.
+##   2. Tidak ada minigame     -> E mencoba membuka tangkapan.
+func _press_e() -> bool:
+	if _minigame != null and _minigame.call("is_active"):
+		return bool(_minigame.call("press"))
+	# Guard UI lain: player berdiri di antara mesin dan NPC masih harus bisa
+	# buka mesin dengan E, dan UI toko yang terbuka tidak boleh ketemu catcher.
+	if _machine_ui_open() or _shop_ui_open():
+		return false
+	var target := _nearest_catchable_dumper()
+	if target == null:
+		return false
+	_open_minigame(target)
+	return true
+
+
+## NPC pembuang yang SEDINGINYA bisa ditutup, dalam jangkauan tangkap.
+##
+## Syarat "harus membawa" DIHAPUS. Dulu E hanya jalan kalau NPC sudah ambil
+## sampah di waypoint pickup, dan itu memaksa player menunggu NPC berjalan
+## ~800 frame lebih dulu - thud, E dipencet berkali-kali dan tidak terjadi
+## apa-apa. Sekarang begitu NPC muncul, E langsung membuka minigame.
+##
+## Yang tetap dijaga: NPC harus HIDUP. Yang terminal (CAUGHT/ESCAPED) sudah
+## selesai malam ini dan tidak boleh bisa ditangkap dua kali, dan NPC yang
+## sedang ditahan minigame tidak boleh jadi target baru.
+func _nearest_catchable_dumper() -> Node2D:
+	var best: Node2D = null
+	var best_d := CATCH_RANGE_PX
+	# NPC yang paling dekat: satu tekan E hanya menutup satu NPC, jadi pilih
+	# yang terdekat supaya tidak perlu menekan E berulang kali.
+	for d in get_tree().get_nodes_in_group("illegal_dumpers"):
+		if not is_instance_valid(d):
+			continue
+		if not d.has_method("try_catch"):
+			continue
+		# NPC yang sedang dinilai minigame lain tidak jadi kandidat; tanpa ini
+		# satu NPC bisa jadi target dua kali kalau ada dua player-ish di scene.
+		if d == _minigame_target:
+			continue
+		var state := int(d.call("current_state")) if d.has_method("current_state") else 0
+		# CAUGHT(4), ESCAPED(5), dan FLEEING(7) berarti NPC sudah ditutup atau
+		# sedang kabur. Semuanya tidak boleh jadi target: FLEEING belum terminal
+		# tapi sudah "selesai" dari sisi player, dan try_catch() akan menolaknya
+		# juga - menyaring di sini biar prompt tidak muncul untuk NPC yang
+		# Sebenarnya sudah ditangani.
+		if state == 4 or state == 5 or state == 7:
+			continue
+		var dist := global_position.distance_to(d.global_position)
+		if dist <= best_d:
+			best_d = dist
+			best = d
+	return best
+
+
+## Prompt badge "[E] Tangkap" yang muncul di atas NPC selama dia bisa
+## ditutup. Dibuat lazy supaya tidak ada alokasi node kalau tidak dipakai.
+func _catch_prompt_badge(target: Node2D) -> CanvasLayer:
+	if _prompt_badge == null or not is_instance_valid(_prompt_badge):
+		_prompt_badge = PROMPT_BADGE.instantiate() as CanvasLayer
+		_prompt_badge.name = "CatchPrompt"
+		add_child(_prompt_badge)
+	_prompt_badge.call("setup", target, "[E]", "Tangkap", CATCH_PROMPT_OFFSET)
+	# `prompt_badge.gd`::_ready() sengaja mulai tersembunyi, jadi badge harus
+	# dinyalakan eksplisit di sini. Tanpa baris ini, setup() jalan tapi badge
+	# tetap tidak terlihat - persis bug yang bikin prompt terasa tidak ada.
+	_prompt_badge.set("visible", true)
+	return _prompt_badge
+
+
+func _clear_catch_prompt() -> void:
+	if _prompt_badge != null and is_instance_valid(_prompt_badge):
+		_prompt_badge.set("visible", false)
+
+
+## Tampilkan atau sembunyikan badge tangkapan sesuai NPC terdekat.
+##
+## disembunyikan kalau: sedang ada minigame terbuka, ada UI lain yang aktif
+## (toko/mesin - E milik mereka), atau tidak ada NPC dalam jangkauan.
+func _update_catch_prompt() -> void:
+	if _minigame != null and _minigame.call("is_active"):
+		_clear_catch_prompt()
+		return
+	if _machine_ui_open() or _shop_ui_open():
+		_clear_catch_prompt()
+		return
+	var target := _nearest_catchable_dumper()
+	if target == null:
+		_clear_catch_prompt()
+		return
+	_catch_prompt_badge(target)
+
+
+## Buka minigame untuk satu NPC, dan tahan NPC itu diam selama penilaian.
+func _open_minigame(target: Node2D) -> void:
+	if _minigame == null:
+		return
+	_minigame_target = target
+	# NPC beku dulu, baru minigame dibuka. Urutannya penting: kalau minigame
+	# lebih dulu, NPC masih bergerak dan bisa keluar jangkauan di frame yang sama.
+	if target.has_method("set_frozen"):
+		target.call("set_frozen", true)
+	_minigame.call("open")
+
+
+## Tutup minigame dan lepaskan NPC-nya. Dipanggil oleh semua jalur keluar,
+## supaya tidak pernah ada NPC yang tertinggal beku kalau minigame ditutup
+## karena alasan apa pun.
+func _close_minigame() -> void:
+	if _minigame_target != null and is_instance_valid(_minigame_target):
+		if _minigame_target.has_method("set_frozen"):
+			_minigame_target.call("set_frozen", false)
+	_minigame_target = null
+
+
+func _on_minigame_succeeded() -> void:
+	var target := _minigame_target
+	_close_minigame()
+	# try_catch() menolak kalau NPC sudah tidak membawa apa-apa (mis. NPC menyelesaikan
+	# buang dan mulai pulang di antara E ditekan dan tekanannya dinilai), dan itu
+	# benar: capturing NPC yang sudah selesai berarti produksi sia-sia.
+	if target != null and is_instance_valid(target):
+		target.call("try_catch")
+
+
+func _on_minigame_failed() -> void:
+	var target := _minigame_target
+	_close_minigame()
+	# Tiga gagal: NPC menyerah dan kabur. Tangkapan malam ini jadi mustahil, dan
+	# penalti -50 dijatuhkan sekali saat fajar oleh NightPatrol.
+	if target != null and is_instance_valid(target):
+		target.call("force_escape")
+
+
+func _on_minigame_dismissed() -> void:
+	_close_minigame()
+
+
+## NPC yang sedang dinilai bisa berhenti jadi target tanpa kesalahan player
+## Kalau itu terjadi, menahannya beku di layar cuma membekukan NPC yang sudah
+## selesai - dan player menekan E ke bar yang tidak lagi mewakili apa pun.
+## Jadi setiap frame dicek: masih hidup, masih membawa, masih dalam jangkauan.
+func _guard_minigame_target() -> void:
+	if _minigame_target == null:
+		return
+	if not is_instance_valid(_minigame_target):
+		_minigame.call("dismiss")
+		return
+	# Syarat "masih membawa" TIDAK lagi dipakai di sini: minigame boleh dimulai
+	# kapan saja NPC hidup dan dekat, jadi selama berjalan NPC boleh menganggur
+	# di titik buang. Yang tetap diperiksa: masih hidup dan masih dalam
+	# jangkauan. Kalau NPC lepas, minigame ditutup tanpa memakai percobaan.
+	var still_ok := global_position.distance_to(_minigame_target.global_position) <= CATCH_RANGE_PX
+	if not still_ok:
+		_minigame.call("dismiss")
+
+
+## True kalau ada mesin dengan UI yang sedang terbuka. Memakai pola yang sama
+## dengan machine.gd: satu-satunya sumber kebenaran UI adalah machine itu sendiri.
+func _machine_ui_open() -> bool:
+	for node in get_tree().get_nodes_in_group("machines"):
+		if is_instance_valid(node) and node.has_method("is_ui_open") and node.is_ui_open():
+			return true
+	return false
+
+
+## Toko punya UI juga, tapi tidak punya `is_ui_open()`; yang dijaga lewat group
+## yang sama supaya pemeriksaan ini tetap satu arah.
+func _shop_ui_open() -> bool:
+	for node in get_tree().get_nodes_in_group("shops"):
+		if is_instance_valid(node) and node.has_method("is_ui_open") and node.is_ui_open():
+			return true
+	return false
 
 
 func _physics_process(_delta: float) -> void:
+	# Prompt TERCANGKAP dihitung lebih dulu, sebelum cabang minigame. Kalau
+	# urutannya dibalik, cabang minigame akan return sebelum badge disembunyikan
+	# - dan badge itu tetap menempel di atas panel minigame, menutupi teks
+	# "TEKAN E SAAT BAR DI ZONA". Badge dan minigame satu layer, jadi badge
+	# yang belakangan di-tree tetap menggambar paling atas.
+	_update_catch_prompt()
+	# Minigame tangkapan sedang berjalan: player dikunci di tempat. Kalau player
+	# bebas bergerak, dia bisa menjauh dari NPC yang sedang dinilai, membuat
+	# tangkapan terasa seperti dikejar bukan seperti ditebak.
+	if _minigame != null and _minigame.call("is_active"):
+		_guard_minigame_target()
+		velocity = Vector2.ZERO
+		move_and_slide()
+		return
 	var input_dir := _read_input()
 	if input_dir != Vector2.ZERO:
 		facing = input_dir.normalized()
