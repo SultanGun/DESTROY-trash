@@ -58,9 +58,11 @@ const SLANT_DEG := 11.0
 ## tidak pernah terlihat.
 const SPREAD := Vector2(1400.0, 800.0)
 
-## Volume audio hujan. Cukup jadi lapisan ambience, tidak boleh mengalahkan
-## musik (lihat GAME_MUSIC_VOL_DB = -14 di audio_manager.gd).
-const RAIN_VOL_DB := -19.0
+## Volume audio hujan. Hujan sumbernya tenang (-25.5 LUFS) dan halus, jadi ia
+## duduk ~14 LU di bawah bed musik siang (lihat GAME_MUSIC_VOL_DB di
+## audio_manager.gd): jelas terdengar sebagai cuaca tanpa menutupi musik.
+## (Dinaikkan mengikuti bed musik; hubungan 14 LU dipertahankan.)
+const RAIN_VOL_DB := -15.0
 
 ## Berapa hari sekali hujan. Hari 3, 6, 9, 12, 15, 18, ... sampai hari berganti.
 const RAIN_EVERY_N_DAYS := 3

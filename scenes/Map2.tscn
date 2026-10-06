@@ -14523,7 +14523,7 @@ script = ExtResource("27_depth")
 [node name="TrashSpawner" type="Node2D" parent="."]
 script = ExtResource("26_spawner")
 max_trash = 40
-spawn_area = Rect2(40, 1080, 3176, 240)
+spawn_area = Rect2(40, 60, 3136, 3900)
 
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
 
@@ -14593,7 +14593,7 @@ texture = ExtResource("14_hbtm2")
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="TileMapLayer/AerMancur/StaticBody2D"]
 polygon = PackedVector2Array(-240, 80, -233.75, 121.25, -187.5, 173.75, -130, 207.5, -16.25, 227.5, 93.75, 215, 181.25, 178.75, 217.5, 142.5, 236.25, 103.75, 236.25, 56.25, 216.25, 0, 171.25, -41.25, 148.75, -48.75, 86.25, -66.25, 86.25, -66.25, 28.75, -77.5, -35, -75, -125, -58.75, -197.5, -22.5, -235, 26.25)
 
-[node name="Ground_14 (ColorRect)" type="ColorRect" parent="."]
+[node name="Ground_14 (ColorRect)" type="ColorRect" parent="." groups=["road"]]
 offset_top = 1080.0
 offset_right = 3215.0
 offset_bottom = 1338.0

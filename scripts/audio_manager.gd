@@ -15,11 +15,18 @@ const COIN_STREAM := preload("res://assets/audio/sfx_coin_reward.mp3")
 const UPGRADE_STREAM := preload("res://assets/audio/sfx_upgrade.mp3")
 
 const MENU_MUSIC_VOL_DB := -12.0
-const GAME_MUSIC_VOL_DB := -14.0
-const NIGHT_MUSIC_VOL_DB := -5.0
+## Bed musik siang. Sumbernya tenang (-16.5 LUFS) dan halus (LRA 2.5), jadi
+## gain-nya harus cukup tinggi untuk terdengar sebagai alas di bawah SFX.
+const GAME_MUSIC_VOL_DB := -10.0
+## Bed musik malam. Sumbernya sangat tenang (-27.0 LUFS).
+const NIGHT_MUSIC_VOL_DB := -3.0
 const MUSIC_FADE_SECS := 1.5
-const DAY_ON_DB := -18.0
-const NIGHT_ON_DB := -12.0
+## Burung siang. Sumbernya PANAS (-14.7 LUFS) dan spiky (LRA 12.1): transient
+## kicauan menembus segalanya, jadi gain-nya harus jauh di bawah musik walau
+## angkanya terlihat "kecil". Target: ~10 LU di bawah bed musik.
+const DAY_ON_DB := -22.0
+## Jangkrik malam. Sumber -23.9 LUFS; target sama: ~10 LU di bawah bed malam.
+const NIGHT_ON_DB := -16.0
 const AMBI_SUNSET_DB := -20.0
 const AMBI_OFF_DB := -80.0
 const FADE_SECS := 2.5

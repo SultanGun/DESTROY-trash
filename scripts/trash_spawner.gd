@@ -34,6 +34,18 @@ var _trash: Array[Trash] = []
 ## di _ready() supaya cek per frame ga perlu crawl scene tree.
 var _ground_rects: Array[Rect2] = []
 
+## Rect larangan (jalan raya) hasil cache, koordinat GLOBAL. Diisi dari
+## ColorRect yang masuk group "road" (mis. pelat jalan Map 2). Sampah tidak
+## boleh spawn di tengah jalan, walau titiknya lolos gate lain.
+var _road_rects: Array[Rect2] = []
+
+## Bounding box gabungan TileMapLayer di bawah map root, koordinat GLOBAL.
+## Map yang tanahnya digambar pakai tile (Map 2) tidak punya ColorRect rumput,
+## jadi tanpa ini gate tanah buta dan spawn_area jadi satu-satunya penentu -
+## yang dulu tepat menutupi jalan. Map tanpa TileMap (Map 1) tidak terpengaruh:
+## rect ini tetap kosong dan gate ColorRect lama yang dipakai.
+var _map_bounds := Rect2()
+
 ## Bounding box gabungan _ground_rects. Efisien buat early-out titik yang
 ## jelas-jelas di luar map sebelum scan semua rect.
 var _ground_bounds := Rect2()
@@ -49,27 +61,81 @@ func _ready() -> void:
 ## itu mencakup `Ground` Map 1 maupun layout Map 2.
 func refresh_ground_rects() -> void:
 	_ground_rects.clear()
+	_road_rects.clear()
+	_map_bounds = Rect2()
 	var map_root := get_parent()
 	if map_root == null:
 		push_warning("TrashSpawner: gak ada parent map, ground gate dilewati.")
 		return
 	_collect_ground_rects(map_root)
-	if _ground_rects.is_empty():
+	_collect_road_rects(map_root)
+	_collect_tile_bounds(map_root)
+	# Jalan boleh menutupi tanah (pelat jalan di atas tile rumput), tapi tidak
+	# boleh dipakai spawn: tidak perlu dihapus dari _ground_rects karena veto
+	# jalan di _on_ground selalu menang.
+	if _ground_rects.is_empty() and not _map_bounds.has_area():
 		# Fail-closed: tanpa data tanah, lebih baik gak spawn daripada nge-spawn
 		# sampah di void. Panggil refresh_ground_rects() manual kalau map baru
 		# sempat diganti transform-nya.
 		push_warning("TrashSpawner: gak nemu ColorRect tanah, spawn diblokir total.")
 		return
-	_ground_bounds = _ground_rects[0]
-	for rect in _ground_rects:
-		_ground_bounds = _ground_bounds.merge(rect)
+	if not _ground_rects.is_empty():
+		_ground_bounds = _ground_rects[0]
+		for rect in _ground_rects:
+			_ground_bounds = _ground_bounds.merge(rect)
 
 func _collect_ground_rects(node: Node) -> void:
+	# Subtree jalan dilewati total: pelat jalan + marka yang jadi anaknya
+	# bukan tanah dan tidak boleh masuk cache tanah.
+	if node.is_in_group(&"road"):
+		return
 	if node is ColorRect:
 		var rect := node as ColorRect
 		_ground_rects.append(rect.get_global_rect())
 	for child in node.get_children():
 		_collect_ground_rects(child)
+
+
+## Kumpulkan rect larangan dari ColorRect yang masuk group "road", termasuk
+## seluruh subtree-nya (mis. marka jalan yang jadi anak pelat jalan).
+func _collect_road_rects(node: Node) -> void:
+	if node.is_in_group(&"road"):
+		_collect_road_subtree(node)
+		return
+	for child in node.get_children():
+		_collect_road_rects(child)
+
+
+func _collect_road_subtree(node: Node) -> void:
+	if node is ColorRect:
+		_road_rects.append((node as ColorRect).get_global_rect())
+	for child in node.get_children():
+		_collect_road_subtree(child)
+
+
+## Kumpulkan bounds TileMapLayer sebagai area tanah. Satu layer penuh
+## (mis. Layer1 Map 2 yang mengisi seluruh map) cukup diwakili satu Rect2
+## gabungan, jadi cek per titik tetap O(1) walau cell-nya puluhan ribu.
+func _collect_tile_bounds(node: Node) -> void:
+	if node is TileMapLayer:
+		var layer := node as TileMapLayer
+		var used: Rect2i = layer.get_used_rect()
+		if used.has_area():
+			var top_left: Vector2 = layer.to_global(layer.map_to_local(used.position))
+			var bottom_right: Vector2 = layer.to_global(
+				layer.map_to_local(used.end - Vector2i(1, 1)))
+			var cell := Rect2(top_left, Vector2.ZERO)
+			cell = cell.expand(bottom_right)
+			# map_to_local mengembalikan TITIK TENGAH cell, jadi lebarkan
+			# setengah tile ke semua sisi supaya tepi map ikut kehitung.
+			var half := Vector2(layer.tile_set.tile_size) * 0.5
+			cell = cell.grow_individual(half.x, half.y, half.x, half.y)
+			if _map_bounds.has_area():
+				_map_bounds = _map_bounds.merge(cell)
+			else:
+				_map_bounds = cell
+	for child in node.get_children():
+		_collect_tile_bounds(child)
 
 func _physics_process(_delta: float) -> void:
 	_prune()
@@ -124,9 +190,17 @@ func _find_free_position() -> Vector2:
 		return pos
 	return Vector2.INF
 
-## True kalau `global_point` jatuh di dalam salah satu ColorRect tanah map.
-## Fail-closed: cache tanah kosong dianggap "bukan tanah".
+## True kalau `global_point` boleh ditandai sampah.
+##
+## Urutannya: veto jalan dulu (menang atas segalanya), lalu area tanah.
+## Map bertile (Map 2) memakai bounds tile; map ColorRect (Map 1) memakai
+## rect tanah seperti sebelumnya. Fail-closed: tanpa data tanah, tolak.
 func _on_ground(global_point: Vector2) -> bool:
+	for road in _road_rects:
+		if road.has_point(global_point):
+			return false
+	if _map_bounds.has_area():
+		return _map_bounds.has_point(global_point)
 	if _ground_rects.is_empty():
 		return false
 	if not _ground_bounds.has_point(global_point):
