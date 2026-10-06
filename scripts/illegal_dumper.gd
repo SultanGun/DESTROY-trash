@@ -42,7 +42,7 @@ const DumperRoutes := preload("res://scripts/dumper_routes.gd")
 ## Lama berhenti di titik dump sambil membuang muatan.
 @export_range(0.1, 10.0, 0.1) var dump_hold: float = 1.4
 
-## Pengali kecepatan saat kabur setelah tertangkap. >1 supaya "lari" terasa
+## Pengali kecepatan saat pulang setelah lolos tangkapan. >1 supaya "lari" terasa
 ## lebih cepat daripada walk_speed biasa.
 @export_range(1.0, 3.0, 0.05) var flee_speed_multiplier: float = 1.8
 
@@ -56,7 +56,7 @@ const DumperRoutes := preload("res://scripts/dumper_routes.gd")
 @export_range(4.0, 40.0, 1.0) var arrive_radius: float = 10.0
 
 ## Berapa jauh (px) kaki kabur minimal harus bisa kelihatan. Dipakai saat NPC
-## ditutup tepat di titik respawn: tanpa kaki tambahan dia akan sampai seketika
+## lolos tepat di titik respawn: tanpa kaki tambahan dia akan sampai seketika
 ## dan hilang tanpa pernah kelihatan bergerak.
 const FLEE_LEG_MIN_DIST := 220.0
 
@@ -85,10 +85,11 @@ enum State {
 	PATROL,        ## 1 kosong, menyusuri circuit menuju titik ambil
 	APPROACH_DUMP, ## 2 membawa muatan, menuju titik dump
 	DUMPING,       ## 3 berhenti di titik dump, sedang membuang
-	CAUGHT,        ## 4 tertangkap, kabur ke respawn
-	ESCAPED,       ## 5 selesai normal: buang berhasil lalu pulang
+	CAUGHT,        ## 4 tertangkap: hilang di tempat, terminal
+	ESCAPED,       ## 5 selesai tanpa tertangkap: buang berhasil lalu pulang,
+	               ##    lolos dari tangkapan lalu pulang, atau keluar area
 	RETURNING,     ## 6 buang selesai, berjalan pulang ke respawn
-	FLEEING,       ## 7 tertangkap, berjalan pulang ke respawn lebih cepat
+	FLEEING,       ## 7 lolos dari tangkapan, berjalan pulang ke respawn lebih cepat
 }
 
 ## Terminal: NPC sudah selesai satu malam. Tidak bisa dihidupkan lagi dan
@@ -127,7 +128,7 @@ var _wp := 0
 var _frozen := false
 ## Dimulai IDLE, bukan PATROL: NPC tidak boleh jalan sebelum `activate()`.
 ## Waypoint yang harus dilalui dulu sebelum pulang ke respawn, 0 = tidak ada.
-## Dipakai supaya NPC yang ditutup tepat di titik respawn tetap terlihat kabur,
+## Dipakai supaya NPC yang lolos tepat di titik respawn tetap terlihat pulang,
 ## alih-alih hilang seketika. Direset tiap kali state berubah.
 var _flee_via := 0
 var _state: State = State.IDLE
@@ -202,14 +203,31 @@ func is_frozen() -> bool:
 
 ## NPC menyerah dan kabur karena player gagal menelessly tangkapan.
 ##
-## Berbeda dari `escaped` biasa (NPC keluar area tanpa sengaja), ini gagal yang
-## disengaja: minigame sudah futile dan tidak ada gunanya menahannya. Efeknya
-## sama untuk ekonomi - keduanya berarti malam ini tidak bisa 2/2 - tapi
-## dibedakan supaya log dan test bisa bilang bedanya.
+## Lolos-dari-tangkapan berarti NPC masih di dalam peta dan terlihat: dia
+## jalan pulang ke respawn, baru selesai. Ekonomi sama saja - malam ini tidak
+## bisa 2/2 - tapi visualnya jujur: player melihat NPC-nya pergi, bukan lenyap
+## mendadak. Sinyal `escaped` dipancarkan langsung (bukan saat tiba) supaya
+## antrean spawn NightPatrol jalan seperti biasa; `finished("escaped")`
+## menyusul saat NPC sampai respawn.
+##
+## Berbeda dari `escaped` biasa (NPC keluar area tanpa sengaja lalu hilang di
+## tempat, lihat _escape): yang itu sudah di luar area main, jadi tidak ada
+## gunanya disuruh jalan pulang.
 func force_escape() -> bool:
 	if _titik.is_empty() or _is_terminal() or _state == State.IDLE:
 		return false
-	_escape()
+	velocity = Vector2.ZERO
+	escaped.emit(_route_name(), global_position)
+	# Jalan pulang ke respawn. Kaki kabur yang terlihat hanya kalau NPC
+	# berdiri di respawn (mis. gagal tepat setelah spawn): tanpa itu dia
+	# "tiba" seketika dan hilang tanpa pernah terlihat jalan.
+	_wp = 0
+	if global_position.distance_to(_titik[0]) <= arrive_radius:
+		var flee_leg := _flee_leg_waypoint()
+		if flee_leg > 0:
+			_flee_via = flee_leg
+		_wp = flee_leg
+	_enter(State.FLEEING)
 	return true
 
 
@@ -307,42 +325,24 @@ func is_finished() -> bool:
 func try_catch() -> bool:
 	if _titik.is_empty() or _is_terminal():
 		return false
-	# Penjaga idempotensi. Dulu ini tidak perlu karena syarat "harus membawa"
-	# sudah menolak NPC yang sedang kabur (setelah tertangkap, muatan sudah
-	# dilepas). Syarat itu sekarang dihapus supaya E bisa langsung dipakai
-	# begitu NPC muncul - jadi penjaga baru WAJIB ada, kalau tidak tekan E
-	# berulang akan resurrect NPC yang sudah FLEEING dan menggandakan sinyal.
+	# Penjaga idempotensi: CAUGHT terminal dan FLEEING (pulang setelah lolos)
+	# sama-sama berarti "sudah ditutup player". Tanpa ini tekan E berulang
+	# akan resurrect NPC dan menggandakan sinyal.
 	#
 	# CAUGHT(4) dan FLEEING(7) sama-sama berarti "sudah ditutup player".
 	if _state == State.FLEEING or _state == State.CAUGHT:
 		return false
-	# Syarat "harus membawa" juga sudah dihapus: NPC kosong pun bisa ditutup,
-	# supaya player tidak perlu menunggu NPC berjalan ke waypoint ambil dulu.
+	# NPC kosong pun bisa ditutup, supaya player tidak perlu menunggu NPC
+	# berjalan ke waypoint ambil dulu.
+	#
+	# Tertangkap = langsung hilang di tempat. Tidak ada jalan pulang:
+	# tangkapan yang sukses berarti NPC diamankan saat itu juga.
 	_set_carrying(false)
 	velocity = Vector2.ZERO
 	intercepted.emit(_route_name(), global_position)
-	# Sisa perjalanan NPC adalah jalan pulang ke respawn, lebih cepat dari jalan
-	# biasa. Tidak `_arrive()` di sini: NPC belum di respawn, dia masih harus
-	# berjalan ke sana.
-	_wp = 0
-	# Kalau NPC ditutup PADA TITIK respawn - yang terjadi kalau player menekan
-	# E begitu NPC spawn, sebelum dia sempat jalan - maka tanpa penjaga ini NPC akan
-	# "tiba" seketika: tidak ada satu frame pun dia terlihat, lalu hilang.
-	# Itu terbaca sebagai NPC lenyap begitu tertangkap, bukan Kabur.
-	# Karena itu dia disuruh lewat satu kaki dulu, baru pulang. Kaki pertama
-	# dicari yang jaraknya cukup jauh supaya benar-benar terlihat, bukan kaki
-	# pertama yang kebetulan cuma 80px.
-	#
-	# Syaratnya penting: kaki tambahan HANYA kalau NPC sudah berdiri di respawn.
-	# NPC yang ditutup di titik buang (jaraknya ~1900px) harus langsung pulang
-	# seperti sebelumnya - kalau dia juga lewat kaki, dia jadi berputar jauh
-	# sebelum home.
-	if global_position.distance_to(_titik[0]) <= arrive_radius:
-		var flee_leg := _flee_leg_waypoint()
-		if flee_leg > 0:
-			_flee_via = flee_leg
-		_wp = flee_leg
-	_enter(State.FLEEING)
+	visible = false
+	_enter(State.CAUGHT)
+	_finish("caught")
 	return true
 
 
@@ -450,7 +450,7 @@ func _step_travel() -> void:
 	move_and_slide()
 
 
-## Kecepatan langkah saat ini. FLEEING (kabur setelah tertangkap) memakai
+## Kecepatan langkah saat ini. FLEEING (pulang setelah lolos) memakai
 ## pengali supaya "lari" terasa lebih cepat daripada jalan biasa.
 func _travel_speed() -> float:
 	if _state == State.FLEEING:
@@ -477,8 +477,7 @@ func _hold(delta: float) -> void:
 
 
 ## Mulai perjalanan pulang: kursor diarahkan ke respawn, lalu jalan. Setelah tiba
-## di respawn NPC jadi terminal (ESCAPED untuk pulang normal, CAUGHT untuk
-## kabur karena tertangkap — cukup dibedakan oleh state yang memanggilnya).
+## di respawn NPC jadi ESCAPED terminal (lihat _reach_respawn).
 func _begin_return(s: State) -> void:
 	_wp = 0
 	_enter(s)
@@ -522,18 +521,18 @@ func _arrive() -> void:
 			_advance()
 
 
-## Sampai di respawn: terminal. ESCAPED kalau pulang normal setelah buang,
-## CAUGHT kalau kabur karena tertangkap. Keduanya selesai, keduanya dilepas dari
-## tree setelah `despawn_hold`.
+## Sampai di respawn: terminal dan dilepas dari tree setelah `despawn_hold`.
+##
+## Satu-satunya jalan yang masih berjalan sampai respawn adalah pulang normal
+## (RETURNING, setelah buang) dan lolos-dari-tangkapan (FLEEING, lihat
+## force_escape). Keduanya berarti malam ini selesai tanpa tangkapan: ESCAPED.
+## Tertangkap langsung CAUGHT di tempat (lihat try_catch) dan tidak pernah
+## lewat sini.
 func _reach_respawn() -> void:
 	velocity = Vector2.ZERO
 	_set_carrying(false)
-	if _state == State.FLEEING:
-		_enter(State.CAUGHT)
-		_finish("caught")
-	else:
-		_enter(State.ESCAPED)
-		_finish("escaped")
+	_enter(State.ESCAPED)
+	_finish("escaped")
 
 
 func _enter(s: State, secs: float = 0.0) -> void:
@@ -581,7 +580,7 @@ func _update_icon() -> void:
 	elif _state == State.ESCAPED:
 		c = Color(0.85, 0.20, 0.85, 0.95)
 	elif _state == State.FLEEING:
-		# Kabur: biru muda, sejeda "CAUGHT" yang belum tercapai.
+		# Lolos lalu pulang: biru muda.
 		c = Color(0.55, 0.65, 0.95, 0.80)
 	elif _state == State.RETURNING:
 		# Pulang: ungu redup, versi kalem dari ESCAPED.

@@ -22,6 +22,7 @@ const GameManagerScript := preload("res://scripts/game_manager.gd")
 const CATCH_RANGE_PX: float = PlayerScript.CATCH_RANGE_PX
 const S_FLEEING: int = IllegalDumperScript.State.FLEEING
 const S_ESCAPED: int = IllegalDumperScript.State.ESCAPED
+const S_CAUGHT: int = IllegalDumperScript.State.CAUGHT
 const CATCH_ZONE_CENTER: float = 0.5
 
 ## Autoload project. Saat main loop dijalankan sebagai --script, autoload
@@ -418,11 +419,13 @@ func _test_e_catch_takes_carrying() -> void:
 	_check(bool(mg.call("is_active")), "E pertama harus membuka minigame")
 	_check(bool(carrier.call("is_frozen")),
 		"NPC harus dibekukan selama minigame, bukan jalangement")
-	# Tekan E kedua saat bar di zona.
+	# Tekan E kedua saat bar di zona: tangkapan sukses = NPC langsung hilang.
 	_press_e(player)
-	_check(int(carrier.call("current_state")) == S_FLEEING,
-		"NPC harus FLEEING setelah tekan E tepat, dapat %d"
+	_check(int(carrier.call("current_state")) == S_CAUGHT,
+		"NPC harus langsung CAUGHT setelah tekan E tepat, dapat %d"
 			% int(carrier.call("current_state")))
+	_check(not carrier.visible,
+		"NPC tertangkap harus langsung hilang")
 	_check(not bool(carrier.call("is_frozen")),
 		"NPC harus thawed setelah minigame selesai")
 	_check(_coins() == before,
@@ -430,8 +433,9 @@ func _test_e_catch_takes_carrying() -> void:
 	_free_main()
 
 
-## Tekan E tiga kali di luar zona = NPC menyerah dan kabur. Ini yang
-## menggantikan "gagal tangkapan" yang dulu cuma berarti tidak terjadi apa-apa.
+## Tekan E tiga kali di luar zona = NPC lolos dan jalan pulang ke respawn.
+## Dulu tiga gagal berarti NPC langsung ESCAPED di tempat; sekarang dia
+## FLEEING pulang dulu dan jadi ESCAPED saat tiba di respawn.
 func _test_e_miss_three_times_flees() -> void:
 	_load_main()
 	var made := _spawn_night_one()
@@ -451,9 +455,11 @@ func _test_e_miss_three_times_flees() -> void:
 	for i in 3:
 		mg.set("_pos", 0.0)
 		_press_e(player)
-	_check(int(carrier.call("current_state")) == S_ESCAPED,
-		"tiga gagal harus membuat NPC ESCAPED, dapat %d"
+	_check(int(carrier.call("current_state")) == S_FLEEING,
+		"tiga gagal harus membuat NPC FLEEING pulang, dapat %d"
 			% int(carrier.call("current_state")))
+	_check(carrier.visible,
+		"NPC yang lolos harus tetap terlihat saat jalan pulang")
 	_check(not bool(mg.call("is_active")), "minigame harus tertutup setelah gagal 3x")
 	_free_main()
 
@@ -480,13 +486,15 @@ func _test_e_catch_empty_dumper() -> void:
 	var mg := _minigame(player)
 	_check(mg != null and bool(mg.call("is_active")),
 		"E harus membuka minigame bahkan kalau NPC belum membawa")
-	# Dan tekan yang benar harus tetap menutupnya.
+	# Dan tekan yang benar harus tetap menutupnya: langsung CAUGHT + hilang.
 	if mg != null:
 		mg.set("_pos", CATCH_ZONE_CENTER)
 		_press_e(player)
-		_check(int(carrier.call("current_state")) == S_FLEEING,
-			"NPC kosong yang ditekan tepat harus tetap tertangkap, state %d"
+		_check(int(carrier.call("current_state")) == S_CAUGHT,
+			"NPC kosong yang ditekan tepat harus langsung CAUGHT, state %d"
 				% int(carrier.call("current_state")))
+		_check(not carrier.visible,
+			"NPC tertangkap harus langsung hilang")
 	_free_main()
 
 

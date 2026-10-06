@@ -321,6 +321,21 @@ func _connect_day_signal() -> void:
 	elif _tm.has_signal("midnight"):
 		# TimeManager lama hanya punya `midnight`. Dipakai sebagai fallback.
 		_tm.midnight.connect(_on_day_started)
+	# RainSystem adalah autoload: ia tetap hidup saat player keluar ke menu
+	# (main.tscn di-free, TimeManager ikut mati), sementara hujan tidak mati
+	# sendiri. Tanpa ini, hujan dari hari hujan ikut tampil di atas menu utama.
+	if not _tm.tree_exiting.is_connected(_on_time_manager_exiting):
+		_tm.tree_exiting.connect(_on_time_manager_exiting)
+
+
+## TimeManager keluar dari tree = player meninggalkan sesi main (kembali ke
+## menu, load ulang). Hujan tidak boleh ikut ke menu: matikan semuanya,
+## lupakan TimeManager lama, dan pasang lagi watcher supaya sesi main
+## berikutnya (TimeManager baru) langsung ketemu.
+func _on_time_manager_exiting() -> void:
+	stop_rain()
+	_tm = null
+	_start_watching()
 
 
 func _on_day_started(day: int) -> void:

@@ -19,8 +19,9 @@ extends SceneTree
 ##   6. NPC menembus dunia (collision_mask = 0), tidak lagi tersangkut.
 ##   7. Hanya animasi kiri/kanan yang dipakai, termasuk untuk gerak vertikal
 ##      dan saat diam.
-##   8. Tertangkap -> FLEEING -> kembali ke respawn -> CAUGHT terminal.
+##   8. Tertangkap -> CAUGHT terminal + hilang di tempat -> despawn.
 ##   9. Berhasil buang -> RETURNING -> kembali ke respawn -> ESCAPED terminal.
+##   9b. Gagal tangkap (force_escape) -> FLEEING pulang -> ESCAPED di respawn.
 ##  10. State terminal melepas NPC (despawn), bukan cuma berhenti.
 ##  11. Keluar peta tetap jadi ESCAPED (jaring pengaman).
 ##  12. route_id ngawur, rute kosong, deactivate(), teleport di terminal.
@@ -69,12 +70,13 @@ func _initialize() -> void:
 	await _run("tangkap: E eksplisit, hanya saat membawa", _test_try_catch)
 	await _run("tangkap: menabrak NPC tidak memicu apa pun", _test_no_automatic_catch)
 	await _run("tangkap: tidak bisa dua kali", _test_try_catch_once)
-	await _run("kabur: NPC di respawn tetap terlihat kabur", _test_flee_leg_visible)
-	await _run("kabur: NPC jauh dari respawn langsung pulang", _test_flee_leg_not_used_when_far)
+	await _run("lolos: NPC di respawn tetap terlihat pulang", _test_escape_leg_visible)
+	await _run("lolos: NPC jauh dari respawn langsung pulang", _test_escape_leg_not_used_when_far)
+	await _run("lolos: gagal tangkap -> FLEEING -> respawn -> ESCAPED", _test_escape_walks_home_and_despawns)
 	await _run("tabrakan: NPC menembus dunia (mask 0)", _test_passes_through_world)
 	await _run("tabrakan: player tidak lagi tertahan NPC", _test_player_no_longer_blocks)
 	await _run("animasi: hanya kiri/kanan, vertikal tahan facing", _test_left_right_only_animation)
-	await _run("terminal: tertangkap -> FLEEING -> respawn -> despawn", _test_caught_flees_and_despawns)
+	await _run("terminal: tertangkap -> CAUGHT + hilang -> despawn", _test_caught_disappears_and_despawns)
 	await _run("terminal: buang -> RETURNING -> respawn -> despawn", _test_dump_returns_and_despawns)
 	await _run("keluar peta: ESCAPED dan muatan hilang", _test_escape_out_of_bounds)
 	await _run("terminal: tidak bisa dihidupkan lagi", _test_terminal_is_final)
@@ -417,8 +419,11 @@ func _test_try_catch() -> void:
 	if hits.size() == 1:
 		_check(hits[0] == "Kurir Pasar", "nama rute pada sinyal salah: %s" % hits[0])
 	_check(not _carrying(d), "setelah tertangkap muatan harus hilang")
-	_check(_state(d) == S_FLEEING,
-		"setelah tertangkap harus FLEEING dulu, state %d" % _state(d))
+	# Tertangkap = hilang di tempat: CAUGHT terminal + tidak terlihat.
+	_check(_state(d) == S_CAUGHT,
+		"setelah tertangkap harus langsung CAUGHT, state %d" % _state(d))
+	_check(not d.visible,
+		"NPC tertangkap harus langsung hilang (visible=false)")
 	if is_instance_valid(d):
 		d.queue_free()
 		return
@@ -436,8 +441,10 @@ func _test_try_catch() -> void:
 	_check(hits.size() == 2,
 		"try_catch() harus memicu intercepted tepat 1x lagi, total %d" % hits.size())
 	_check(not _carrying(d2), "setelah tertangkap muatan harus hilang")
-	_check(_state(d2) == S_FLEEING,
-		"setelah tertangkap harus FLEEING dulu, state %d" % _state(d2))
+	_check(_state(d2) == S_CAUGHT,
+		"setelah tertangkap harus langsung CAUGHT, state %d" % _state(d2))
+	_check(not d2.visible,
+		"NPC tertangkap harus langsung hilang (visible=false)")
 	# Menutup NPC yang sama dua kali harus ditolak: dia sudah terminal.
 	var again := bool(d2.call("try_catch"))
 	_check(not again, "tangkap kedua NPC yang sama harus ditolak")
@@ -473,19 +480,18 @@ func _test_no_automatic_catch() -> void:
 
 
 func _test_try_catch_once() -> void:
-	# try_catch() harus idempoten. Begitu tertangkap NPC masuk FLEEING, dan
-	# FLEEING BUKAN terminal - jadi penjaga eksplisit di try_catch() yang
-	# mencegah tangkap kedua, bukan state terminal. Regression ini menjaga
-	# penjaga itu tetap ada setelah syarat "harus membawa" dilonggarkan.
+	# try_catch() harus idempoten. Begitu tertangkap NPC langsung CAUGHT
+	# terminal + hilang, dan tangkap kedua harus ditolak.
 	var d := await _spawn_dumper(0)
 	var hits: Array[String] = []
 	d.connect("intercepted", func(n, _at): hits.append(n))
 	d.call("_set_carrying", true)
 	_check(bool(d.call("try_catch")), "tangkap pertama harus berhasil")
-	_check(_state(d) == S_FLEEING,
-		"sesudah tertangkap harus FLEEING (bukan terminal), state %d" % _state(d))
+	_check(_state(d) == S_CAUGHT,
+		"sesudah tertangkap harus langsung CAUGHT, state %d" % _state(d))
+	_check(not d.visible, "NPC tertangkap harus langsung hilang")
 	var again := bool(d.call("try_catch"))
-	_check(not again, "tangkap kedua harus ditolak walau FLEEING belum terminal")
+	_check(not again, "tangkap kedua harus ditolak karena sudah terminal")
 	_check(hits.size() == 1,
 		"tekan E dua kali tidak boleh menambah sinyal, dapat %d" % hits.size())
 	# NPC yang sudah terminal (selesai malam) juga tetap ditolak.
@@ -493,24 +499,27 @@ func _test_try_catch_once() -> void:
 		d.queue_free()
 
 
-## NPC yang ditutup TEPAT DI TITIK RESPAWN harus terlihat kabur dulu.
+## NPC yang LOLOS TEPAT DI TITIK RESPAWN harus terlihat pulang dulu.
 ##
-## Ini kondisi yang muncul setelah E bisa dipakai begitu NPC spawn: player bisa
-## menekan E saat NPC masih berdiri di waypoint 0. Tanpa penjaga, `try_catch()`
-## menetapkan `_wp = 0` dan NPC sudah ada di sana, jadi ia "tiba" seketika,
-## terminal, dan hilang 0.6 detik kemudian - player tidak pernah melihatnya
-## bergerak, dan terbaca sebagai NPC lenyap begitu tertangkap.
-func _test_flee_leg_visible() -> void:
+## Ini kondisi gagal-minigame tepat setelah spawn: NPC masih berdiri di
+## waypoint 0. Tanpa kaki kabur, `force_escape()` menetapkan `_wp = 0` dan NPC
+## sudah ada di sana, jadi ia "tiba" seketika dan hilang tanpa pernah terlihat
+## bergerak.
+func _test_escape_leg_visible() -> void:
 	var d := await _spawn_dumper(0)
 	var route: Dictionary = DumperRoutes.by_index(0)
 	var respawn: Vector2 = route["titik"][0]
 	# Taruh tepat di respawn.
 	d.global_position = respawn
 	await process_frame
+	var escapes: Array = []
+	d.connect("escaped", func(n, _at): escapes.append(n))
 	var before: Vector2 = d.global_position
-	_check(d.call("try_catch"), "tangkap di respawn harus berhasil")
+	_check(d.call("force_escape"), "lolos di respawn harus berhasil")
 	_check(_state(d) == S_FLEEING,
-		"harus FLEEING, bukan langsung terminal, state %d" % _state(d))
+		"harus FLEEING (jalan pulang), bukan langsung terminal, state %d" % _state(d))
+	_check(escapes.size() == 1,
+		"sinyal escaped harus keluar langsung 1x, dapat %d" % escapes.size())
 	# Tidak boleh jadi terminal dalam beberapa frame pertama.
 	for _i in 30:
 		await physics_frame
@@ -523,16 +532,15 @@ func _test_flee_leg_visible() -> void:
 	# Dan dia harus benar-benar bergerak, bukan diam di tempat.
 	var moved: float = before.distance_to(d.global_position)
 	_check(moved > 20.0,
-		"NPC harus terlihat bergerak saat kabur, baru jalan %.0f px" % moved)
+		"NPC harus terlihat bergerak saat pulang, baru jalan %.0f px" % moved)
 	if is_instance_valid(d):
 		d.queue_free()
 
 
-## Kebalikannya: NPC yang ditutup JAUH dari respawn (mis. sedang membawa di
-## titik buang, ~1900px dari rumah) harus langsung pulang, tanpa kaki tambahan.
-## Kaki kabur hanya untuk NPC yang sudah berdiri di respawn; kalau tidak, tiap
-## tangkapan akan berputar jauh dulu sebelum pulang.
-func _test_flee_leg_not_used_when_far() -> void:
+## Kebalikannya: NPC yang lolos JAUH dari respawn harus langsung pulang,
+## tanpa kaki tambahan. Kaki kabur hanya untuk NPC yang sudah berdiri di
+## respawn; kalau tidak, tiap lolos akan berputar jauh dulu sebelum pulang.
+func _test_escape_leg_not_used_when_far() -> void:
 	var d := await _spawn_dumper(0)
 	var route: Dictionary = DumperRoutes.by_index(0)
 	var respawn: Vector2 = route["titik"][0]
@@ -541,7 +549,9 @@ func _test_flee_leg_not_used_when_far() -> void:
 	await process_frame
 	_check(d.global_position.distance_to(respawn) > 500.0,
 		"prasyarat: NPC harus jauh dari respawn")
-	_check(d.call("try_catch"), "tangkap harus berhasil")
+	_check(d.call("force_escape"), "lolos harus berhasil")
+	_check(_state(d) == S_FLEEING,
+		"harus FLEEING (jalan pulang), state %d" % _state(d))
 	# `_flee_via` harus 0 dan target langsung respawn.
 	_check(int(d.get("_flee_via")) == 0,
 		"NPC jauh dari respawn tidak boleh memakai kaki kabur, dapat %d"
@@ -557,6 +567,35 @@ func _test_flee_leg_not_used_when_far() -> void:
 		var actual: Vector2 = (d.global_position - d0).normalized()
 		_check(to_home.dot(actual) > 0.5,
 			"NPC harus langsung menuju respawn, arahnya %s" % actual)
+	if is_instance_valid(d):
+		d.queue_free()
+
+
+## Kontrak lolos-dari-tangkapan: force_escape -> FLEEING jalan pulang ke
+## respawn -> ESCAPED -> queue_free. Sinyal `escaped` keluar langsung (supaya
+## antrean spawn jalan), `finished("escaped")` menyusul saat tiba.
+func _test_escape_walks_home_and_despawns() -> void:
+	var d := await _spawn_dumper(0)
+	var escapes: Array = []
+	var dones: Array = []
+	d.connect("escaped", func(n, _at): escapes.append(n))
+	d.connect("finished", func(n, o): dones.append(o))
+	d.call("_set_carrying", true)
+	_check(bool(d.call("force_escape")), "force_escape() harus berhasil")
+	_check(_state(d) == S_FLEEING,
+		"harus FLEEING setelah force_escape, state %d" % _state(d))
+	_check(escapes.size() == 1,
+		"sinyal escaped harus keluar langsung 1x, dapat %d" % escapes.size())
+	# NPC pulang lebih cepat dari walk_speed normal (dibuat FLEEING).
+	_check(await _wait_state(d, S_ESCAPED, 6000),
+		"NPC harus sampai ESCAPED di respawn, state %d" % _state(d))
+	_check(dones == ["escaped"],
+		"finished harus 'escaped' tepat 1x, dapat %s" % [dones])
+	_check(escapes.size() == 1,
+		"sinyal escaped tetap 1x, dapat %d" % escapes.size())
+	# ESCAPED terminal: NPC dilepas dari tree.
+	_check(await _wait_freed(d, 120),
+		"NPC harus queue_free() setelah ESCAPED (terminal)")
 	if is_instance_valid(d):
 		d.queue_free()
 
@@ -664,19 +703,17 @@ func _test_left_right_only_animation() -> void:
 		d.queue_free()
 
 
-func _test_caught_flees_and_despawns() -> void:
-	# Kontrak terminal utama: tertangkap -> FLEEING -> jalan balik ke respawn
-	# -> CAUGHT -> queue_free. Tidak boleh loop di CAUGHT atau jadi diam.
+func _test_caught_disappears_and_despawns() -> void:
+	# Kontrak terminal tangkapan: try_catch -> langsung CAUGHT + hilang di
+	# tempat -> queue_free. Tidak ada jalan pulang, tidak ada FLEEING.
 	var d := await _spawn_dumper(0)
 	var hits: Array[String] = []
 	d.connect("intercepted", func(n, _at): hits.append(n))
 	d.call("_set_carrying", true)
 	_check(bool(d.call("try_catch")), "try_catch() harus berhasil")
-	_check(_state(d) == S_FLEEING, "harus FLEEING setelah try_catch, state %d" % _state(d))
-
-	# NPC kabur lebih cepat dari walk_speed normal (dibuat FLEEING).
-	_check(await _wait_state(d, S_CAUGHT, 3000),
-		"NPC harus sampai CAUGHT di respawn, state %d" % _state(d))
+	_check(_state(d) == S_CAUGHT,
+		"harus langsung CAUGHT setelah try_catch, state %d" % _state(d))
+	_check(not d.visible, "NPC tertangkap harus langsung hilang")
 	_check(hits.size() == 1, "sinyal intercepted tetap 1x, dapat %d" % hits.size())
 
 	# CAUGHT terminal: NPC dilepas dari tree.
@@ -764,11 +801,13 @@ func _test_terminal_is_final() -> void:
 			_check(await _wait_state(d, S_ESCAPED, 60),
 				"[%s] harus sampai ESCAPED dulu, state %d" % [label, _state(d)])
 		else:
-			# carrying + try_catch() -> FLEEING, lalu tunggu sampai CAUGHT.
+			# carrying + try_catch() -> langsung CAUGHT terminal + hilang.
 			d.call("_set_carrying", true)
 			_check(bool(d.call("try_catch")), "[%s] try_catch() harus berhasil" % label)
-			_check(await _wait_state(d, S_CAUGHT, 3000),
-				"[%s] harus sampai CAUGHT dulu, state %d" % [label, _state(d)])
+			_check(_state(d) == S_CAUGHT,
+				"[%s] harus langsung CAUGHT, state %d" % [label, _state(d)])
+			_check(not d.visible,
+				"[%s] NPC tertangkap harus langsung hilang" % label)
 
 		var terminal := _state(d)
 		_check(terminal in S_TERMINAL,

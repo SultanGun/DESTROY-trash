@@ -74,6 +74,7 @@ func _initialize() -> void:
 
 	# ------------------------------------------- 3. wiring TimeManager otomatis
 	await _run("TimeManager menyalakan RainSystem otomatis", _test_timemanager_drives_rain)
+	await _run("kembali ke menu: hujan mati, tidak ikut ke menu", _test_menu_return_stops_rain)
 
 	# ------------------------------------------ 4. transisi peta saat hujan
 	await _run("Map1->Map2 saat hujan: satu sistem, seam utuh", _test_map_transitions_keep_one_system)
@@ -600,6 +601,57 @@ func _test_timemanager_drives_rain() -> void:
 	_check(_rain.get("_tm") == tm, "TimeManager tidak boleh lepas setelah stop")
 
 	tm.queue_free()
+	await process_frame
+
+
+## Regresi yang pernah dilaporkan user: hujan dari hari hujan ikut tampil di
+## atas main menu setelah player keluar dari sesi main.
+##
+## Penyebabnya: RainSystem adalah autoload yang tetap hidup saat main.tscn
+## di-free (TimeManager ikut mati), dan tidak ada yang mematikan hujan.
+## Kontraknya: saat TimeManager keluar tree, hujan mati dan RainSystem
+## melupakan TimeManager lama; sesi main berikutnya attach ulang otomatis.
+func _test_menu_return_stops_rain() -> void:
+	if is_instance_valid(_main):
+		_main.free()
+		_main = null
+	await process_frame
+	var tm := TimeManagerScript.new()
+	tm.name = "TimeManagerMenuProbe"
+	tm.set("day", 6)
+	tm.set_process(false)
+	root.add_child(tm)
+	await process_frame
+	_rain = _make_rain()
+	await process_frame
+	_check(_rain.get("_tm") == tm, "prasyarat: RainSystem harus attach ke TimeManager")
+	_check(_rain.call("is_raining"),
+		"prasyarat: hari 6 harus hujan sebelum keluar ke menu, agar regresinya nyata")
+
+	# --- keluar ke menu: TimeManager di-free seperti saat ganti scene ---
+	tm.queue_free()
+	await process_frame
+	await process_frame
+	_check(not _rain.call("is_raining"),
+		"hujan harus mati saat TimeManager keluar tree (kembali ke menu)")
+	_check(_find_particles() == 0,
+		"partikel tidak boleh tertinggal di menu, tersisa %d" % _find_particles())
+	_check(_rain.get("_tm") == null,
+		"TimeManager lama harus dilupakan, masih menunjuk %s" % str(_rain.get("_tm")))
+
+	# --- masuk sesi main baru: TimeManager baru langsung dipakai lagi ---
+	var tm2 := TimeManagerScript.new()
+	tm2.name = "TimeManagerMenuProbe2"
+	tm2.set("day", 6)
+	tm2.set_process(false)
+	root.add_child(tm2)
+	for _i in 4:
+		await process_frame
+	_check(_rain.get("_tm") == tm2,
+		"sesi main baru harus attach ulang, menunjuk %s" % str(_rain.get("_tm")))
+	_check(_rain.call("is_raining"),
+		"hari 6 di sesi baru harus hujan lagi")
+	tm2.queue_free()
 	await process_frame
 
 
